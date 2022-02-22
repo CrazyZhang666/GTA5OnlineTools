@@ -1,4 +1,4 @@
-﻿using GTA5OnlineTools.Features.Core;
+using GTA5OnlineTools.Features.Core;
 using GTA5OnlineTools.Features.Data;
 
 namespace GTA5OnlineTools.Features.SDK
@@ -197,7 +197,29 @@ namespace GTA5OnlineTools.Features.SDK
                     return v3;
                 }
             }
+            return v3;
+        }
 
+        public static Vector3 ObjectiveCoordsCustom(int target_Icon, int target_colour)
+        {
+            Vector3 v3 = Vector3.Zero;
+            int dwIcon;
+            int dwColour;
+
+            for (int i = 2000; i > 1; i--)
+            {
+                dwIcon = Memory.Read<int>(Globals.BlipPTR + (i * 8), new int[] { 0x40 });
+                dwColour = Memory.Read<int>(Globals.BlipPTR + (i * 8), new int[] { 0x48 });
+
+                if (dwIcon == target_Icon && dwColour == target_colour)
+                {
+                    v3.X = Memory.Read<float>(Globals.BlipPTR + (i * 8), new int[] { 0x10 });
+                    v3.Y = Memory.Read<float>(Globals.BlipPTR + (i * 8), new int[] { 0x14 });
+                    v3.Z = Memory.Read<float>(Globals.BlipPTR + (i * 8), new int[] { 0x18 }) + 1.0f;
+                    
+                    return v3;
+                }
+            }
             return v3;
         }
 
@@ -260,7 +282,38 @@ namespace GTA5OnlineTools.Features.SDK
         /// </summary>
         public static void ToBlips(int blipID)
         {
+            int kosatkaID = MiscData.Blips.Find(t => t.Name == "虎鲸").ID;
+            int yachtID = MiscData.Blips.Find(t => t.Name == "游艇").ID;
+
+            if (blipID == kosatkaID || blipID == yachtID)
+            {
+                int blipColour = GetOrganizationColour();
+                SetTeleportV3Pos(ObjectiveCoordsCustom(blipID, blipColour));
+            }
             SetTeleportV3Pos(ObjectiveCoordsCustom(blipID));
+        }
+
+        /// <summary>
+        /// 获取所在组织的颜色
+        /// </summary>
+        public static int GetOrganizationColour()
+        {
+            int dwColour;
+            int dwIcon;
+            for (int i = 2000; i > 1; i--)
+            {
+                dwIcon = Memory.Read<int>(Globals.BlipPTR + (i * 8), new int[] { 0x40 });
+                dwColour = Memory.Read<int>(Globals.BlipPTR + (i * 8), new int[] { 0x48 });
+
+                int ceoID = MiscData.Blips.Find(t => t.Name == "CEO办公室").ID;
+                int mcID = MiscData.Blips.Find(t => t.Name == "摩托帮会所").ID;
+
+                if (dwIcon == ceoID || dwIcon == mcID)
+                {
+                    return dwColour;
+                }
+            }
+            return 0;
         }
     }
 }
