@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTA5OnlineTools", "GTA5OnlineTools\GTA5OnlineTools.csproj", "{23CA868E-0861-4910-8054-F8EC9E0D6938}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GTA5OnlineTools.UI", "GTA5OnlineTools.UI\GTA5OnlineTools.UI.csproj", "{D787A226-8842-45FA-B376-09EEA898B6BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23CA868E-0861-4910-8054-F8EC9E0D6938}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23CA868E-0861-4910-8054-F8EC9E0D6938}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23CA868E-0861-4910-8054-F8EC9E0D6938}.Debug|x64.ActiveCfg = Debug|x64
+		{23CA868E-0861-4910-8054-F8EC9E0D6938}.Debug|x64.Build.0 = Debug|x64
+		{23CA868E-0861-4910-8054-F8EC9E0D6938}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23CA868E-0861-4910-8054-F8EC9E0D6938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23CA868E-0861-4910-8054-F8EC9E0D6938}.Release|x64.ActiveCfg = Release|x64
+		{23CA868E-0861-4910-8054-F8EC9E0D6938}.Release|x64.Build.0 = Release|x64
+		{D787A226-8842-45FA-B376-09EEA898B6BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D787A226-8842-45FA-B376-09EEA898B6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D787A226-8842-45FA-B376-09EEA898B6BF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D787A226-8842-45FA-B376-09EEA898B6BF}.Debug|x64.Build.0 = Debug|Any CPU
+		{D787A226-8842-45FA-B376-09EEA898B6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D787A226-8842-45FA-B376-09EEA898B6BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D787A226-8842-45FA-B376-09EEA898B6BF}.Release|x64.ActiveCfg = Release|Any CPU
+		{D787A226-8842-45FA-B376-09EEA898B6BF}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1B3CB37-4EBE-4661-8F8E-6680C819EE3F}
+	EndGlobalSection
+EndGlobal

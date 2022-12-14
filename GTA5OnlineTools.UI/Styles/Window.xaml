@@ -1,0 +1,161 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:attach="clr-namespace:GTA5OnlineTools.UI.Controls.Attach"
+    xmlns:controls="clr-namespace:GTA5OnlineTools.UI.Controls">
+
+    <!--#region 系统按钮-->
+    <Style x:Key="UiSystemButton" TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        Background="{TemplateBinding Background}">
+                        <Border x:Name="bg" Background="Transparent" />
+                        <Path
+                            x:Name="content"
+                            Width="{TemplateBinding attach:Icon.Width}"
+                            Height="{TemplateBinding attach:Icon.Height}"
+                            Data="{TemplateBinding attach:Icon.Geometry}"
+                            Fill="{TemplateBinding Foreground}"
+                            Stretch="Fill"
+                            UseLayoutRounding="True" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="bg" Property="Background" Value="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=(attach:Mouse.OverBackColor)}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="0.8" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region 系统窗口-->
+    <Style x:Key="UiWindowStyle" TargetType="{x:Type controls:UiWindow}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="#585858" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:UiWindow}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        SnapsToDevicePixels="True">
+                        <Grid x:Name="workArea">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <AdornerDecorator x:Name="content" Grid.Row="1">
+                                <ContentPresenter />
+                            </AdornerDecorator>
+                            <Grid Height="{TemplateBinding CaptionHeight}" Background="{TemplateBinding CaptionBackground}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <ContentPresenter Content="{TemplateBinding TitleContent}" />
+                                <StackPanel
+                                    Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    WindowChrome.IsHitTestVisibleInChrome="True">
+                                    <Button
+                                        x:Name="ButtonMin"
+                                        Width="{TemplateBinding SystemButtonSize}"
+                                        Height="{TemplateBinding SystemButtonSize}"
+                                        attach:Icon.Geometry="F1M0,6L0,9 9,9 9,6 0,6z"
+                                        attach:Icon.Height="2"
+                                        attach:Mouse.OverBackColor="{TemplateBinding SystemButtonOverColor}"
+                                        Background="{TemplateBinding SystemButtonColor}"
+                                        Command="SystemCommands.MinimizeWindowCommand"
+                                        Foreground="{TemplateBinding SystemButtonForeground}"
+                                        IsTabStop="False"
+                                        Style="{StaticResource UiSystemButton}"
+                                        ToolTip="最小化" />
+                                    <Button
+                                        x:Name="ButtonMax"
+                                        Width="{TemplateBinding SystemButtonSize}"
+                                        Height="{TemplateBinding SystemButtonSize}"
+                                        attach:Icon.Geometry="F1M0,0L0,9 9,9 9,0 0,0 0,3 8,3 8,8 1,8 1,3z"
+                                        attach:Mouse.OverBackColor="{TemplateBinding SystemButtonOverColor}"
+                                        Background="{TemplateBinding SystemButtonColor}"
+                                        Command="SystemCommands.MaximizeWindowCommand"
+                                        Foreground="{TemplateBinding SystemButtonForeground}"
+                                        IsTabStop="False"
+                                        Style="{StaticResource UiSystemButton}"
+                                        ToolTip="最大化" />
+                                    <Button
+                                        x:Name="ButtonRestore"
+                                        Width="{TemplateBinding SystemButtonSize}"
+                                        Height="{TemplateBinding SystemButtonSize}"
+                                        attach:Icon.Geometry="F1M0,10L0,3 3,3 3,0 10,0 10,2 4,2 4,3 7,3 7,6 6,6 6,5 1,5 1,10z M1,10L7,10 7,7 10,7 10,2 9,2 9,6 6,6 6,9 1,9z"
+                                        attach:Mouse.OverBackColor="{TemplateBinding SystemButtonOverColor}"
+                                        Background="{TemplateBinding SystemButtonColor}"
+                                        Command="SystemCommands.RestoreWindowCommand"
+                                        Foreground="{TemplateBinding SystemButtonForeground}"
+                                        IsTabStop="False"
+                                        Style="{StaticResource UiSystemButton}"
+                                        ToolTip="向下还原" />
+                                    <Button
+                                        x:Name="ButtonClose"
+                                        Width="{TemplateBinding SystemButtonSize}"
+                                        Height="{TemplateBinding SystemButtonSize}"
+                                        attach:Icon.Geometry="M453.44 512L161.472 220.032a41.408 41.408 0 0 1 58.56-58.56L512 453.44 803.968 161.472a41.408 41.408 0 0 1 58.56 58.56L570.56 512l291.968 291.968a41.408 41.408 0 0 1-58.56 58.56L512 570.56 220.032 862.528a41.408 41.408 0 0 1-58.56-58.56L453.44 512z"
+                                        attach:Mouse.OverBackColor="{TemplateBinding SystemButtonCloseOverColor}"
+                                        Background="{TemplateBinding SystemButtonColor}"
+                                        Command="SystemCommands.CloseWindowCommand"
+                                        Foreground="{TemplateBinding SystemButtonForeground}"
+                                        IsTabStop="False"
+                                        Style="{StaticResource UiSystemButton}"
+                                        ToolTip="关闭" />
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="FitSystemWindow" Value="True">
+                            <Setter TargetName="content" Property="Grid.Row" Value="0" />
+                            <Setter TargetName="content" Property="Grid.RowSpan" Value="2" />
+                        </Trigger>
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter TargetName="workArea" Property="MaxWidth" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Width}" />
+                            <Setter TargetName="workArea" Property="MaxHeight" Value="{Binding Source={x:Static SystemParameters.WorkArea}, Path=Height}" />
+                            <Setter TargetName="ButtonMax" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ButtonRestore" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="WindowState" Value="Normal">
+                            <Setter TargetName="ButtonMax" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="ButtonRestore" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="ResizeMode" Value="NoResize">
+                            <Setter TargetName="ButtonMin" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ButtonMax" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ButtonRestore" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="ResizeMode" Value="CanMinimize">
+                            <Setter TargetName="ButtonMax" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="ButtonRestore" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+</ResourceDictionary>
