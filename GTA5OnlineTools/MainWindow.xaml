@@ -59,7 +59,6 @@
             </StackPanel>
             <!--  ################################  -->
             <StackPanel
-                VerticalAlignment="Center"
                 DockPanel.Dock="Left"
                 Orientation="Horizontal"
                 WindowChrome.IsHitTestVisibleInChrome="True">

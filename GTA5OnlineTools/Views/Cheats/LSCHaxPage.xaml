@@ -7,7 +7,6 @@
     Title="LSCHaxPage"
     d:DesignHeight="720"
     d:DesignWidth="1280"
-    Style="{StaticResource PageStyle_Loaded}"
     mc:Ignorable="d">
 
     <UniformGrid Columns="2">
