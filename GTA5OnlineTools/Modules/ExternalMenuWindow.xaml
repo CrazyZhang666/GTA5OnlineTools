@@ -1,0 +1,84 @@
+﻿<ui:UiWindow
+    x:Class="GTA5OnlineTools.Modules.ExternalMenuWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    x:Name="Window_ExternalMenu"
+    Title="GTA5线上小助手 - 外置菜单"
+    Width="1000"
+    Height="600"
+    CaptionHeight="30"
+    Closing="Window_ExternalMenu_Closing"
+    Loaded="Window_ExternalMenu_Loaded"
+    ResizeMode="CanMinimize"
+    Style="{StaticResource UiWindowStyle}"
+    mc:Ignorable="d">
+
+    <ui:UiWindow.TitleContent>
+        <DockPanel>
+            <StackPanel
+                VerticalAlignment="Center"
+                DockPanel.Dock="Right"
+                Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Text="Delete键 显示/隐藏" />
+                <CheckBox
+                    x:Name="CheckBox_IsTopMost"
+                    Margin="10,0,10,0"
+                    Click="CheckBox_IsTopMost_Click"
+                    Content="窗口置顶"
+                    WindowChrome.IsHitTestVisibleInChrome="True" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <Image
+                    Height="20"
+                    Margin="5"
+                    Source="\Assets\Images\Favicon.ico"
+                    Style="{StaticResource ImageStyle_HighQuality}" />
+                <TextBlock
+                    VerticalAlignment="Center"
+                    FontSize="14"
+                    FontWeight="Bold"
+                    Text="{Binding ElementName=Window_ExternalMenu, Path=Title}" />
+            </StackPanel>
+        </DockPanel>
+    </ui:UiWindow.TitleContent>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!--  ######################  -->
+        <ListBox
+            x:Name="MenuBar"
+            Margin="5,5,0,5"
+            DockPanel.Dock="Bottom"
+            ItemsSource="{Binding MenuBars}"
+            SelectedIndex="0"
+            Style="{StaticResource ListBoxStyle_NavMenu}">
+            <b:Interaction.Triggers>
+                <b:EventTrigger EventName="SelectionChanged">
+                    <b:InvokeCommandAction Command="{Binding NavigateCommand}" CommandParameter="{Binding ElementName=MenuBar, Path=SelectedItem}" />
+                </b:EventTrigger>
+            </b:Interaction.Triggers>
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="{x:Type ListBoxItem}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                            Margin="8,0,5,0"
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            Text="{Binding Emoji}" />
+                        <TextBlock VerticalAlignment="Center" Text="{Binding Title}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <!--  ######################  -->
+        <ContentControl x:Name="ContentControl_Main" Grid.Column="1" />
+    </Grid>
+
+</ui:UiWindow>

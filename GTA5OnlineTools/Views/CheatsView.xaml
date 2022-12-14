@@ -1,0 +1,371 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Views.CheatsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    Style="{StaticResource UserControlStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <!--  主体功能  -->
+        <ScrollViewer>
+            <WrapPanel Margin="2">
+                <!--  Kiddion 外置辅助菜单  -->
+                <Border Style="{StaticResource BorderStyle_Hacks}">
+                    <DockPanel>
+                        <!--  预览图片  -->
+                        <Border DockPanel.Dock="Left" Style="{StaticResource BorderStyle_HacksPrewImage}">
+                            <Image Source="/Assets/Images/Hacks/Kiddion.png" Style="{StaticResource ImageStyle_HighQuality}">
+                                <Image.ToolTip>
+                                    <Image Source="/Assets/Images/Hacks/Kiddion.png" />
+                                </Image.ToolTip>
+                            </Image>
+                        </Border>
+                        <!--  简介和功能  -->
+                        <DockPanel Margin="5" DockPanel.Dock="Right">
+                            <!--  顶部区域  -->
+                            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                <!--  标题  -->
+                                <TextBlock
+                                    Margin="5"
+                                    DockPanel.Dock="Left"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    Text="Kiddion 外置辅助菜单" />
+                                <!--  功能  -->
+                                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                    <CheckBox
+                                        x:Name="CheckBox_IsUseKiddionChs"
+                                        Content="汉化"
+                                        IsChecked="{Binding CheatsModel.IsUseKiddionChs, UpdateSourceTrigger=PropertyChanged}" />
+                                    <TextBlock Margin="5,0,5,0" VerticalAlignment="Center">
+                                        <Hyperlink Command="{Binding ReadMeClickCommand}" CommandParameter="KiddionPage">
+                                            使用说明
+                                        </Hyperlink>
+                                    </TextBlock>
+                                    <ToggleButton Margin="5,0,5,0" IsChecked="{Binding CheatsModel.KiddionIsRun}">
+                                        <b:Interaction.Triggers>
+                                            <b:EventTrigger EventName="Click">
+                                                <b:InvokeCommandAction Command="{Binding CheatsClickCommand}" CommandParameter="Kiddion" />
+                                            </b:EventTrigger>
+                                        </b:Interaction.Triggers>
+                                    </ToggleButton>
+                                </StackPanel>
+                            </DockPanel>
+                            <!--  描述  -->
+                            <TextBlock
+                                Margin="5"
+                                DockPanel.Dock="Top"
+                                TextWrapping="Wrap">
+                                一款国外UnKnoWnCheaTs论坛Kiddion大佬制作的免费GTA5外置菜单，功能十分实用。By CrazyZhang和mAsk°汉化
+                            </TextBlock>
+                            <!--  增强  -->
+                            <StackPanel DockPanel.Dock="Top">
+                                <WrapPanel>
+                                    <Button
+                                        Background="#4285F4"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="KiddionKey104"
+                                        Content="104键" />
+                                    <Button
+                                        Background="#F36838"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="KiddionKey87"
+                                        Content="87键" />
+                                    <Button
+                                        Background="#009AD6"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="KiddionConfigDirectory"
+                                        Content="配置目录" />
+                                    <Button
+                                        Background="#00AE9D"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="KiddionScriptsDirectory"
+                                        Content="Lua脚本目录" />
+                                    <Button
+                                        Background="#F34B7D"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="KiddionChsHelper"
+                                        Content="汉化修正" />
+                                    <Button
+                                        Background="#F34B7D"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="KiddionLuaHelper"
+                                        Content="Lua生成" />
+                                </WrapPanel>
+                                <WrapPanel>
+                                    <Button
+                                        Background="#34A853"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="EditKiddionConfig"
+                                        Content="配置文件" />
+                                    <Button
+                                        Background="#1685A9"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="EditKiddionTheme"
+                                        Content="主题文件" />
+                                    <Button
+                                        Background="#34A853"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="EditKiddionTP"
+                                        Content="自定传送" />
+                                    <Button
+                                        Background="#4C8DAE"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="EditKiddionVC"
+                                        Content="自定载具" />
+                                </WrapPanel>
+                                <WrapPanel>
+                                    <Button
+                                        Background="#EA4335"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="ResetKiddionConfig"
+                                        Content="重置Kiddion配置文件" />
+                                </WrapPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+
+                <!--  GTAHax 全局变量编辑器  -->
+                <Border Style="{StaticResource BorderStyle_Hacks}">
+                    <DockPanel>
+                        <!--  预览图片  -->
+                        <Border DockPanel.Dock="Left" Style="{StaticResource BorderStyle_HacksPrewImage}">
+                            <Image Source="/Assets/Images/Hacks/GTAHax.png" Style="{StaticResource ImageStyle_HighQuality}">
+                                <Image.ToolTip>
+                                    <Image Source="/Assets/Images/Hacks/GTAHax.png" />
+                                </Image.ToolTip>
+                            </Image>
+                        </Border>
+                        <!--  简介和功能  -->
+                        <DockPanel Margin="5" DockPanel.Dock="Right">
+                            <!--  顶部区域  -->
+                            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                <!--  标题  -->
+                                <TextBlock
+                                    Margin="5"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    Text="GTAHax 全局变量编辑器" />
+                                <!--  功能  -->
+                                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,5,0" VerticalAlignment="Center">
+                                        <Hyperlink Command="{Binding ReadMeClickCommand}" CommandParameter="GTAHaxPage">
+                                            使用说明
+                                        </Hyperlink>
+                                    </TextBlock>
+                                    <ToggleButton Margin="5,0,5,0" IsChecked="{Binding CheatsModel.GTAHaxIsRun}">
+                                        <b:Interaction.Triggers>
+                                            <b:EventTrigger EventName="Click">
+                                                <b:InvokeCommandAction Command="{Binding CheatsClickCommand}" CommandParameter="GTAHax" />
+                                            </b:EventTrigger>
+                                        </b:Interaction.Triggers>
+                                    </ToggleButton>
+                                </StackPanel>
+                            </DockPanel>
+                            <!--  描述  -->
+                            <TextBlock
+                                Margin="5"
+                                DockPanel.Dock="Top"
+                                TextWrapping="Wrap">
+                                一款国外UnKnoWnCheaTs论坛polivilas大佬制作的免费GTA5全局变量编辑器。By CrazyZhang汉化
+                            </TextBlock>
+                            <!--  增强  -->
+                            <StackPanel DockPanel.Dock="Top">
+                                <WrapPanel>
+                                    <Button
+                                        Background="#4285F4"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="EditGTAHaxStat"
+                                        Content="导入文件" />
+                                    <Button
+                                        Background="#00AE9D"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="DefaultGTAHaxStat"
+                                        Content="预设代码" />
+                                </WrapPanel>
+                                <WrapPanel />
+                                <WrapPanel />
+                            </StackPanel>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+
+                <!--  BincoHax 角色服装编辑器  -->
+                <Border Style="{StaticResource BorderStyle_Hacks}">
+                    <DockPanel>
+                        <!--  预览图片  -->
+                        <Border DockPanel.Dock="Left" Style="{StaticResource BorderStyle_HacksPrewImage}">
+                            <Image Source="/Assets/Images/Hacks/BincoHax.png" Style="{StaticResource ImageStyle_HighQuality}">
+                                <Image.ToolTip>
+                                    <Image Source="/Assets/Images/Hacks/BincoHax.png" />
+                                </Image.ToolTip>
+                            </Image>
+                        </Border>
+                        <!--  简介和功能  -->
+                        <DockPanel Margin="5" DockPanel.Dock="Right">
+                            <!--  顶部区域  -->
+                            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                <!--  标题  -->
+                                <TextBlock
+                                    Margin="5"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    Text="BincoHax 角色服装编辑器" />
+                                <!--  功能  -->
+                                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,5,0" VerticalAlignment="Center">
+                                        <Hyperlink Command="{Binding ReadMeClickCommand}" CommandParameter="BincoHaxPage">
+                                            使用说明
+                                        </Hyperlink>
+                                    </TextBlock>
+                                    <ToggleButton Margin="5,0,5,0" IsChecked="{Binding CheatsModel.BincoHaxIsRun}">
+                                        <b:Interaction.Triggers>
+                                            <b:EventTrigger EventName="Click">
+                                                <b:InvokeCommandAction Command="{Binding CheatsClickCommand}" CommandParameter="BincoHax" />
+                                            </b:EventTrigger>
+                                        </b:Interaction.Triggers>
+                                    </ToggleButton>
+                                </StackPanel>
+                            </DockPanel>
+                            <!--  描述  -->
+                            <TextBlock
+                                Margin="5"
+                                DockPanel.Dock="Top"
+                                TextWrapping="Wrap">
+                                一款国外UnKnoWnCheaTs论坛polivilas大佬制作的免费GTA5角色服装编辑器。By CrazyZhang汉化
+                            </TextBlock>
+                            <!--  增强  -->
+                            <StackPanel DockPanel.Dock="Top">
+                                <WrapPanel>
+                                    <!--<Button Background="#4285F4" Content="未定义" />-->
+                                </WrapPanel>
+                                <WrapPanel />
+                                <WrapPanel />
+                            </StackPanel>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+
+                <!--  LSCHax 载具改装编辑器  -->
+                <Border Style="{StaticResource BorderStyle_Hacks}">
+                    <DockPanel>
+                        <!--  预览图片  -->
+                        <Border DockPanel.Dock="Left" Style="{StaticResource BorderStyle_HacksPrewImage}">
+                            <Image Source="/Assets/Images/Hacks/LSCHax.png" Style="{StaticResource ImageStyle_HighQuality}">
+                                <Image.ToolTip>
+                                    <Image Source="/Assets/Images/Hacks/LSCHax.png" />
+                                </Image.ToolTip>
+                            </Image>
+                        </Border>
+                        <!--  简介和功能  -->
+                        <DockPanel Margin="5" DockPanel.Dock="Right">
+                            <!--  顶部区域  -->
+                            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                <!--  标题  -->
+                                <TextBlock
+                                    Margin="5"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    Text="LSCHax 载具改装编辑器" />
+                                <!--  功能  -->
+                                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,5,0" VerticalAlignment="Center">
+                                        <Hyperlink Command="{Binding ReadMeClickCommand}" CommandParameter="LSCHaxPage">
+                                            使用说明
+                                        </Hyperlink>
+                                    </TextBlock>
+                                    <ToggleButton Margin="5,0,5,0" IsChecked="{Binding CheatsModel.LSCHaxIsRun}">
+                                        <b:Interaction.Triggers>
+                                            <b:EventTrigger EventName="Click">
+                                                <b:InvokeCommandAction Command="{Binding CheatsClickCommand}" CommandParameter="LSCHax" />
+                                            </b:EventTrigger>
+                                        </b:Interaction.Triggers>
+                                    </ToggleButton>
+                                </StackPanel>
+                            </DockPanel>
+                            <!--  描述  -->
+                            <TextBlock
+                                Margin="5"
+                                DockPanel.Dock="Top"
+                                TextWrapping="Wrap">
+                                一款国外UnKnoWnCheaTs论坛polivilas大佬制作的免费GTA5载具改装编辑器。主要用来改装载具，使用频率较少，目前尚未汉化
+                            </TextBlock>
+                            <TextBlock
+                                Margin="5"
+                                DockPanel.Dock="Top"
+                                Foreground="#F00056"
+                                TextWrapping="Wrap">
+                                提示：由于1.63更新后原作者未更新此工具，目前部分功能可能已失效
+                            </TextBlock>
+                            <!--  增强  -->
+                            <StackPanel DockPanel.Dock="Top">
+                                <WrapPanel>
+                                    <!--<Button Background="#4285F4" Content="未定义" />-->
+                                </WrapPanel>
+                                <WrapPanel />
+                                <WrapPanel />
+                            </StackPanel>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+
+            </WrapPanel>
+        </ScrollViewer>
+
+        <!--  使用说明窗口  -->
+        <Grid Background="#7E585858" Visibility="{Binding CheatsModel.FrameState, FallbackValue=Collapsed}">
+            <Border
+                Margin="10"
+                Background="White"
+                BorderBrush="#585858"
+                BorderThickness="1"
+                SnapsToDevicePixels="True">
+                <Border.Effect>
+                    <DropShadowEffect
+                        BlurRadius="10"
+                        Direction="0"
+                        Opacity="0.8"
+                        ShadowDepth="0"
+                        Color="Black" />
+                </Border.Effect>
+            </Border>
+            <Grid Margin="10" Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <DockPanel
+                    Grid.Row="0"
+                    Margin="1"
+                    Background="#F5F5F5"
+                    LastChildFill="False">
+                    <TextBlock
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        DockPanel.Dock="Left"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        Text="📖 使用说明" />
+                    <Button
+                        Command="{Binding FrameHideClickCommand}"
+                        Content="&#xeaf2;"
+                        DockPanel.Dock="Right"
+                        Style="{StaticResource ButtonStyle_FrameHide}"
+                        ToolTip="点击关闭使用说明" />
+                </DockPanel>
+                <Frame
+                    Grid.Row="1"
+                    Content="{Binding CheatsModel.FrameContent}"
+                    NavigationUIVisibility="Hidden" />
+            </Grid>
+        </Grid>
+    </Grid>
+
+</UserControl>

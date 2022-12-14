@@ -1,0 +1,36 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Views.HomeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    Style="{StaticResource UserControlStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <UniformGrid Grid.Row="0" Columns="2">
+            <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="📰 通知公告" />
+            <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="📗 更新日志" />
+        </UniformGrid>
+        <UniformGrid Grid.Row="1" Columns="2">
+            <TextBox
+                x:Name="TextBox_Notice"
+                Margin="5,0,2,5"
+                Style="{StaticResource TextBoxStyle_Logger}"
+                Text="正在加载中，请稍后..." />
+            <TextBox
+                x:Name="TextBox_Change"
+                Margin="2,0,5,5"
+                Style="{StaticResource TextBoxStyle_Logger}"
+                Text="正在加载中，请稍后..." />
+        </UniformGrid>
+    </Grid>
+
+</UserControl>

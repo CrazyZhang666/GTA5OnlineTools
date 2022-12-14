@@ -1,0 +1,47 @@
+﻿<Window
+    x:Class="GTA5OnlineTools.Modules.SpeedMeter.DrawWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lc="clr-namespace:GTA5OnlineTools.Modules.SpeedMeter"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="Window_Draw"
+    Title="GTA5线上小助手 车速表"
+    Width="200"
+    Height="200"
+    Closing="Window_Draw_Closing"
+    Loaded="Window_Draw_Loaded"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    SnapsToDevicePixels="True"
+    Topmost="True"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1" />
+    </WindowChrome.WindowChrome>
+
+    <Window.Template>
+        <ControlTemplate TargetType="{x:Type Window}">
+            <Border Background="Transparent">
+                <ContentPresenter ClipToBounds="True" />
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
+
+    <Grid>
+        <lc:MeterPlate
+            x:Name="MeterPlate_Main"
+            HorizontalAlignment="Center"
+            Gear="{Binding DrawWindowModel.VehicleGear}"
+            Maximum="200"
+            Minimum="0"
+            PlateBackground="Transparent"
+            PlateBorderBrush="Gray"
+            PlateBorderThickness="0"
+            Unit="MPH"
+            Value="{Binding DrawWindowModel.VehicleSpeed}" />
+    </Grid>
+
+</Window>

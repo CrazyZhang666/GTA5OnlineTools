@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="GTA5OnlineTools.Views.Cheats.LSCHaxPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="LSCHaxPage"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    Style="{StaticResource PageStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="2">
+        <RichTextBox Margin="5,5,2.5,5" Style="{StaticResource RichTextBoxStyle_Page}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    简介
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 一个载具改装编辑器
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 请把载具开进改车王后再启动本程序
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    提示
+                </Paragraph>
+                <Paragraph
+                    FontWeight="Bold"
+                    Foreground="#FFF33131"
+                    Style="{StaticResource ParagraphStyle_Content}">
+                    ● 此刷钱方法属于上古产物，不推荐使用
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 通过把NPC使用的普通载具变成复古挽歌出售来赚钱，通常一辆70~80万左右
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 如果卖车提示上限了，需要用Hax解除
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    批量导入
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 批量导入文件目录：C:\ProgramData\GTA5OnlineTools\Cache\stat.txt，如果你要导入多个代码，可以把stat代码粘贴到这个文件内并保存，然后再GTAHax中点击导入按钮
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <!--  ##########  -->
+        <RichTextBox Margin="2.5,5,5,5" Style="{StaticResource RichTextBoxStyle_Page}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    说明
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 首先要建个邀请战局（避免有人捣乱），你要有个车库，推荐日蚀大厦，车库里至少有一辆自己的汽车（任意即可），但是车库不能停满，再把输入法调成英文
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 到大街上抢一辆NPC的车（最好是小轿车，要能开进改车王）然后开进附近的改车王
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 进入改车王后等出现改装选项后再打开辅助，等该辅助初始化完成出现菜单时输入数字7回车，然后切入游戏，进入汽车保险选项会发现载具已经变了颜色，然后切到辅助，输入6回车后在输入elegy按回车，再切到游戏等3秒钟购买第一个保险，然后等待被改车王老板踢出
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 把车开到自己车库门口（不能开进去），然后下车走到车库开一辆自己的车出来再回到车库，这时会发现刚才那辆车已经到车库里了，现在开那辆车再去改车王
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 进去后切到辅助输入7回车，切回游戏发现载具外观发生变化，现在去卖掉汽车
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 如果还想继续刷，请重复上述步骤
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </UniformGrid>
+
+</Page>

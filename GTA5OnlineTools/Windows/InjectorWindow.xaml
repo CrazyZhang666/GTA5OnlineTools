@@ -1,0 +1,98 @@
+﻿<ui:UiWindow
+    x:Class="GTA5OnlineTools.Windows.InjectorWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    x:Name="Window_Injector"
+    Title="GTA5线上小助手 - DLL注入器"
+    Width="800"
+    Height="450"
+    Closing="Window_Injector_Closing"
+    Loaded="Window_Injector_Loaded"
+    ResizeMode="CanMinimize"
+    Style="{StaticResource UiWindowStyle}"
+    mc:Ignorable="d">
+
+    <ui:UiWindow.TitleContent>
+        <StackPanel
+            VerticalAlignment="Center"
+            DockPanel.Dock="Left"
+            Orientation="Horizontal">
+            <Image
+                Height="20"
+                Margin="5"
+                Source="\Assets\Images\Favicon.ico"
+                Style="{StaticResource ImageStyle_HighQuality}" />
+            <TextBlock
+                VerticalAlignment="Center"
+                FontSize="14"
+                FontWeight="Bold"
+                Text="{Binding ElementName=Window_Injector, Path=Title}" />
+        </StackPanel>
+    </ui:UiWindow.TitleContent>
+
+    <DockPanel LastChildFill="True">
+        <DockPanel
+            Margin="5,5,5,0"
+            DockPanel.Dock="Top"
+            LastChildFill="True">
+            <TextBlock VerticalAlignment="Center" Text="DLL路径" />
+            <Button
+                x:Name="Button_Refush"
+                Margin="5,5,0,5"
+                Click="Button_Refush_Click"
+                Content="刷新"
+                DockPanel.Dock="Right" />
+            <Button
+                x:Name="Button_Inject"
+                Margin="0,5,0,5"
+                Click="Button_Inject_Click"
+                Content="注入"
+                DockPanel.Dock="Right" />
+            <ui:UiTextBoxHint
+                x:Name="TextBox_DLLPath"
+                Hint="双击我选择DLL文件路径"
+                IsReadOnly="True"
+                MouseDoubleClick="TextBox_DLLPath_MouseDoubleClick" />
+        </DockPanel>
+        <!--  ##########  -->
+        <TextBlock
+            x:Name="TextBlock_Status"
+            Margin="10,5,10,5"
+            VerticalAlignment="Center"
+            DockPanel.Dock="Top"
+            Foreground="Green"
+            Text="等待用户操作..." />
+        <!--  ##########  -->
+        <ListView
+            x:Name="ListView_Process"
+            Margin="5"
+            DockPanel.Dock="Bottom"
+            ItemsSource="{Binding ProcessLists}"
+            SelectionChanged="ListView_Process_SelectionChanged">
+            <ListView.View>
+                <GridView ColumnHeaderContainerStyle="{StaticResource GridViewColumnHeaderStyle}">
+                    <GridViewColumn
+                        Width="Auto"
+                        DisplayMemberBinding="{Binding ProcID}"
+                        Header="PID" />
+                    <GridViewColumn
+                        Width="Auto"
+                        DisplayMemberBinding="{Binding ProcName}"
+                        Header="进程名称" />
+                    <GridViewColumn
+                        Width="Auto"
+                        DisplayMemberBinding="{Binding MainWindowTitle}"
+                        Header="进程主窗口名称" />
+                    <GridViewColumn
+                        Width="Auto"
+                        DisplayMemberBinding="{Binding MainWindowHandle}"
+                        Header="进程主窗口句柄" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+
+</ui:UiWindow>

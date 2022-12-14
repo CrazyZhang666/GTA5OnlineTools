@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="GTA5OnlineTools.Views.Cheats.GTAHaxPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="GTAHaxPage"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    Style="{StaticResource PageStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="2">
+        <RichTextBox Margin="5,5,2.5,5" Style="{StaticResource RichTextBoxStyle_Page}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    简介
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 一个GTA5全局变量编辑器
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 修改数据分为int类型和bool类型。字符串格式一般为$+MP0/MP1+_对应变量名
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● int类型可以直接修改，赋值为整数型，如果标明范围则不要超过，否则可能会有风险
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● bool类型需要人物佩戴一个可下拉式头盔来表示修改状态，头盔上拉表示true，头盔下拉表示false
+                </Paragraph>
+
+            </FlowDocument>
+        </RichTextBox>
+        <!--  ##########  -->
+        <RichTextBox Margin="2.5,5,5,5" Style="{StaticResource RichTextBoxStyle_Page}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    说明
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 比如我们要修改角色的属性值-体力，如果角色是角色1为MP0，角色2为MP1，对应的函数为SCRIPT_INCREASE_STAM，赋值范围为0~100，则最终组合字符串为
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    $MP0_SCRIPT_INCREASE_STAM<LineBreak />
+                    100</Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 这样就代表我们修改了角色1的属性值体力为100，也就是加满了体力
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </UniformGrid>
+
+</Page>

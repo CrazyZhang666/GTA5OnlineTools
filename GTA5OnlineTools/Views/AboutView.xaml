@@ -1,0 +1,67 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Views.AboutView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    Style="{StaticResource UserControlStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <StackPanel Margin="10" Orientation="Vertical">
+            <Image
+                Width="96"
+                Height="96"
+                Margin="10"
+                Source="/Assets/Images/Favicon.ico" />
+            <TextBlock
+                Margin="5,0,5,5"
+                HorizontalAlignment="Center"
+                FontSize="32"
+                Text="GTA5线上小助手" />
+            <TextBlock
+                Margin="5"
+                HorizontalAlignment="Center"
+                FontSize="14"
+                Text="Copyright© 2018-2022 DS By CrazyZhang And Aure" />
+
+            <TextBlock Margin="5" HorizontalAlignment="Center">
+                <Hyperlink Command="{Binding HyperlinkClickCommand}" CommandParameter="https://crazyzhang.cn">
+                    支持作者，帮作者点一点小助手网站上的谷歌广告，感谢大家的支持
+                </Hyperlink>
+            </TextBlock>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style BasedOn="{StaticResource TextBlockStyle_IconFontVerCen}" TargetType="{x:Type TextBlock}">
+                        <Setter Property="Margin" Value="10" />
+                        <Setter Property="FontSize" Value="36" />
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock ToolTip="项目开源地址">
+                    <Hyperlink Command="{Binding HyperlinkClickCommand}" CommandParameter="https://github.com/CrazyZhang666/GTA5OnlineTools">
+                        &#xe686;
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock ToolTip="小助手官方Discord频道">
+                    <Hyperlink Command="{Binding HyperlinkClickCommand}" CommandParameter="https://discord.gg/7GuNzajfhD">
+                        &#xe71d;
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock ToolTip="Bug反馈">
+                    <Hyperlink Command="{Binding HyperlinkClickCommand}" CommandParameter="https://github.com/CrazyZhang666/GTA5OnlineTools/issues/new">
+                        &#xf495;
+                    </Hyperlink>
+                </TextBlock>
+                <TextBlock ToolTip="小助手官方网站">
+                    <Hyperlink Command="{Binding HyperlinkClickCommand}" CommandParameter="https://crazyzhang.cn">
+                        &#xe65b;
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+
+</UserControl>

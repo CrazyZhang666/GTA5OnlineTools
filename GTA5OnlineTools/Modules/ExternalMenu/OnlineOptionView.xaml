@@ -1,0 +1,174 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Modules.ExternalMenu.OnlineOptionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <StackPanel>
+            <ui:UiLabelIcon Content="战局切换" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_Sessions_Click" Content="公共战局" />
+                <Button Click="Button_Sessions_Click" Content="仅限邀请战局" />
+                <Button Click="Button_Sessions_Click" Content="帮会战局" />
+                <Button Click="Button_Sessions_Click" Content="私人帮会战局" />
+                <Button Click="Button_Sessions_Click" Content="私人好友战局" />
+                <Button Click="Button_Sessions_Click" Content="单人战局" />
+                <Button Click="Button_Sessions_Click" Content="加入好友" />
+                <Button Click="Button_Sessions_Click" Content="加入帮会伙伴" />
+                <Button Click="Button_Sessions_Click" Content="创建公共战局" />
+                <Button Click="Button_Sessions_Click" Content="离开线上模式" />
+            </WrapPanel>
+
+            <ui:UiLabelIcon Content="特殊功能" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_EmptySession"
+                    Click="Button_EmptySession_Click"
+                    Content="空战局" />
+                <Button
+                    x:Name="Button_Disconnect"
+                    Click="Button_Disconnect_Click"
+                    Content="断开战局连接" />
+                <Button
+                    x:Name="Button_StopCutscene"
+                    Click="Button_StopCutscene_Click"
+                    Content="结束过场动画" />
+            </WrapPanel>
+
+            <ui:UiLabelIcon Content="高级" />
+            <UniformGrid Margin="5,0,5,0" Columns="2">
+                <StackPanel>
+                    <CheckBox
+                        x:Name="CheckBox_RemovePassiveModeCooldown"
+                        Click="CheckBox_RemovePassiveModeCooldown_Click"
+                        Content="移除被动模式冷却" />
+                    <CheckBox
+                        x:Name="CheckBox_RemoveSuicideCooldown"
+                        Click="CheckBox_RemoveSuicideCooldown_Click"
+                        Content="移除自杀冷却" />
+                    <CheckBox
+                        x:Name="CheckBox_DisableOrbitalCooldown"
+                        Click="CheckBox_DisableOrbitalCooldown_Click"
+                        Content="移除天基炮冷却" />
+                    <CheckBox
+                        x:Name="CheckBox_AllowSellOnNonPublic"
+                        Click="CheckBox_AllowSellOnNonPublic_Click"
+                        Content="非公开战局运货 ★" />
+                    <CheckBox
+                        x:Name="CheckBox_OnlineSnow"
+                        Click="CheckBox_OnlineSnow_Click"
+                        Content="战局雪天 (自己可见)" />
+                </StackPanel>
+                <StackPanel>
+                    <CheckBox
+                        x:Name="CheckBox_OffRadar"
+                        Click="CheckBox_OffRadar_Click"
+                        Content="雷达影踪" />
+                    <CheckBox
+                        x:Name="CheckBox_GhostOrganization"
+                        Click="CheckBox_GhostOrganization_Click"
+                        Content="幽灵组织" />
+                    <CheckBox
+                        x:Name="CheckBox_BribeOrBlindCops"
+                        Click="CheckBox_BribeOrBlindCops_Click"
+                        Content="警察无视犯罪" />
+                    <CheckBox
+                        x:Name="CheckBox_BribeAuthorities"
+                        Click="CheckBox_BribeAuthorities_Click"
+                        Content="贿赂当局" />
+                    <CheckBox
+                        x:Name="CheckBox_RevealPlayers"
+                        Click="CheckBox_RevealPlayers_Click"
+                        Content="显示玩家" />
+                </StackPanel>
+            </UniformGrid>
+        </StackPanel>
+        <!--  面板2  -->
+        <StackPanel>
+            <ui:UiLabelIcon Content="线上资产传送" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_Blips_Click" Content="游艇" />
+                <Button Click="Button_Blips_Click" Content="CEO仓库" />
+                <Button Click="Button_Blips_Click" Content="CEO办公室" />
+                <Button Click="Button_Blips_Click" Content="摩托帮会所" />
+                <Button Click="Button_Blips_Click" Content="大麻种植场" />
+                <Button Click="Button_Blips_Click" Content="可卡因工厂" />
+                <Button Click="Button_Blips_Click" Content="伪证件办公室" />
+                <Button Click="Button_Blips_Click" Content="冰毒实验室" />
+                <Button Click="Button_Blips_Click" Content="假钞工厂" />
+                <Button Click="Button_Blips_Click" Content="CEO载具仓库" />
+                <Button Click="Button_Blips_Click" Content="地堡" />
+                <Button Click="Button_Blips_Click" Content="机库" />
+                <Button Click="Button_Blips_Click" Content="设施" />
+                <Button Click="Button_Blips_Click" Content="夜总会" />
+                <Button Click="Button_Blips_Click" Content="恐霸" />
+                <Button Click="Button_Blips_Click" Content="游戏厅" />
+                <Button Click="Button_Blips_Click" Content="虎鲸" />
+                <Button Click="Button_Blips_Click" Content="车友会" />
+                <Button Click="Button_Blips_Click" Content="事务所" />
+            </WrapPanel>
+
+            <ui:UiLabelIcon Content="梅利威瑟" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_MerryweatherServices_Click" Content="请求弹药空投" />
+                <Button Click="Button_MerryweatherServices_Click" Content="请求重型防弹装甲" />
+                <Button Click="Button_MerryweatherServices_Click" Content="请求牛鲨睾酮" />
+                <Button Click="Button_MerryweatherServices_Click" Content="请求船只接送" />
+                <Button Click="Button_MerryweatherServices_Click" Content="请求直升机接送" />
+            </WrapPanel>
+            <StackPanel Margin="5,0,5,0">
+                <CheckBox
+                    x:Name="CheckBox_InstantBullShark"
+                    Click="CheckBox_InstantBullShark_Click"
+                    Content="使用牛鲨睾酮" />
+                <CheckBox
+                    x:Name="CheckBox_BackupHeli"
+                    Click="CheckBox_BackupHeli_Click"
+                    Content="呼叫支援直升机" />
+                <CheckBox
+                    x:Name="CheckBox_Airstrike"
+                    Click="CheckBox_Airstrike_Click"
+                    Content="呼叫空袭" />
+                <TextBlock />
+            </StackPanel>
+
+        </StackPanel>
+        <!--  面板3  -->
+        <StackPanel>
+            <ui:UiLabelIcon Content="角色等级RP倍数" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_RPxN_Click" Content="RPx1" />
+                <Button Click="Button_RPxN_Click" Content="RPx2" />
+                <Button Click="Button_RPxN_Click" Content="RPx5" />
+                <Button Click="Button_RPxN_Click" Content="RPx10" />
+                <Button Click="Button_RPxN_Click" Content="RPx20" />
+                <Button Click="Button_RPxN_Click" Content="RPx50" />
+                <Button Click="Button_RPxN_Click" Content="RPx100" />
+                <Button Click="Button_RPxN_Click" Content="RPx500" />
+                <Button Click="Button_RPxN_Click" Content="RPx1000" />
+            </WrapPanel>
+
+            <ui:UiLabelIcon Content="车友会等级RP倍数" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_REPxN_Click" Content="REPx1" />
+                <Button Click="Button_REPxN_Click" Content="REPx2" />
+                <Button Click="Button_REPxN_Click" Content="REPx5" />
+                <Button Click="Button_REPxN_Click" Content="REPx10" />
+                <Button Click="Button_REPxN_Click" Content="REPx20" />
+                <Button Click="Button_REPxN_Click" Content="REPx50" />
+                <Button Click="Button_REPxN_Click" Content="REPx100" />
+                <Button Click="Button_REPxN_Click" Content="REPx500" />
+                <Button Click="Button_REPxN_Click" Content="REPx1000" />
+            </WrapPanel>
+        </StackPanel>
+
+    </UniformGrid>
+
+</UserControl>

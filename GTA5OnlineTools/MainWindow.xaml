@@ -1,15 +1,128 @@
-﻿<Window
+﻿<ui:UiWindow
     x:Class="GTA5OnlineTools.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:GTA5OnlineTools"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MainWindow"
-    Width="800"
-    Height="450"
+    xmlns:tb="http://www.hardcodet.net/taskbar"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    x:Name="Window_Main"
+    Title="GTA5线上小助手"
+    Width="1280"
+    Height="720"
+    MinWidth="1280"
+    MinHeight="720"
+    CaptionHeight="40"
+    Closing="Window_Main_Closing"
+    Loaded="Window_Main_Loaded"
+    Style="{StaticResource UiWindowStyle}"
     mc:Ignorable="d">
 
-    <Grid />
+    <ui:UiWindow.TitleContent>
+        <DockPanel LastChildFill="True">
+            <StackPanel
+                VerticalAlignment="Center"
+                DockPanel.Dock="Left"
+                Orientation="Horizontal">
+                <Image
+                    Height="25"
+                    Margin="5"
+                    Source="\Assets\Images\Favicon.ico"
+                    Style="{StaticResource ImageStyle_HighQuality}" />
+                <TextBlock
+                    Margin="0,0,5,0"
+                    VerticalAlignment="Center"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Text="GTA5线上小助手" />
+            </StackPanel>
+            <!--  ################################  -->
+            <StackPanel
+                VerticalAlignment="Center"
+                DockPanel.Dock="Right"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    Text="{Binding MainModel.AppVersion, StringFormat='🕹 版本 : {0}', FallbackValue='🕹 版本 : 9.9.9.9'}" />
+                <TextBlock
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    Text="{Binding MainModel.AppRunTime, StringFormat='⏱ 时间 : {0}', FallbackValue='⏱ 时间 : 99:59:59'}" />
+                <TextBlock
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    FontSize="16"
+                    IsEnabled="{Binding MainModel.IsGTA5Run}"
+                    Style="{StaticResource TextBlockStyle_IconFontGTA5IsRun}"
+                    Text="&#xe64d;" />
+            </StackPanel>
+            <!--  ################################  -->
+            <StackPanel
+                VerticalAlignment="Center"
+                DockPanel.Dock="Left"
+                Orientation="Horizontal"
+                WindowChrome.IsHitTestVisibleInChrome="True">
+                <ui:UiRadioButtonIcon
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="HomeView"
+                    Content="主页"
+                    Icon="🏡"
+                    IsChecked="True" />
+                <ui:UiRadioButtonIcon
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="CheatsView"
+                    Content="第三方"
+                    Icon="📡" />
+                <ui:UiRadioButtonIcon
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="ModulesView"
+                    Content="功能"
+                    Icon="🖥" />
+                <ui:UiRadioButtonIcon
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="ToolsView"
+                    Content="工具"
+                    Icon="🛠" />
+                <ui:UiRadioButtonIcon
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="OptionView"
+                    Content="选项"
+                    Icon="⚙" />
+                <ui:UiRadioButtonIcon
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="AboutView"
+                    Content="关于"
+                    Icon="🎈" />
+            </StackPanel>
+        </DockPanel>
+    </ui:UiWindow.TitleContent>
 
-</Window>
+    <Window.Resources>
+        <ContextMenu x:Key="ContextMenu_MainNotifyIcon">
+            <MenuItem
+                x:Name="MenuItem_ShowMainWindow"
+                Click="MenuItem_ShowMainWindow_Click"
+                Header="显示主窗口"
+                Icon="🖥" />
+            <MenuItem
+                x:Name="MenuItem_ExitProcess"
+                Click="MenuItem_ExitProcess_Click"
+                Header="退出程序"
+                Icon="🗑" />
+        </ContextMenu>
+    </Window.Resources>
+
+    <Grid>
+        <tb:TaskbarIcon
+            x:Name="TaskbarIcon_Main"
+            ContextMenu="{StaticResource ContextMenu_MainNotifyIcon}"
+            IconSource="/Assets/Images/Favicon.ico"
+            MenuActivation="LeftOrRightClick"
+            ToolTipText="GTA5线上小助手"
+            TrayMouseDoubleClick="TaskbarIcon_Main_TrayMouseDoubleClick" />
+        <!--  ######################  -->
+        <ContentControl x:Name="ContentControl_Main" FocusVisualStyle="{x:Null}" />
+    </Grid>
+
+</ui:UiWindow>

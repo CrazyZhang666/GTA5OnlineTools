@@ -1,0 +1,308 @@
+﻿<ui:UiWindow
+    x:Class="GTA5OnlineTools.Modules.OutfitsEditWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    x:Name="Window_OutfitsEdit"
+    Title="GTA5线上小助手 - 角色服装编辑器"
+    Width="1280"
+    Height="720"
+    MinWidth="1280"
+    MinHeight="720"
+    Closing="Window_OutfitsEdit_Closing"
+    Loaded="Window_OutfitsEdit_Loaded"
+    Style="{StaticResource UiWindowStyle}"
+    mc:Ignorable="d">
+
+    <ui:UiWindow.TitleContent>
+        <StackPanel
+            VerticalAlignment="Center"
+            DockPanel.Dock="Left"
+            Orientation="Horizontal">
+            <Image
+                Height="20"
+                Margin="5"
+                Source="\Assets\Images\Favicon.ico"
+                Style="{StaticResource ImageStyle_HighQuality}" />
+            <TextBlock
+                VerticalAlignment="Center"
+                FontSize="14"
+                FontWeight="Bold"
+                Text="{Binding ElementName=Window_OutfitsEdit, Path=Title}" />
+        </StackPanel>
+    </ui:UiWindow.TitleContent>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--  ##########  -->
+        <DockPanel LastChildFill="True">
+            <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
+                <TextBlock
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    Text="请选择服装槽位" />
+                <ComboBox
+                    x:Name="ComboBox_OutfitIndex"
+                    Width="150"
+                    SelectionChanged="ComboBox_OutfitIndex_SelectionChanged">
+                    <ComboBoxItem Content="槽位01" />
+                    <ComboBoxItem Content="槽位02" />
+                    <ComboBoxItem Content="槽位03" />
+                    <ComboBoxItem Content="槽位04" />
+                    <ComboBoxItem Content="槽位05" />
+                    <ComboBoxItem Content="槽位06" />
+                    <ComboBoxItem Content="槽位07" />
+                    <ComboBoxItem Content="槽位08" />
+                    <ComboBoxItem Content="槽位09" />
+                    <ComboBoxItem Content="槽位10" />
+                    <ComboBoxItem Content="槽位11" />
+                    <ComboBoxItem Content="槽位12" />
+                    <ComboBoxItem Content="槽位13" />
+                    <ComboBoxItem Content="槽位14" />
+                    <ComboBoxItem Content="槽位15" />
+                    <ComboBoxItem Content="槽位16" />
+                    <ComboBoxItem Content="槽位17" />
+                    <ComboBoxItem Content="槽位18" />
+                    <ComboBoxItem Content="槽位19" />
+                    <ComboBoxItem Content="槽位20" />
+                </ComboBox>
+                <TextBlock
+                    Margin="5"
+                    VerticalAlignment="Center"
+                    Text="当前服装槽位名称" />
+                <TextBox
+                    x:Name="TextBox_OutfitName"
+                    Width="200"
+                    Margin="5" />
+            </StackPanel>
+            <StackPanel
+                Grid.Row="2"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                DockPanel.Dock="Right"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="Button_Read"
+                    Click="Button_Read_Click"
+                    Content="读取" />
+                <Button
+                    x:Name="Button_Write"
+                    Margin="0,5,5,5"
+                    Click="Button_Write_Click"
+                    Content="写入" />
+            </StackPanel>
+        </DockPanel>
+        <!--  ##########  -->
+        <ScrollViewer Grid.Row="1">
+            <UniformGrid Columns="2">
+                <StackPanel Margin="5">
+                    <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="搭配" />
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="TOP（外衣）" />
+                        <TextBox x:Name="TextBox_TOP" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="TOP TEX" />
+                        <TextBox x:Name="TextBox_TOP_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="UNDERSHIRT（内衣）" />
+                        <TextBox x:Name="TextBox_UNDERSHIRT" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="UNDERSHIRT TEX" />
+                        <TextBox x:Name="TextBox_UNDERSHIRT_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="LEGS（裤子）" />
+                        <TextBox x:Name="TextBox_LEGS" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="LEGS TEX" />
+                        <TextBox x:Name="TextBox_LEGS_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="FEET（鞋子）" />
+                        <TextBox x:Name="TextBox_FEET" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="FEET TEX" />
+                        <TextBox x:Name="TextBox_FEET_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="ACCESSORIES（配饰）" />
+                        <TextBox x:Name="TextBox_ACCESSORIES" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="ACCESSORIES TEX" />
+                        <TextBox x:Name="TextBox_ACCESSORIES_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="BAGS（背包）" />
+                        <TextBox x:Name="TextBox_BAGS" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="BAGS TEX" />
+                        <TextBox x:Name="TextBox_BAGS_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="GLOVES（手套）" />
+                        <TextBox x:Name="TextBox_GLOVES" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="GLOVES TEX" />
+                        <TextBox x:Name="TextBox_GLOVES_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="DECALS（贴纸）" />
+                        <TextBox x:Name="TextBox_DECALS" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="DECALS TEX" />
+                        <TextBox x:Name="TextBox_DECALS_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="MASK（面具）" />
+                        <TextBox x:Name="TextBox_MASK" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="MASK TEX" />
+                        <TextBox x:Name="TextBox_MASK_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="ARMOR（防弹衣）" />
+                        <TextBox x:Name="TextBox_ARMOR" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="ARMOR TEX" />
+                        <TextBox x:Name="TextBox_ARMOR_TEX" />
+                    </UniformGrid>
+
+                </StackPanel>
+
+                <StackPanel Margin="5">
+                    <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="配件" />
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="HATS（帽子）" />
+                        <TextBox x:Name="TextBox_HATS" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="HATS TEX" />
+                        <TextBox x:Name="TextBox_HATS_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="GLASSES（眼睛）" />
+                        <TextBox x:Name="TextBox_GLASSES" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="GLASSES TEX" />
+                        <TextBox x:Name="TextBox_GLASSES_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="EARS（耳朵）" />
+                        <TextBox x:Name="TextBox_EARS" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="EARS TEX" />
+                        <TextBox x:Name="TextBox_EARS_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="WATCHES（手表）" />
+                        <TextBox x:Name="TextBox_WATCHES" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="WATCHES TEX" />
+                        <TextBox x:Name="TextBox_WATCHES_TEX" />
+                    </UniformGrid>
+
+                    <UniformGrid Columns="4">
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="WRIST（手腕）" />
+                        <TextBox x:Name="TextBox_WRIST" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Text="WRIST TEX" />
+                        <TextBox x:Name="TextBox_WRIST_TEX" />
+                    </UniformGrid>
+                </StackPanel>
+            </UniformGrid>
+        </ScrollViewer>
+    </Grid>
+
+</ui:UiWindow>

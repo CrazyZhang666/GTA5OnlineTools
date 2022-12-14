@@ -1,0 +1,122 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Views.OptionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    Style="{StaticResource UserControlStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--  主体功能区  -->
+        <UniformGrid Columns="4">
+            <!--  面板1  -->
+            <StackPanel>
+                <ui:UiLabelIcon Content="设置" />
+                <GroupBox Header="点击音效" Style="{StaticResource GroupBoxStyle_Normal}">
+                    <WrapPanel>
+                        <RadioButton
+                            x:Name="RadioButton_ClickAudio_0"
+                            Click="RadioButton_ClickAudio_Click"
+                            Content="无音效" />
+                        <RadioButton
+                            x:Name="RadioButton_ClickAudio_1"
+                            Click="RadioButton_ClickAudio_Click"
+                            Content="音效1" />
+                        <RadioButton
+                            x:Name="RadioButton_ClickAudio_2"
+                            Click="RadioButton_ClickAudio_Click"
+                            Content="音效2" />
+                        <RadioButton
+                            x:Name="RadioButton_ClickAudio_3"
+                            Click="RadioButton_ClickAudio_Click"
+                            Content="音效3" />
+                        <RadioButton
+                            x:Name="RadioButton_ClickAudio_4"
+                            Click="RadioButton_ClickAudio_Click"
+                            Content="音效4" />
+                        <RadioButton
+                            x:Name="RadioButton_ClickAudio_5"
+                            Click="RadioButton_ClickAudio_Click"
+                            Content="音效5" />
+                    </WrapPanel>
+                </GroupBox>
+            </StackPanel>
+            <!--  面板2  -->
+            <!--  面板3  -->
+            <!--  面板4  -->
+        </UniformGrid>
+        <!--  次要功能区  -->
+        <StackPanel
+            Grid.Row="1"
+            Margin="5"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+            <UniformGrid Rows="2">
+                <TextBlock
+                    Margin="5"
+                    FontWeight="Black"
+                    Text="Discord加速" />
+                <TextBlock Margin="5">
+                    <Hyperlink
+                        NavigateUri="https://steampp.net"
+                        RequestNavigate="Hyperlink_RequestNavigate"
+                        ToolTip="https://steampp.net">
+                        Steam++
+                    </Hyperlink>
+                </TextBlock>
+            </UniformGrid>
+            <UniformGrid Rows="2">
+                <TextBlock
+                    Margin="5"
+                    FontWeight="Black"
+                    Text="Discord聊天" />
+                <TextBlock Margin="5">
+                    <Hyperlink
+                        NavigateUri="https://discord.com"
+                        RequestNavigate="Hyperlink_RequestNavigate"
+                        ToolTip="https://discord.com">
+                        Discord
+                    </Hyperlink>
+                </TextBlock>
+            </UniformGrid>
+            <UniformGrid Rows="2">
+                <TextBlock
+                    Margin="5"
+                    FontWeight="Black"
+                    Text="Snipaste截图" />
+                <TextBlock Margin="5">
+                    <Hyperlink
+                        NavigateUri="https://zh.snipaste.com"
+                        RequestNavigate="Hyperlink_RequestNavigate"
+                        ToolTip="https://zh.snipaste.com">
+                        Snipaste
+                    </Hyperlink>
+                </TextBlock>
+            </UniformGrid>
+            <UniformGrid Rows="2">
+                <TextBlock
+                    Margin="5"
+                    FontWeight="Black"
+                    Text="免费加速器" />
+                <TextBlock Margin="5">
+                    <Hyperlink
+                        NavigateUri="https://www.nn.com"
+                        RequestNavigate="Hyperlink_RequestNavigate"
+                        ToolTip="https://www.nn.com">
+                        NN游戏加速器
+                    </Hyperlink>
+                </TextBlock>
+            </UniformGrid>
+
+        </StackPanel>
+    </Grid>
+
+</UserControl>

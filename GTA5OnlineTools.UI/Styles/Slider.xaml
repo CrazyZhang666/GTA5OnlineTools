@@ -1,0 +1,141 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DropShadowEffect
+        x:Key="UnhoverThumbEffect"
+        BlurRadius="5"
+        Opacity="0.3"
+        ShadowDepth="0"
+        Color="#616161" />
+    <DropShadowEffect
+        x:Key="HoverThumbEffect"
+        BlurRadius="5"
+        Opacity="0.5"
+        ShadowDepth="0"
+        Color="#616161" />
+    <DropShadowEffect
+        x:Key="DragThumbEffect"
+        BlurRadius="8"
+        Opacity="1"
+        ShadowDepth="0"
+        Color="#616161" />
+
+    <Style x:Key="DefaultLeftRepeatButtonStyle" TargetType="RepeatButton">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Border Height="4" Background="#1E88E5" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DefaultRightRepeatButtonStyle" TargetType="RepeatButton">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Border Background="Transparent" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DefaultSliderThumbStyle" TargetType="Thumb">
+        <Setter Property="Width" Value="15" />
+        <Setter Property="Height" Value="15" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Ellipse
+                        Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        Effect="{StaticResource UnhoverThumbEffect}"
+                        Fill="{TemplateBinding Background}"
+                        Stroke="#616161"
+                        StrokeThickness="1" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Effect" Value="{StaticResource HoverThumbEffect}" />
+                            <Setter Property="Cursor" Value="Hand" />
+                        </Trigger>
+                        <Trigger Property="IsDragging" Value="True">
+                            <Setter Property="Effect" Value="{StaticResource DragThumbEffect}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type Slider}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="IsSnapToTickEnabled" Value="True" />
+        <Setter Property="IsMoveToPointEnabled" Value="True" />
+        <Setter Property="TickPlacement" Value="None" />
+        <Setter Property="TickFrequency" Value="1" />
+        <Setter Property="Background" Value="LightGray" />
+        <Setter Property="Foreground" Value="#1E88E5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Slider">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TickBar
+                            Name="TopTick"
+                            Grid.Row="0"
+                            Height="4"
+                            Fill="{TemplateBinding Foreground}"
+                            Placement="Top"
+                            Visibility="Collapsed" />
+                        <Border
+                            Name="TrackBackground"
+                            Grid.Row="1"
+                            Height="4"
+                            Background="{TemplateBinding Background}" />
+                        <Track Name="PART_Track" Grid.Row="1">
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton Command="Slider.DecreaseLarge" Style="{StaticResource DefaultLeftRepeatButtonStyle}" />
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb Style="{StaticResource DefaultSliderThumbStyle}" />
+                            </Track.Thumb>
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="Slider.IncreaseLarge" Style="{StaticResource DefaultRightRepeatButtonStyle}" />
+                            </Track.IncreaseRepeatButton>
+                        </Track>
+                        <TickBar
+                            Name="BottomTick"
+                            Grid.Row="2"
+                            Height="4"
+                            Fill="{TemplateBinding Foreground}"
+                            Placement="Bottom"
+                            Visibility="Collapsed" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TickPlacement" Value="Both">
+                            <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="TickPlacement" Value="BottomRight">
+                            <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="TickPlacement" Value="TopLeft">
+                            <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

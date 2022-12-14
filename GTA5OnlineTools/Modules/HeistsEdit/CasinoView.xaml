@@ -1,0 +1,575 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Modules.HeistsEdit.CasinoView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    mc:Ignorable="d">
+
+    <TabControl Margin="5">
+        <ui:UiTabItemIcon Header="赌场抢劫 - 前置任务">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <DockPanel>
+                    <WrapPanel DockPanel.Dock="Bottom">
+                        <Button
+                            x:Name="Button_BuildGTAHax"
+                            Margin="5,5,2,5"
+                            Click="Button_BuildGTAHax_Click"
+                            Content="生成GTAHax代码" />
+                        <Button
+                            x:Name="Button_ImportGTAHax"
+                            Margin="2,5,5,5"
+                            Click="Button_ImportGTAHax_Click"
+                            Content="批量导入GTAHax" />
+                    </WrapPanel>
+                    <TextBox
+                        x:Name="TextBox_PreviewGTAHax"
+                        Margin="5,5,5,0"
+                        AcceptsReturn="True"
+                        IsReadOnly="False"
+                        Style="{StaticResource TextBoxStyle_Logger}" />
+                </DockPanel>
+                <!--  ##########  -->
+                <ScrollViewer Grid.Column="1" Margin="5">
+                    <StackPanel Orientation="Vertical">
+                        <Border>
+                            <Border.Style>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="Margin" Value="5" />
+                                    <Setter Property="Padding" Value="5" />
+                                    <Setter Property="BorderThickness" Value="1" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=RadioButton_H3_P1, Path=IsChecked}" Value="True">
+                                            <Setter Property="Background" Value="#EEEEEE" />
+                                            <Setter Property="BorderBrush" Value="#0078D4" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <RadioButton
+                                x:Name="RadioButton_H3_P1"
+                                HorizontalAlignment="Center"
+                                Content="第一块面板"
+                                FontSize="18"
+                                FontWeight="Bold"
+                                GroupName="RadioButton_H3"
+                                IsChecked="True" />
+                        </Border>
+
+                        <CheckBox
+                            x:Name="CheckBox_H3OPT_BITSET1"
+                            Content="重置第一块面板"
+                            Foreground="Red" />
+                        <ComboBox
+                            x:Name="ListBox_H3OPT_APPROACH"
+                            Margin="5"
+                            SelectedIndex="0">
+                            <ComboBoxItem Content="不选择抢劫方式" Foreground="#FF6666" />
+                            <ComboBoxItem Content="隐迹潜踪" />
+                            <ComboBoxItem Content="兵不厌诈" />
+                            <ComboBoxItem Content="气势汹汹" />
+                        </ComboBox>
+                        <ComboBox
+                            x:Name="ComboBoxItem_H3OPT_TARGET"
+                            Margin="5"
+                            SelectedIndex="0">
+                            <ComboBoxItem Content="不选择抢劫物品" Foreground="#FF6666" />
+                            <ComboBoxItem Content="现金" />
+                            <ComboBoxItem Content="黄金" />
+                            <ComboBoxItem Content="艺术品" />
+                            <ComboBoxItem Content="钻石" />
+                        </ComboBox>
+                        <CheckBox x:Name="CheckBox_H3OPT_ACCESSPOINTS" Content="解锁所有侦察点" />
+                        <CheckBox x:Name="CheckBox_H3OPT_POI" Content="解锁所有兴趣点" />
+                        <CheckBox x:Name="CheckBox_H3OPT_BITSET1_1" Content="提交修改到第一块面板" />
+
+                        <TextBlock />
+                        <Expander Header="高级" IsExpanded="True">
+                            <StackPanel Margin="5">
+                                <CheckBox
+                                    x:Name="CheckBox_Reset_P1P2"
+                                    Content="重置赌场抢劫第一第二块面板"
+                                    Foreground="Red" />
+                            </StackPanel>
+                        </Expander>
+
+                        <TextBlock />
+                        <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                            提示：导入时需要在游戏厅地下室按E键选择对应面板，导入成功后会黑屏一下
+                        </TextBlock>
+                    </StackPanel>
+                </ScrollViewer>
+                <!--  ##########  -->
+                <ScrollViewer Grid.Column="2" Margin="5">
+                    <StackPanel Orientation="Vertical">
+                        <Border>
+                            <Border.Style>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="Margin" Value="5" />
+                                    <Setter Property="Padding" Value="5" />
+                                    <Setter Property="BorderThickness" Value="1" />
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=RadioButton_H3_P2, Path=IsChecked}" Value="True">
+                                            <Setter Property="Background" Value="#EEEEEE" />
+                                            <Setter Property="BorderBrush" Value="#0078D4" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <RadioButton
+                                x:Name="RadioButton_H3_P2"
+                                HorizontalAlignment="Center"
+                                Content="第二块面板"
+                                FontSize="18"
+                                FontWeight="Bold"
+                                GroupName="RadioButton_H3" />
+                        </Border>
+
+                        <CheckBox
+                            x:Name="CheckBox_H3OPT_BITSET0"
+                            Content="重置第二块面板"
+                            Foreground="Red" />
+                        <ComboBox
+                            x:Name="ComboBox_H3OPT_VEH"
+                            Margin="5"
+                            SelectedIndex="0">
+                            <ComboBoxItem Content="不选择逃亡载具" Foreground="#FF6666" />
+                            <ComboBoxItem Content="载具类型一" />
+                            <ComboBoxItem Content="载具类型二" />
+                            <ComboBoxItem Content="载具类型三" />
+                            <ComboBoxItem Content="载具类型四" />
+                        </ComboBox>
+                        <ComboBox
+                            x:Name="ComboBoxItem_H3OPT_WEAPS"
+                            Margin="5"
+                            SelectedIndex="0">
+                            <ComboBoxItem Content="不选择武器类型" Foreground="#FF6666" />
+                            <ComboBoxItem Content="武器类型一" />
+                            <ComboBoxItem Content="武器类型二" />
+                            <ComboBoxItem Content="武器类型三" />
+                            <ComboBoxItem Content="武器类型四" />
+                            <ComboBoxItem Content="武器类型五" />
+                        </ComboBox>
+                        <CheckBox x:Name="CheckBox_H3OPT_DISRUPTSHIP" Content="撤走重型武装警卫" />
+                        <CheckBox x:Name="CheckBox_H3OPT_KEYLEVELS" Content="获得二级门禁卡" />
+                        <ComboBox
+                            x:Name="ComboBoxItem_H3OPT_CREWWEAP"
+                            Margin="5"
+                            SelectedIndex="0">
+                            <ComboBoxItem Content="不选择枪手" Foreground="#FF6666" />
+                            <ComboBoxItem Content="卡尔·阿不拉季（5％分红）" />
+                            <ComboBoxItem Content="古斯塔沃·莫塔（9％分红）" />
+                            <ComboBoxItem Content="查理·里德（7％分红）" />
+                            <ComboBoxItem Content="切斯特·麦考伊（10％分红）" />
+                            <ComboBoxItem Content="帕里克·麦克瑞利（8％分红）" />
+                            <ComboBoxItem Content="枪手零分红" />
+                        </ComboBox>
+                        <ComboBox
+                            x:Name="ComboBoxItem_H3OPT_CREWDRIVER"
+                            Margin="5"
+                            SelectedIndex="0">
+                            <ComboBoxItem Content="不选择车手" Foreground="#FF6666" />
+                            <ComboBoxItem Content="卡里姆·登茨（5％分红）" />
+                            <ComboBoxItem Content="塔丽娜·马丁内斯（7％分红）" />
+                            <ComboBoxItem Content="淘艾迪（9％分红）" />
+                            <ComboBoxItem Content="扎克·尼尔森（6％分红）" />
+                            <ComboBoxItem Content="切斯特·麦考伊（10％分红）" />
+                            <ComboBoxItem Content="车手零分红" />
+                        </ComboBox>
+                        <ComboBox
+                            x:Name="ComboBoxItem_H3OPT_CREWHACKER"
+                            Margin="5"
+                            SelectedIndex="0">
+                            <ComboBoxItem Content="不选择黑客" Foreground="#FF6666" />
+                            <ComboBoxItem Content="里奇·卢肯斯（3％分红）" />
+                            <ComboBoxItem Content="克里斯汀·费尔兹（7％分红）" />
+                            <ComboBoxItem Content="尤汗·布莱尔（5％分红）" />
+                            <ComboBoxItem Content="阿维·施瓦茨曼（10％分红）" />
+                            <ComboBoxItem Content="佩奇·哈里斯（9％分红）" />
+                            <ComboBoxItem Content="黑客零分红" />
+                        </ComboBox>
+                        <CheckBox x:Name="CheckBox_H3OPT_BITSET0_0" Content="提交修改到第二块面板" />
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </ui:UiTabItemIcon>
+        <!--  ##############################  -->
+        <ui:UiTabItemIcon Header="赌场抢劫 - 分红数据">
+            <StackPanel>
+                <Border Margin="5" Background="#F0F0F0">
+                    <WrapPanel HorizontalAlignment="Center">
+                        <Button
+                            x:Name="Button_Read"
+                            Click="Button_Read_Click"
+                            Content="读取数据" />
+                        <Button
+                            x:Name="Button_Write"
+                            Click="Button_Write_Click"
+                            Content="写入数据" />
+                    </WrapPanel>
+                </Border>
+                <!--  ##########  -->
+                <UniformGrid Columns="4">
+                    <UniformGrid.Resources>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Margin" Value="5" />
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </UniformGrid.Resources>
+                    <StackPanel Margin="5">
+                        <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="分红比例" />
+                        <UniformGrid Columns="2">
+                            <TextBlock Text="（房主）玩家1" />
+                            <TextBox x:Name="TextBox_Casino_Player1" />
+                            <TextBlock Text="玩家2" />
+                            <TextBox x:Name="TextBox_Casino_Player2" />
+                            <TextBlock Text="玩家3" />
+                            <TextBox x:Name="TextBox_Casino_Player3" />
+                            <TextBlock Text="玩家4" />
+                            <TextBox x:Name="TextBox_Casino_Player4" />
+
+                            <TextBlock />
+                            <TextBlock />
+
+                            <TextBlock Text="莱斯特" />
+                            <TextBox x:Name="TextBox_Casino_Lester" />
+                        </UniformGrid>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="分红金额" />
+                        <UniformGrid Columns="2">
+                            <TextBlock Text="现金" />
+                            <TextBox x:Name="TextBox_CasinoPotential_Money" />
+                            <TextBlock Text="名画" />
+                            <TextBox x:Name="TextBox_CasinoPotential_Artwork" />
+                            <TextBlock Text="黄金" />
+                            <TextBox x:Name="TextBox_CasinoPotential_Gold" />
+                            <TextBlock Text="钻石" />
+                            <TextBox x:Name="TextBox_CasinoPotential_Diamonds" />
+                        </UniformGrid>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="AI分红比例 枪手" />
+                        <UniformGrid Columns="2">
+                            <TextBlock Text="卡尔·阿不拉季" />
+                            <TextBox x:Name="TextBox_CasinoAI_1" />
+                            <TextBlock Text="古斯塔沃·莫塔" />
+                            <TextBox x:Name="TextBox_CasinoAI_2" />
+                            <TextBlock Text="查理·里德" />
+                            <TextBox x:Name="TextBox_CasinoAI_3" />
+                            <TextBlock Text="切斯特·麦考伊" />
+                            <TextBox x:Name="TextBox_CasinoAI_4" />
+                            <TextBlock Text="帕里克·麦克瑞利" />
+                            <TextBox x:Name="TextBox_CasinoAI_5" />
+                        </UniformGrid>
+
+                        <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="AI分红比例 车手" />
+                        <UniformGrid Columns="2">
+                            <TextBlock Text="卡里姆·登茨" />
+                            <TextBox x:Name="TextBox_CasinoAI_6" />
+                            <TextBlock Text="塔丽娜·马丁内斯" />
+                            <TextBox x:Name="TextBox_CasinoAI_7" />
+                            <TextBlock Text="淘艾迪" />
+                            <TextBox x:Name="TextBox_CasinoAI_8" />
+                            <TextBlock Text="扎克·尼尔森" />
+                            <TextBox x:Name="TextBox_CasinoAI_9" />
+                            <TextBlock Text="切斯特·麦考伊" />
+                            <TextBox x:Name="TextBox_CasinoAI_10" />
+                        </UniformGrid>
+
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="AI分红比例 黑客" />
+                        <UniformGrid Columns="2">
+                            <TextBlock Text="里奇·卢肯斯" />
+                            <TextBox x:Name="TextBox_CasinoAI_11" />
+                            <TextBlock Text="克里斯汀·费尔兹" />
+                            <TextBox x:Name="TextBox_CasinoAI_12" />
+                            <TextBlock Text="尤汗·布莱尔" />
+                            <TextBox x:Name="TextBox_CasinoAI_13" />
+                            <TextBlock Text="阿维·施瓦茨曼" />
+                            <TextBox x:Name="TextBox_CasinoAI_14" />
+                            <TextBlock Text="佩奇·哈里斯" />
+                            <TextBox x:Name="TextBox_CasinoAI_15" />
+                        </UniformGrid>
+                    </StackPanel>
+                </UniformGrid>
+            </StackPanel>
+        </ui:UiTabItemIcon>
+        <!--  ##############################  -->
+        <ui:UiTabItemIcon Header="赌场抢劫 - 高级">
+            <UniformGrid Columns="3">
+                <ScrollViewer Margin="5">
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="面板一" />
+                        <GroupBox
+                            Margin="5"
+                            Header="前置任务"
+                            Style="{StaticResource GroupBoxStyle_Normal}">
+                            <WrapPanel Orientation="Horizontal">
+                                <Button
+                                    x:Name="Button_H3OPT_ACCESSPOINTS"
+                                    Click="Button_H3OPT_ACCESSPOINTS_Click"
+                                    Content="解锁所有侦察点" />
+                                <Button
+                                    x:Name="Button_H3OPT_H3OPT_POI"
+                                    Click="Button_H3OPT_H3OPT_POI_Click"
+                                    Content="解锁所有兴趣点" />
+                            </WrapPanel>
+                        </GroupBox>
+                        <GroupBox
+                            Margin="5"
+                            Header="抢劫方式"
+                            Style="{StaticResource GroupBoxStyle_Normal}">
+                            <WrapPanel Orientation="Horizontal">
+                                <Button
+                                    x:Name="Button_H3OPT_APPROACH_1"
+                                    Click="Button_H3OPT_APPROACH_1_Click"
+                                    Content="隐迹潜踪" />
+                                <Button
+                                    x:Name="Button_H3OPT_APPROACH_2"
+                                    Click="Button_H3OPT_APPROACH_2_Click"
+                                    Content="兵不厌诈" />
+                                <Button
+                                    x:Name="Button_H3OPT_APPROACH_3"
+                                    Click="Button_H3OPT_APPROACH_3_Click"
+                                    Content="气势汹汹" />
+                            </WrapPanel>
+                        </GroupBox>
+                        <GroupBox
+                            Margin="5"
+                            Header="抢劫物品"
+                            Style="{StaticResource GroupBoxStyle_Normal}">
+                            <WrapPanel Orientation="Horizontal">
+                                <Button
+                                    x:Name="Button_H3OPT_TARGET_0"
+                                    Click="Button_H3OPT_TARGET_0_Click"
+                                    Content="现金" />
+                                <Button
+                                    x:Name="Button_H3OPT_TARGET_1"
+                                    Click="Button_H3OPT_TARGET_1_Click"
+                                    Content="黄金" />
+                                <Button
+                                    x:Name="Button_H3OPT_TARGET_2"
+                                    Click="Button_H3OPT_TARGET_2_Click"
+                                    Content="艺术品" />
+                                <Button
+                                    x:Name="Button_H3OPT_TARGET_3"
+                                    Click="Button_H3OPT_TARGET_3_Click"
+                                    Content="钻石" />
+                            </WrapPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <ScrollViewer Margin="0,5,5,5">
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="面板二" />
+                        <GroupBox
+                            Margin="5"
+                            Header="前置任务"
+                            Style="{StaticResource GroupBoxStyle_Normal}">
+                            <WrapPanel Orientation="Horizontal">
+                                <Button
+                                    x:Name="Button_H3OPT_DISRUPTSHIP"
+                                    Click="Button_H3OPT_DISRUPTSHIP_Click"
+                                    Content="撤走重型武装警卫" />
+                                <Button
+                                    x:Name="Button_H3OPT_KEYLEVELS"
+                                    Click="Button_H3OPT_KEYLEVELS_Click"
+                                    Content="获得二级门禁卡" />
+                            </WrapPanel>
+                        </GroupBox>
+                        <GroupBox
+                            Margin="5"
+                            Header="枪手等级"
+                            Style="{StaticResource GroupBoxStyle_Normal}">
+                            <WrapPanel Orientation="Horizontal">
+                                <Button
+                                    x:Name="Button_H3OPT_CREWWEAP_1"
+                                    Click="Button_H3OPT_CREWWEAP_1_Click"
+                                    Content="卡尔·阿不拉季 5％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWWEAP_2"
+                                    Click="Button_H3OPT_CREWWEAP_2_Click"
+                                    Content="古斯塔沃·莫塔 9％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWWEAP_3"
+                                    Click="Button_H3OPT_CREWWEAP_3_Click"
+                                    Content="查理·里德 7％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWWEAP_4"
+                                    Click="Button_H3OPT_CREWWEAP_4_Click"
+                                    Content="切斯特·麦考伊 10％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWWEAP_5"
+                                    Click="Button_H3OPT_CREWWEAP_5_Click"
+                                    Content="帕里克·麦克瑞利 8％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWWEAP_6"
+                                    Click="Button_H3OPT_CREWWEAP_6_Click"
+                                    Content="枪手零分红" />
+                            </WrapPanel>
+                        </GroupBox>
+                        <GroupBox
+                            Margin="5"
+                            Header="车手等级"
+                            Style="{StaticResource GroupBoxStyle_Normal}">
+                            <WrapPanel Orientation="Horizontal">
+                                <Button
+                                    x:Name="Button_H3OPT_CREWDRIVER_1"
+                                    Click="Button_H3OPT_CREWDRIVER_1_Click"
+                                    Content="卡里姆·登茨 5％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWDRIVER_2"
+                                    Click="Button_H3OPT_CREWDRIVER_2_Click"
+                                    Content="塔丽娜·马丁内斯 7％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWDRIVER_3"
+                                    Click="Button_H3OPT_CREWDRIVER_3_Click"
+                                    Content="淘艾迪 9％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWDRIVER_4"
+                                    Click="Button_H3OPT_CREWDRIVER_4_Click"
+                                    Content="扎克·尼尔森 6％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWDRIVER_5"
+                                    Click="Button_H3OPT_CREWDRIVER_5_Click"
+                                    Content="切斯特·麦考伊 10％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWDRIVER_6"
+                                    Click="Button_H3OPT_CREWDRIVER_6_Click"
+                                    Content="车手零分红" />
+                            </WrapPanel>
+                        </GroupBox>
+                        <GroupBox
+                            Margin="5"
+                            Header="黑客等级"
+                            Style="{StaticResource GroupBoxStyle_Normal}">
+                            <WrapPanel Orientation="Horizontal">
+                                <Button
+                                    x:Name="Button_H3OPT_CREWHACKER_1"
+                                    Click="Button_H3OPT_CREWHACKER_1_Click"
+                                    Content="里奇·卢肯斯 3％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWHACKER_2"
+                                    Click="Button_H3OPT_CREWHACKER_2_Click"
+                                    Content="克里斯汀·费尔兹 7％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWHACKER_3"
+                                    Click="Button_H3OPT_CREWHACKER_3_Click"
+                                    Content="尤汗·布莱尔 5％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWHACKER_4"
+                                    Click="Button_H3OPT_CREWHACKER_4_Click"
+                                    Content="阿维·施瓦茨曼 10％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWHACKER_5"
+                                    Click="Button_H3OPT_CREWHACKER_5_Click"
+                                    Content="佩奇·哈里斯 9％" />
+                                <Button
+                                    x:Name="Button_H3OPT_CREWHACKER_6"
+                                    Click="Button_H3OPT_CREWHACKER_6_Click"
+                                    Content="黑客零分红" />
+                            </WrapPanel>
+                        </GroupBox>
+                        <GroupBox
+                            Margin="5"
+                            Header="武器类型"
+                            Style="{StaticResource GroupBoxStyle_Normal}">
+                            <WrapPanel Orientation="Horizontal">
+                                <Button
+                                    x:Name="Button_H3OPT_WEAPS_0"
+                                    Click="Button_H3OPT_WEAPS_0_Click"
+                                    Content="类型一" />
+                                <Button
+                                    x:Name="Button_H3OPT_WEAPS_1"
+                                    Click="Button_H3OPT_WEAPS_1_Click"
+                                    Content="类型二" />
+                                <Button
+                                    x:Name="Button_H3OPT_WEAPS_2"
+                                    Click="Button_H3OPT_WEAPS_2_Click"
+                                    Content="类型三" />
+                                <Button
+                                    x:Name="Button_H3OPT_WEAPS_3"
+                                    Click="Button_H3OPT_WEAPS_3_Click"
+                                    Content="类型四" />
+                                <Button
+                                    x:Name="Button_H3OPT_WEAPS_4"
+                                    Click="Button_H3OPT_WEAPS_4_Click"
+                                    Content="类型五" />
+                            </WrapPanel>
+                        </GroupBox>
+                        <GroupBox
+                            Margin="5"
+                            Header="逃亡载具"
+                            Style="{StaticResource GroupBoxStyle_Normal}">
+                            <WrapPanel Orientation="Horizontal">
+                                <Button
+                                    x:Name="Button_H3OPT_VEH_0"
+                                    Click="Button_H3OPT_VEH_0_Click"
+                                    Content="类型一" />
+                                <Button
+                                    x:Name="Button_H3OPT_VEH_1"
+                                    Click="Button_H3OPT_VEH_1_Click"
+                                    Content="类型二" />
+                                <Button
+                                    x:Name="Button_H3OPT_VEH_2"
+                                    Click="Button_H3OPT_VEH_2_Click"
+                                    Content="类型三" />
+                                <Button
+                                    x:Name="Button_H3OPT_VEH_3"
+                                    Click="Button_H3OPT_VEH_3_Click"
+                                    Content="类型四" />
+                            </WrapPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <ScrollViewer>
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="高级" />
+                        <Button
+                            x:Name="Button_H3OPT_ACCESSPOINTS_0"
+                            Click="Button_H3OPT_ACCESSPOINTS_0_Click"
+                            Content="取消解锁所有侦察点" />
+                        <Button
+                            x:Name="Button_H3OPT_H3OPT_POI_0"
+                            Click="Button_H3OPT_H3OPT_POI_0_Click"
+                            Content="取消解锁所有兴趣点" />
+
+                        <TextBlock />
+                        <Button
+                            x:Name="Button_H3OPT_BITSET1"
+                            Click="Button_H3OPT_BITSET1_Click"
+                            Content="重置面板一" />
+                        <Button
+                            x:Name="Button_H3OPT_BITSET0"
+                            Click="Button_H3OPT_BITSET0_Click"
+                            Content="重置面板二" />
+
+                        <TextBlock />
+                        <Button x:Name="Button_CAS_HEIST_FLOW" Click="Button_CAS_HEIST_FLOW_Click">
+                            <TextBlock TextAlignment="Center">
+                                解决赌场抢劫所有问题<LineBreak />
+                                （包括拍照和启动战局卡游戏厅视角）</TextBlock>
+                        </Button>
+                    </StackPanel>
+                </ScrollViewer>
+            </UniformGrid>
+        </ui:UiTabItemIcon>
+    </TabControl>
+
+</UserControl>

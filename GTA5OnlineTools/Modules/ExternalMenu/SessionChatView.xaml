@@ -1,0 +1,138 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Modules.ExternalMenu.SessionChatView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <StackPanel>
+            <ui:UiLabelIcon Content="输入文本" DockPanel.Dock="Top" />
+            <TextBox
+                x:Name="TextBox_InputMessage"
+                Height="150"
+                VerticalContentAlignment="Top"
+                InputLanguageManager.InputLanguage="zh-CN"
+                KeyUp="TextBox_InputMessage_KeyUp"
+                TextWrapping="WrapWithOverflow"
+                ToolTip="提示：输入完成后，按下Enter键自动发送文本到游戏中" />
+            <!--  ##########  -->
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_Translate_Click" Content="中英互译" />
+                <Button Click="Button_Translate_Click" Content="简转繁" />
+                <Button Click="Button_Translate_Click" Content="繁转简" />
+                <Button Click="Button_Translate_Click" Content="转拼音" />
+            </WrapPanel>
+            <!--  ##########  -->
+            <GroupBox
+                Margin="5"
+                Header="按键设置"
+                Style="{StaticResource GroupBoxStyle_Normal}">
+                <WrapPanel>
+                    <RadioButton
+                        x:Name="RadioButton_PressKeyT"
+                        Content="按键T (全部)"
+                        IsChecked="True" />
+                    <RadioButton x:Name="RadioButton_PressKeyU" Content="按键Y (团队)" />
+                </WrapPanel>
+            </GroupBox>
+            <!--  ##########  -->
+            <GroupBox
+                Margin="5"
+                Header="发送设置"
+                Style="{StaticResource GroupBoxStyle_Normal}">
+                <StackPanel>
+                    <DockPanel>
+                        <TextBlock
+                            Margin="5"
+                            VerticalAlignment="Center"
+                            Text="{Binding ElementName=Slider_SendKey_Sleep1, Path=Value, StringFormat=启动延迟 : {0:000} ms}" />
+                        <Slider
+                            x:Name="Slider_SendKey_Sleep1"
+                            Margin="5"
+                            IsSnapToTickEnabled="True"
+                            Maximum="500"
+                            Minimum="10"
+                            TickFrequency="10"
+                            Value="150" />
+                    </DockPanel>
+                    <!--  ##########  -->
+                    <DockPanel>
+                        <TextBlock
+                            Margin="5"
+                            VerticalAlignment="Center"
+                            Text="{Binding ElementName=Slider_SendKey_Sleep2, Path=Value, StringFormat=按键延迟 : {0:000} ms}" />
+                        <Slider
+                            x:Name="Slider_SendKey_Sleep2"
+                            Margin="5"
+                            IsSnapToTickEnabled="True"
+                            Maximum="500"
+                            Minimum="10"
+                            TickFrequency="10"
+                            Value="50" />
+                    </DockPanel>
+                </StackPanel>
+            </GroupBox>
+            <!--  ##########  -->
+            <StackPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_SendTextToGTA5"
+                    Click="Button_SendTextToGTA5_Click"
+                    Content="发送" />
+                <!--  ##########  -->
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    提示：请进入GTA5按T，然后把输入法切成美式键盘，否则可能会出现文字不完整问题，确保打字时不会弹出中文输入法
+                </TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    提示：如果发送不完整，请尝试拖动上方滑块调整到合适的延迟
+                </TextBlock>
+            </StackPanel>
+
+        </StackPanel>
+        <!--  面板2  -->
+        <StackPanel>
+            <ui:UiLabelIcon Content="玩家昵称修改（最大20字符）" />
+            <DockPanel LastChildFill="False">
+                <TextBlock
+                    Margin="5"
+                    DockPanel.Dock="Left"
+                    Text="输入你要修改的昵称 " />
+                <CheckBox
+                    x:Name="CheckBox_IngnoreInputRule"
+                    Margin="5"
+                    Click="CheckBox_IngnoreInputRule_Click"
+                    Content="解除输入限制"
+                    DockPanel.Dock="Right" />
+            </DockPanel>
+            <TextBox x:Name="TextBox_PlayerName" MaxLength="20" />
+            <UniformGrid Columns="2">
+                <Button
+                    x:Name="Button_ReadPlayerName"
+                    Click="Button_ReadPlayerName_Click"
+                    Content="读取" />
+                <Button
+                    x:Name="Button_WritePlayerName"
+                    Click="Button_WritePlayerName_Click"
+                    Content="修改" />
+            </UniformGrid>
+            <!--  ##########  -->
+            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                提示：默认仅运行修改英文、数字、空格和下划线，范围3~20字符。勾选解除输入限制后无限制
+            </TextBlock>
+            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                提示：勾选解除输入限制后如果输入其他特殊字符（比如中文），可能会导致战局异常，需要重启游戏解决
+            </TextBlock>
+            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                提示：修改成功后，切换战局生效
+            </TextBlock>
+        </StackPanel>
+        <!--  面板3  -->
+
+    </UniformGrid>
+
+</UserControl>

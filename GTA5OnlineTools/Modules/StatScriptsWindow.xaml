@@ -1,0 +1,90 @@
+﻿<ui:UiWindow
+    x:Class="GTA5OnlineTools.Modules.StatScriptsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    x:Name="Window_StatScripts"
+    Title="GTA5线上小助手 - STAT自动化脚本"
+    Width="1280"
+    Height="720"
+    MinWidth="1280"
+    MinHeight="720"
+    Closing="Window_StatScripts_Closing"
+    Loaded="Window_StatScripts_Loaded"
+    Style="{StaticResource UiWindowStyle}"
+    mc:Ignorable="d">
+
+    <ui:UiWindow.TitleContent>
+        <StackPanel
+            VerticalAlignment="Center"
+            DockPanel.Dock="Left"
+            Orientation="Horizontal">
+            <Image
+                Height="20"
+                Margin="5"
+                Source="\Assets\Images\Favicon.ico"
+                Style="{StaticResource ImageStyle_HighQuality}" />
+            <TextBlock
+                VerticalAlignment="Center"
+                FontSize="14"
+                FontWeight="Bold"
+                Text="{Binding ElementName=Window_StatScripts, Path=Title}" />
+        </StackPanel>
+    </ui:UiWindow.TitleContent>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*" />
+            <ColumnDefinition Width="1.5*" />
+            <ColumnDefinition Width="0.7*" />
+        </Grid.ColumnDefinitions>
+        <!--  面板1  -->
+        <DockPanel Grid.Column="0">
+            <TextBlock
+                DockPanel.Dock="Top"
+                Style="{StaticResource TextBlockStyle_Title}"
+                Text="📇 操作日志" />
+            <TextBox
+                x:Name="TextBox_Logger"
+                Margin="5,0,5,5"
+                Style="{StaticResource TextBoxStyle_Logger}"
+                ToolTip="把需要导入GTAHax的代码粘贴到这里" />
+        </DockPanel>
+        <!--  面板2  -->
+        <DockPanel Grid.Column="1">
+            <TextBlock
+                DockPanel.Dock="Top"
+                Style="{StaticResource TextBlockStyle_Title}"
+                Text="📃 STAT脚本列表" />
+            <ListBox
+                x:Name="ListBox_STATList"
+                Margin="0,0,0,5"
+                DockPanel.Dock="Bottom" />
+        </DockPanel>
+        <!--  面板3  -->
+        <StackPanel Grid.Column="2">
+            <TextBlock
+                DockPanel.Dock="Top"
+                Style="{StaticResource TextBlockStyle_Title}"
+                Text="⭐ 功能" />
+            <ui:UiLabelIcon Content="功能" />
+            <StackPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_ExecuteAutoScript"
+                    Click="Button_ExecuteAutoScript_Click"
+                    Content="执行选中脚本" />
+                <Button
+                    x:Name="Button_LoadSession"
+                    Margin="5,0,5,5"
+                    Click="Button_LoadSession_Click"
+                    Content="如果没有效果请点我切换战局" />
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    提示：如果代码执行成功，游戏中会出现《大受好评》的奖章，并给予少于经验值
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+</ui:UiWindow>

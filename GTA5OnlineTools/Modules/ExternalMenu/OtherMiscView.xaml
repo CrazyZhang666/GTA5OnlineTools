@@ -1,0 +1,66 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Modules.ExternalMenu.OtherMiscView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <ui:UiLabelIcon Content="随身技工" />
+                <UniformGrid Margin="5,0,5,0" Columns="3">
+                    <Button
+                        x:Name="Button_RefushPersonalVehicleList"
+                        Click="Button_RefushPersonalVehicleList_Click"
+                        Content="刷新列表" />
+                    <Button
+                        x:Name="Button_SpawnPersonalVehicle"
+                        Click="Button_SpawnPersonalVehicle_Click"
+                        Content="呼叫个人载具" />
+                    <Button
+                        x:Name="Button_GetInOnlinePV"
+                        Click="Button_GetInOnlinePV_Click"
+                        Content="坐进个人载具" />
+                </UniformGrid>
+            </StackPanel>
+            <ListBox
+                x:Name="ListBox_PersonalVehicle"
+                Margin="5"
+                DockPanel.Dock="Bottom" />
+        </DockPanel>
+        <!--  面板2  -->
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <ui:UiLabelIcon Content="模型修改" />
+                <StackPanel Margin="5,0,5,0">
+                    <Button
+                        x:Name="Button_ModelChange"
+                        Click="Button_ModelChange_Click"
+                        Content="⚠ 修改线上角色模型">
+                        <Button.ToolTip>
+                            <TextBlock>
+                                1. 此功能仅供尝鲜使用，部分人物模型显示怪异<LineBreak />
+                                2. 如果人物没有刷出来，请多尝试几次<LineBreak />
+                                3. 刷出的人物没有武器，可以拾取地上掉落武器<LineBreak />
+                                4. 人物死亡复活后会变透明，重新刷人物即可<LineBreak />
+                                5. 如果要恢复线上角色，请切换战局或者回到故事模式然后重新进入线上</TextBlock>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <ListBox
+                x:Name="ListBox_PedModel"
+                Margin="5"
+                DockPanel.Dock="Bottom"
+                MouseDoubleClick="ListBox_PedModel_MouseDoubleClick" />
+        </DockPanel>
+        <!--  面板3  -->
+    </UniformGrid>
+
+</UserControl>

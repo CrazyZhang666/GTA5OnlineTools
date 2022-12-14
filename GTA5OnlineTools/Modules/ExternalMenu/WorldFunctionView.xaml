@@ -1,0 +1,327 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Modules.ExternalMenu.WorldFunctionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <StackPanel>
+            <ui:UiLabelIcon Content="本地天气" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_LocalWeather_Click" Content="默认" />
+                <Button Click="Button_LocalWeather_Click" Content="格外晴朗" />
+                <Button Click="Button_LocalWeather_Click" Content="晴朗" />
+                <Button Click="Button_LocalWeather_Click" Content="多云" />
+                <Button Click="Button_LocalWeather_Click" Content="阴霾" />
+                <Button Click="Button_LocalWeather_Click" Content="大雾" />
+                <Button Click="Button_LocalWeather_Click" Content="阴天" />
+                <Button Click="Button_LocalWeather_Click" Content="下雨" />
+                <Button Click="Button_LocalWeather_Click" Content="雷雨" />
+                <Button Click="Button_LocalWeather_Click" Content="雨转晴" />
+                <Button Click="Button_LocalWeather_Click" Content="阴雨" />
+                <Button Click="Button_LocalWeather_Click" Content="下雪" />
+                <Button Click="Button_LocalWeather_Click" Content="暴雪" />
+                <Button Click="Button_LocalWeather_Click" Content="小雪" />
+                <Button Click="Button_LocalWeather_Click" Content="圣诞" />
+                <Button Click="Button_LocalWeather_Click" Content="万圣节" />
+            </WrapPanel>
+
+            <ui:UiLabelIcon Content="NPC控制" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_KillAllNPC"
+                    Click="Button_KillNPC_Click"
+                    Content="杀死全部NPC" />
+                <Button
+                    x:Name="Button_KillAllHostilityNPC"
+                    Click="Button_KillAllHostilityNPC_Click"
+                    Content="杀死全部敌对NPC" />
+                <Button
+                    x:Name="Button_KillAllPolice"
+                    Click="Button_KillAllPolice_Click"
+                    Content="杀死全部警察" />
+                <Button
+                    x:Name="Button_DestroyAllVehicles"
+                    Click="Button_DestroyAllVehicles_Click"
+                    Content="摧毁全部载具" />
+                <Button
+                    x:Name="Button_DestroyAllNPCVehicles"
+                    Click="Button_DestroyAllNPCVehicles_Click"
+                    Content="摧毁全部NPC载具" />
+                <Button
+                    x:Name="Button_DestroyAllHostilityNPCVehicles"
+                    Click="Button_DestroyAllHostilityNPCVehicles_Click"
+                    Content="摧毁全部敌对NPC载具" />
+                <Button
+                    x:Name="Button_TPAllNPCToMe"
+                    Click="Button_TPAllNPCToMe_Click"
+                    Content="传送全部NPC到我" />
+                <Button
+                    x:Name="Button_TPHostilityNPCToMe"
+                    Click="Button_TPHostilityNPCToMe_Click"
+                    Content="传送全部敌对NPC到我" />
+            </WrapPanel>
+
+            <ui:UiLabelIcon Content="自定义传送" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_ToWaypoint"
+                    Click="Button_ToWaypoint_Click"
+                    Content="传送到导航点" />
+                <Button
+                    x:Name="Button_ToObjective"
+                    Click="Button_ToObjective_Click"
+                    Content="传送到目标点" />
+            </WrapPanel>
+        </StackPanel>
+        <!--  面板2  -->
+        <DockPanel LastChildFill="True">
+            <ui:UiLabelIcon Content="传送分类" DockPanel.Dock="Top" />
+            <ComboBox
+                x:Name="ComboBox_TeleportClass"
+                Margin="5"
+                DockPanel.Dock="Top"
+                SelectionChanged="ComboBox_TeleportClass_SelectionChanged">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type ListBoxItem}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0,0,5,0"
+                                VerticalAlignment="Center"
+                                FontSize="14"
+                                Text="{Binding Emoji}" />
+                            <TextBlock VerticalAlignment="Center" Text="{Binding Title}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ui:UiLabelIcon Content="传送列表（双击快速传送）" DockPanel.Dock="Top" />
+            <ListBox
+                x:Name="ListBox_TeleportInfo"
+                Margin="5"
+                DockPanel.Dock="Bottom"
+                MouseDoubleClick="ListBox_TeleportInfo_MouseDoubleClick"
+                SelectionChanged="ListBox_TeleportInfo_SelectionChanged"
+                ToolTip="双击选中项即可快捷传送" />
+        </DockPanel>
+        <!--  面板3  -->
+        <StackPanel>
+            <ui:UiLabelIcon Content="坐标数据" />
+            <StackPanel Margin="5,0,5,0">
+                <!--  X坐标  -->
+                <DockPanel>
+                    <TextBlock
+                        Width="60"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="X坐标" />
+                    <TextBox x:Name="TextBox_Position_X">
+                        <TextBox.Resources>
+                            <Style BasedOn="{StaticResource TextBoxStyle_Base}" TargetType="{x:Type TextBox}">
+                                <Setter Property="IsEnabled" Value="False" />
+                                <Setter Property="InputLanguageManager.InputLanguage" Value="en-US" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=ComboBox_TeleportClass, Path=SelectedIndex}" Value="0">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </DockPanel>
+                <!--  Y坐标  -->
+                <DockPanel>
+                    <TextBlock
+                        Width="60"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="Y坐标" />
+                    <TextBox x:Name="TextBox_Position_Y">
+                        <TextBox.Resources>
+                            <Style BasedOn="{StaticResource TextBoxStyle_Base}" TargetType="{x:Type TextBox}">
+                                <Setter Property="IsEnabled" Value="False" />
+                                <Setter Property="InputLanguageManager.InputLanguage" Value="en-US" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=ComboBox_TeleportClass, Path=SelectedIndex}" Value="0">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </DockPanel>
+                <!--  Z坐标  -->
+                <DockPanel>
+                    <TextBlock
+                        Width="60"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="Z坐标" />
+                    <TextBox x:Name="TextBox_Position_Z">
+                        <TextBox.Resources>
+                            <Style BasedOn="{StaticResource TextBoxStyle_Base}" TargetType="{x:Type TextBox}">
+                                <Setter Property="IsEnabled" Value="False" />
+                                <Setter Property="InputLanguageManager.InputLanguage" Value="en-US" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=ComboBox_TeleportClass, Path=SelectedIndex}" Value="0">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </DockPanel>
+                <!--  坐标名称  -->
+                <DockPanel>
+                    <TextBlock
+                        Width="60"
+                        Margin="5,0,0,0"
+                        VerticalAlignment="Center"
+                        Text="坐标名称" />
+                    <TextBox x:Name="TextBox_CustomTeleportName">
+                        <TextBox.Resources>
+                            <Style BasedOn="{StaticResource TextBoxStyle_Base}" TargetType="{x:Type TextBox}">
+                                <Setter Property="IsEnabled" Value="False" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=ComboBox_TeleportClass, Path=SelectedIndex}" Value="0">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                </DockPanel>
+                <WrapPanel>
+                    <Button
+                        x:Name="Button_AddCustomTeleport"
+                        Click="Button_AddCustomTeleport_Click"
+                        Content="添加当前位置">
+                        <Button.Resources>
+                            <Style BasedOn="{StaticResource ButtonStyle_Base}" TargetType="{x:Type Button}">
+                                <Setter Property="IsEnabled" Value="False" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=ComboBox_TeleportClass, Path=SelectedIndex}" Value="0">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button
+                        x:Name="Button_EditCustomTeleport"
+                        Click="Button_EditCustomTeleport_Click"
+                        Content="修改选中数据">
+                        <Button.Resources>
+                            <Style BasedOn="{StaticResource ButtonStyle_Base}" TargetType="{x:Type Button}">
+                                <Setter Property="IsEnabled" Value="False" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=ComboBox_TeleportClass, Path=SelectedIndex}" Value="0">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button
+                        x:Name="Button_DeleteCustomTeleport"
+                        Background="#EA4335"
+                        Click="Button_DeleteCustomTeleport_Click"
+                        Content="删除选中数据">
+                        <Button.Resources>
+                            <Style BasedOn="{StaticResource ButtonStyle_Base}" TargetType="{x:Type Button}">
+                                <Setter Property="IsEnabled" Value="False" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=ComboBox_TeleportClass, Path=SelectedIndex}" Value="0">
+                                        <Setter Property="IsEnabled" Value="True" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button
+                        x:Name="Button_Teleport_SaveCustom"
+                        Background="#34A853"
+                        Click="Button_SaveCustomTeleport_Click"
+                        Content="保存传送数据" />
+                    <Button
+                        x:Name="Button_Teleport"
+                        Background="#34A853"
+                        Click="Button_Teleport_Click"
+                        Content="传送到选中位置" />
+                </WrapPanel>
+            </StackPanel>
+
+            <ui:UiLabelIcon Content="坐标微调" />
+            <StackPanel Margin="5,0,5,0">
+                <DockPanel>
+                    <TextBlock
+                        Margin="5"
+                        DockPanel.Dock="Left"
+                        Text="{Binding ElementName=Slider_MoveDistance, Path=Value, StringFormat=微调距离 : {0:0.0}}" />
+                    <Slider
+                        Name="Slider_MoveDistance"
+                        VerticalAlignment="Center"
+                        DockPanel.Dock="Right"
+                        Maximum="5.0"
+                        Minimum="0.5"
+                        TickFrequency="0.5"
+                        ValueChanged="Slider_MoveDistance_ValueChanged"
+                        Value="1.5" />
+                </DockPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="0.5*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Click="Button_MoveDistance_Click"
+                            Content="向前" />
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Click="Button_MoveDistance_Click"
+                            Content="向后" />
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Click="Button_MoveDistance_Click"
+                            Content="向左" />
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Click="Button_MoveDistance_Click"
+                            Content="向右" />
+                    </Grid>
+                    <StackPanel
+                        Grid.Column="1"
+                        Margin="5"
+                        VerticalAlignment="Center">
+                        <Button Click="Button_MoveDistance_Click" Content="向上" />
+                        <Button Click="Button_MoveDistance_Click" Content="向下" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+        </StackPanel>
+    </UniformGrid>
+
+</UserControl>

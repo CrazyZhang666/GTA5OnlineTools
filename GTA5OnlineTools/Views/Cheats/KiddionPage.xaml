@@ -1,0 +1,89 @@
+﻿<Page
+    x:Class="GTA5OnlineTools.Views.Cheats.KiddionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="KiddionPage"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    Style="{StaticResource PageStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="2">
+        <RichTextBox Margin="5,5,2.5,5" Style="{StaticResource RichTextBoxStyle_Page}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    简介
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 使用Kiddion外置辅助游戏需要设置无边框或窗口化
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● Kiddion启动后，游戏右边的英文提示是Kiddion的免责声明，并不是R星的提示，无需担心
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    提示
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 先启动外置辅助，等待辅助菜单加载出来后再启用汉化，否则汉化会无法显示
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 如果外置辅助按键不受控制，按Shift+对应按键（出问题的按键）解决。如果是点num-显示菜单就自动隐藏，你就按Shift+num-，如果是菜单一直向下滑动，你就按Shift+num2，其他的依次类推（要多按几次）
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 多人传送前，请进入同一辆载具，然后在司机（开车玩家）地图上点击导航点，按F5传送，这时载具会卡在地下，
+                    司机按一下W键载具会开始翻滚，司机这时按F键下车，然后立刻离开当前位置（因为载具会落在你头顶）
+                    载具不一会就会从头顶掉落在地面上，传送完毕（乘坐载具玩家不用做任何动作）
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    配置文件
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● Kiddion配置文件目录：C:\ProgramData\GTA5OnlineTools\Kiddion\，该目录内的配置文件不会随着小助手重启而更新，如果需要初始化配置文件，请使用 工具->初始化配置文件夹
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    Lua脚本
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● Kiddion脚本目录：C:\ProgramData\GTA5OnlineTools\Kiddion\scripts，把lua格式脚本放到这个目录，然后重新启动Kiddion即可加载
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <!--  ##########  -->
+        <RichTextBox Margin="2.5,5,5,5" Style="{StaticResource RichTextBoxStyle_Page}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    快捷键
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    【F5】传送至导航点<LineBreak />
+                    【F6】传送至目标点<LineBreak />
+                    【F7】治疗玩家<LineBreak />
+                    【F8】消除警星</Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    104按键
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    【小键盘-】显示/隐藏菜单<LineBreak />
+                    【小键盘8】和【小键盘2】上下选择<LineBreak />
+                    【小键盘4】和【小键盘6】左右选择<LineBreak />
+                    【小键盘5】确定，【小键盘0】返回</Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    87按键
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    【P键】显示/隐藏菜单<LineBreak />
+                    【I键】和【K键】上下选择<LineBreak />
+                    【J键】和【L键】左右选择<LineBreak />
+                    【U键】确定，【O键】返回</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </UniformGrid>
+
+</Page>

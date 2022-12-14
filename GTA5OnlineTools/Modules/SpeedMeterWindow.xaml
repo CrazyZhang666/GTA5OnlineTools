@@ -1,0 +1,113 @@
+﻿<ui:UiWindow
+    x:Class="GTA5OnlineTools.Modules.SpeedMeterWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    x:Name="Window_SpeedMeter"
+    Title="GTA5线上小助手 - 车速表"
+    Width="800"
+    Height="600"
+    Closing="Window_SpeedMeter_Closing"
+    Loaded="Window_SpeedMeter_Loaded"
+    ResizeMode="CanMinimize"
+    Style="{StaticResource UiWindowStyle}"
+    mc:Ignorable="d">
+
+    <ui:UiWindow.TitleContent>
+        <StackPanel
+            VerticalAlignment="Center"
+            DockPanel.Dock="Left"
+            Orientation="Horizontal">
+            <Image
+                Height="20"
+                Margin="5"
+                Source="\Assets\Images\Favicon.ico"
+                Style="{StaticResource ImageStyle_HighQuality}" />
+            <TextBlock
+                VerticalAlignment="Center"
+                FontSize="14"
+                FontWeight="Bold"
+                Text="{Binding ElementName=Window_SpeedMeter, Path=Title}" />
+        </StackPanel>
+    </ui:UiWindow.TitleContent>
+
+    <UniformGrid Columns="2">
+        <StackPanel>
+            <GroupBox
+                Margin="5"
+                Header="车速表位置"
+                Style="{StaticResource GroupBoxStyle_Normal}">
+                <WrapPanel Orientation="Horizontal">
+                    <RadioButton
+                        x:Name="RadioButton_SpeedMeterPos_Center"
+                        Click="RadioButton_SpeedMeterPos_Center_Click"
+                        Content="居中"
+                        IsChecked="True" />
+                    <RadioButton
+                        x:Name="RadioButton_SpeedMeterPos_Right"
+                        Click="RadioButton_SpeedMeterPos_Center_Click"
+                        Content="居右" />
+                </WrapPanel>
+            </GroupBox>
+            <GroupBox
+                Margin="5"
+                Header="车速表单位"
+                Style="{StaticResource GroupBoxStyle_Normal}">
+                <WrapPanel Orientation="Horizontal">
+                    <RadioButton
+                        x:Name="RadioButton_SpeedMeterUnit_MPH"
+                        Click="RadioButton_SpeedMeterUnit_MPH_Click"
+                        Content="MPH（英里每小时）"
+                        IsChecked="True" />
+                    <RadioButton
+                        x:Name="RadioButton_SpeedMeterUnit_KPH"
+                        Click="RadioButton_SpeedMeterUnit_MPH_Click"
+                        Content="KPH（公里每小时）" />
+                </WrapPanel>
+            </GroupBox>
+            <GroupBox
+                Margin="5"
+                Header="调试信息"
+                Style="{StaticResource GroupBoxStyle_Normal}">
+                <StackPanel>
+                    <TextBlock
+                        x:Name="TextBlock_ScreenResolution"
+                        Margin="5"
+                        Text="屏幕分辨率" />
+                    <TextBlock
+                        x:Name="TextBlock_GameResolution"
+                        Margin="5"
+                        Text="游戏分辨率" />
+                    <TextBlock
+                        x:Name="TextBlock_ScreenScale"
+                        Margin="5"
+                        Text="缩放比例" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel>
+            <ui:UiLabelIcon Content="车速表" />
+            <Button
+                x:Name="Button_RunDraw"
+                Click="Button_RunDraw_Click"
+                Content="启动" />
+            <Button
+                x:Name="Button_StopDraw"
+                Click="Button_StopDraw_Click"
+                Content="停止" />
+            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                提示：游戏需要无边框或者窗口化才能正常显示，不支持全屏
+            </TextBlock>
+            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                提示：如果是win7系统，则需要开启Aero特效，否则可能显示不正常，win10及以上版本均可正常显示
+            </TextBlock>
+            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                提示：只有坐上载具和GTA5窗口在最前面才会显示车速表，防止遮挡视线
+            </TextBlock>
+        </StackPanel>
+
+    </UniformGrid>
+
+</ui:UiWindow>

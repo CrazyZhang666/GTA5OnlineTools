@@ -1,6 +1,38 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/Global.xaml" />
+
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/ScrollViewer.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/ContextMenu.xaml" />
+
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/Border.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/TextBlock.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/Image.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/TextBox.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/RichTextBox.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/Button.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/ToggleButton.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/Slider.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/GroupBox.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/ComboBox.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/CheckBox.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/RadioButton.xaml" />
+
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/LabelIcon.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/ButtonIcon.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/RadioButtonIcon.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/TextBoxHint.xaml" />
+
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/ListBox.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/TabControlIcon.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/ListView.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/DataGrid.xaml" />
+
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/LoadingSpinner.xaml" />
+
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/UserControl.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/Page.xaml" />
         <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/Window.xaml" />
 
     </ResourceDictionary.MergedDictionaries>

@@ -1,0 +1,72 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Views.ModulesView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    Style="{StaticResource UserControlStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <WrapPanel>
+        <ui:UiButtonIcon
+            Title="External Menu"
+            Command="{Binding ModelsClickCommand}"
+            CommandParameter="ExternalMenu"
+            Content="小助手外置菜单"
+            Icon="&#xe666;"
+            Style="{StaticResource ButtonStyle_FuncModule}" />
+
+        <ui:UiButtonIcon
+            Title="Spawn Vehicle"
+            Command="{Binding ModelsClickCommand}"
+            CommandParameter="SpawnVehicle"
+            Content="刷出线上载具"
+            Icon="&#xe629;"
+            Style="{StaticResource ButtonStyle_FuncModule}" />
+
+        <ui:UiButtonIcon
+            Title="Heists Edit"
+            Command="{Binding ModelsClickCommand}"
+            CommandParameter="HeistsEdit"
+            Content="抢劫任务编辑器"
+            Icon="&#xe63b;"
+            Style="{StaticResource ButtonStyle_FuncModule}" />
+
+        <ui:UiButtonIcon
+            Title="Outfits Edit"
+            Command="{Binding ModelsClickCommand}"
+            CommandParameter="OutfitsEdit"
+            Content="角色服装编辑器"
+            Icon="&#xe8c7;"
+            Style="{StaticResource ButtonStyle_FuncModule}" />
+
+        <ui:UiButtonIcon
+            Title="STAT Auto Scripts"
+            Command="{Binding ModelsClickCommand}"
+            CommandParameter="StatScripts"
+            Content="STAT自动化脚本"
+            Icon="&#xe636;"
+            Style="{StaticResource ButtonStyle_FuncModule}" />
+
+        <ui:UiButtonIcon
+            Title="Casino Hack"
+            Command="{Binding ModelsClickCommand}"
+            CommandParameter="CasinoHack"
+            Content="赌场黑客"
+            Icon="&#xe811;"
+            Style="{StaticResource ButtonStyle_FuncModule}" />
+
+        <ui:UiButtonIcon
+            Title="Speed Meter"
+            Command="{Binding ModelsClickCommand}"
+            CommandParameter="SpeedMeter"
+            Content="车速表"
+            Icon="&#xeab4;"
+            Style="{StaticResource ButtonStyle_FuncModule}" />
+
+    </WrapPanel>
+
+</UserControl>

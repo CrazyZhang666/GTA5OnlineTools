@@ -1,0 +1,103 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Modules.ExternalMenu.ReadMeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style x:Key="RichTextBoxStyle_ReadMe" TargetType="{x:Type RichTextBox}">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="IsDocumentEnabled" Value="True" />
+            <Setter Property="Cursor" Value="Arrow" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+        </Style>
+
+        <Style x:Key="Title" TargetType="{x:Type Paragraph}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="LineHeight" Value="10" />
+        </Style>
+
+        <Style x:Key="Head1" TargetType="{x:Type Paragraph}">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="LineHeight" Value="10" />
+        </Style>
+
+        <Style TargetType="{x:Type Paragraph}">
+            <Setter Property="LineHeight" Value="10" />
+        </Style>
+    </UserControl.Resources>
+
+    <UniformGrid Columns="2">
+        <RichTextBox Style="{StaticResource RichTextBoxStyle_ReadMe}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource Title}">
+                    传送说明
+                </Paragraph>
+                <Paragraph>
+                    ● 由于外置传送的原理是同时修改玩家的模型和相机坐标，和内置辅助直接调用游戏本地Native函数不一样，所以会有一些缺陷，
+                    比如必须保持静止状态才能传送、在空中无法传送、不能直接传送到水中等等，但是灵活使用基本可以满足我们的需要
+                </Paragraph>
+                <Paragraph>
+                    ● 传送目前分为导航点传送和目标点传送，
+                    导航点是我们打开大地图手动点击的紫色点，这个只能在近处才会获取到导航点的xyz坐标，
+                    远处只有xy坐标，通常我们会把z坐标改成-255，这样系统会自动把玩家传送到地面
+                    而目标点可以获取到xyz坐标，可以达到精准传送
+                </Paragraph>
+                <Paragraph>
+                    ● 传送为啥会在地下？因为如果传送点没有z坐标，程序会把z设置为-255，GTA5系统会自动把模型z坐标处于-255的自动传送到附近适合的地面上
+                </Paragraph>
+                <Paragraph>
+                    ● 如何近距离精确传送？我们打开大地图，然后在附件你需要传送的地方点击导航点（不能太远），
+                    然后就按下F5键，不要退出地图，因为距离太近了退出地图导航点会消失
+                </Paragraph>
+                <Paragraph Style="{StaticResource Head1}">
+                    单人传送
+                </Paragraph>
+                <Paragraph>
+                    ● 我们先保持静止状态，载具请停下来，然后在地图上点击导航点，使用快捷键F5传送即可，F6是传送到系统生成的图标出
+                </Paragraph>
+                <Paragraph Style="{StaticResource Head1}">
+                    多人传送
+                </Paragraph>
+                <Paragraph>
+                    ● 多人传送前，请进入同一辆载具，然后在司机（开车玩家）地图上点击导航点，按F5传送，这时载具会卡在地下，
+                    司机按一下W键载具会开始翻滚，司机这时按F键下车，然后立刻离开当前位置（因为载具会落在你头顶）
+                    载具不一会就会从头顶掉落在地面上，传送完毕（乘坐载具玩家不用做任何动作）
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+        <RichTextBox Style="{StaticResource RichTextBoxStyle_ReadMe}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource Title}">
+                    功能说明
+                </Paragraph>
+                <Paragraph>
+                    ● 如果某些功能无效，你可能需要用小助手切换一下战局
+                </Paragraph>
+                <Paragraph>
+                    ● 如果载具刷不出来，请确保人物前方有一定的空间可以容纳该载具
+                </Paragraph>
+                <Paragraph>
+                    ● 有些功能可能需要退出游戏电脑程序进入才有效（比如重新进入CEO电脑），或者是需要重新加载场景才有效（比如重新进入地堡），
+                    请大家灵活使用
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </UniformGrid>
+
+</UserControl>

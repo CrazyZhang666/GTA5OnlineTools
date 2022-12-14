@@ -1,0 +1,100 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Modules.HeistsEdit.DoomsdayView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    mc:Ignorable="d">
+
+    <TabControl Margin="5">
+        <ui:UiTabItemIcon Header="末日抢劫 - 分红数据">
+            <StackPanel>
+                <Border Margin="5" Background="#F0F0F0">
+                    <WrapPanel HorizontalAlignment="Center">
+                        <Button
+                            x:Name="Button_Read"
+                            Click="Button_Read_Click"
+                            Content="读取数据" />
+                        <Button
+                            x:Name="Button_Write"
+                            Click="Button_Write_Click"
+                            Content="写入数据" />
+                    </WrapPanel>
+                </Border>
+                <!--  ##########  -->
+                <UniformGrid Columns="4">
+                    <UniformGrid.Resources>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Margin" Value="5" />
+                            <Setter Property="HorizontalAlignment" Value="Right" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </UniformGrid.Resources>
+                    <StackPanel Margin="5">
+                        <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="分红比例" />
+                        <UniformGrid Columns="2">
+                            <TextBlock Text="（房主）玩家1" />
+                            <TextBox x:Name="TextBox_Doomsday_Player1" />
+                            <TextBlock Text="玩家2" />
+                            <TextBox x:Name="TextBox_Doomsday_Player2" />
+                            <TextBlock Text="玩家3" />
+                            <TextBox x:Name="TextBox_Doomsday_Player3" />
+                            <TextBlock Text="玩家4" />
+                            <TextBox x:Name="TextBox_Doomsday_Player4" />
+                        </UniformGrid>
+
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="分红金额" />
+                        <UniformGrid Columns="2">
+                            <TextBlock Text="末日一" />
+                            <TextBox x:Name="TextBox_Doomsday_ActI" />
+                            <TextBlock Text="末日二" />
+                            <TextBox x:Name="TextBox_Doomsday_ActII" />
+                            <TextBlock Text="末日三" />
+                            <TextBox x:Name="TextBox_Doomsday_ActIII" />
+                        </UniformGrid>
+                    </StackPanel>
+                </UniformGrid>
+            </StackPanel>
+        </ui:UiTabItemIcon>
+        <!--  ##############################  -->
+        <ui:UiTabItemIcon Header="末日抢劫 - 高级">
+            <UniformGrid Columns="3">
+                <StackPanel Margin="5">
+                    <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="跳过前置" />
+                    <Button
+                        x:Name="Button_GANGOPS_FLOW_MISSION_PROG_1"
+                        Click="Button_GANGOPS_FLOW_MISSION_PROG_1_Click"
+                        Content="跳过末日前置及准备任务" />
+
+                    <TextBlock />
+                    <Button
+                        x:Name="Button_GANGOPS_FLOW_MISSION_PROG_503"
+                        Click="Button_GANGOPS_FLOW_MISSION_PROG_503_Click"
+                        Content="进入末日一分红关" />
+                    <Button
+                        x:Name="Button_GANGOPS_FLOW_MISSION_PROG_240"
+                        Click="Button_GANGOPS_FLOW_MISSION_PROG_240_Click"
+                        Content="进入末日二分红关" />
+                    <Button
+                        x:Name="Button_GANGOPS_FLOW_MISSION_PROG_16368"
+                        Click="Button_GANGOPS_FLOW_MISSION_PROG_16368_Click"
+                        Content="进入末日三分红关" />
+
+                    <TextBlock />
+                    <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                        提示：按M键-设施管理-抢劫任务策划大屏-关闭/开启一次，用来刷新策划大屏，这样我们才能看到修改后的结果
+                    </TextBlock>
+
+                </StackPanel>
+
+            </UniformGrid>
+        </ui:UiTabItemIcon>
+    </TabControl>
+
+</UserControl>

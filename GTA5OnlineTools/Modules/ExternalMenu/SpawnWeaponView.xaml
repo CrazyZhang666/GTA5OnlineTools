@@ -1,0 +1,185 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Modules.ExternalMenu.SpawnWeaponView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style x:Key="ListBoxStyle_WeaponPreview" TargetType="{x:Type ListBox}">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="VirtualizingPanel.IsVirtualizing" Value="True" />
+            <Setter Property="VirtualizingPanel.VirtualizationMode" Value="Recycling" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <Border BorderBrush="#808080" BorderThickness="1">
+                            <ScrollViewer>
+                                <StackPanel IsItemsHost="true" />
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                    <Grid Height="40" Background="Transparent">
+                                        <Border Name="border" />
+                                        <Border>
+                                            <ContentPresenter VerticalAlignment="Center" />
+                                        </Border>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#CCCCCC" />
+                                            <Setter Property="TextElement.Foreground" Value="White" />
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="border" Property="Background" Value="#808080" />
+                                            <Setter Property="TextElement.Foreground" Value="White" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image
+                                Width="60"
+                                Margin="5,5,10,5"
+                                Source="{Binding Image, Converter={StaticResource StringToImageSourceConverter}}"
+                                Stretch="Uniform"
+                                Style="{StaticResource ImageStyle_HighQuality}" />
+                            <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <DockPanel LastChildFill="True">
+            <ui:UiLabelIcon Content="武器分类" DockPanel.Dock="Top" />
+            <ComboBox
+                x:Name="ComboBox_WeaponClass"
+                Margin="5"
+                DockPanel.Dock="Top"
+                SelectionChanged="ComboBox_WeaponClass_SelectionChanged">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate DataType="{x:Type ListBoxItem}">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                                Margin="0,0,5,0"
+                                VerticalAlignment="Center"
+                                FontSize="14"
+                                Text="{Binding Emoji}" />
+                            <TextBlock VerticalAlignment="Center" Text="{Binding Title}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ui:UiLabelIcon Content="武器列表" DockPanel.Dock="Top" />
+            <ListBox
+                x:Name="ListBox_WeaponInfo"
+                Margin="5"
+                DockPanel.Dock="Bottom"
+                SelectionChanged="ListBox_WeaponInfo_SelectionChanged"
+                Style="{StaticResource ListBoxStyle_WeaponPreview}" />
+        </DockPanel>
+        <!--  面板2  -->
+        <StackPanel>
+            <ui:UiLabelIcon Content="弹药编辑" />
+            <WrapPanel Margin="5,0,5,0">
+                <RadioButton
+                    x:Name="RadioButton_AmmoModifier_None"
+                    Click="RadioButton_AmmoModifier_None_Click"
+                    Content="默认"
+                    IsChecked="True" />
+                <RadioButton
+                    x:Name="RadioButton_AmmoModifier_AMMO"
+                    Click="RadioButton_AmmoModifier_None_Click"
+                    Content="无限弹药 ★" />
+                <RadioButton
+                    x:Name="RadioButton_AmmoModifier_CLIP"
+                    Click="RadioButton_AmmoModifier_None_Click"
+                    Content="无限弹夹 ★" />
+                <RadioButton
+                    x:Name="RadioButton_AmmoModifier_Both"
+                    Click="RadioButton_AmmoModifier_None_Click"
+                    Content="无限弹药和弹夹 ★" />
+            </WrapPanel>
+
+            <ui:UiLabelIcon Content="高级" />
+            <StackPanel Margin="5,0,5,0">
+                <CheckBox
+                    x:Name="CheckBox_ReloadMult"
+                    Click="CheckBox_ReloadMult_Click"
+                    Content="快速换弹" />
+            </StackPanel>
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_NoRecoil"
+                    Click="Button_NoRecoil_Click"
+                    Content="无后坐力" />
+                <Button
+                    x:Name="CheckBox_NoSpread"
+                    Click="CheckBox_NoSpread_Click"
+                    Content="无子弹扩散" />
+                <Button
+                    x:Name="CheckBox_Range"
+                    Click="CheckBox_Range_Click"
+                    Content="提升射程" />
+            </WrapPanel>
+
+            <ui:UiLabelIcon Content="子弹类型" />
+            <ComboBox x:Name="ComboBox_ImpactExplosion" SelectionChanged="ComboBox_ImpactExplosion_SelectionChanged" />
+            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                注意：如果你修改的武器和NPC使用的武器一样，那么他们的子弹类型也会一并修改
+            </TextBlock>
+
+            <ui:UiLabelIcon Content="快捷功能" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_FillCurrentAmmo"
+                    Click="Button_FillCurrentAmmo_Click"
+                    Content="补满当前武器弹药" />
+                <Button
+                    x:Name="Button_FillAllAmmo"
+                    Click="Button_FillAllAmmo_Click"
+                    Content="补满全部武器弹药" />
+            </WrapPanel>
+
+            <ui:UiLabelIcon Content="刷出武器" />
+            <StackPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_SpawnWeapon"
+                    Click="Button_SpawnWeapon_Click"
+                    Content="刷出线上武器"
+                    DockPanel.Dock="Bottom" />
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    提示：部分武器刷不出来是正常现象，请多次尝试
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <!--  面板3  -->
+        <StackPanel />
+    </UniformGrid>
+
+</UserControl>
