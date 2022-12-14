@@ -3,21 +3,24 @@
 public static class JsonUtil
 {
     /// <summary>
-    /// 反序列化z配置
+    /// 反序列化配置
     /// </summary>
-    private static JsonSerializerOptions Options1 = new JsonSerializerOptions()
+    private static readonly JsonSerializerOptions OptionsDese = new()
     {
         IncludeFields = true,
+        NumberHandling = JsonNumberHandling.AllowNamedFloatingPointLiterals,
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull
     };
 
     /// <summary>
     /// 序列化配置
     /// </summary>
-    private static JsonSerializerOptions Options2 = new JsonSerializerOptions()
+    private static readonly JsonSerializerOptions OptionsSeri = new()
     {
         WriteIndented = true,
         IncludeFields = true,
+        NumberHandling = JsonNumberHandling.AllowNamedFloatingPointLiterals,
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
         Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)
     };
 
@@ -29,7 +32,7 @@ public static class JsonUtil
     /// <returns></returns>
     public static T JsonDese<T>(string result)
     {
-        return JsonSerializer.Deserialize<T>(result, Options1);
+        return JsonSerializer.Deserialize<T>(result, OptionsDese);
     }
 
     /// <summary>
@@ -40,6 +43,6 @@ public static class JsonUtil
     /// <returns></returns>
     public static string JsonSeri<T>(T jsonClass)
     {
-        return JsonSerializer.Serialize(jsonClass, Options2);
+        return JsonSerializer.Serialize(jsonClass, OptionsSeri);
     }
 }

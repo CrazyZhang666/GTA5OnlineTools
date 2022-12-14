@@ -104,7 +104,7 @@ public partial class LoadWindow
             }
             catch (Exception ex)
             {
-                LoadModel.LoadState = $"初始化错误，发生了未知异常！\n\n{ex.Message}\n\n提示：请清空默认配置文件夹全部文件后重试";
+                LoadModel.LoadState = $"初始化错误，发生了未知异常！\n\n{ex.Message}\n\n提示：请关闭杀毒软件并尝试清空默认配置文件夹全部文件后重试";
                 LoggerHelper.Error("初始化错误，发生了未知异常", ex);
 
                 this.Dispatcher.Invoke(() =>

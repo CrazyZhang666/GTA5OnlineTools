@@ -11,7 +11,7 @@
                 <ControlTemplate TargetType="{x:Type ContextMenu}">
                     <Border
                         Name="Border"
-                        MinWidth="200"
+                        MinWidth="150"
                         Margin="0,0,3,3"
                         Background="#FFFFFF"
                         BorderBrush="#ABADB3"

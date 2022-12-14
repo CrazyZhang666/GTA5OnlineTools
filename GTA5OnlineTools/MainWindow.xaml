@@ -41,14 +41,10 @@
                 VerticalAlignment="Center"
                 DockPanel.Dock="Right"
                 Orientation="Horizontal">
-                <TextBlock
-                    Margin="5"
-                    VerticalAlignment="Center"
-                    Text="{Binding MainModel.AppVersion, StringFormat='🕹 版本 : {0}', FallbackValue='🕹 版本 : 9.9.9.9'}" />
-                <TextBlock
-                    Margin="5"
-                    VerticalAlignment="Center"
-                    Text="{Binding MainModel.AppRunTime, StringFormat='⏱ 时间 : {0}', FallbackValue='⏱ 时间 : 99:59:59'}" />
+                <StackPanel Margin="5,0,5,0" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding MainModel.AppRunTime, FallbackValue='00:00:00'}" />
+                    <TextBlock FontSize="10" Text="{Binding MainModel.AppVersion, StringFormat='v{0}', FallbackValue='1.0.0.0'}" />
+                </StackPanel>
                 <TextBlock
                     Margin="5"
                     VerticalAlignment="Center"
@@ -97,30 +93,27 @@
         </DockPanel>
     </ui:UiWindow.TitleContent>
 
-    <Window.Resources>
-        <ContextMenu x:Key="ContextMenu_MainNotifyIcon">
-            <MenuItem
-                x:Name="MenuItem_ShowMainWindow"
-                Click="MenuItem_ShowMainWindow_Click"
-                Header="显示主窗口"
-                Icon="🖥" />
-            <MenuItem
-                x:Name="MenuItem_ExitProcess"
-                Click="MenuItem_ExitProcess_Click"
-                Header="退出程序"
-                Icon="🗑" />
-        </ContextMenu>
-    </Window.Resources>
-
     <Grid>
         <tb:TaskbarIcon
             x:Name="TaskbarIcon_Main"
-            ContextMenu="{StaticResource ContextMenu_MainNotifyIcon}"
             IconSource="/Assets/Images/Favicon.ico"
             MenuActivation="LeftOrRightClick"
             ToolTipText="GTA5线上小助手"
-            TrayMouseDoubleClick="TaskbarIcon_Main_TrayMouseDoubleClick" />
-        <!--  ######################  -->
+            TrayMouseDoubleClick="TaskbarIcon_Main_TrayMouseDoubleClick">
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem
+                        x:Name="MenuItem_ShowMainWindow"
+                        Click="MenuItem_ShowMainWindow_Click"
+                        Header="显示主窗口" />
+                    <MenuItem
+                        x:Name="MenuItem_ExitProcess"
+                        Click="MenuItem_ExitProcess_Click"
+                        Header="退出程序" />
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+        <!--  ################################  -->
         <ContentControl x:Name="ContentControl_Main" FocusVisualStyle="{x:Null}" />
     </Grid>
 
