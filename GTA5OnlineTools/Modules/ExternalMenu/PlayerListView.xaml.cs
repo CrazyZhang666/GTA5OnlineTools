@@ -1,7 +1,7 @@
 ﻿using GTA5OnlineTools.Utils;
-using GTA5OnlineTools.Features.SDK;
-using GTA5OnlineTools.Features.Core;
-using GTA5OnlineTools.Features.Data;
+using GTA5OnlineTools.GTA.SDK;
+using GTA5OnlineTools.GTA.Core;
+using GTA5OnlineTools.GTA.Data;
 
 namespace GTA5OnlineTools.Modules.ExternalMenu;
 
@@ -154,9 +154,9 @@ public partial class PlayerListView : UserControl
 
     private void PlayerInfoAppend(string title = "", string value = "")
     {
-        ListBox_PlayerInfo.Items.Add(new EmojiMenu()
+        ListBox_PlayerInfo.Items.Add(new IconMenu()
         {
-            Emoji = string.Empty,
+            Icon = string.Empty,
             Title = title,
             Value = value
         });

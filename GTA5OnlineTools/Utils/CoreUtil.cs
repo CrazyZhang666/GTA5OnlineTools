@@ -1,5 +1,5 @@
 ﻿using GTA5OnlineTools.Data;
-using GTA5OnlineTools.Features.Core;
+using GTA5OnlineTools.GTA.Core;
 
 namespace GTA5OnlineTools.Utils;
 

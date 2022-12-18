@@ -1,7 +1,7 @@
 ﻿using GTA5OnlineTools.Utils;
-using GTA5OnlineTools.Features.SDK;
-using GTA5OnlineTools.Features.Data;
-using GTA5OnlineTools.Features.Client;
+using GTA5OnlineTools.GTA.SDK;
+using GTA5OnlineTools.GTA.Data;
+using GTA5OnlineTools.GTA.Client;
 
 namespace GTA5OnlineTools.Modules;
 
@@ -22,9 +22,9 @@ public partial class SpawnVehicleWindow
         // 载具列表
         foreach (var item in VehicleData.VehicleClassData)
         {
-            ListBox_VehicleClass.Items.Add(new EmojiMenu()
+            ListBox_VehicleClass.Items.Add(new IconMenu()
             {
-                Emoji = item.Emoji,
+                Icon = item.Emoji,
                 Title = item.Name
             });
         }

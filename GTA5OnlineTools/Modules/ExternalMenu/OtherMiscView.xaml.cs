@@ -1,7 +1,7 @@
 ﻿using GTA5OnlineTools.Utils;
-using GTA5OnlineTools.Features.SDK;
-using GTA5OnlineTools.Features.Data;
-using GTA5OnlineTools.Features.Client;
+using GTA5OnlineTools.GTA.SDK;
+using GTA5OnlineTools.GTA.Data;
+using GTA5OnlineTools.GTA.Client;
 
 namespace GTA5OnlineTools.Modules.ExternalMenu;
 

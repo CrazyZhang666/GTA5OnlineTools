@@ -4,7 +4,7 @@ using GTA5OnlineTools.Views;
 using GTA5OnlineTools.Models;
 using GTA5OnlineTools.Helper;
 using GTA5OnlineTools.Windows;
-using GTA5OnlineTools.Features.Core;
+using GTA5OnlineTools.GTA.Core;
 
 using RestSharp;
 using CommunityToolkit.Mvvm.Input;

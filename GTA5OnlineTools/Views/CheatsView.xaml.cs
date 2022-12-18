@@ -2,7 +2,7 @@
 using GTA5OnlineTools.Models;
 using GTA5OnlineTools.Helper;
 using GTA5OnlineTools.Views.Cheats;
-using GTA5OnlineTools.Features.Core;
+using GTA5OnlineTools.GTA.Core;
 using GTA5OnlineTools.Windows.Cheats;
 
 using CommunityToolkit.Mvvm.Input;

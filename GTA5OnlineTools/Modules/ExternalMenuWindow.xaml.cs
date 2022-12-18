@@ -1,8 +1,8 @@
 ﻿using GTA5OnlineTools.Data;
-using GTA5OnlineTools.Features.SDK;
-using GTA5OnlineTools.Features.Core;
-using GTA5OnlineTools.Features.Client;
-using GTA5OnlineTools.Features.Settings;
+using GTA5OnlineTools.GTA.SDK;
+using GTA5OnlineTools.GTA.Core;
+using GTA5OnlineTools.GTA.Client;
+using GTA5OnlineTools.GTA.Settings;
 using GTA5OnlineTools.Modules.ExternalMenu;
 
 using CommunityToolkit.Mvvm.Input;
@@ -127,18 +127,18 @@ public partial class ExternalMenuWindow
     /// </summary>
     private void CreateMenuBar()
     {
-        MenuBars.Add(new MenuBar() { Icon = "🍎", Title = "自身属性", NameSpace = "SelfStateView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍐", Title = "世界功能", NameSpace = "WorldFunctionView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍋", Title = "线上选项", NameSpace = "OnlineOptionView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍇", Title = "线上载具", NameSpace = "SpawnVehicleView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍓", Title = "线上武器", NameSpace = "SpawnWeaponView" });
-        MenuBars.Add(new MenuBar() { Icon = "🥭", Title = "任务帮手", NameSpace = "JobHelperView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍈", Title = "外部ESP", NameSpace = "ExternalOverlayView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍉", Title = "玩家列表", NameSpace = "PlayerListView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍑", Title = "战局聊天", NameSpace = "SessionChatView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍍", Title = "其他杂项", NameSpace = "OtherMiscView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "自身属性", NameSpace = "SelfStateView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "世界功能", NameSpace = "WorldFunctionView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "线上选项", NameSpace = "OnlineOptionView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "线上载具", NameSpace = "SpawnVehicleView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "线上武器", NameSpace = "SpawnWeaponView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "任务帮手", NameSpace = "JobHelperView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "外部ESP", NameSpace = "ExternalOverlayView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "玩家列表", NameSpace = "PlayerListView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "战局聊天", NameSpace = "SessionChatView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "其他杂项", NameSpace = "OtherMiscView" });
 
-        MenuBars.Add(new MenuBar() { Icon = "💌", Title = "README", NameSpace = "ReadMeView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "README", NameSpace = "ReadMeView" });
     }
 
     /// <summary>

@@ -69,9 +69,9 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock
                             Margin="8,0,5,0"
-                            VerticalAlignment="Center"
                             FontSize="14"
-                            Text="{Binding Emoji}" />
+                            Style="{StaticResource TextBlockStyle_IconFontVerCen}"
+                            Text="{Binding Icon}" />
                         <TextBlock VerticalAlignment="Center" Text="{Binding Title}" />
                     </StackPanel>
                 </DataTemplate>

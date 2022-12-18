@@ -1,7 +1,7 @@
 ﻿using GTA5OnlineTools.Utils;
 using GTA5OnlineTools.Helper;
-using GTA5OnlineTools.Features.Core;
-using GTA5OnlineTools.Features.Client;
+using GTA5OnlineTools.GTA.Core;
+using GTA5OnlineTools.GTA.Client;
 
 namespace GTA5OnlineTools.Windows.Cheats;
 

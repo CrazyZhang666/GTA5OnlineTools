@@ -14,7 +14,7 @@ public static class LoggerHelper
 
         var logfile = new FileTarget("logfile")
         {
-            FileName = "C:/ProgramData/GTA5OnlineTools/Log/InfoLog/${shortdate}.log",
+            FileName = "C:/ProgramData/GTA5OnlineTools/Log/NLog/${shortdate}.log",
             Layout = "${longdate} ${level:upperCase=true} ${message} ${exception:format=message}",
             MaxArchiveFiles = 24,
             ArchiveAboveSize = 1024 * 1024,

@@ -1,6 +1,6 @@
 ﻿using GTA5OnlineTools.Utils;
 using GTA5OnlineTools.Helper;
-using GTA5OnlineTools.Features.SDK;
+using GTA5OnlineTools.GTA.SDK;
 
 namespace GTA5OnlineTools.Modules;
 

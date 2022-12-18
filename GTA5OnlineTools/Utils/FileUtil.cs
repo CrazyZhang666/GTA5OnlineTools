@@ -7,9 +7,9 @@ public static class FileUtil
     /// </summary>
     public const string Default_Path = @"C:\ProgramData\GTA5OnlineTools\";
 
-    public const string Resource_Path = "GTA5OnlineTools.Features.Files.";
-    public const string Resource_Kiddion_Path = "GTA5OnlineTools.Features.Files.Kiddion.";
-    public const string Resource_Inject_Path = "GTA5OnlineTools.Features.Files.Inject.";
+    public const string Resource_Path = "GTA5OnlineTools.GTA.Files.";
+    public const string Resource_Kiddion_Path = "GTA5OnlineTools.GTA.Files.Kiddion.";
+    public const string Resource_Inject_Path = "GTA5OnlineTools.GTA.Files.Inject.";
 
     public static string D_Kiddion_Path = Default_Path + @"Kiddion\";
     public static string D_Cache_Path = Default_Path + @"Cache\";

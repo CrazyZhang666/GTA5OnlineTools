@@ -1,8 +1,8 @@
 ﻿using GTA5OnlineTools.Utils;
 using GTA5OnlineTools.Helper;
-using GTA5OnlineTools.Features.SDK;
-using GTA5OnlineTools.Features.Data;
-using GTA5OnlineTools.Features.Client;
+using GTA5OnlineTools.GTA.SDK;
+using GTA5OnlineTools.GTA.Data;
+using GTA5OnlineTools.GTA.Client;
 
 namespace GTA5OnlineTools.Modules.ExternalMenu;
 
@@ -50,9 +50,9 @@ public partial class WorldFunctionView : UserControl
 
         foreach (var item in TeleportData.TeleportClassData)
         {
-            ComboBox_TeleportClass.Items.Add(new EmojiMenu()
+            ComboBox_TeleportClass.Items.Add(new IconMenu()
             {
-                Emoji = item.Emoji,
+                Icon = item.Emoji,
                 Title = item.Name
             });
         }

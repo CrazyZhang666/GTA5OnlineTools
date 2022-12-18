@@ -22,21 +22,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Features\Files\BincoHax.exe" />
-    <EmbeddedResource Include="Features\Files\GTAHax.exe" />
-    <EmbeddedResource Include="Features\Files\Inject\YimMenu.dll" />
-    <EmbeddedResource Include="Features\Files\Kiddion\config.json" />
-    <EmbeddedResource Include="Features\Files\Kiddion\key87\config.json" />
-    <EmbeddedResource Include="Features\Files\Kiddion\Kiddion.exe" />
-    <EmbeddedResource Include="Features\Files\Kiddion\KiddionChs.dll" />
-    <EmbeddedResource Include="Features\Files\Kiddion\scripts\Readme.api" />
-    <EmbeddedResource Include="Features\Files\Kiddion\teleports.json" />
-    <EmbeddedResource Include="Features\Files\Kiddion\themes.json" />
-    <EmbeddedResource Include="Features\Files\Kiddion\vehicles.json" />
-    <EmbeddedResource Include="Features\Files\LSCHax.exe" />
-    <EmbeddedResource Include="Features\Files\Notepad2.exe" />
-    <EmbeddedResource Include="Features\Files\Other\SGTA50000" />
-    <EmbeddedResource Include="Features\Files\stat.txt" />
+    <EmbeddedResource Include="GTA\Files\BincoHax.exe" />
+    <EmbeddedResource Include="GTA\Files\GTAHax.exe" />
+    <EmbeddedResource Include="GTA\Files\Inject\YimMenu.dll" />
+    <EmbeddedResource Include="GTA\Files\Kiddion\config.json" />
+    <EmbeddedResource Include="GTA\Files\Kiddion\key87\config.json" />
+    <EmbeddedResource Include="GTA\Files\Kiddion\Kiddion.exe" />
+    <EmbeddedResource Include="GTA\Files\Kiddion\KiddionChs.dll" />
+    <EmbeddedResource Include="GTA\Files\Kiddion\scripts\Readme.api" />
+    <EmbeddedResource Include="GTA\Files\Kiddion\teleports.json" />
+    <EmbeddedResource Include="GTA\Files\Kiddion\themes.json" />
+    <EmbeddedResource Include="GTA\Files\Kiddion\vehicles.json" />
+    <EmbeddedResource Include="GTA\Files\LSCHax.exe" />
+    <EmbeddedResource Include="GTA\Files\Notepad2.exe" />
+    <EmbeddedResource Include="GTA\Files\Other\SGTA50000" />
+    <EmbeddedResource Include="GTA\Files\stat.txt" />
   </ItemGroup>
 
   <ItemGroup>
