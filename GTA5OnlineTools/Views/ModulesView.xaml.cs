@@ -1,6 +1,6 @@
-﻿using GTA5OnlineTools.Modules;
-using GTA5OnlineTools.Utils;
+﻿using GTA5OnlineTools.Utils;
 using GTA5OnlineTools.Helper;
+using GTA5OnlineTools.Modules;
 
 using CommunityToolkit.Mvvm.Input;
 
@@ -20,8 +20,6 @@ public partial class ModulesView : UserControl
     private CasinoHackWindow CasinoHackWindow = null;
     private SpeedMeterWindow SpeedMeterWindow = null;
 
-    public RelayCommand<string> ModelsClickCommand { get; private set; }
-
     /// <summary>
     /// 关闭全部第三方模块窗口委托
     /// </summary>
@@ -31,16 +29,19 @@ public partial class ModulesView : UserControl
     {
         InitializeComponent();
         this.DataContext = this;
-
-        ModelsClickCommand = new(ModelsClick);
+        MainWindow.WindowClosingEvent += MainWindow_WindowClosingEvent;
 
         ActionCloseAllModulesWindow = CloseAllModulesWindow;
     }
 
+    private void MainWindow_WindowClosingEvent()
+    {
+
+    }
+
+    [RelayCommand]
     private void ModelsClick(string modelName)
     {
-        AudioUtil.PlayClickSound();
-
         if (ProcessUtil.IsGTA5Run())
         {
             switch (modelName)

@@ -31,7 +31,7 @@ public partial class CasinoView : UserControl
     #region 赌场抢劫 - 分红数据
     private void Button_Read_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         // 赌场抢劫玩家分红比例
         TextBox_Casino_Player1.Text = Hacks.ReadGA<int>(1966534 + 1497 + 736 + 92 + 1).ToString();
@@ -67,7 +67,7 @@ public partial class CasinoView : UserControl
 
     private void Button_Write_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         try
         {
@@ -165,7 +165,7 @@ public partial class CasinoView : UserControl
 
     private void Button_BuildGTAHax_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         TextBox_PreviewGTAHax.Clear();
         TextBox_PreviewGTAHax.AppendText("INT32\n");
@@ -414,7 +414,7 @@ public partial class CasinoView : UserControl
 
     private void Button_ImportGTAHax_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         if (!ProcessUtil.IsAppRun("GTAHax"))
             ProcessUtil.OpenProcess("GTAHax", false);

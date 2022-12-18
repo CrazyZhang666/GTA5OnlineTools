@@ -24,7 +24,7 @@ public partial class OnlineOptionView : UserControl
 
     private void Button_Sessions_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         var btnContent = (e.OriginalSource as Button).Content.ToString();
         var index = MiscData.Sessions.FindIndex(t => t.Name == btnContent);
@@ -34,28 +34,28 @@ public partial class OnlineOptionView : UserControl
 
     private void Button_EmptySession_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Online.EmptySession();
     }
 
     private void Button_Disconnect_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Online.Disconnect();
     }
 
     private void Button_StopCutscene_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Online.StopCutscene();
     }
 
     private void Button_RPxN_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         var btnContent = (e.OriginalSource as Button).Content.ToString();
         var index = MiscData.RPxNs.FindIndex(t => t.Name == btnContent);
@@ -65,7 +65,7 @@ public partial class OnlineOptionView : UserControl
 
     private void Button_REPxN_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         var btnContent = (e.OriginalSource as Button).Content.ToString();
         var index = MiscData.REPxNs.FindIndex(t => t.Name == btnContent);
@@ -126,7 +126,7 @@ public partial class OnlineOptionView : UserControl
 
     private void Button_Blips_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         var btnContent = (e.OriginalSource as Button).Content.ToString();
 
@@ -139,7 +139,7 @@ public partial class OnlineOptionView : UserControl
 
     private void Button_MerryweatherServices_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         var btnContent = (e.OriginalSource as Button).Content.ToString();
 

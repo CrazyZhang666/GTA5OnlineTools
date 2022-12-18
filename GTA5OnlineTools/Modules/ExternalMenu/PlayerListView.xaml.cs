@@ -27,7 +27,7 @@ public partial class PlayerListView : UserControl
 
     private void Button_RefreshPlayerList_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         lock (this)
         {
@@ -140,7 +140,7 @@ public partial class PlayerListView : UserControl
 
     private void Button_TeleportSelectedPlayer_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         if (ListBox_NetPlayer.SelectedItem != null)
         {

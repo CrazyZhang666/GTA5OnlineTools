@@ -72,7 +72,7 @@ public partial class GTAHaxStatWindow
 
     private void Button_ImportGTAHax_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         try
         {

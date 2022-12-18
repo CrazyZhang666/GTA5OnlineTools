@@ -31,7 +31,7 @@ public partial class KiddionChsWindow
 
     private void Button_GetKiddionUI_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         lock (this)
         {
@@ -74,7 +74,7 @@ public partial class KiddionChsWindow
 
     private void Button_TranslateSelected_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         var value = TextBox_SelectedItem_Vaule.Text.Trim();
         if (!string.IsNullOrEmpty(value))
@@ -91,7 +91,7 @@ public partial class KiddionChsWindow
 
     private async void Button_YouDaoTranslateSelected_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         var name = TextBox_SelectedItem_Name.Text.Trim();
         if (!string.IsNullOrEmpty(name))
@@ -108,7 +108,7 @@ public partial class KiddionChsWindow
 
     private void Button_TranslateBuild_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         TextBox_TranslateBuild.Clear();
 

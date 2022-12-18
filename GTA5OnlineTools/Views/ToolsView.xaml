@@ -10,93 +10,164 @@
     Style="{StaticResource UserControlStyle_Loaded}"
     mc:Ignorable="d">
 
-    <ScrollViewer Margin="5">
-        <StackPanel>
-            <WrapPanel>
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="CurrentDirectory"
-                    Content="程序当前目录"
-                    Icon="&#xec17;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="ReleaseDirectory"
-                    Content="程序释放目录"
-                    Icon="&#xec17;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="InitCPDPath"
-                    Content="初始化配置文件夹"
-                    Icon="&#xe619;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="RestartApp"
-                    Content="重启程序"
-                    Icon="&#xe653;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="BaseInjector"
-                    Content="基础DLL注入器"
-                    Icon="&#xe63d;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="OpenUpdateWindow"
-                    Content="打开更新窗口"
-                    Icon="&#xe652;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="RefreshDNSCache"
-                    Content="刷新DNS缓存"
-                    Icon="&#xe62c;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="EditHosts"
-                    Content="编辑Hosts文件"
-                    Icon="&#xe675;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-            </WrapPanel>
-            <!--  ##################################################  -->
-            <WrapPanel>
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="ReNameAppCN"
-                    Content="重命名小助手中文"
-                    Icon="&#xe667;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="ReNameAppEN"
-                    Content="重命名小助手英文"
-                    Icon="&#xe667;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="StoryModeArchive"
-                    Content="替换故事模式完美存档"
-                    Icon="&#xe64d;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="MinimizeToTray"
-                    Content="最小化程序到系统托盘"
-                    Icon="&#xe60e;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-                <ui:UiButtonIcon
-                    Command="{Binding ToolsButtonClickCommand}"
-                    CommandParameter="ManualGC"
-                    Content="GC垃圾回收"
-                    Icon="&#xe651;"
-                    Style="{StaticResource ButtonStyle_Tools}" />
-            </WrapPanel>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!--  主体功能区  -->
+        <ScrollViewer Margin="5">
+            <StackPanel>
+                <WrapPanel>
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="CurrentDirectory"
+                        Content="程序当前目录"
+                        Icon="&#xec17;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="ReleaseDirectory"
+                        Content="程序释放目录"
+                        Icon="&#xec17;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="InitCPDPath"
+                        Content="初始化配置文件夹"
+                        Icon="&#xe619;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="RestartApp"
+                        Content="重启程序"
+                        Icon="&#xe653;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="BaseInjector"
+                        Content="基础DLL注入器"
+                        Icon="&#xe63d;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="OpenUpdateWindow"
+                        Content="打开更新窗口"
+                        Icon="&#xe652;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="RefreshDNSCache"
+                        Content="刷新DNS缓存"
+                        Icon="&#xe62c;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="EditHosts"
+                        Content="编辑Hosts文件"
+                        Icon="&#xe675;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                </WrapPanel>
+                <!--  ##################################################  -->
+                <WrapPanel>
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="ReNameAppCN"
+                        Content="重命名小助手中文"
+                        Icon="&#xe667;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="ReNameAppEN"
+                        Content="重命名小助手英文"
+                        Icon="&#xe667;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="StoryModeArchive"
+                        Content="替换故事模式完美存档"
+                        Icon="&#xe64d;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="MinimizeToTray"
+                        Content="最小化程序到系统托盘"
+                        Icon="&#xe60e;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                    <ui:UiButtonIcon
+                        Command="{Binding ToolsButtonClickCommand}"
+                        CommandParameter="ManualGC"
+                        Content="GC垃圾回收"
+                        Icon="&#xe651;"
+                        Style="{StaticResource ButtonStyle_Tools}" />
+                </WrapPanel>
 
+            </StackPanel>
+        </ScrollViewer>
+        <!--  次要功能区  -->
+        <StackPanel
+            Grid.Row="1"
+            Margin="5"
+            HorizontalAlignment="Right"
+            Orientation="Horizontal">
+            <UniformGrid Rows="2">
+                <TextBlock
+                    Margin="5"
+                    FontWeight="Black"
+                    Text="Discord加速" />
+                <TextBlock Margin="5">
+                    <Hyperlink
+                        NavigateUri="https://steampp.net"
+                        RequestNavigate="Hyperlink_RequestNavigate"
+                        ToolTip="https://steampp.net">
+                        Steam++
+                    </Hyperlink>
+                </TextBlock>
+            </UniformGrid>
+            <UniformGrid Rows="2">
+                <TextBlock
+                    Margin="5"
+                    FontWeight="Black"
+                    Text="Discord聊天" />
+                <TextBlock Margin="5">
+                    <Hyperlink
+                        NavigateUri="https://discord.com"
+                        RequestNavigate="Hyperlink_RequestNavigate"
+                        ToolTip="https://discord.com">
+                        Discord
+                    </Hyperlink>
+                </TextBlock>
+            </UniformGrid>
+            <UniformGrid Rows="2">
+                <TextBlock
+                    Margin="5"
+                    FontWeight="Black"
+                    Text="Snipaste截图" />
+                <TextBlock Margin="5">
+                    <Hyperlink
+                        NavigateUri="https://zh.snipaste.com"
+                        RequestNavigate="Hyperlink_RequestNavigate"
+                        ToolTip="https://zh.snipaste.com">
+                        Snipaste
+                    </Hyperlink>
+                </TextBlock>
+            </UniformGrid>
+            <UniformGrid Rows="2">
+                <TextBlock
+                    Margin="5"
+                    FontWeight="Black"
+                    Text="免费加速器" />
+                <TextBlock Margin="5">
+                    <Hyperlink
+                        NavigateUri="https://www.nn.com"
+                        RequestNavigate="Hyperlink_RequestNavigate"
+                        ToolTip="https://www.nn.com">
+                        NN游戏加速器
+                    </Hyperlink>
+                </TextBlock>
+            </UniformGrid>
         </StackPanel>
-    </ScrollViewer>
+
+    </Grid>
 
 </UserControl>

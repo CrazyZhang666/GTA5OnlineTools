@@ -43,7 +43,7 @@ public partial class SpeedMeterWindow
 
     private void Button_RunDraw_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Memory.SetForegroundWindow();
 
@@ -62,7 +62,7 @@ public partial class SpeedMeterWindow
 
     private void Button_StopDraw_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         if (DrawWindow != null)
         {

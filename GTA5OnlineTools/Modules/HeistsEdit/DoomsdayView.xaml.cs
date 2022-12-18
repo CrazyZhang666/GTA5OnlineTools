@@ -17,7 +17,7 @@ public partial class DoomsdayView : UserControl
     #region 末日抢劫 - 分红数据
     private void Button_Read_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         // 末日抢劫玩家分红比例
         TextBox_Doomsday_Player1.Text = Hacks.ReadGA<int>(1962546 + 812 + 50 + 1).ToString();
@@ -32,7 +32,7 @@ public partial class DoomsdayView : UserControl
 
     private void Button_Write_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         try
         {

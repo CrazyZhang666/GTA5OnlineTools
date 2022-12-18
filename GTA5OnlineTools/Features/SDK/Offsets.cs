@@ -30,22 +30,22 @@ public static class Offsets
 
     public const int InitSessionState = 1574589;
     public const int InitSessionCache = 1574589 + 2;
-    public const int InitSessionType = 1575015;
+    public const int InitSessionType = 1575017;
 
     ////////////////////////////////////////////////////////////////////
 
     public const int oMaxPeds = 256;
 
     // Vehicle Menus Globals
-    public const int oVMCreate = 2725439;       // Create any vehicle.
-    public const int oVMYCar = 2815059;         // Get my car.
-    public const int oVGETIn = 2671449;         // Spawn into vehicle.
-    public const int oVMSlots = 1585857;        // Get vehicle slots.
+    public const int oVMCreate = 2694560;       // Create any vehicle.
+    public const int oVMYCar = 2793044;         // Get my car.
+    public const int oVGETIn = 2639783;         // Spawn into vehicle.
+    public const int oVMSlots = 1586468;        // Get vehicle slots.
 
     // Some Player / Network times associated Globals
-    public const int oNETTimeHelp = 2703735;
-    public const int oPlayerIDHelp = 2689235;
-    public const int oPlayerGA = 2703735;
+    public const int oNETTimeHelp = 2672505;
+    public const int oPlayerIDHelp = 2657589;
+    public const int oPlayerGA = 2672505;
 
     public const int SpawnPersonalVehicleIndex1 = oVMYCar + 965;
     public const int SpawnPersonalVehicleIndex2 = oVMYCar + 962;

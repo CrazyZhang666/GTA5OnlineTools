@@ -54,7 +54,7 @@ public partial class InjectorWindow
     /// <param name="e"></param>
     private void Button_Inject_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         if (string.IsNullOrEmpty(InjectInfo.DLLPath))
         {
@@ -91,7 +91,7 @@ public partial class InjectorWindow
 
     private void Button_Refush_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         lock (this)
         {

@@ -16,7 +16,7 @@ public partial class ContractView : UserControl
 
     private void Button_Read_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         // hash:-920277662
         TextBox_FIXER_Value.Text = Hacks.ReadGA<int>(262145 + 31735).ToString();
@@ -32,7 +32,7 @@ public partial class ContractView : UserControl
 
     private void Button_Write_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         try
         {

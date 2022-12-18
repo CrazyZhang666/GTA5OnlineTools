@@ -56,11 +56,11 @@ public partial class HeistsEditWindow
     /// </summary>
     private void CreateMenuBar()
     {
-        MenuBars.Add(new MenuBar() { Emoji = "🍎", Title = "事所合约", NameSpace = "ContractView" });
-        MenuBars.Add(new MenuBar() { Emoji = "🍐", Title = "佩里克岛", NameSpace = "PericoView" });
-        MenuBars.Add(new MenuBar() { Emoji = "🍋", Title = "赌场抢劫", NameSpace = "CasinoView" });
-        MenuBars.Add(new MenuBar() { Emoji = "🍇", Title = "末日抢劫", NameSpace = "DoomsdayView" });
-        MenuBars.Add(new MenuBar() { Emoji = "🍓", Title = "公寓抢劫", NameSpace = "ApartmentView" });
+        MenuBars.Add(new MenuBar() { Icon = "🍎", Title = "事所合约", NameSpace = "ContractView" });
+        MenuBars.Add(new MenuBar() { Icon = "🍐", Title = "佩里克岛", NameSpace = "PericoView" });
+        MenuBars.Add(new MenuBar() { Icon = "🍋", Title = "赌场抢劫", NameSpace = "CasinoView" });
+        MenuBars.Add(new MenuBar() { Icon = "🍇", Title = "末日抢劫", NameSpace = "DoomsdayView" });
+        MenuBars.Add(new MenuBar() { Icon = "🍓", Title = "公寓抢劫", NameSpace = "ApartmentView" });
     }
 
     /// <summary>

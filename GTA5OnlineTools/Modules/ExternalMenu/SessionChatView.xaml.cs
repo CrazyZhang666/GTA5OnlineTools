@@ -34,7 +34,7 @@ public partial class SessionChatView : UserControl
 
     private void Button_Translate_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         try
         {
@@ -69,7 +69,7 @@ public partial class SessionChatView : UserControl
 
     private void Button_SendTextToGTA5_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         try
         {
@@ -180,7 +180,7 @@ public partial class SessionChatView : UserControl
 
     private void Button_ReadPlayerName_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         long pCPlayerInfo = Globals.GetCPlayerInfo();
         TextBox_PlayerName.Text = Memory.ReadString(pCPlayerInfo + Offsets.CPed_CPlayerInfo_Name, 64);
@@ -193,7 +193,7 @@ public partial class SessionChatView : UserControl
 
     private void Button_WritePlayerName_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         try
         {

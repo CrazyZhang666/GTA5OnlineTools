@@ -33,7 +33,7 @@ public partial class OtherMiscView : UserControl
 
     private void Button_RefushPersonalVehicleList_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         lock (this)
         {
@@ -73,7 +73,7 @@ public partial class OtherMiscView : UserControl
 
     private void Button_SpawnPersonalVehicle_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         var index = ListBox_PersonalVehicle.SelectedIndex;
         if (index != -1)
@@ -87,7 +87,7 @@ public partial class OtherMiscView : UserControl
 
     private void Button_GetInOnlinePV_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Online.GetInOnlinePV();
     }
@@ -96,7 +96,7 @@ public partial class OtherMiscView : UserControl
 
     private void Button_ModelChange_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         var index = ListBox_PedModel.SelectedIndex;
         if (index != -1)

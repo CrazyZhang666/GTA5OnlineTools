@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="GTA5OnlineTools.Views.Cheats.YimMenuPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="YimMenuPage"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="2">
+        <RichTextBox Margin="5,5,2.5,5" Style="{StaticResource RichTextBoxStyle_Page}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    简介
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    一款GitHub开源项目Yimura大佬制作的免费GTA5注入式菜单，旨在防止崩溃（目前并非全部）并改善整体体验。
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    项目地址：https://github.com/YimMenu/YimMenu
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    发布版本：https://github.com/YimMenu/YimMenu/releases/tag/nightly
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    配置文件
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    默认配置文件路径：C:\Users\用户名\AppData\Roaming\BigBaseV2<LineBreak />
+                    如果你不小心修改了某些设置导致Yim无法正常使用，请先卸载注入，到这个文件夹清理里面内容，然后重新注入Yim即可恢复默认设置</Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    注意事项
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    最新版本YimMenu文件使用了游戏缓存来获取载具、Ped等数据，第一次使用（若游戏更新同理）请先清空BigBaseV2目录的旧版配置文件，然后进入线上模式后注入YimMenu，让其更新缓存，否则可能会导致游戏崩溃
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    如果发生崩溃问题，请清空配置目录全部文件后重新注入，然后按照提示在线上模式更新游戏缓存
+                </Paragraph>
+
+            </FlowDocument>
+        </RichTextBox>
+        <!--  ##########  -->
+        <RichTextBox Margin="2.5,5,5,5" Style="{StaticResource RichTextBoxStyle_Page}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    按钮
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    注入成功了，按Ins键显示/隐藏菜单，鼠标点击操作
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    如果鼠标卡在屏幕中心不动，请在游戏中按ESC-》设置-》键盘/鼠标-》鼠标输入方法，改成原始输入即可
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    提示
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    建议大家进入故事模式后再注入游戏，不要直接在线上模式注入，注入成功后再进入线上模式
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    如果要使用防护功能，建议大家在线下开启后再进入线上模式，直接在线上开启防护可能会导致防护失效
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    注入成功后，会出现一个YimMenu的控制台窗口，这个不要关闭，否则游戏会跟着一起关闭，如果要卸载注入，点击菜单左上角的卸载按钮即可
+                </Paragraph>
+
+            </FlowDocument>
+        </RichTextBox>
+    </UniformGrid>
+
+</Page>

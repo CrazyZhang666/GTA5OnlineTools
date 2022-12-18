@@ -1,7 +1,7 @@
-﻿using GTA5OnlineTools.Models;
-using GTA5OnlineTools.Views.Cheats;
-using GTA5OnlineTools.Utils;
+﻿using GTA5OnlineTools.Utils;
+using GTA5OnlineTools.Models;
 using GTA5OnlineTools.Helper;
+using GTA5OnlineTools.Views.Cheats;
 using GTA5OnlineTools.Features.Core;
 using GTA5OnlineTools.Windows.Cheats;
 
@@ -15,29 +15,15 @@ namespace GTA5OnlineTools.Views;
 public partial class CheatsView : UserControl
 {
     /// <summary>
-    /// Cheats数据模型
+    /// Cheats 数据模型绑定
     /// </summary>
     public CheatsModel CheatsModel { get; set; } = new();
-
-    /// <summary>
-    /// 第三方辅助功能开关点击命令
-    /// </summary>
-    public RelayCommand<string> CheatsClickCommand { get; private set; }
-    /// <summary>
-    /// 第三方辅助使用说明点击命令
-    /// </summary>
-    public RelayCommand<string> ReadMeClickCommand { get; private set; }
-    /// <summary>
-    /// 第三方辅助额外功能点击命令
-    /// </summary>
-    public RelayCommand<string> ExtraClickCommand { get; private set; }
-
-    public RelayCommand FrameHideClickCommand { get; private set; }
 
     private readonly KiddionPage KiddionPage = new();
     private readonly GTAHaxPage GTAHaxPage = new();
     private readonly BincoHaxPage BincoHaxPage = new();
     private readonly LSCHaxPage LSCHaxPage = new();
+    private readonly YimMenuPage YimMenuPage = new();
 
     private GTAHaxStatWindow GTAHaxWindow = null;
     private KiddionChsWindow KiddionChsWindow = null;
@@ -47,18 +33,18 @@ public partial class CheatsView : UserControl
     {
         InitializeComponent();
         this.DataContext = this;
-
-        CheatsClickCommand = new(CheatsClick);
-        ReadMeClickCommand = new(ReadMeClick);
-        ExtraClickCommand = new(ExtraClick);
-
-        FrameHideClickCommand = new(FrameHideClick);
+        MainWindow.WindowClosingEvent += MainWindow_WindowClosingEvent;
 
         new Thread(CheckCheatsIsRun)
         {
             Name = "CheckCheatsIsRun",
             IsBackground = true
         }.Start();
+    }
+
+    private void MainWindow_WindowClosingEvent()
+    {
+
     }
 
     /// <summary>
@@ -85,9 +71,10 @@ public partial class CheatsView : UserControl
     /// 点击第三方辅助开关按钮
     /// </summary>
     /// <param name="hackName"></param>
+    [RelayCommand]
     private void CheatsClick(string hackName)
     {
-        AudioUtil.PlayClickSound();
+
 
         if (ProcessUtil.IsGTA5Run())
         {
@@ -105,6 +92,9 @@ public partial class CheatsView : UserControl
                 case "LSCHax":
                     LSCHaxClick();
                     break;
+                case "YimMenu":
+                    YimMenuClick();
+                    break;
             }
         }
         else
@@ -117,6 +107,7 @@ public partial class CheatsView : UserControl
     /// 点击第三方辅助使用说明
     /// </summary>
     /// <param name="pageName"></param>
+    [RelayCommand]
     private void ReadMeClick(string pageName)
     {
         switch (pageName)
@@ -137,6 +128,10 @@ public partial class CheatsView : UserControl
                 CheatsModel.FrameState = Visibility.Visible;
                 CheatsModel.FrameContent = LSCHaxPage;
                 break;
+            case "YimMenuPage":
+                CheatsModel.FrameState = Visibility.Visible;
+                CheatsModel.FrameContent = YimMenuPage;
+                break;
         }
     }
 
@@ -144,9 +139,10 @@ public partial class CheatsView : UserControl
     /// 点击第三方辅助配置文件路径
     /// </summary>
     /// <param name="funcName"></param>
+    [RelayCommand]
     private void ExtraClick(string funcName)
     {
-        AudioUtil.PlayClickSound();
+
 
         switch (funcName)
         {
@@ -193,6 +189,12 @@ public partial class CheatsView : UserControl
             case "DefaultGTAHaxStat":
                 DefaultGTAHaxStatClick();
                 break;
+            case "YimMenuDirectory":
+                YimMenuDirectoryClick();
+                break;
+            case "ResetYimMenuConfig":
+                ResetYimMenuConfigClick();
+                break;
             #endregion
             ////////////////////////////////////
             default:
@@ -203,6 +205,7 @@ public partial class CheatsView : UserControl
     /// <summary>
     /// 使用说明隐藏按钮点击事件
     /// </summary>
+    [RelayCommand]
     private void FrameHideClick()
     {
         CheatsModel.FrameState = Visibility.Collapsed;
@@ -291,6 +294,40 @@ public partial class CheatsView : UserControl
             ProcessUtil.OpenProcess("LSCHax", false);
         else
             ProcessUtil.CloseProcess("LSCHax");
+    }
+
+    /// <summary>
+    /// YimMenu点击事件
+    /// </summary>
+    private void YimMenuClick()
+    {
+        var dllPath = FileUtil.D_Inject_Path + "YimMenu.dll";
+
+        if (!File.Exists(dllPath))
+        {
+            NotifierHelper.Show(NotifierType.Error, "发生异常，YimMenu菜单DLL文件不存在");
+            return;
+        }
+
+        foreach (ProcessModule module in Process.GetProcessById(Memory.GTA5ProId).Modules)
+        {
+            if (module.FileName == dllPath)
+            {
+                NotifierHelper.Show(NotifierType.Warning, "该DLL已经被注入过了，请勿重复注入");
+                return;
+            }
+        }
+
+        try
+        {
+            BaseInjector.DLLInjector(Memory.GTA5ProId, dllPath);
+            Memory.SetForegroundWindow();
+            NotifierHelper.Show(NotifierType.Success, "YimMenu注入成功，请前往游戏查看");
+        }
+        catch (Exception ex)
+        {
+            NotifierHelper.ShowException(ex);
+        }
     }
     #endregion
 
@@ -498,6 +535,41 @@ public partial class CheatsView : UserControl
                 GTAHaxWindow = new GTAHaxStatWindow();
                 GTAHaxWindow.Show();
             }
+        }
+    }
+
+    /// <summary>
+    /// YimMenu配置目录
+    /// </summary>
+    private void YimMenuDirectoryClick()
+    {
+        ProcessUtil.OpenPath(FileUtil.YimMenu_Path);
+    }
+
+    /// <summary>
+    /// 重置YimMenu配置文件
+    /// </summary>
+    private void ResetYimMenuConfigClick()
+    {
+        try
+        {
+            if (FileUtil.IsOccupied(FileUtil.D_Inject_Path + "YimMenu.dll"))
+            {
+                NotifierHelper.Show(NotifierType.Warning, "请先卸载YimMenu菜单后再执行操作");
+                return;
+            }
+
+            if (MessageBox.Show($"你确定要重置YimMenu配置文件吗？\n\n将清空「{FileUtil.YimMenu_Path}」文件夹，如有重要文件请提前备份",
+                "重置YimMenu配置文件", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                FileUtil.DelectDir(FileUtil.YimMenu_Path);
+
+                NotifierHelper.Show(NotifierType.Success, "重置YimMenu配置文件成功");
+            }
+        }
+        catch (Exception ex)
+        {
+            NotifierHelper.ShowException(ex);
         }
     }
     #endregion

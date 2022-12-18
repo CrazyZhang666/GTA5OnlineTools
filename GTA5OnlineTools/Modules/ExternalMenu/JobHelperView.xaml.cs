@@ -1,5 +1,4 @@
-﻿using GTA5OnlineTools.Utils;
-using GTA5OnlineTools.Features.SDK;
+﻿using GTA5OnlineTools.Features.SDK;
 using GTA5OnlineTools.Features.Client;
 
 namespace GTA5OnlineTools.Modules.ExternalMenu;
@@ -48,8 +47,6 @@ public partial class JobHelperView : UserControl
 
     private void Button_CEOCargos_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
-
         var btnContent = (e.OriginalSource as Button).Content.ToString();
 
         int index = MiscData.CEOCargos.FindIndex(t => t.Name == btnContent);
@@ -62,8 +59,6 @@ public partial class JobHelperView : UserControl
 
     private void Button_CEOSpecialCargos_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
-
         var btnContent = (e.OriginalSource as Button).Content.ToString();
 
         int index = MiscData.CEOSpecialCargos.FindIndex(t => t.Name == btnContent);

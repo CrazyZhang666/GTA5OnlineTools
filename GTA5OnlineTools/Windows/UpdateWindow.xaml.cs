@@ -26,9 +26,6 @@ public partial class UpdateWindow
     {
         try
         {
-            if (CoreUtil.ServerVersion != CoreUtil.ClientVersion)
-                AudioUtil.SP_GTA5_Email.Play();
-
             TextBlock_LatestUpdateInfo.Text = $"{CoreUtil.UpdateInfo.Latest.Date}\n{CoreUtil.UpdateInfo.Latest.Change}";
 
             if (CoreUtil.UpdateInfo != null)
@@ -81,7 +78,7 @@ public partial class UpdateWindow
     /// <param name="e"></param>
     private void Button_Update_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+
 
         Button_Update.IsEnabled = false;
         Button_CancelUpdate.IsEnabled = true;
@@ -115,7 +112,7 @@ public partial class UpdateWindow
     /// <param name="e"></param>
     private void Button_CancelUpdate_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+
 
         downloader.CancelAsync();
         downloader.Clear();
@@ -178,8 +175,6 @@ public partial class UpdateWindow
             {
                 try
                 {
-                    AudioUtil.SP_DownloadOK.Play();
-
                     // 下载临时文件完整路径
                     string OldPath = FileUtil.GetCurrFullPath(CoreUtil.HalfwayAppName);
                     // 下载完成后文件真正路径

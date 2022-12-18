@@ -17,7 +17,7 @@ public partial class ApartmentView : UserControl
     #region 公寓抢劫 - 分红数据
     private void Button_Read_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         // 公寓抢劫玩家分红比例
         TextBox_Apart_Player1.Text = Hacks.ReadGA<int>(1933908 + 3008 + 1).ToString();
@@ -34,7 +34,7 @@ public partial class ApartmentView : UserControl
 
     private void Button_Write_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         try
         {

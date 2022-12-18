@@ -10,7 +10,7 @@
     mc:Ignorable="d">
 
     <ScrollViewer>
-        <StackPanel Margin="10" Orientation="Vertical">
+        <StackPanel Margin="5" Orientation="Vertical">
             <Image
                 Width="96"
                 Height="96"

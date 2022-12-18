@@ -31,7 +31,7 @@ public partial class StatScriptsWindow
 
     private void Button_LoadSession_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Online.LoadSession(11);
     }
@@ -47,7 +47,7 @@ public partial class StatScriptsWindow
 
     private void Button_ExecuteAutoScript_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         var index = ListBox_STATList.SelectedIndex;
         if (index != -1)

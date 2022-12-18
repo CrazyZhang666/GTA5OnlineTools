@@ -31,7 +31,7 @@ public partial class PericoView : UserControl
     #region 佩里克岛 - 分红数据
     private void Button_Read_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         // 佩里克岛抢劫玩家分红比例
         TextBox_Cayo_Player1.Text = Hacks.ReadGA<int>(1973321 + 823 + 56 + 1).ToString();
@@ -54,7 +54,7 @@ public partial class PericoView : UserControl
 
     private void Button_Write_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         try
         {
@@ -126,7 +126,7 @@ public partial class PericoView : UserControl
 
     private void Button_BuildGTAHax_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         TextBox_PreviewGTAHax.Clear();
         TextBox_PreviewGTAHax.AppendText("INT32\n");
@@ -425,7 +425,7 @@ public partial class PericoView : UserControl
 
     private void Button_ImportGTAHax_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         if (!ProcessUtil.IsAppRun("GTAHax"))
             ProcessUtil.OpenProcess("GTAHax", false);

@@ -29,7 +29,6 @@ public partial class MainWindow
     private readonly CheatsView CheatsView = new();
     private readonly ModulesView ModulesView = new();
     private readonly ToolsView ToolsView = new();
-    private readonly OptionView OptionView = new();
     private readonly AboutView AboutView = new();
 
     ///////////////////////////////////////////////////////////////
@@ -172,10 +171,6 @@ public partial class MainWindow
             case "ToolsView":
                 if (ContentControl_Main.Content != ToolsView)
                     ContentControl_Main.Content = ToolsView;
-                break;
-            case "OptionView":
-                if (ContentControl_Main.Content != OptionView)
-                    ContentControl_Main.Content = OptionView;
                 break;
             case "AboutView":
                 if (ContentControl_Main.Content != AboutView)

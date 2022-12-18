@@ -297,17 +297,82 @@
                                 TextWrapping="Wrap">
                                 一款国外UnKnoWnCheaTs论坛polivilas大佬制作的免费GTA5载具改装编辑器。主要用来改装载具，使用频率较少，目前尚未汉化
                             </TextBlock>
+                            <!--  增强  -->
+                            <StackPanel DockPanel.Dock="Top">
+                                <WrapPanel>
+                                    <!--<Button Background="#4285F4" Content="未定义" />-->
+                                </WrapPanel>
+                                <WrapPanel />
+                                <WrapPanel />
+                            </StackPanel>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+
+                <!--  YimMenu 注入式菜单  -->
+                <Border Style="{StaticResource BorderStyle_Hacks}">
+                    <DockPanel>
+                        <!--  预览图片  -->
+                        <Border DockPanel.Dock="Left" Style="{StaticResource BorderStyle_HacksPrewImage}">
+                            <Image Source="/Assets/Images/Hacks/YimMenu.png" Style="{StaticResource ImageStyle_HighQuality}">
+                                <Image.ToolTip>
+                                    <Image Source="/Assets/Images/Hacks/YimMenu.png" />
+                                </Image.ToolTip>
+                            </Image>
+                        </Border>
+                        <!--  简介和功能  -->
+                        <DockPanel Margin="5" DockPanel.Dock="Right">
+                            <!--  顶部区域  -->
+                            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                <!--  简介  -->
+                                <TextBlock
+                                    Margin="5"
+                                    FontSize="18"
+                                    FontWeight="Bold"
+                                    Text="YimMenu 注入式菜单" />
+                                <!--  功能  -->
+                                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                                    <TextBlock Margin="5,0,5,0" VerticalAlignment="Center">
+                                        <Hyperlink Command="{Binding ReadMeClickCommand}" CommandParameter="YimMenuPage">
+                                            使用说明
+                                        </Hyperlink>
+                                    </TextBlock>
+                                    <Button
+                                        Width="40"
+                                        Margin="5,0,5,0"
+                                        Padding="5"
+                                        Command="{Binding CheatsClickCommand}"
+                                        CommandParameter="YimMenu"
+                                        Content="注入" />
+                                </StackPanel>
+                            </DockPanel>
+                            <!--  描述  -->
+                            <TextBlock
+                                Margin="5"
+                                DockPanel.Dock="Top"
+                                TextWrapping="Wrap">
+                                一款GitHub开源项目Yimura大佬制作的免费GTA5注入式菜单，旨在防止崩溃（目前并非全部）并改善整体体验。By CrazyZhang和Aure汉化
+                            </TextBlock>
                             <TextBlock
                                 Margin="5"
                                 DockPanel.Dock="Top"
                                 Foreground="#F00056"
                                 TextWrapping="Wrap">
-                                提示：由于1.63更新后原作者未更新此工具，目前部分功能可能已失效
+                                提示：如果发生注入后发生崩溃，请重置YimMenu配置文件（重置前先确保YimMenu未在运行），然后重新启动游戏注入，然后并按照提示在线上更新缓存。后续若还出现崩溃，需要重复上述操作
                             </TextBlock>
                             <!--  增强  -->
                             <StackPanel DockPanel.Dock="Top">
                                 <WrapPanel>
-                                    <!--<Button Background="#4285F4" Content="未定义" />-->
+                                    <Button
+                                        Background="#4285F4"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="YimMenuDirectory"
+                                        Content="配置目录" />
+                                    <Button
+                                        Background="#EA4335"
+                                        Command="{Binding ExtraClickCommand}"
+                                        CommandParameter="ResetYimMenuConfig"
+                                        Content="重置YimMenu配置文件" />
                                 </WrapPanel>
                                 <WrapPanel />
                                 <WrapPanel />

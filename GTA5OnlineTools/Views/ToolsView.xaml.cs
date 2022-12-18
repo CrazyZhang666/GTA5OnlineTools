@@ -1,6 +1,6 @@
-﻿using GTA5OnlineTools.Windows;
-using GTA5OnlineTools.Utils;
+﻿using GTA5OnlineTools.Utils;
 using GTA5OnlineTools.Helper;
+using GTA5OnlineTools.Windows;
 
 using CommunityToolkit.Mvvm.Input;
 
@@ -11,29 +11,38 @@ namespace GTA5OnlineTools.Views;
 /// </summary>
 public partial class ToolsView : UserControl
 {
-    /// <summary>
-    /// 工具按钮点击命令
-    /// </summary>
-    public RelayCommand<string> ToolsButtonClickCommand { get; private set; }
-
     private InjectorWindow InjectorWindow = null;
 
     public ToolsView()
     {
         InitializeComponent();
         this.DataContext = this;
+        MainWindow.WindowClosingEvent += MainWindow_WindowClosingEvent;
+    }
 
-        ToolsButtonClickCommand = new(ToolsButtonClick);
+    private void MainWindow_WindowClosingEvent()
+    {
+
+    }
+
+    /// <summary>
+    /// 超链接请求导航事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+    {
+        ProcessUtil.OpenPath(e.Uri.OriginalString);
+        e.Handled = true;
     }
 
     /// <summary>
     /// 工具按钮点击
     /// </summary>
     /// <param name="name"></param>
+    [RelayCommand]
     private void ToolsButtonClick(string name)
     {
-        AudioUtil.PlayClickSound();
-
         switch (name)
         {
             #region 分组1

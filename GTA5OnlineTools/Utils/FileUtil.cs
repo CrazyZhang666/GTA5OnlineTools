@@ -14,6 +14,7 @@ public static class FileUtil
     public static string D_Kiddion_Path = Default_Path + @"Kiddion\";
     public static string D_Cache_Path = Default_Path + @"Cache\";
     public static string D_Config_Path = Default_Path + @"Config\";
+    public static string D_Inject_Path = Default_Path + @"Inject\";
     public static string D_Log_Path = Default_Path + @"Log\";
 
     public static string D_KiddionScripts_Path = D_Kiddion_Path + @"scripts\";
@@ -44,6 +45,11 @@ public static class FileUtil
     /// AppData完整路径
     /// </summary>
     public static string AppData_Path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+    /// <summary>
+    /// YimMenu路径
+    /// </summary>
+    public static string YimMenu_Path = Path.Combine(AppData_Path, "BigBaseV2");
 
     /// <summary>
     /// 文件重命名

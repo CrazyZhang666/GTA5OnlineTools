@@ -13,7 +13,7 @@ namespace GTA5OnlineTools;
 public partial class LoadWindow
 {
     /// <summary>
-    /// Load数据模型
+    /// Load 数据模型绑定
     /// </summary>
     public LoadModel LoadModel { get; set; } = new();
 
@@ -54,6 +54,7 @@ public partial class LoadWindow
                 Directory.CreateDirectory(FileUtil.D_Config_Path);
                 Directory.CreateDirectory(FileUtil.D_Kiddion_Path);
                 Directory.CreateDirectory(FileUtil.D_KiddionScripts_Path);
+                Directory.CreateDirectory(FileUtil.D_Inject_Path);
                 Directory.CreateDirectory(FileUtil.D_Log_Path);
 
                 // 清空缓存文件夹
@@ -84,6 +85,17 @@ public partial class LoadWindow
                 FileUtil.ExtractResFile(FileUtil.Resource_Path + "LSCHax.exe", FileUtil.D_Cache_Path + "LSCHax.exe");
 
                 FileUtil.ExtractResFile(FileUtil.Resource_Path + "Notepad2.exe", FileUtil.D_Cache_Path + "Notepad2.exe");
+
+                // 判断DLL文件是否存在以及是否被占用
+                if (!File.Exists(FileUtil.D_Inject_Path + "YimMenu.dll"))
+                {
+                    FileUtil.ExtractResFile(FileUtil.Resource_Inject_Path + "YimMenu.dll", FileUtil.D_Inject_Path + "YimMenu.dll");
+                }
+                else
+                {
+                    if (!FileUtil.IsOccupied(FileUtil.D_Inject_Path + "YimMenu.dll"))
+                        FileUtil.ExtractResFile(FileUtil.Resource_Inject_Path + "YimMenu.dll", FileUtil.D_Inject_Path + "YimMenu.dll");
+                }
 
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 

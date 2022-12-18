@@ -95,7 +95,7 @@ public partial class SpawnVehicleView : UserControl
 
     private void Button_SpawnOnlineVehicleA_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Vehicle.SpawnVehicle(VehicleSpawn.VehicleHash, -255.0f, 5, VehicleSpawn.VehicleMod);
         //Vehicle.SpawnVehicle(vehicleSpawn.VehicleHash, -255.0f);
@@ -103,7 +103,7 @@ public partial class SpawnVehicleView : UserControl
 
     private void Button_SpawnOnlineVehicleB_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Vehicle.SpawnVehicle(VehicleSpawn.VehicleHash, 0.0f, 5, VehicleSpawn.VehicleMod);
         //Vehicle.SpawnVehicle(vehicleSpawn.VehicleHash, -255.0f);
@@ -135,21 +135,21 @@ public partial class SpawnVehicleView : UserControl
 
     private void Button_FillVehicleHealth_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Vehicle.FillHealth();
     }
 
     private void Button_RepairVehicle_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Vehicle.Fix1stfoundBST();
     }
 
     private void Button_TurnOffBST_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         Online.InstantBullShark(false);
     }

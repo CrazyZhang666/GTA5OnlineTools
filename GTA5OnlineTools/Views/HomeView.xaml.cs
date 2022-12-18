@@ -10,6 +10,8 @@ public partial class HomeView : UserControl
     public HomeView()
     {
         InitializeComponent();
+        this.DataContext = this;
+        MainWindow.WindowClosingEvent += MainWindow_WindowClosingEvent;
 
         string content = "网络异常，获取最新公告内容失败！这并不影响小助手程序使用\n\n" +
             "建议你定期去小助手网址查看是否有最新版本：https://crazyzhang.cn/\n\n" +
@@ -30,5 +32,10 @@ public partial class HomeView : UserControl
                 TextBox_Change.Text = e == "404" ? content : e;
             });
         });
+    }
+
+    private void MainWindow_WindowClosingEvent()
+    {
+
     }
 }

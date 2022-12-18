@@ -41,10 +41,8 @@
                 VerticalAlignment="Center"
                 DockPanel.Dock="Right"
                 Orientation="Horizontal">
-                <StackPanel Margin="5,0,5,0" VerticalAlignment="Center">
-                    <TextBlock Text="{Binding MainModel.AppRunTime, FallbackValue='00:00:00'}" />
-                    <TextBlock FontSize="10" Text="{Binding MainModel.AppVersion, StringFormat='v{0}', FallbackValue='1.0.0.0'}" />
-                </StackPanel>
+                <TextBlock Margin="5" Text="{Binding MainModel.AppVersion, StringFormat='版本 : v{0}', FallbackValue='1.0.0.0'}" />
+                <TextBlock Margin="5" Text="{Binding MainModel.AppRunTime, StringFormat='时间 : {0}', FallbackValue='00:00:00'}" />
                 <TextBlock
                     Margin="5"
                     VerticalAlignment="Center"
@@ -79,11 +77,6 @@
                     CommandParameter="ToolsView"
                     Content="工具"
                     Icon="🛠" />
-                <ui:UiRadioButtonIcon
-                    Command="{Binding NavigateCommand}"
-                    CommandParameter="OptionView"
-                    Content="选项"
-                    Icon="⚙" />
                 <ui:UiRadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="AboutView"

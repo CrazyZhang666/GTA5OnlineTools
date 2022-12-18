@@ -86,7 +86,7 @@ public partial class KiddionLuaWindow
 
     private void Button_BulidLua_Click(object sender, RoutedEventArgs e)
     {
-        AudioUtil.PlayClickSound();
+        
 
         try
         {

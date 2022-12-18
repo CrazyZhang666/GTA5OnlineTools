@@ -13,6 +13,12 @@ public partial class AboutView : UserControl
     {
         InitializeComponent();
         this.DataContext = this;
+        MainWindow.WindowClosingEvent += MainWindow_WindowClosingEvent;
+    }
+
+    private void MainWindow_WindowClosingEvent()
+    {
+
     }
 
     [RelayCommand]
