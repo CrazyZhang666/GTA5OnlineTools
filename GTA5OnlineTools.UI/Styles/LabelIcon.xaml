@@ -45,18 +45,23 @@
     <Style x:Key="LabelIconStyle_MenuTitle" TargetType="{x:Type controls:UiLabelIcon}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Margin" Value="5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:UiLabelIcon}">
-                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
                         <TextBlock
-                            Width="15"
                             Margin="0,0,5,0"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Text="{TemplateBinding Icon}"
-                            TextAlignment="Center" />
-                        <ContentPresenter TextElement.Foreground="Black" />
+                            FontSize="20"
+                            FontWeight="Normal"
+                            Style="{DynamicResource TextBlockStyle_IconFontVerCen}"
+                            Text="{TemplateBinding Icon}" />
+                        <ContentPresenter VerticalAlignment="Center" />
                     </StackPanel>
                 </ControlTemplate>
             </Setter.Value>

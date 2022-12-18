@@ -60,28 +60,28 @@
                     Command="{Binding NavigateCommand}"
                     CommandParameter="HomeView"
                     Content="主页"
-                    Icon="🏡"
+                    Icon="&#xe734;"
                     IsChecked="True" />
                 <ui:UiRadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="CheatsView"
                     Content="第三方"
-                    Icon="📡" />
+                    Icon="&#xe636;" />
                 <ui:UiRadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="ModulesView"
                     Content="功能"
-                    Icon="🖥" />
+                    Icon="&#xe691;" />
                 <ui:UiRadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="ToolsView"
                     Content="工具"
-                    Icon="🛠" />
+                    Icon="&#xe648;" />
                 <ui:UiRadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="AboutView"
                     Content="关于"
-                    Icon="🎈" />
+                    Icon="&#xe625;" />
             </StackPanel>
         </DockPanel>
     </ui:UiWindow.TitleContent>

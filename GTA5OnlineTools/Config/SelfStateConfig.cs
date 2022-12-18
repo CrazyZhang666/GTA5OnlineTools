@@ -1,4 +1,4 @@
-﻿namespace GTA5OnlineTools.Config.Modules;
+﻿namespace GTA5OnlineTools.Config;
 
 public class SelfStateConfig
 {

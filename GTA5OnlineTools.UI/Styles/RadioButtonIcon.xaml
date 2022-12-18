@@ -12,17 +12,19 @@
                 <ControlTemplate TargetType="{x:Type controls:UiRadioButtonIcon}">
                     <Border
                         x:Name="border"
-                        Margin="0,0,1,0"
+                        Margin="3,3,0,3"
+                        Padding="6"
+                        VerticalAlignment="Center"
                         Background="Transparent"
-                        BorderThickness="0,0,0,4">
-                        <StackPanel
-                            Margin="5,3,5,0"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Orientation="Horizontal">
+                        BorderBrush="Transparent"
+                        BorderThickness="2"
+                        CornerRadius="3"
+                        SnapsToDevicePixels="True">
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                             <TextBlock
                                 Margin="0,0,5,0"
                                 VerticalAlignment="Center"
+                                FontSize="16"
                                 Style="{DynamicResource TextBlockStyle_IconFontBase}"
                                 Text="{TemplateBinding Icon}" />
                             <ContentPresenter VerticalAlignment="Center" />
@@ -33,8 +35,8 @@
                             <Setter TargetName="border" Property="BorderBrush" Value="#DDDDDD" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="border" Property="BorderBrush" Value="#FFA200" />
-                            <Setter Property="FontWeight" Value="Bold" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#2196F3" />
+                            <Setter TargetName="border" Property="Background" Value="#E2F0FF" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
