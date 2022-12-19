@@ -27,7 +27,7 @@ public partial class SpawnWeaponView : UserControl
         {
             ComboBox_WeaponClass.Items.Add(new IconMenu()
             {
-                Icon = item.Emoji,
+                Icon = item.Icon,
                 Title = item.Name
             });
         }

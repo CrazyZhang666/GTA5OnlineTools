@@ -52,7 +52,7 @@ public partial class WorldFunctionView : UserControl
         {
             ComboBox_TeleportClass.Items.Add(new IconMenu()
             {
-                Icon = item.Emoji,
+                Icon = item.Icon,
                 Title = item.Name
             });
         }

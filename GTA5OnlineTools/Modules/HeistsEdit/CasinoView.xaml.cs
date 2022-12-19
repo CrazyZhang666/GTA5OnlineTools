@@ -31,44 +31,40 @@ public partial class CasinoView : UserControl
     #region 赌场抢劫 - 分红数据
     private void Button_Read_Click(object sender, RoutedEventArgs e)
     {
-        
-
         // 赌场抢劫玩家分红比例
-        TextBox_Casino_Player1.Text = Hacks.ReadGA<int>(1966534 + 1497 + 736 + 92 + 1).ToString();
-        TextBox_Casino_Player2.Text = Hacks.ReadGA<int>(1966534 + 1497 + 736 + 92 + 2).ToString();
-        TextBox_Casino_Player3.Text = Hacks.ReadGA<int>(1966534 + 1497 + 736 + 92 + 3).ToString();
-        TextBox_Casino_Player4.Text = Hacks.ReadGA<int>(1966534 + 1497 + 736 + 92 + 4).ToString();
+        TextBox_Casino_Player1.Text = Hacks.ReadGA<int>(1970895 + 2325 + 1).ToString();
+        TextBox_Casino_Player2.Text = Hacks.ReadGA<int>(1970895 + 2325 + 2).ToString();
+        TextBox_Casino_Player3.Text = Hacks.ReadGA<int>(1970895 + 2325 + 3).ToString();
+        TextBox_Casino_Player4.Text = Hacks.ReadGA<int>(1970895 + 2325 + 4).ToString();
 
-        TextBox_Casino_Lester.Text = Hacks.ReadGA<int>(262145 + 28779).ToString();
+        TextBox_Casino_Lester.Text = Hacks.ReadGA<int>(262145 + 29732).ToString();
 
-        TextBox_CasinoPotential_Money.Text = Hacks.ReadGA<int>(262145 + 28793).ToString();
-        TextBox_CasinoPotential_Artwork.Text = Hacks.ReadGA<int>(262145 + 28794).ToString();
-        TextBox_CasinoPotential_Gold.Text = Hacks.ReadGA<int>(262145 + 28795).ToString();
-        TextBox_CasinoPotential_Diamonds.Text = Hacks.ReadGA<int>(262145 + 28796).ToString();
+        TextBox_CasinoPotential_Money.Text = Hacks.ReadGA<int>(262145 + 28804 + 1).ToString();
+        TextBox_CasinoPotential_Artwork.Text = Hacks.ReadGA<int>(262145 + 28804 + 2).ToString();
+        TextBox_CasinoPotential_Gold.Text = Hacks.ReadGA<int>(262145 + 28804 + 3).ToString();
+        TextBox_CasinoPotential_Diamonds.Text = Hacks.ReadGA<int>(262145 + 28804 + 4).ToString();
 
-        TextBox_CasinoAI_1.Text = Hacks.ReadGA<int>(262145 + 28804 + 1).ToString();
-        TextBox_CasinoAI_2.Text = Hacks.ReadGA<int>(262145 + 28804 + 2).ToString();
-        TextBox_CasinoAI_3.Text = Hacks.ReadGA<int>(262145 + 28804 + 3).ToString();
-        TextBox_CasinoAI_4.Text = Hacks.ReadGA<int>(262145 + 28804 + 4).ToString();
-        TextBox_CasinoAI_5.Text = Hacks.ReadGA<int>(262145 + 28804 + 5).ToString();
+        TextBox_CasinoAI_1.Text = Hacks.ReadGA<int>(262145 + 28816 + 1).ToString();
+        TextBox_CasinoAI_2.Text = Hacks.ReadGA<int>(262145 + 28816 + 2).ToString();
+        TextBox_CasinoAI_3.Text = Hacks.ReadGA<int>(262145 + 28816 + 3).ToString();
+        TextBox_CasinoAI_4.Text = Hacks.ReadGA<int>(262145 + 28816 + 4).ToString();
+        TextBox_CasinoAI_5.Text = Hacks.ReadGA<int>(262145 + 28816 + 5).ToString();
 
-        TextBox_CasinoAI_6.Text = Hacks.ReadGA<int>(262145 + 28804 + 6).ToString();
-        TextBox_CasinoAI_7.Text = Hacks.ReadGA<int>(262145 + 28804 + 7).ToString();
-        TextBox_CasinoAI_8.Text = Hacks.ReadGA<int>(262145 + 28804 + 8).ToString();
-        TextBox_CasinoAI_9.Text = Hacks.ReadGA<int>(262145 + 28804 + 9).ToString();
-        TextBox_CasinoAI_10.Text = Hacks.ReadGA<int>(262145 + 28804 + 10).ToString();
+        TextBox_CasinoAI_6.Text = Hacks.ReadGA<int>(262145 + 28816 + 6).ToString();
+        TextBox_CasinoAI_7.Text = Hacks.ReadGA<int>(262145 + 28816 + 7).ToString();
+        TextBox_CasinoAI_8.Text = Hacks.ReadGA<int>(262145 + 28816 + 8).ToString();
+        TextBox_CasinoAI_9.Text = Hacks.ReadGA<int>(262145 + 28816 + 9).ToString();
+        TextBox_CasinoAI_10.Text = Hacks.ReadGA<int>(262145 + 28816 + 10).ToString();
 
-        TextBox_CasinoAI_11.Text = Hacks.ReadGA<int>(262145 + 28804 + 11).ToString();
-        TextBox_CasinoAI_12.Text = Hacks.ReadGA<int>(262145 + 28804 + 12).ToString();
-        TextBox_CasinoAI_13.Text = Hacks.ReadGA<int>(262145 + 28804 + 13).ToString();
-        TextBox_CasinoAI_14.Text = Hacks.ReadGA<int>(262145 + 28804 + 14).ToString();
-        TextBox_CasinoAI_15.Text = Hacks.ReadGA<int>(262145 + 28804 + 15).ToString();
+        TextBox_CasinoAI_11.Text = Hacks.ReadGA<int>(262145 + 28816 + 11).ToString();
+        TextBox_CasinoAI_12.Text = Hacks.ReadGA<int>(262145 + 28816 + 12).ToString();
+        TextBox_CasinoAI_13.Text = Hacks.ReadGA<int>(262145 + 28816 + 13).ToString();
+        TextBox_CasinoAI_14.Text = Hacks.ReadGA<int>(262145 + 28816 + 14).ToString();
+        TextBox_CasinoAI_15.Text = Hacks.ReadGA<int>(262145 + 28816 + 15).ToString();
     }
 
     private void Button_Write_Click(object sender, RoutedEventArgs e)
     {
-        
-
         try
         {
             if (TextBox_Casino_Player1.Text.Trim() != "" &&
@@ -102,35 +98,35 @@ public partial class CasinoView : UserControl
                 TextBox_CasinoAI_15.Text.Trim() != "")
             {
                 // 赌场抢劫玩家分红比例
-                Hacks.WriteGA(1966534 + 1497 + 736 + 92 + 1, Convert.ToInt32(TextBox_Casino_Player1.Text.Trim()));
-                Hacks.WriteGA(1966534 + 1497 + 736 + 92 + 2, Convert.ToInt32(TextBox_Casino_Player2.Text.Trim()));
-                Hacks.WriteGA(1966534 + 1497 + 736 + 92 + 3, Convert.ToInt32(TextBox_Casino_Player3.Text.Trim()));
-                Hacks.WriteGA(1966534 + 1497 + 736 + 92 + 4, Convert.ToInt32(TextBox_Casino_Player4.Text.Trim()));
+                Hacks.WriteGA(1970895 + 2325 + 1, Convert.ToInt32(TextBox_Casino_Player1.Text.Trim()));
+                Hacks.WriteGA(1970895 + 2325 + 2, Convert.ToInt32(TextBox_Casino_Player2.Text.Trim()));
+                Hacks.WriteGA(1970895 + 2325 + 3, Convert.ToInt32(TextBox_Casino_Player3.Text.Trim()));
+                Hacks.WriteGA(1970895 + 2325 + 4, Convert.ToInt32(TextBox_Casino_Player4.Text.Trim()));
 
-                Hacks.WriteGA(262145 + 28779, Convert.ToInt32(TextBox_Casino_Lester.Text.Trim()));
+                Hacks.WriteGA(262145 + 29732, Convert.ToInt32(TextBox_Casino_Lester.Text.Trim()));
 
-                Hacks.WriteGA(262145 + 28793, Convert.ToInt32(TextBox_CasinoPotential_Money.Text.Trim()));
-                Hacks.WriteGA(262145 + 28794, Convert.ToInt32(TextBox_CasinoPotential_Artwork.Text.Trim()));
-                Hacks.WriteGA(262145 + 28795, Convert.ToInt32(TextBox_CasinoPotential_Gold.Text.Trim()));
-                Hacks.WriteGA(262145 + 28796, Convert.ToInt32(TextBox_CasinoPotential_Diamonds.Text.Trim()));
+                Hacks.WriteGA(262145 + 28804 + 1, Convert.ToInt32(TextBox_CasinoPotential_Money.Text.Trim()));
+                Hacks.WriteGA(262145 + 28804 + 2, Convert.ToInt32(TextBox_CasinoPotential_Artwork.Text.Trim()));
+                Hacks.WriteGA(262145 + 28804 + 3, Convert.ToInt32(TextBox_CasinoPotential_Gold.Text.Trim()));
+                Hacks.WriteGA(262145 + 28804 + 4, Convert.ToInt32(TextBox_CasinoPotential_Diamonds.Text.Trim()));
 
-                Hacks.WriteGA(262145 + 28804 + 1, Convert.ToInt32(TextBox_CasinoAI_1.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 2, Convert.ToInt32(TextBox_CasinoAI_2.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 3, Convert.ToInt32(TextBox_CasinoAI_3.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 4, Convert.ToInt32(TextBox_CasinoAI_4.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 5, Convert.ToInt32(TextBox_CasinoAI_5.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 1, Convert.ToInt32(TextBox_CasinoAI_1.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 2, Convert.ToInt32(TextBox_CasinoAI_2.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 3, Convert.ToInt32(TextBox_CasinoAI_3.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 4, Convert.ToInt32(TextBox_CasinoAI_4.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 5, Convert.ToInt32(TextBox_CasinoAI_5.Text.Trim()));
 
-                Hacks.WriteGA(262145 + 28804 + 6, Convert.ToInt32(TextBox_CasinoAI_6.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 7, Convert.ToInt32(TextBox_CasinoAI_7.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 8, Convert.ToInt32(TextBox_CasinoAI_8.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 9, Convert.ToInt32(TextBox_CasinoAI_9.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 10, Convert.ToInt32(TextBox_CasinoAI_10.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 6, Convert.ToInt32(TextBox_CasinoAI_6.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 7, Convert.ToInt32(TextBox_CasinoAI_7.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 8, Convert.ToInt32(TextBox_CasinoAI_8.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 9, Convert.ToInt32(TextBox_CasinoAI_9.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 10, Convert.ToInt32(TextBox_CasinoAI_10.Text.Trim()));
 
-                Hacks.WriteGA(262145 + 28804 + 11, Convert.ToInt32(TextBox_CasinoAI_11.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 12, Convert.ToInt32(TextBox_CasinoAI_12.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 13, Convert.ToInt32(TextBox_CasinoAI_13.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 14, Convert.ToInt32(TextBox_CasinoAI_14.Text.Trim()));
-                Hacks.WriteGA(262145 + 28804 + 15, Convert.ToInt32(TextBox_CasinoAI_15.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 11, Convert.ToInt32(TextBox_CasinoAI_11.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 12, Convert.ToInt32(TextBox_CasinoAI_12.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 13, Convert.ToInt32(TextBox_CasinoAI_13.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 14, Convert.ToInt32(TextBox_CasinoAI_14.Text.Trim()));
+                Hacks.WriteGA(262145 + 28816 + 15, Convert.ToInt32(TextBox_CasinoAI_15.Text.Trim()));
             }
             else
             {
@@ -165,7 +161,7 @@ public partial class CasinoView : UserControl
 
     private void Button_BuildGTAHax_Click(object sender, RoutedEventArgs e)
     {
-        
+
 
         TextBox_PreviewGTAHax.Clear();
         TextBox_PreviewGTAHax.AppendText("INT32\n");
@@ -414,7 +410,7 @@ public partial class CasinoView : UserControl
 
     private void Button_ImportGTAHax_Click(object sender, RoutedEventArgs e)
     {
-        
+
 
         if (!ProcessUtil.IsAppRun("GTAHax"))
             ProcessUtil.OpenProcess("GTAHax", false);

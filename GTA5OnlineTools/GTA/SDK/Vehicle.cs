@@ -314,13 +314,13 @@ public static class Vehicle
     }
 
     /// <summary>
-    /// 刷出个人载具
+    /// 请求个人载具
     /// </summary>
     /// <param name="index"></param>
-    public static void SpawnPersonalVehicle(int index)
+    public static void RequestPersonalVehicle(int index)
     {
-        Hacks.WriteGA(Offsets.SpawnPersonalVehicleIndex1, index);
-        Hacks.WriteGA(Offsets.SpawnPersonalVehicleIndex2, 1);
+        Hacks.WriteGA(Offsets.RequestPersonalVehicle1, index);
+        Hacks.WriteGA(Offsets.RequestPersonalVehicle2, 1);
     }
 
     /// <summary>

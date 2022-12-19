@@ -31,31 +31,27 @@ public partial class PericoView : UserControl
     #region 佩里克岛 - 分红数据
     private void Button_Read_Click(object sender, RoutedEventArgs e)
     {
-        
-
         // 佩里克岛抢劫玩家分红比例
-        TextBox_Cayo_Player1.Text = Hacks.ReadGA<int>(1973321 + 823 + 56 + 1).ToString();
-        TextBox_Cayo_Player2.Text = Hacks.ReadGA<int>(1973321 + 823 + 56 + 2).ToString();
-        TextBox_Cayo_Player3.Text = Hacks.ReadGA<int>(1973321 + 823 + 56 + 3).ToString();
-        TextBox_Cayo_Player4.Text = Hacks.ReadGA<int>(1973321 + 823 + 56 + 4).ToString();
+        TextBox_Cayo_Player1.Text = Hacks.ReadGA<int>(1977693 + 823 + 56 + 1).ToString();
+        TextBox_Cayo_Player2.Text = Hacks.ReadGA<int>(1977693 + 823 + 56 + 2).ToString();
+        TextBox_Cayo_Player3.Text = Hacks.ReadGA<int>(1977693 + 823 + 56 + 3).ToString();
+        TextBox_Cayo_Player4.Text = Hacks.ReadGA<int>(1977693 + 823 + 56 + 4).ToString();
 
-        TextBox_Cayo_Tequila.Text = Hacks.ReadGA<int>(262145 + 29970).ToString();
-        TextBox_Cayo_RubyNecklace.Text = Hacks.ReadGA<int>(262145 + 29971).ToString();
-        TextBox_Cayo_BearerBonds.Text = Hacks.ReadGA<int>(262145 + 29972).ToString();
-        TextBox_Cayo_PinkDiamond.Text = Hacks.ReadGA<int>(262145 + 29973).ToString();
-        TextBox_Cayo_MadrazoFiles.Text = Hacks.ReadGA<int>(262145 + 29974).ToString();
-        TextBox_Cayo_BlackPanther.Text = Hacks.ReadGA<int>(262145 + 29975).ToString();
+        TextBox_Cayo_Tequila.Text = Hacks.ReadGA<int>(262145 + 29982 + 0).ToString();
+        TextBox_Cayo_RubyNecklace.Text = Hacks.ReadGA<int>(262145 + 29982 + 1).ToString();
+        TextBox_Cayo_BearerBonds.Text = Hacks.ReadGA<int>(262145 + 29982 + 2).ToString();
+        TextBox_Cayo_PinkDiamond.Text = Hacks.ReadGA<int>(262145 + 29982 + 3).ToString();
+        TextBox_Cayo_MadrazoFiles.Text = Hacks.ReadGA<int>(262145 + 29982 + 4).ToString();
+        TextBox_Cayo_BlackPanther.Text = Hacks.ReadGA<int>(262145 + 29982 + 5).ToString();
 
-        TextBox_Cayo_LocalBagSize.Text = Hacks.ReadGA<int>(262145 + 29720).ToString();
+        TextBox_Cayo_LocalBagSize.Text = Hacks.ReadGA<int>(262145 + 29732).ToString();
 
-        TextBox_Cayo_FencingFee.Text = Hacks.ReadGA<float>(262145 + 29979).ToString();
-        TextBox_Cayo_PavelCut.Text = Hacks.ReadGA<float>(262145 + 29980).ToString();
+        TextBox_Cayo_FencingFee.Text = Hacks.ReadGA<float>(262145 + 29982 + 9).ToString();
+        TextBox_Cayo_PavelCut.Text = Hacks.ReadGA<float>(262145 + 29982 + 10).ToString();
     }
 
     private void Button_Write_Click(object sender, RoutedEventArgs e)
     {
-        
-
         try
         {
             if (TextBox_Cayo_Player1.Text.Trim() != "" &&
@@ -76,22 +72,22 @@ public partial class PericoView : UserControl
                 TextBox_Cayo_PavelCut.Text.Trim() != "")
             {
                 // 佩里克岛抢劫玩家分红比例
-                Hacks.WriteGA(1973321 + 823 + 56 + 1, Convert.ToInt32(TextBox_Cayo_Player1.Text.Trim()));
-                Hacks.WriteGA(1973321 + 823 + 56 + 2, Convert.ToInt32(TextBox_Cayo_Player2.Text.Trim()));
-                Hacks.WriteGA(1973321 + 823 + 56 + 3, Convert.ToInt32(TextBox_Cayo_Player3.Text.Trim()));
-                Hacks.WriteGA(1973321 + 823 + 56 + 4, Convert.ToInt32(TextBox_Cayo_Player4.Text.Trim()));
+                Hacks.WriteGA(1977693 + 823 + 56 + 1, Convert.ToInt32(TextBox_Cayo_Player1.Text.Trim()));
+                Hacks.WriteGA(1977693 + 823 + 56 + 2, Convert.ToInt32(TextBox_Cayo_Player2.Text.Trim()));
+                Hacks.WriteGA(1977693 + 823 + 56 + 3, Convert.ToInt32(TextBox_Cayo_Player3.Text.Trim()));
+                Hacks.WriteGA(1977693 + 823 + 56 + 4, Convert.ToInt32(TextBox_Cayo_Player4.Text.Trim()));
 
-                Hacks.WriteGA(262145 + 29970, Convert.ToInt32(TextBox_Cayo_Tequila.Text.Trim()));
-                Hacks.WriteGA(262145 + 29971, Convert.ToInt32(TextBox_Cayo_RubyNecklace.Text.Trim()));
-                Hacks.WriteGA(262145 + 29972, Convert.ToInt32(TextBox_Cayo_BearerBonds.Text.Trim()));
-                Hacks.WriteGA(262145 + 29973, Convert.ToInt32(TextBox_Cayo_PinkDiamond.Text.Trim()));
-                Hacks.WriteGA(262145 + 29974, Convert.ToInt32(TextBox_Cayo_MadrazoFiles.Text.Trim()));
-                Hacks.WriteGA(262145 + 29975, Convert.ToInt32(TextBox_Cayo_BlackPanther.Text.Trim()));
+                Hacks.WriteGA(262145 + 29982 + 0, Convert.ToInt32(TextBox_Cayo_Tequila.Text.Trim()));
+                Hacks.WriteGA(262145 + 29982 + 1, Convert.ToInt32(TextBox_Cayo_RubyNecklace.Text.Trim()));
+                Hacks.WriteGA(262145 + 29982 + 2, Convert.ToInt32(TextBox_Cayo_BearerBonds.Text.Trim()));
+                Hacks.WriteGA(262145 + 29982 + 3, Convert.ToInt32(TextBox_Cayo_PinkDiamond.Text.Trim()));
+                Hacks.WriteGA(262145 + 29982 + 4, Convert.ToInt32(TextBox_Cayo_MadrazoFiles.Text.Trim()));
+                Hacks.WriteGA(262145 + 29982 + 5, Convert.ToInt32(TextBox_Cayo_BlackPanther.Text.Trim()));
 
-                Hacks.WriteGA(262145 + 29720, Convert.ToInt32(TextBox_Cayo_LocalBagSize.Text.Trim()));
+                Hacks.WriteGA(262145 + 29732, Convert.ToInt32(TextBox_Cayo_LocalBagSize.Text.Trim()));
 
-                Hacks.WriteGA(262145 + 29979, Convert.ToSingle(TextBox_Cayo_FencingFee.Text.Trim()));
-                Hacks.WriteGA(262145 + 29980, Convert.ToSingle(TextBox_Cayo_PavelCut.Text.Trim()));
+                Hacks.WriteGA(262145 + 29982 + 9, Convert.ToSingle(TextBox_Cayo_FencingFee.Text.Trim()));
+                Hacks.WriteGA(262145 + 29982 + 10, Convert.ToSingle(TextBox_Cayo_PavelCut.Text.Trim()));
             }
             else
             {
@@ -126,7 +122,7 @@ public partial class PericoView : UserControl
 
     private void Button_BuildGTAHax_Click(object sender, RoutedEventArgs e)
     {
-        
+
 
         TextBox_PreviewGTAHax.Clear();
         TextBox_PreviewGTAHax.AppendText("INT32\n");
@@ -425,7 +421,7 @@ public partial class PericoView : UserControl
 
     private void Button_ImportGTAHax_Click(object sender, RoutedEventArgs e)
     {
-        
+
 
         if (!ProcessUtil.IsAppRun("GTAHax"))
             ProcessUtil.OpenProcess("GTAHax", false);

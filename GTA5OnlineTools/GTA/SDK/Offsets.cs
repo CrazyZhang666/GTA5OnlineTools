@@ -47,8 +47,8 @@ public static class Offsets
     public const int oPlayerIDHelp = 2657589;
     public const int oPlayerGA = 2672505;
 
-    public const int SpawnPersonalVehicleIndex1 = oVMYCar + 965;
-    public const int SpawnPersonalVehicleIndex2 = oVMYCar + 962;
+    public const int RequestPersonalVehicle1 = oVMYCar + 986;
+    public const int RequestPersonalVehicle2 = oVMYCar + 983;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

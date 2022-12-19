@@ -1,5 +1,4 @@
-﻿using GTA5OnlineTools.Utils;
-using GTA5OnlineTools.Helper;
+﻿using GTA5OnlineTools.Helper;
 using GTA5OnlineTools.GTA.SDK;
 
 namespace GTA5OnlineTools.Modules.HeistsEdit;
@@ -16,9 +15,7 @@ public partial class ContractView : UserControl
 
     private void Button_Read_Click(object sender, RoutedEventArgs e)
     {
-        
-
-        // hash:-920277662
+        // hash: -920277662
         TextBox_FIXER_Value.Text = Hacks.ReadGA<int>(262145 + 31735).ToString();
         TextBox_TUNER_Value0.Text = Hacks.ReadGA<int>(262145 + 31030 + 1).ToString();
         TextBox_TUNER_Value1.Text = Hacks.ReadGA<int>(262145 + 31030 + 2).ToString();
@@ -32,8 +29,6 @@ public partial class ContractView : UserControl
 
     private void Button_Write_Click(object sender, RoutedEventArgs e)
     {
-        
-
         try
         {
             if (TextBox_FIXER_Value.Text.Trim() != "" &&

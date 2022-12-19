@@ -5,7 +5,7 @@ public class TeleportData
     public class TeleportClass
     {
         public string Name;
-        public string Emoji;
+        public string Icon;
         public List<TeleportInfo> TeleportInfo;
     }
 
@@ -60,9 +60,9 @@ public class TeleportData
 
     public static List<TeleportClass> TeleportClassData = new()
     {
-        new TeleportClass(){ Name="自定义地点", Emoji="🍽", TeleportInfo = CustomTeleport },
-        new TeleportClass(){ Name="预设-常用地点", Emoji="🍎", TeleportInfo = CommonTP },
-        new TeleportClass(){ Name="预设-室内场景", Emoji="🍐", TeleportInfo = IndoorTP },
-        new TeleportClass(){ Name="预设-任务地点", Emoji = "🍋", TeleportInfo = MissionTP },
+        new TeleportClass(){ Name="自定义地点", Icon="\xe63b", TeleportInfo = CustomTeleport },
+        new TeleportClass(){ Name="预设-常用地点", Icon="\xe63b", TeleportInfo = CommonTP },
+        new TeleportClass(){ Name="预设-室内场景", Icon="\xe63b", TeleportInfo = IndoorTP },
+        new TeleportClass(){ Name="预设-任务地点", Icon = "\xe63b", TeleportInfo = MissionTP },
     };
 }

@@ -131,15 +131,15 @@ public static class Hacks
             hash = $"MP{stat_MP}{hash}";
         }
 
-        uint stat_resotreHash = ReadGA<uint>(1655453 + 4);
-        int stat_resotreValue = ReadGA<int>(1020252 + 5526);
+        uint oldhash = ReadGA<uint>(1655453 + 4);
+        int oldvalue = ReadGA<int>(1010831 + 5525);
 
-        WriteGA(1659575 + 4, Joaat(hash));
-        WriteGA(1020252 + 5526, value);
-        WriteGA(1648034 + 1139, -1);
+        WriteGA(1665454 + 4, Joaat(hash));
+        WriteGA(1010831 + 5525, value);
+        WriteGA(1653913 + 1139, -1);
         Thread.Sleep(1000);
-        WriteGA(1659575 + 4, stat_resotreHash);
-        WriteGA(1020252 + 5526, stat_resotreValue);
+        WriteGA(1665454 + 4, oldhash);
+        WriteGA(1010831 + 5525, oldvalue);
     }
 
     /////////////////////////////////////////
@@ -156,21 +156,21 @@ public static class Hacks
 
         Vector3 vector3 = Teleport.GetPlayerPosition();
 
-        WriteGA(2787534 + 3, vector3.X);
-        WriteGA(2787534 + 4, vector3.Y);
-        WriteGA(2787534 + 5, vector3.Z + 3.0f);
-        WriteGA(2787534 + 1, 9999);
+        WriteGA(2764230 + 3, vector3.X);
+        WriteGA(2764230 + 4, vector3.Y);
+        WriteGA(2764230 + 5, vector3.Z + 3.0f);
+        WriteGA(2764230 + 1, 9999);
 
-        WriteGA(4534105 + 1 + (ReadGA<int>(2787534) * 85) + 66 + 2, 2);
-        WriteGA(2787534 + 6, 1);
+        WriteGA(4535172 + 1 + (ReadGA<int>(2764230) * 85) + 66 + 2, 2);
+        WriteGA(2764230 + 6, 1);
 
         Thread.Sleep(200);
 
         long pReplayInterface = Memory.Read<long>(Pointers.ReplayInterfacePTR);
         long pCPickupInterface = Memory.Read<long>(pReplayInterface + 0x20);    // pCPickupInterface
 
-        long oPickupNum = Memory.Read<long>(pCPickupInterface + 0x110);        // oPickupNum
-        long pPickupList = Memory.Read<long>(pCPickupInterface + 0x100);       // pPickupList
+        long oPickupNum = Memory.Read<long>(pCPickupInterface + 0x110);         // oPickupNum
+        long pPickupList = Memory.Read<long>(pCPickupInterface + 0x100);        // pPickupList
 
         for (long i = 0; i < oPickupNum; i++)
         {

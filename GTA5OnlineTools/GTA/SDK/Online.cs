@@ -216,7 +216,7 @@ public static class Online
     /// <param name="multiplier"></param>
     public static void APMultiplier(float multiplier)
     {
-        Hacks.WriteGA(262145 + 25914, multiplier);
+        Hacks.WriteGA(262145 + 25926, multiplier);
     }
 
     /// <summary>
@@ -225,14 +225,14 @@ public static class Online
     /// <param name="multiplier"></param>
     public static void REPMultiplier(float multiplier)
     {
-        Hacks.WriteGA(262145 + 31636, multiplier);        // Street Race         街头比赛        -147149995
-        Hacks.WriteGA(262145 + 31637, multiplier);        // Pursuit Race        追逐赛
-        Hacks.WriteGA(262145 + 31638, multiplier);        // Scramble            攀登
-        Hacks.WriteGA(262145 + 31639, multiplier);        // Head 2 Head         头对头          1434998920
+        Hacks.WriteGA(262145 + 31648, multiplier);        // Street Race         街头比赛        -147149995
+        Hacks.WriteGA(262145 + 31649, multiplier);        // Pursuit Race        追逐赛
+        Hacks.WriteGA(262145 + 31650, multiplier);        // Scramble            攀登
+        Hacks.WriteGA(262145 + 31651, multiplier);        // Head 2 Head         头对头          1434998920
 
-        Hacks.WriteGA(262145 + 31641, multiplier);        // LS Car Meet         汽车见面会       1819417801
-        Hacks.WriteGA(262145 + 31642, multiplier);        // LS Car Meet Track
-        Hacks.WriteGA(262145 + 31643, multiplier);        // LS Car Meet Cloth Shop
+        Hacks.WriteGA(262145 + 31653, multiplier);        // LS Car Meet         汽车见面会       1819417801
+        Hacks.WriteGA(262145 + 31654, multiplier);        // LS Car Meet Track
+        Hacks.WriteGA(262145 + 31655, multiplier);        // LS Car Meet Cloth Shop
     }
 
     /// <summary>

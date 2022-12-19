@@ -24,7 +24,7 @@ public partial class SpawnVehicleWindow
         {
             ListBox_VehicleClass.Items.Add(new IconMenu()
             {
-                Icon = item.Emoji,
+                Icon = item.Icon,
                 Title = item.Name
             });
         }

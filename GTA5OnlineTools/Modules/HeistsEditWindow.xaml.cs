@@ -14,10 +14,6 @@ public partial class HeistsEditWindow
     /// 导航菜单
     /// </summary>
     public List<MenuBar> MenuBars { get; set; } = new();
-    /// <summary>
-    /// 导航命令
-    /// </summary>
-    public RelayCommand<MenuBar> NavigateCommand { get; private set; }
 
     private readonly ContractView ContractView = new();
     private readonly PericoView PericoView = new();
@@ -38,8 +34,6 @@ public partial class HeistsEditWindow
 
         // 创建菜单
         CreateMenuBar();
-        // 绑定菜单切换命令
-        NavigateCommand = new(Navigate);
         // 设置主页
         ContentControl_Main.Content = ContractView;
 
@@ -56,17 +50,18 @@ public partial class HeistsEditWindow
     /// </summary>
     private void CreateMenuBar()
     {
-        MenuBars.Add(new MenuBar() { Icon = "🍎", Title = "事所合约", NameSpace = "ContractView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍐", Title = "佩里克岛", NameSpace = "PericoView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍋", Title = "赌场抢劫", NameSpace = "CasinoView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍇", Title = "末日抢劫", NameSpace = "DoomsdayView" });
-        MenuBars.Add(new MenuBar() { Icon = "🍓", Title = "公寓抢劫", NameSpace = "ApartmentView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe63b", Title = "事所合约", NameSpace = "ContractView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe63b", Title = "佩里克岛", NameSpace = "PericoView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe63b", Title = "赌场抢劫", NameSpace = "CasinoView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe63b", Title = "末日抢劫", NameSpace = "DoomsdayView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe63b", Title = "公寓抢劫", NameSpace = "ApartmentView" });
     }
 
     /// <summary>
     /// 页面导航（重复点击不会重复触发）
     /// </summary>
     /// <param name="menu"></param>
+    [RelayCommand]
     private void Navigate(MenuBar menu)
     {
         if (menu == null || string.IsNullOrEmpty(menu.NameSpace))

@@ -5,7 +5,7 @@ public static class WeaponData
     public class WeaponClass
     {
         public string Name;
-        public string Emoji;
+        public string Icon;
         public List<WeaponInfo> WeaponInfo;
     }
 
@@ -195,15 +195,15 @@ public static class WeaponData
     /// </summary>
     public static List<WeaponClass> WeaponClassData = new()
     {
-        new WeaponClass(){ Name="近战", Emoji="🏂", WeaponInfo=Melee },
-        new WeaponClass(){ Name="手枪", Emoji="🏋", WeaponInfo=Handguns },
-        new WeaponClass(){ Name="冲锋枪", Emoji="🤸‍♂️", WeaponInfo=SubmachineGuns },
-        new WeaponClass(){ Name="霰弹枪", Emoji="⛹", WeaponInfo=Shotguns },
-        new WeaponClass(){ Name="突击步枪", Emoji="🤺", WeaponInfo=AssaultRifles },
-        new WeaponClass(){ Name="轻机枪", Emoji="🤾‍♀️", WeaponInfo=LightMachineGuns },
-        new WeaponClass(){ Name="狙击枪", Emoji="🏌", WeaponInfo=SniperRifles },
-        new WeaponClass(){ Name="重武器", Emoji="🏇", WeaponInfo=HeavyWeapons },
-        new WeaponClass(){ Name="投掷物", Emoji="🏄", WeaponInfo=Throwables },
-        new WeaponClass(){ Name="杂项", Emoji="🏊", WeaponInfo=Miscellaneous }
+        new WeaponClass(){ Name="近战", Icon="\xe63b", WeaponInfo=Melee },
+        new WeaponClass(){ Name="手枪", Icon="\xe63b", WeaponInfo=Handguns },
+        new WeaponClass(){ Name="冲锋枪", Icon="\xe63b", WeaponInfo=SubmachineGuns },
+        new WeaponClass(){ Name="霰弹枪", Icon="\xe63b", WeaponInfo=Shotguns },
+        new WeaponClass(){ Name="突击步枪", Icon="\xe63b", WeaponInfo=AssaultRifles },
+        new WeaponClass(){ Name="轻机枪", Icon="\xe63b", WeaponInfo=LightMachineGuns },
+        new WeaponClass(){ Name="狙击枪", Icon="\xe63b", WeaponInfo=SniperRifles },
+        new WeaponClass(){ Name="重武器", Icon="\xe63b", WeaponInfo=HeavyWeapons },
+        new WeaponClass(){ Name="投掷物", Icon="\xe63b", WeaponInfo=Throwables },
+        new WeaponClass(){ Name="杂项", Icon="\xe63b", WeaponInfo=Miscellaneous }
     };
 }
