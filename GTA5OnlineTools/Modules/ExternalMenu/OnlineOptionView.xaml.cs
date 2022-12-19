@@ -1,5 +1,4 @@
-﻿using GTA5OnlineTools.Utils;
-using GTA5OnlineTools.GTA.SDK;
+﻿using GTA5OnlineTools.GTA.SDK;
 using GTA5OnlineTools.GTA.Client;
 using GTA5OnlineTools.GTA.Settings;
 
@@ -24,8 +23,6 @@ public partial class OnlineOptionView : UserControl
 
     private void Button_Sessions_Click(object sender, RoutedEventArgs e)
     {
-        
-
         var btnContent = (e.OriginalSource as Button).Content.ToString();
         var index = MiscData.Sessions.FindIndex(t => t.Name == btnContent);
         if (index != -1)
@@ -34,29 +31,21 @@ public partial class OnlineOptionView : UserControl
 
     private void Button_EmptySession_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Online.EmptySession();
     }
 
     private void Button_Disconnect_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Online.Disconnect();
     }
 
     private void Button_StopCutscene_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Online.StopCutscene();
     }
 
     private void Button_RPxN_Click(object sender, RoutedEventArgs e)
     {
-        
-
         var btnContent = (e.OriginalSource as Button).Content.ToString();
         var index = MiscData.RPxNs.FindIndex(t => t.Name == btnContent);
         if (index != -1)
@@ -65,8 +54,6 @@ public partial class OnlineOptionView : UserControl
 
     private void Button_REPxN_Click(object sender, RoutedEventArgs e)
     {
-        
-
         var btnContent = (e.OriginalSource as Button).Content.ToString();
         var index = MiscData.REPxNs.FindIndex(t => t.Name == btnContent);
         if (index != -1)
@@ -126,28 +113,20 @@ public partial class OnlineOptionView : UserControl
 
     private void Button_Blips_Click(object sender, RoutedEventArgs e)
     {
-        
-
         var btnContent = (e.OriginalSource as Button).Content.ToString();
 
-        int index = MiscData.Blips.FindIndex(t => t.Name == btnContent);
+        var index = MiscData.Blips.FindIndex(t => t.Name == btnContent);
         if (index != -1)
-        {
             Teleport.ToBlips(MiscData.Blips[index].ID);
-        }
     }
 
     private void Button_MerryweatherServices_Click(object sender, RoutedEventArgs e)
     {
-        
-
         var btnContent = (e.OriginalSource as Button).Content.ToString();
 
-        int index = MiscData.MerryWeatherServices.FindIndex(t => t.Name == btnContent);
+        var index = MiscData.MerryWeatherServices.FindIndex(t => t.Name == btnContent);
         if (index != -1)
-        {
             Online.MerryWeatherServices(MiscData.MerryWeatherServices[index].ID);
-        }
     }
 
     private void CheckBox_InstantBullShark_Click(object sender, RoutedEventArgs e)

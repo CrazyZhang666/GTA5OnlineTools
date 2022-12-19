@@ -102,11 +102,11 @@ public static class MiscData
 
     public static List<FlagInfo> MerryWeatherServices = new()
     {
-        new FlagInfo(){ Name="请求弹药空投", ID=874 },
-        new FlagInfo(){ Name="请求重型防弹装甲", ID=884 },
-        new FlagInfo(){ Name="请求牛鲨睾酮", ID=882 },
-        new FlagInfo(){ Name="请求船只接送", ID=875 },
-        new FlagInfo(){ Name="请求直升机接送", ID=876 },
+        new FlagInfo(){ Name="请求弹药空投", ID=886 },
+        new FlagInfo(){ Name="请求重型防弹装甲", ID=896 },
+        new FlagInfo(){ Name="请求牛鲨睾酮", ID=894 },
+        new FlagInfo(){ Name="请求船只接送", ID=887 },
+        new FlagInfo(){ Name="请求直升机接送", ID=888 },
     };
 
     public static List<FlagInfo> LocalWeathers = new()
