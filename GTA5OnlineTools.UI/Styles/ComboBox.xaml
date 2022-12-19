@@ -119,7 +119,7 @@
                             Style="{StaticResource ComboxStyleToggleButton}" />
                         <Popup
                             x:Name="PART_Popup"
-                            MinHeight="120"
+                            MinHeight="30"
                             AllowsTransparency="True"
                             Focusable="False"
                             IsOpen="{TemplateBinding IsDropDownOpen}"

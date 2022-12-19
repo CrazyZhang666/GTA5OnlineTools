@@ -95,7 +95,7 @@
                                 Margin="0,0,5,0"
                                 VerticalAlignment="Center"
                                 FontSize="14"
-                                Text="{Binding Emoji}" />
+                                Text="{Binding Icon}" />
                             <TextBlock VerticalAlignment="Center" Text="{Binding Title}" />
                         </StackPanel>
                     </DataTemplate>

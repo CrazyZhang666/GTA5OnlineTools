@@ -649,7 +649,7 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void TriggerRCBandito(bool isEnable)
     {
-        Hacks.WriteGA(Offsets.oVMYCar + 6751, isEnable ? 1 : 0);
+        Hacks.WriteGA(Offsets.oVMYCar + 6874, isEnable ? 1 : 0);
     }
 
     /// <summary>
@@ -658,6 +658,6 @@ public static class Online
     /// <param name="isEnable"></param>
     public static void TriggerMiniTank(bool isEnable)
     {
-        Hacks.WriteGA(Offsets.oVMYCar + 6752, isEnable ? 1 : 0);
+        Hacks.WriteGA(Offsets.oVMYCar + 6875, isEnable ? 1 : 0);
     }
 }

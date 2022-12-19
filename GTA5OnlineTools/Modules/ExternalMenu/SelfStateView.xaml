@@ -17,11 +17,7 @@
                 <!--  生命值  -->
                 <DockPanel>
                     <DockPanel Width="120" DockPanel.Dock="Left">
-                        <ui:UiLabelIcon
-                            Margin="5,0,0,0"
-                            Content="生命值"
-                            Icon="❤️"
-                            Style="{StaticResource LabelIconStyle_MenuTitle}" />
+                        <TextBlock Margin="5" Text="生命值" />
                         <TextBlock
                             Margin="5"
                             HorizontalAlignment="Right"
@@ -43,11 +39,7 @@
                         Width="120"
                         VerticalAlignment="Center"
                         DockPanel.Dock="Left">
-                        <ui:UiLabelIcon
-                            Margin="5,0,0,0"
-                            Content="最大生命值"
-                            Icon="💖"
-                            Style="{StaticResource LabelIconStyle_MenuTitle}" />
+                        <TextBlock Margin="5" Text="最大生命值" />
                         <TextBlock
                             Margin="5"
                             HorizontalAlignment="Right"
@@ -69,11 +61,7 @@
                         Width="120"
                         VerticalAlignment="Center"
                         DockPanel.Dock="Left">
-                        <ui:UiLabelIcon
-                            Margin="5,0,0,0"
-                            Content="护甲值"
-                            Icon="💎"
-                            Style="{StaticResource LabelIconStyle_MenuTitle}" />
+                        <TextBlock Margin="5" Text="护甲值" />
                         <TextBlock
                             Margin="5"
                             HorizontalAlignment="Right"
@@ -95,11 +83,7 @@
                         Width="120"
                         VerticalAlignment="Center"
                         DockPanel.Dock="Left">
-                        <ui:UiLabelIcon
-                            Margin="5,0,0,0"
-                            Content="通缉等级"
-                            Icon="👮"
-                            Style="{StaticResource LabelIconStyle_MenuTitle}" />
+                        <TextBlock Margin="5" Text="通缉等级" />
                         <TextBlock
                             Margin="5"
                             HorizontalAlignment="Right"
@@ -115,17 +99,13 @@
                         TickFrequency="1"
                         ValueChanged="Slider_WantedLevel_ValueChanged" />
                 </DockPanel>
-                <!--  潜行速度  -->
+                <!--  走路速度  -->
                 <DockPanel>
                     <DockPanel
                         Width="120"
                         VerticalAlignment="Center"
                         DockPanel.Dock="Left">
-                        <ui:UiLabelIcon
-                            Margin="5,0,0,0"
-                            Content="走路速度"
-                            Icon="🚶🏻"
-                            Style="{StaticResource LabelIconStyle_MenuTitle}" />
+                        <TextBlock Margin="5" Text="走路速度" />
                         <TextBlock
                             Margin="5"
                             HorizontalAlignment="Right"
@@ -147,11 +127,7 @@
                         Width="120"
                         VerticalAlignment="Center"
                         DockPanel.Dock="Left">
-                        <ui:UiLabelIcon
-                            Margin="5,0,0,0"
-                            Content="奔跑速度"
-                            Icon="🏃‍"
-                            Style="{StaticResource LabelIconStyle_MenuTitle}" />
+                        <TextBlock Margin="5" Text="奔跑速度" />
                         <TextBlock
                             Margin="5"
                             HorizontalAlignment="Right"
@@ -170,11 +146,7 @@
                 <!--  游泳速度  -->
                 <DockPanel>
                     <DockPanel Width="120" DockPanel.Dock="Left">
-                        <ui:UiLabelIcon
-                            Margin="5,0,0,0"
-                            Content="游泳速度"
-                            Icon="🏊"
-                            Style="{StaticResource LabelIconStyle_MenuTitle}" />
+                        <TextBlock Margin="5" Text="游泳速度" />
                         <TextBlock
                             Margin="5"
                             HorizontalAlignment="Right"
@@ -294,8 +266,10 @@
                     x:Name="Button_ToWaypoint_Super"
                     Click="Button_ToWaypoint_Super_Click"
                     Content="传送到导航点(精准传送)" />
-                <TextBlock Width="127" Style="{StaticResource TextBlockStyle_Hint}"><Run Text="精准传送传送时不能移动，否则可能会出现传送到错误位置" /></TextBlock>
             </WrapPanel>
+            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                提示：精准传送传送时不能移动，否则可能会出现传送到错误位置
+            </TextBlock>
             <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
                 提示：带 ★ 的功能代表会进入线程循环修改，这样切换战局也不会失效，其余功能仅在点击时修改内存
             </TextBlock>

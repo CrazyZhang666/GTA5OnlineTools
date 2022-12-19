@@ -1,9 +1,9 @@
 ﻿using GTA5OnlineTools.Utils;
-using GTA5OnlineTools.Models.Modules;
+using GTA5OnlineTools.Config;
 using GTA5OnlineTools.GTA.SDK;
 using GTA5OnlineTools.GTA.Core;
 using GTA5OnlineTools.GTA.Settings;
-using GTA5OnlineTools.Config;
+using GTA5OnlineTools.Models.Modules;
 
 namespace GTA5OnlineTools.Modules.ExternalMenu;
 
@@ -13,7 +13,7 @@ namespace GTA5OnlineTools.Modules.ExternalMenu;
 public partial class SelfStateView : UserControl
 {
     /// <summary>
-    /// SelfState 数据模型
+    /// SelfState 的数据模型绑定
     /// </summary>
     public SelfStateModel SelfStateModel { get; set; } = new();
 
@@ -339,43 +339,31 @@ public partial class SelfStateView : UserControl
 
     private void Button_ToWaypoint_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Teleport.ToWaypoint();
     }
 
     private void Button_ToObjective_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Teleport.ToObjective();
     }
 
     private void Button_FillHealth_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Player.FillHealth();
     }
 
     private void Button_FillArmor_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Player.FillArmor();
     }
 
     private void Button_ClearWanted_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Player.WantedLevel(0x00);
     }
 
     private void Button_Suicide_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Player.Suicide();
     }
 
@@ -429,9 +417,6 @@ public partial class SelfStateView : UserControl
 
     private void Button_ToWaypoint_Super_Click(object sender, RoutedEventArgs e)
     {
-        
-
-        //Teleport.ToWaypoint();
-        Teleport.ToWaypoint_Super();
+        Teleport.ToWaypointSuper();
     }
 }
