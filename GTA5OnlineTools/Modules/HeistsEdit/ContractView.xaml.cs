@@ -16,15 +16,15 @@ public partial class ContractView : UserControl
     private void Button_Read_Click(object sender, RoutedEventArgs e)
     {
         // hash: -920277662
-        TextBox_FIXER_Value.Text = Hacks.ReadGA<int>(262145 + 31735).ToString();
-        TextBox_TUNER_Value0.Text = Hacks.ReadGA<int>(262145 + 31030 + 1).ToString();
-        TextBox_TUNER_Value1.Text = Hacks.ReadGA<int>(262145 + 31030 + 2).ToString();
-        TextBox_TUNER_Value2.Text = Hacks.ReadGA<int>(262145 + 31030 + 3).ToString();
-        TextBox_TUNER_Value3.Text = Hacks.ReadGA<int>(262145 + 31030 + 4).ToString();
-        TextBox_TUNER_Value4.Text = Hacks.ReadGA<int>(262145 + 31030 + 5).ToString();
-        TextBox_TUNER_Value5.Text = Hacks.ReadGA<int>(262145 + 31030 + 6).ToString();
-        TextBox_TUNER_Value6.Text = Hacks.ReadGA<int>(262145 + 31030 + 7).ToString();
-        TextBox_TUNER_Value7.Text = Hacks.ReadGA<int>(262145 + 31030 + 8).ToString();
+        TextBox_FIXER_Value.Text = Hacks.ReadGA<int>(262145 + 31747).ToString();            // -2108119120 joaat("FIXER_FINALE_LEADER_CASH_REWARD")
+        TextBox_TUNER_Value0.Text = Hacks.ReadGA<int>(262145 + 31042 + 1).ToString();       // -920277662
+        TextBox_TUNER_Value1.Text = Hacks.ReadGA<int>(262145 + 31042 + 2).ToString();
+        TextBox_TUNER_Value2.Text = Hacks.ReadGA<int>(262145 + 31042 + 3).ToString();
+        TextBox_TUNER_Value3.Text = Hacks.ReadGA<int>(262145 + 31042 + 4).ToString();
+        TextBox_TUNER_Value4.Text = Hacks.ReadGA<int>(262145 + 31042 + 5).ToString();
+        TextBox_TUNER_Value5.Text = Hacks.ReadGA<int>(262145 + 31042 + 6).ToString();
+        TextBox_TUNER_Value6.Text = Hacks.ReadGA<int>(262145 + 31042 + 7).ToString();
+        TextBox_TUNER_Value7.Text = Hacks.ReadGA<int>(262145 + 31042 + 8).ToString();
     }
 
     private void Button_Write_Click(object sender, RoutedEventArgs e)
@@ -41,15 +41,15 @@ public partial class ContractView : UserControl
                 TextBox_TUNER_Value6.Text.Trim() != "" &&
                 TextBox_TUNER_Value7.Text.Trim() != "")
             {
-                Hacks.WriteGA(262145 + 31735, Convert.ToInt32(TextBox_FIXER_Value.Text.Trim()));
-                Hacks.WriteGA(262145 + 31030 + 1, Convert.ToInt32(TextBox_TUNER_Value0.Text.Trim()));
-                Hacks.WriteGA(262145 + 31030 + 2, Convert.ToInt32(TextBox_TUNER_Value1.Text.Trim()));
-                Hacks.WriteGA(262145 + 31030 + 3, Convert.ToInt32(TextBox_TUNER_Value2.Text.Trim()));
-                Hacks.WriteGA(262145 + 31030 + 4, Convert.ToInt32(TextBox_TUNER_Value3.Text.Trim()));
-                Hacks.WriteGA(262145 + 31030 + 5, Convert.ToInt32(TextBox_TUNER_Value4.Text.Trim()));
-                Hacks.WriteGA(262145 + 31030 + 6, Convert.ToInt32(TextBox_TUNER_Value5.Text.Trim()));
-                Hacks.WriteGA(262145 + 31030 + 7, Convert.ToInt32(TextBox_TUNER_Value6.Text.Trim()));
-                Hacks.WriteGA(262145 + 31030 + 8, Convert.ToInt32(TextBox_TUNER_Value7.Text.Trim()));
+                Hacks.WriteGA(262145 + 31747, Convert.ToInt32(TextBox_FIXER_Value.Text.Trim()));
+                Hacks.WriteGA(262145 + 31042 + 1, Convert.ToInt32(TextBox_TUNER_Value0.Text.Trim()));
+                Hacks.WriteGA(262145 + 31042 + 2, Convert.ToInt32(TextBox_TUNER_Value1.Text.Trim()));
+                Hacks.WriteGA(262145 + 31042 + 3, Convert.ToInt32(TextBox_TUNER_Value2.Text.Trim()));
+                Hacks.WriteGA(262145 + 31042 + 4, Convert.ToInt32(TextBox_TUNER_Value3.Text.Trim()));
+                Hacks.WriteGA(262145 + 31042 + 5, Convert.ToInt32(TextBox_TUNER_Value4.Text.Trim()));
+                Hacks.WriteGA(262145 + 31042 + 6, Convert.ToInt32(TextBox_TUNER_Value5.Text.Trim()));
+                Hacks.WriteGA(262145 + 31042 + 7, Convert.ToInt32(TextBox_TUNER_Value6.Text.Trim()));
+                Hacks.WriteGA(262145 + 31042 + 8, Convert.ToInt32(TextBox_TUNER_Value7.Text.Trim()));
             }
             else
             {

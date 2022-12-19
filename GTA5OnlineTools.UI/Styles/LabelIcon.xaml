@@ -27,8 +27,8 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock
                                     Margin="0,0,5,0"
-                                    VerticalAlignment="Center"
-                                    Style="{DynamicResource TextBlockStyle_IconFontBase}"
+                                    FontSize="16"
+                                    Style="{DynamicResource TextBlockStyle_IconFontVerCen}"
                                     Text="{TemplateBinding Icon}" />
                                 <ContentPresenter
                                     VerticalAlignment="Center"

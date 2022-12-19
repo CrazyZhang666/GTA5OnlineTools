@@ -523,9 +523,9 @@ public static class Online
     /// </summary>
     public static void Disconnect()
     {
-        Hacks.WriteGA(32241, 1);        // NETWORK::NETWORK_BAIL(1, 0, 0)
+        Hacks.WriteGA(32441, 1);        // NETWORK::NETWORK_BAIL(1, 0, 0)
         Thread.Sleep(200);              // return NETWORK::NETWORK_CAN_ACCESS_MULTIPLAYER
-        Hacks.WriteGA(32241, 0);
+        Hacks.WriteGA(32441, 0);
     }
 
     /// <summary>

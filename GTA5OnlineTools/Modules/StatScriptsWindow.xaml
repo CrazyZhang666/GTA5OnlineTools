@@ -36,16 +36,16 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.7*" />
-            <ColumnDefinition Width="1.5*" />
-            <ColumnDefinition Width="0.7*" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="300" />
         </Grid.ColumnDefinitions>
         <!--  面板1  -->
         <DockPanel Grid.Column="0">
             <TextBlock
                 DockPanel.Dock="Top"
                 Style="{StaticResource TextBlockStyle_Title}"
-                Text="📇 操作日志" />
+                Text="操作日志" />
             <TextBox
                 x:Name="TextBox_Logger"
                 Margin="5,0,5,5"
@@ -57,7 +57,7 @@
             <TextBlock
                 DockPanel.Dock="Top"
                 Style="{StaticResource TextBlockStyle_Title}"
-                Text="📃 STAT脚本列表" />
+                Text="STAT脚本列表" />
             <ListBox
                 x:Name="ListBox_STATList"
                 Margin="0,0,0,5"
@@ -68,7 +68,7 @@
             <TextBlock
                 DockPanel.Dock="Top"
                 Style="{StaticResource TextBlockStyle_Title}"
-                Text="⭐ 功能" />
+                Text="功能" />
             <ui:UiLabelIcon Content="功能" />
             <StackPanel Margin="5,0,5,0">
                 <Button
@@ -77,7 +77,6 @@
                     Content="执行选中脚本" />
                 <Button
                     x:Name="Button_LoadSession"
-                    Margin="5,0,5,5"
                     Click="Button_LoadSession_Click"
                     Content="如果没有效果请点我切换战局" />
                 <TextBlock Style="{StaticResource TextBlockStyle_Hint}">

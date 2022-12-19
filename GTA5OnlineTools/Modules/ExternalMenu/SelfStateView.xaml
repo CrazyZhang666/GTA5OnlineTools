@@ -195,8 +195,10 @@
                     x:Name="CheckBox_PoliceIgnore"
                     Click="CheckBox_NPCIgnore_Click"
                     Content="警察无视" />
-
             </StackPanel>
+            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                提示：带 ★ 的功能代表切换战局也不会失效，其余功能仅在点击时生效
+            </TextBlock>
 
         </StackPanel>
         <!--  面板2  -->
@@ -269,9 +271,6 @@
             </WrapPanel>
             <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
                 提示：精准传送传送时不能移动，否则可能会出现传送到错误位置
-            </TextBlock>
-            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
-                提示：带 ★ 的功能代表会进入线程循环修改，这样切换战局也不会失效，其余功能仅在点击时修改内存
             </TextBlock>
 
         </StackPanel>

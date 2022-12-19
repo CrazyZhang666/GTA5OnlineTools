@@ -29,7 +29,8 @@
                         <Border
                             x:Name="contentPanel"
                             Grid.Row="1"
-                            BorderBrush="Gray"
+                            Margin="0,2,0,0"
+                            BorderBrush="#D0D7DE"
                             BorderThickness="0,1,0,0"
                             KeyboardNavigation.DirectionalNavigation="Contained"
                             KeyboardNavigation.TabIndex="2"
@@ -57,11 +58,13 @@
                             <ControlTemplate TargetType="{x:Type controls:UiTabItemIcon}">
                                 <Border
                                     x:Name="border"
-                                    Margin="0,0,1,0"
+                                    Margin="3,3,0,3"
                                     Padding="6"
+                                    VerticalAlignment="Center"
                                     Background="Transparent"
                                     BorderBrush="Transparent"
-                                    BorderThickness="0,0,0,5">
+                                    BorderThickness="2"
+                                    CornerRadius="3">
                                     <StackPanel
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
@@ -81,11 +84,11 @@
                                 </Border>
                                 <ControlTemplate.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="border" Property="BorderBrush" Value="#E2E2E2" />
+                                        <Setter TargetName="border" Property="BorderBrush" Value="#DDDDDD" />
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
-                                        <Setter TargetName="border" Property="BorderBrush" Value="#0078d4" />
-                                        <Setter TargetName="contentPresenter" Property="TextElement.FontWeight" Value="Bold" />
+                                        <Setter TargetName="border" Property="BorderBrush" Value="#2196F3" />
+                                        <Setter TargetName="border" Property="Background" Value="#E2F0FF" />
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>

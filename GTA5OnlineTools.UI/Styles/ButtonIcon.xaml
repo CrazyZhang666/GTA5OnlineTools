@@ -22,7 +22,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="Gray"
                         BorderThickness="1"
-                        CornerRadius="0"
+                        CornerRadius="5"
                         SnapsToDevicePixels="True">
                         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBlock
@@ -74,7 +74,7 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="Transparent"
                         BorderThickness="0"
-                        CornerRadius="0"
+                        CornerRadius="5"
                         SnapsToDevicePixels="True">
                         <Grid>
                             <TextBlock
