@@ -52,7 +52,7 @@ public partial class CasinoHackWindow
                 if (pointer != 0)
                 {
                     pointer = Memory.Read<long>(pointer);
-                    int index = Memory.Read<int>(pointer + (2026 + 2 + (1 + 1 * 1)) * 8);
+                    int index = Memory.Read<int>(pointer + (2026 + 2 + 1 + 1 * 1) * 8);
 
                     var sb = new StringBuilder();
                     if ((index - 1) / 13 == 0)
@@ -69,7 +69,7 @@ public partial class CasinoHackWindow
                     ///////////////////////////////////////////////////////
 
                     int current_table = Memory.Read<int>(pointer + (1769 + (1 + Hacks.ReadGA<int>(2703735) * 8) + 4) * 8);
-                    int nums = Memory.Read<int>(pointer + (109 + 1 + (1 + current_table * 211) + 209) * 8);
+                    int nums = Memory.Read<int>(pointer + (109 + 1 + 1 + current_table * 211 + 209) * 8);
 
                     index = Memory.Read<int>(pointer + (2026 + 2 + 1 + nums * 1) * 8);
 
@@ -94,7 +94,7 @@ public partial class CasinoHackWindow
                 if (pointer != 0)
                 {
                     pointer = Memory.Read<long>(pointer);
-                    int index = Memory.Read<int>(pointer + (1031 + 799 + 2 + (1 + 2 * 1)) * 8);
+                    int index = Memory.Read<int>(pointer + (1031 + 799 + 2 + 1 + 2 * 1) * 8);
 
                     var sb = new StringBuilder();
                     if ((index - 1) / 13 == 0)
@@ -107,7 +107,7 @@ public partial class CasinoHackWindow
                         sb.Append($"♠黑桃{(index - 1) % 13 + 1}");
 
                     sb.Append('\n');
-                    index = Memory.Read<int>(pointer + (1031 + 799 + 2 + (1 + 0 * 1)) * 8);
+                    index = Memory.Read<int>(pointer + (1031 + 799 + 2 + 1 + 0 * 1) * 8);
                     if ((index - 1) / 13 == 0)
                         sb.Append($"♣梅花{(index - 1) % 13 + 1}");
                     if ((index - 1) / 13 == 1)
@@ -118,7 +118,7 @@ public partial class CasinoHackWindow
                         sb.Append($"♠黑桃{(index - 1) % 13 + 1}");
 
                     sb.Append('\n');
-                    index = Memory.Read<int>(pointer + (1031 + 799 + 2 + (1 + 1 * 1)) * 8);
+                    index = Memory.Read<int>(pointer + (1031 + 799 + 2 + 1 + 1 * 1) * 8);
                     if ((index - 1) / 13 == 0)
                         sb.Append($"♣梅花{(index - 1) % 13 + 1}");
                     if ((index - 1) / 13 == 1)
@@ -157,8 +157,8 @@ public partial class CasinoHackWindow
                     {
                         for (int j = 0; j < 64; j++)
                         {
-                            int index = 1341 + 1 + (1 + i * 65) + (1 + j * 1);
-                            Memory.Write<int>(pointer + index * 8, CasinoHackModel.SlotMachineSelectedIndex);
+                            int index = 1341 + 1 + 1 + i * 65 + 1 + j * 1;
+                            Memory.Write(pointer + index * 8, CasinoHackModel.SlotMachineSelectedIndex);
                         }
                     }
                 }

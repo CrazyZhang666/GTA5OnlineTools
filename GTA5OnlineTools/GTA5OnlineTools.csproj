@@ -9,8 +9,8 @@
     <StartupObject>GTA5OnlineTools.App</StartupObject>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\Images\Favicon.ico</ApplicationIcon>
-    <AssemblyVersion>3.0.8.0</AssemblyVersion>
-    <FileVersion>3.0.8.0</FileVersion>
+    <AssemblyVersion>3.0.8.1</AssemblyVersion>
+    <FileVersion>3.0.8.1</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
