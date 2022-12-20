@@ -27,8 +27,6 @@ public partial class PlayerListView : UserControl
 
     private void Button_RefreshPlayerList_Click(object sender, RoutedEventArgs e)
     {
-        
-
         lock (this)
         {
             NetPlayerDatas.Clear();
@@ -77,14 +75,14 @@ public partial class PlayerListView : UserControl
                 var god = Memory.Read<byte>(pCPed + Offsets.CPed_God);
                 var position = Memory.Read<Vector3>(pCPed + Offsets.CPed_VisualX);
 
-                var money = Hacks.ReadGA<long>(1853348 + 1 + i * 834 + 205 + 56);
-                var cash = Hacks.ReadGA<long>(1853348 + 1 + i * 834 + 205 + 3);
+                var money = Hacks.ReadGA<long>(1853910 + 1 + i * 862 + 205 + 56);
+                var cash = Hacks.ReadGA<long>(1853910 + 1 + i * 862 + 205 + 3);
 
                 ////////////////////////////////////////////
 
                 NetPlayerDatas.Add(new NetPlayerData()
                 {
-                    Rank = Hacks.ReadGA<int>(1853348 + 1 + (i * 834) + 205 + 6),
+                    Rank = Hacks.ReadGA<int>(1853910 + 1 + i * 862 + 205 + 6),
 
                     RockstarId = Memory.Read<long>(pCPlayerInfo + Offsets.CPed_CPlayerInfo_RockstarID),
                     PlayerName = Memory.ReadString(pCPlayerInfo + Offsets.CPed_CPlayerInfo_Name, 20),
@@ -140,8 +138,6 @@ public partial class PlayerListView : UserControl
 
     private void Button_TeleportSelectedPlayer_Click(object sender, RoutedEventArgs e)
     {
-        
-
         if (ListBox_NetPlayer.SelectedItem != null)
         {
             var index = ListBox_NetPlayer.SelectedIndex;

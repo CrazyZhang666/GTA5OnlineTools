@@ -1,8 +1,6 @@
-﻿using GTA5OnlineTools.GTA;
+﻿using GTA5OnlineTools.Models;
 using GTA5OnlineTools.GTA.SDK;
 using GTA5OnlineTools.GTA.Core;
-
-using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace GTA5OnlineTools.Modules;
 
@@ -11,6 +9,9 @@ namespace GTA5OnlineTools.Modules;
 /// </summary>
 public partial class CasinoHackWindow
 {
+    /// <summary>
+    /// CasinoHack 的数据模型绑定
+    /// </summary>
     public CasinoHackModel CasinoHackModel { get; set; } = new();
 
     public CasinoHackWindow()
@@ -140,7 +141,7 @@ public partial class CasinoHackWindow
                     pointer = Memory.Read<long>(pointer);
                     for (int i = 0; i < 6; i++)
                     {
-                        Memory.Write<int>(pointer + (117 + 1357 + 153 + (1 + i * 1)) * 8, CasinoHackModel.RouletteSelectedIndex);
+                        Memory.Write(pointer + (117 + 1357 + 153 + 1 + i * 1) * 8, CasinoHackModel.RouletteSelectedIndex);
                     }
                 }
             }
@@ -172,131 +173,11 @@ public partial class CasinoHackWindow
                 {
                     pointer = Memory.Read<long>(pointer);
                     int index = 273 + 14;
-                    Memory.Write<int>(pointer + index * 8, CasinoHackModel.LuckyWheelSelectedIndex);
+                    Memory.Write(pointer + index * 8, CasinoHackModel.LuckyWheelSelectedIndex);
                 }
             }
 
             Thread.Sleep(250);
         }
-    }
-}
-
-/// <summary>
-/// CasinoHack 数据模型
-/// </summary>
-public class CasinoHackModel : ObservableObject
-{
-    private bool _blackjackIsCheck;
-    /// <summary>
-    /// 黑杰克 是否 开启预测
-    /// </summary>
-    public bool BlackjackIsCheck
-    {
-        get => _blackjackIsCheck;
-        set => SetProperty(ref _blackjackIsCheck, value);
-    }
-
-    private bool _pokerIsCheck;
-    /// <summary>
-    /// 三张扑克 是否 开启预测
-    /// </summary>
-    public bool PokerIsCheck
-    {
-        get => _pokerIsCheck;
-        set => SetProperty(ref _pokerIsCheck, value);
-    }
-
-    private bool _rouletteIsCheck;
-    /// <summary>
-    /// 轮盘赌 是否 操控中奖
-    /// </summary>
-    public bool RouletteIsCheck
-    {
-        get => _rouletteIsCheck;
-        set => SetProperty(ref _rouletteIsCheck, value);
-    }
-
-    private bool _slotMachineIsCheck;
-    /// <summary>
-    /// 老虎机 是否 操控中奖
-    /// </summary>
-    public bool SlotMachineIsCheck
-    {
-        get => _slotMachineIsCheck;
-        set => SetProperty(ref _slotMachineIsCheck, value);
-    }
-
-    private bool _luckyWheelIsCheck;
-    /// <summary>
-    /// 幸运轮盘 是否 操控中奖
-    /// </summary>
-    public bool LuckyWheelIsCheck
-    {
-        get => _luckyWheelIsCheck;
-        set => SetProperty(ref _luckyWheelIsCheck, value);
-    }
-
-    /////////////////////////////////////////////////////////
-
-    private int _rouletteSelectedIndex;
-    /// <summary>
-    /// 轮盘赌 选中索引
-    /// </summary>
-    public int RouletteSelectedIndex
-    {
-        get => _rouletteSelectedIndex;
-        set => SetProperty(ref _rouletteSelectedIndex, value);
-    }
-
-    private int _slotMachineSelectedIndex;
-    /// <summary>
-    /// 老虎机 选中索引
-    /// </summary>
-    public int SlotMachineSelectedIndex
-    {
-        get => _slotMachineSelectedIndex;
-        set => SetProperty(ref _slotMachineSelectedIndex, value);
-    }
-
-    private int _luckyWheelSelectedIndex;
-    /// <summary>
-    /// 幸运轮盘 选中索引
-    /// </summary>
-    public int LuckyWheelSelectedIndex
-    {
-        get => _luckyWheelSelectedIndex;
-        set => SetProperty(ref _luckyWheelSelectedIndex, value);
-    }
-
-    /////////////////////////////////////////////////////////
-
-    private string _blackjackContent;
-    /// <summary>
-    /// 黑杰克 内容
-    /// </summary>
-    public string BlackjackContent
-    {
-        get => _blackjackContent;
-        set => SetProperty(ref _blackjackContent, value);
-    }
-
-    private string _blackjackNextContent;
-    /// <summary>
-    /// 黑杰克 下一张牌内容
-    /// </summary>
-    public string BlackjackNextContent
-    {
-        get => _blackjackNextContent;
-        set => SetProperty(ref _blackjackNextContent, value);
-    }
-
-    private string _pokerContent;
-    /// <summary>
-    /// 三张扑克 内容
-    /// </summary>
-    public string PokerContent
-    {
-        get => _pokerContent;
-        set => SetProperty(ref _pokerContent, value);
     }
 }
