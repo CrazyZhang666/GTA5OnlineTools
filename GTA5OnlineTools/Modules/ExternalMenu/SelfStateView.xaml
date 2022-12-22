@@ -267,7 +267,7 @@
                 <Button
                     x:Name="Button_ToWaypoint_Super"
                     Click="Button_ToWaypoint_Super_Click"
-                    Content="传送到导航点(精准传送)" />
+                    Content="传送到导航点（精准）" />
             </WrapPanel>
             <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
                 提示：精准传送传送时不能移动，否则可能会出现传送到错误位置

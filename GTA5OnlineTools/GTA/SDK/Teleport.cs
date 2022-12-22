@@ -5,58 +5,11 @@ namespace GTA5OnlineTools.GTA.SDK;
 public static class Teleport
 {
     /// <summary>
-    /// 游戏内最高建筑为800左右,但使用HHD硬盘可能存在加载地图较慢,所以增加至1000
-    /// </summary>
-    private static readonly float[] GroundCheckHeight = new float[22]
-    {
-        100.0f, 150.0f, 50.0f, 0.0f, 200.0f, 250.0f,
-        300.0f, 350.0f, 400.0f, 450.0f, 500.0f, 550.0f,
-        600.0f, 650.0f, 700.0f, 750.0f, 800.0f,
-        850.0f, 900.0f, 950.0f, 1000.0f, 1050.0f
-    };
-
-    /// <summary>
     /// 传送到导航点
     /// </summary>
     public static void ToWaypoint()
     {
         SetTeleportPosition(WaypointPosition());
-    }
-
-    /// <summary>
-    /// 传送到导航点（精准）
-    /// </summary>
-    public static void ToWaypointSuper()
-    {
-        Vector3 coords = WaypointPosition();
-        if (coords != Vector3.Zero)
-        {
-            if (coords.Z == -225.0f)
-            {
-                bool GroundFound = false;
-                float old_height = GetGroundZCoord();
-                for (int i = 0; i < GroundCheckHeight.Length; i++)
-                {
-                    Thread.Sleep(100);
-                    Vector3 TempCoords = coords;
-                    TempCoords.Z = GroundCheckHeight[i];
-                    SetCameraCoords(TempCoords);
-                    coords.Z = GetGroundZCoord();
-                    if (coords.Z != 0.0f && coords.Z != old_height)
-                    {
-                        GroundFound = true;
-                        coords.Z += 1.0f;
-                        break;
-                    }
-                }
-                if (GroundFound != true)
-                {
-                    coords.Z = -301.0f;
-                }
-            }
-            SetCameraCoords(coords);
-            SetTeleportPosition(coords);
-        }
     }
 
     /// <summary>
@@ -108,37 +61,6 @@ public static class Teleport
                 Memory.Write(pCVehicle + Offsets.CPed_CVehicle_VisualX, vector3);
                 long pCNavigation = Memory.Read<long>(pCVehicle + Offsets.CPed_CVehicle_CNavigation);
                 Memory.Write(pCNavigation + Offsets.CPed_CVehicle_CNavigation_PositionX, vector3);
-            }
-        }
-    }
-
-    /// <summary>
-    /// 获取高度坐标
-    /// </summary>
-    public static float GetGroundZCoord()
-    {
-        return Memory.Read<float>(Memory.GTA5ProBaseAddress + 0x26E9ED4);
-    }
-
-    /// <summary>
-    /// 设置摄像机坐标
-    /// </summary>
-    public static void SetCameraCoords(Vector3 vector3)
-    {
-        if (vector3 != Vector3.Zero)
-        {
-            long pCPed = Globals.GetCPed();
-
-            if (Memory.Read<int>(pCPed + Offsets.CPed_InVehicle) == 0)
-            {
-                // 玩家不在载具
-                Memory.Write(pCPed + Offsets.CPed_VisualX, vector3);
-            }
-            else
-            {
-                // 玩家在载具
-                long pCVehicle = Memory.Read<long>(pCPed + Offsets.CPed_CVehicle);
-                Memory.Write(pCVehicle + Offsets.CPed_CVehicle_VisualX, vector3);
             }
         }
     }
@@ -358,5 +280,52 @@ public static class Teleport
         Vector3 vector3 = GetPlayerPosition();
         vector3.Z -= distance;
         SetTeleportPosition(vector3);
+    }
+
+    //////////////////////////////////////////////////////////////////////////
+
+    /// <summary>
+    /// 传送到导航点（精准）
+    /// </summary>
+    public static void ToWaypointSuper()
+    {
+        Vector3 coords = WaypointPosition();
+        if (coords != Vector3.Zero)
+        {
+            if (coords.Z == -225.0f)
+            {
+                bool isFindGround = false;
+                float oldHeight = GetGroundZCoord();
+
+                for (float z = 0; z < 1000; z += 100)
+                {
+                    coords.Z = z;
+                    SetTeleportPosition(coords);
+
+                    coords.Z = GetGroundZCoord();
+                    if (coords.Z != 0.0f && coords.Z != oldHeight)
+                    {
+                        isFindGround = true;
+                        coords.Z += 1.0f;
+                        break;
+                    }
+
+                    Thread.Sleep(100);
+                }
+
+                if (!isFindGround)
+                    coords.Z = -301.0f;
+            }
+
+            SetTeleportPosition(coords);
+        }
+    }
+
+    /// <summary>
+    /// 获取高度坐标
+    /// </summary>
+    public static float GetGroundZCoord()
+    {
+        return Memory.Read<float>(Memory.GTA5ProBaseAddress + 0x26E9ED4);
     }
 }
