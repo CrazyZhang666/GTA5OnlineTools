@@ -51,12 +51,8 @@ public partial class UpdateWindow
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private async void Window_Update_Closing(object sender, CancelEventArgs e)
-    {
-        if (!downloader.IsCancelled)
-        {
-            downloader.CancelAsync();
-            await downloader.Clear();
-        }
+    { 
+        await downloader.Clear();
         downloader.Dispose();
     }
 
