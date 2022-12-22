@@ -350,13 +350,6 @@
                                 TextWrapping="Wrap">
                                 一款GitHub开源项目Yimura大佬制作的免费GTA5注入式菜单，旨在防止崩溃（目前并非全部）并改善整体体验。By CrazyZhang和Aure汉化
                             </TextBlock>
-                            <TextBlock
-                                Margin="5"
-                                DockPanel.Dock="Top"
-                                Foreground="#F00056"
-                                TextWrapping="Wrap">
-                                提示：如果发生注入后发生崩溃，请重置YimMenu配置文件（重置前先确保YimMenu未在运行），然后重新启动游戏注入，然后并按照提示在线上更新缓存。后续若还出现崩溃，需要重复上述操作
-                            </TextBlock>
                             <!--  增强  -->
                             <StackPanel DockPanel.Dock="Top">
                                 <WrapPanel>
