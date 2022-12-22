@@ -1,5 +1,4 @@
-﻿using GTA5OnlineTools.Utils;
-using GTA5OnlineTools.GTA.SDK;
+﻿using GTA5OnlineTools.GTA.SDK;
 using GTA5OnlineTools.GTA.Core;
 using GTA5OnlineTools.GTA.Data;
 
@@ -108,11 +107,6 @@ public partial class PlayerListView : UserControl
                     ClanName = Memory.ReadString(pCNetGamePlayer + Offsets.CNetworkPlayerMgr_CNetGamePlayer_ClanName, 20),
                     ClanTag = Memory.ReadString(pCNetGamePlayer + Offsets.CNetworkPlayerMgr_CNetGamePlayer_ClanTag, 20),
 
-                    IsSpectating = Memory.Read<byte>(pCNetGamePlayer + Offsets.CNetworkPlayerMgr_CNetGamePlayer_IsSpectating) != 0x00,
-                    IsRockStarDev = Memory.Read<byte>(pCNetGamePlayer + Offsets.CNetworkPlayerMgr_CNetGamePlayer_IsRockStarDev) != 0x00,
-                    IsRockStarQA = Memory.Read<byte>(pCNetGamePlayer + Offsets.CNetworkPlayerMgr_CNetGamePlayer_IsRockStarQA) != 0x00,
-                    IsCheater = Memory.Read<byte>(pCNetGamePlayer + Offsets.CNetworkPlayerMgr_CNetGamePlayer_IsCheater) != 0x00,
-
                     RelayIP = $"{relayIP[3]}.{relayIP[2]}.{relayIP[1]}.{relayIP[0]} : {relayPort}",
                     ExternalIP = $"{externalIP[3]}.{externalIP[2]}.{externalIP[1]}.{externalIP[0]} : {externalPort}",
                     InternalIP = $"{internalIP[3]}.{internalIP[2]}.{internalIP[1]}.{internalIP[0]} : {internalPort}",
@@ -207,12 +201,6 @@ public partial class PlayerListView : UserControl
             PlayerInfoAppend("游泳速度", $"{item.SwimSpeed:0.0}");
             PlayerInfoAppend("与我距离", $"{item.Distance:0.000}");
             PlayerInfoAppend("坐标数据", $"{item.Position.X:0.000}, {item.Position.Y:0.000}, {item.Position.Z:0.000}");
-            PlayerInfoAppend();
-
-            PlayerInfoAppend("是否在观看", BoolToString(item.IsSpectating));
-            PlayerInfoAppend("是否为R星Dev", BoolToString(item.IsRockStarDev));
-            PlayerInfoAppend("是否为R星QA", BoolToString(item.IsRockStarQA));
-            PlayerInfoAppend("是否为作弊者", BoolToString(item.IsCheater));
             PlayerInfoAppend();
 
             PlayerInfoAppend("中继IP地址", $"{item.RelayIP}");

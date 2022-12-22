@@ -41,6 +41,12 @@
                     Click="Button_StopCutscene_Click"
                     Content="结束过场动画" />
             </WrapPanel>
+            <WrapPanel Margin="5,0,5,0">
+                <CheckBox
+                    x:Name="CheckBox_FreeChangeAppearance"
+                    Click="CheckBox_FreeChangeAppearance_Click"
+                    Content="免费更改角色外观" />
+            </WrapPanel>
 
             <ui:UiLabelIcon Content="高级" />
             <UniformGrid Margin="5,0,5,0" Columns="2">

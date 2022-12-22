@@ -144,7 +144,7 @@ public partial class SpawnVehicleView : UserControl
     {
         
 
-        Vehicle.Fix1stfoundBST();
+        Vehicle.FixVehicleByBST();
     }
 
     private void Button_TurnOffBST_Click(object sender, RoutedEventArgs e)

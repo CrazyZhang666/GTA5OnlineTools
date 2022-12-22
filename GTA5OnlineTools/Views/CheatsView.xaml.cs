@@ -1,8 +1,8 @@
 ﻿using GTA5OnlineTools.Utils;
 using GTA5OnlineTools.Models;
 using GTA5OnlineTools.Helper;
-using GTA5OnlineTools.Views.Cheats;
 using GTA5OnlineTools.GTA.Core;
+using GTA5OnlineTools.Views.Cheats;
 using GTA5OnlineTools.Windows.Cheats;
 
 using CommunityToolkit.Mvvm.Input;
@@ -74,8 +74,6 @@ public partial class CheatsView : UserControl
     [RelayCommand]
     private void CheatsClick(string hackName)
     {
-
-
         if (ProcessUtil.IsGTA5Run())
         {
             switch (hackName)
@@ -142,8 +140,6 @@ public partial class CheatsView : UserControl
     [RelayCommand]
     private void ExtraClick(string funcName)
     {
-
-
         switch (funcName)
         {
             #region Kiddion增强功能
@@ -218,49 +214,39 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void KiddionClick()
     {
-        bool isRun = false;
-
-        Task.Run(() =>
+        lock (this)
         {
-            if (CheatsModel.KiddionIsRun)
-            {
-                ProcessUtil.OpenProcess("Kiddion", true);
+            int count = 0;
 
-                if (CheatsModel.IsUseKiddionChs)
+            Task.Run(async () =>
+            {
+                if (CheatsModel.KiddionIsRun)
                 {
-                    do
+                    ProcessUtil.OpenProcess("Kiddion", true);
+
+                    if (CheatsModel.IsUseKiddionChs)
                     {
-                        // 等待Kiddion启动
-                        if (ProcessUtil.IsAppRun("Kiddion"))
+                        do
                         {
-                            // Kiddion进程启动标志
-                            isRun = true;
+                            // 等待Kiddion启动
+                            if (ProcessUtil.IsAppRun("Kiddion"))
+                            {
+                                // 拿到Kiddion进程
+                                var pKiddion = Process.GetProcessesByName("Kiddion").ToList()[0];
+                                BaseInjector.DLLInjector(pKiddion.Id, FileUtil.D_Kiddion_Path + "KiddionChs.dll");
+                                return;
+                            }
 
-                            // 拿到Kiddion进程
-                            var pKiddion = Process.GetProcessesByName("Kiddion").ToList()[0];
-                            BaseInjector.DLLInjector(pKiddion.Id, FileUtil.D_Kiddion_Path + "KiddionChs.dll");
-                        }
-                        else
-                        {
-                            isRun = false;
-                        }
-
-                        Task.Delay(250).Wait();
-                    } while (!isRun);
+                            await Task.Delay(250);
+                        } while (count++ > 10);
+                    }
                 }
-            }
-            else
-            {
-                ProcessUtil.CloseProcess("Kiddion");
-            }
-        });
-
-        Task.Run(() =>
-        {
-            // 模拟任务超时
-            Task.Delay(5000);
-            isRun = true;
-        });
+                else
+                {
+                    ProcessUtil.CloseProcess("Kiddion");
+                }
+            });
+        }
     }
 
     /// <summary>

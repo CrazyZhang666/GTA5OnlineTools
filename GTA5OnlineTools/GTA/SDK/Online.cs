@@ -75,6 +75,15 @@ public static class Online
     }
 
     /// <summary>
+    /// 免费更改角色外观
+    /// </summary>
+    /// <param name="isEnable"></param>
+    public static void FreeChangeAppearance(bool isEnable)
+    {
+        Hacks.WriteGA(262145 + 19110, isEnable ? 0 : 100000);
+    }
+
+    /// <summary>
     /// 模型变更
     /// </summary>
     /// <param name="hash"></param>

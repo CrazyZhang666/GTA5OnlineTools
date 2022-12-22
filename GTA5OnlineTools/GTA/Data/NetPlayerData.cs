@@ -27,13 +27,7 @@ public class NetPlayerData
     public string ClanName { get; set; }
     public string ClanTag { get; set; }
 
-    public bool IsSpectating { get; set; }
-    public bool IsRockStarDev { get; set; }
-    public bool IsRockStarQA { get; set; }
-    public bool IsCheater { get; set; }
-
     public string RelayIP { get; set; }
     public string ExternalIP { get; set; }
     public string InternalIP { get; set; }
-
 }

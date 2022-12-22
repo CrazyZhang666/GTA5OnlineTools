@@ -1,5 +1,5 @@
-﻿using GTA5OnlineTools.GTA.SDK;
-using GTA5OnlineTools.Helper;
+﻿using GTA5OnlineTools.Helper;
+using GTA5OnlineTools.GTA.SDK;
 
 namespace GTA5OnlineTools.GTA.Core;
 
@@ -126,14 +126,15 @@ public static class Memory
             Pointers.GlobalPTR = 0;
             Pointers.NetworkPlayerMgrPTR = 0;
             Pointers.ReplayInterfacePTR = 0;
-            Pointers.WeatherPTR = 0;
-            Pointers.UnkModelPTR = 0;
-            Pointers.PickupDataPTR = 0;
+            Pointers.NetworkInfoPTR = 0;
             Pointers.ViewPortPTR = 0;
-            Pointers.AimingPedPTR = 0;
             Pointers.CCameraPTR = 0;
-            Pointers.UnkPTR = 0;
+            Pointers.AimingPedPTR = 0;
+            Pointers.WeatherPTR = 0;
+            Pointers.PickupDataPTR = 0;
+            Pointers.UnkModelPTR = 0;
             Pointers.LocalScriptsPTR = 0;
+            Pointers.UnkPTR = 0;
         }
     }
 
@@ -163,13 +164,6 @@ public static class Memory
             LoggerHelper.Info($"《GTA5》GlobalPTR 0x{Pointers.GlobalPTR:x}");
         }
 
-        if (Pointers.NetworkPlayerMgrPTR == 0)
-        {
-            Pointers.NetworkPlayerMgrPTR = FindPattern(Offsets.Mask.NetworkPlayerMgrMask);
-            Pointers.NetworkPlayerMgrPTR = Rip_37(Pointers.NetworkPlayerMgrPTR);
-            LoggerHelper.Info($"《GTA5》NetworkPlayerMgrPTR 0x{Pointers.NetworkPlayerMgrPTR:x}");
-        }
-
         if (Pointers.ReplayInterfacePTR == 0)
         {
             Pointers.ReplayInterfacePTR = FindPattern(Offsets.Mask.ReplayInterfaceMask);
@@ -177,25 +171,18 @@ public static class Memory
             LoggerHelper.Info($"《GTA5》ReplayInterfacePTR 0x{Pointers.ReplayInterfacePTR:x}");
         }
 
-        if (Pointers.WeatherPTR == 0)
+        if (Pointers.NetworkPlayerMgrPTR == 0)
         {
-            Pointers.WeatherPTR = FindPattern(Offsets.Mask.WeatherMask);
-            Pointers.WeatherPTR = Rip_6A(Pointers.WeatherPTR);
-            LoggerHelper.Info($"《GTA5》WeatherPTR 0x{Pointers.WeatherPTR:x}");
+            Pointers.NetworkPlayerMgrPTR = FindPattern(Offsets.Mask.NetworkPlayerMgrMask);
+            Pointers.NetworkPlayerMgrPTR = Rip_37(Pointers.NetworkPlayerMgrPTR);
+            LoggerHelper.Info($"《GTA5》NetworkPlayerMgrPTR 0x{Pointers.NetworkPlayerMgrPTR:x}");
         }
 
-        if (Pointers.UnkModelPTR == 0)
+        if (Pointers.NetworkInfoPTR == 0)
         {
-            Pointers.UnkModelPTR = FindPattern(Offsets.Mask.UnkModelMask);
-            Pointers.UnkModelPTR = Rip_37(Pointers.UnkModelPTR);
-            LoggerHelper.Info($"《GTA5》UnkModelPTR 0x{Pointers.UnkModelPTR:x}");
-        }
-
-        if (Pointers.PickupDataPTR == 0)
-        {
-            Pointers.PickupDataPTR = FindPattern(Offsets.Mask.PickupDataMask);
-            Pointers.PickupDataPTR = Rip_37(Pointers.PickupDataPTR);
-            LoggerHelper.Info($"《GTA5》PickupDataPTR 0x{Pointers.PickupDataPTR:x}");
+            Pointers.NetworkInfoPTR = FindPattern(Offsets.Mask.NetworkInfoMask);
+            Pointers.NetworkInfoPTR = Rip_37(Pointers.NetworkInfoPTR);
+            LoggerHelper.Info($"《GTA5》NetworkInfoPTR 0x{Pointers.NetworkInfoPTR:x}");
         }
 
         if (Pointers.ViewPortPTR == 0)
@@ -205,13 +192,6 @@ public static class Memory
             LoggerHelper.Info($"《GTA5》ViewPortPTR 0x{Pointers.ViewPortPTR:x}");
         }
 
-        if (Pointers.AimingPedPTR == 0)
-        {
-            Pointers.AimingPedPTR = FindPattern(Offsets.Mask.AimingPedMask);
-            Pointers.AimingPedPTR = Rip_37(Pointers.AimingPedPTR);
-            LoggerHelper.Info($"《GTA5》AimingPedPTR 0x{Pointers.AimingPedPTR:x}");
-        }
-
         if (Pointers.CCameraPTR == 0)
         {
             Pointers.CCameraPTR = FindPattern(Offsets.Mask.CCameraMask);
@@ -219,11 +199,32 @@ public static class Memory
             LoggerHelper.Info($"《GTA5》CCameraPTR 0x{Pointers.CCameraPTR:x}");
         }
 
-        if (Pointers.UnkPTR == 0)
+        if (Pointers.AimingPedPTR == 0)
         {
-            Pointers.UnkPTR = FindPattern(Offsets.Mask.UnkMask);
-            Pointers.UnkPTR = Rip_37(Pointers.UnkPTR);
-            LoggerHelper.Info($"《GTA5》UnkPTR 0x{Pointers.UnkPTR:x}");
+            Pointers.AimingPedPTR = FindPattern(Offsets.Mask.AimingPedMask);
+            Pointers.AimingPedPTR = Rip_37(Pointers.AimingPedPTR);
+            LoggerHelper.Info($"《GTA5》AimingPedPTR 0x{Pointers.AimingPedPTR:x}");
+        }
+
+        if (Pointers.WeatherPTR == 0)
+        {
+            Pointers.WeatherPTR = FindPattern(Offsets.Mask.WeatherMask);
+            Pointers.WeatherPTR = Rip_6A(Pointers.WeatherPTR);
+            LoggerHelper.Info($"《GTA5》WeatherPTR 0x{Pointers.WeatherPTR:x}");
+        }
+
+        if (Pointers.PickupDataPTR == 0)
+        {
+            Pointers.PickupDataPTR = FindPattern(Offsets.Mask.PickupDataMask);
+            Pointers.PickupDataPTR = Rip_37(Pointers.PickupDataPTR);
+            LoggerHelper.Info($"《GTA5》PickupDataPTR 0x{Pointers.PickupDataPTR:x}");
+        }
+
+        if (Pointers.UnkModelPTR == 0)
+        {
+            Pointers.UnkModelPTR = FindPattern(Offsets.Mask.UnkModelMask);
+            Pointers.UnkModelPTR = Rip_37(Pointers.UnkModelPTR);
+            LoggerHelper.Info($"《GTA5》UnkModelPTR 0x{Pointers.UnkModelPTR:x}");
         }
 
         if (Pointers.LocalScriptsPTR == 0)
@@ -231,6 +232,13 @@ public static class Memory
             Pointers.LocalScriptsPTR = FindPattern(Offsets.Mask.LocalScriptsMask);
             Pointers.LocalScriptsPTR = Rip_37(Pointers.LocalScriptsPTR);
             LoggerHelper.Info($"《GTA5》LocalScriptsPTR 0x{Pointers.LocalScriptsPTR:x}");
+        }
+
+        if (Pointers.UnkPTR == 0)
+        {
+            Pointers.UnkPTR = FindPattern(Offsets.Mask.UnkMask);
+            Pointers.UnkPTR = Rip_37(Pointers.UnkPTR);
+            LoggerHelper.Info($"《GTA5》UnkPTR 0x{Pointers.UnkPTR:x}");
         }
     }
 

@@ -94,7 +94,7 @@ public static class Vehicle
     /// <summary>
     /// 修复载具外观
     /// </summary>
-    public static void Fix1stfoundBST()
+    public static void FixVehicleByBST()
     {
         Task.Run(async () =>
         {
@@ -102,29 +102,35 @@ public static class Vehicle
             {
                 var offset = Memory.Read<long>(Pointers.GlobalPTR + 0x08 * 0x0A);
 
-                Memory.Write(offset + 0x17BE28, 1);
-                Memory.Write(pCVehicle + Offsets.CPed_CVehicle_Health, 999.0f);
+                Hacks.WriteGA(Offsets.oVMYCar + 894, 1);
 
-                await Task.Delay(300);
+                await Task.Delay(1000);
 
                 long pCPickupData = Memory.Read<long>(Pointers.PickupDataPTR);
-                int FixVehValue = Memory.Read<int>(pCPickupData + 0x228);       // pFixVeh
-                int BSTValue = Memory.Read<int>(pCPickupData + 0x160);          // pBST
+                long FixVehValue = Memory.Read<long>(pCPickupData + 0x230);       // pFixVeh
+                long BSTValue = Memory.Read<long>(pCPickupData + 0x160);          // pBST
+
+                Memory.Write(pCVehicle + Offsets.CPed_CVehicle_Health, 999.0f);
 
                 long pCPickupInterface = Memory.Read<long>(Pointers.ReplayInterfacePTR);
                 long pCReplayInterface_CPickupInterface = Memory.Read<long>(pCPickupInterface + Offsets.CReplayInterface_CPickupInterface);
+
                 long mPickupCount = Memory.Read<int>(pCReplayInterface_CPickupInterface + 0x110);       // oPickupNum
                 long pPickupList = Memory.Read<long>(pCReplayInterface_CPickupInterface + 0x100);       // pPickupList
 
-                if (!Memory.IsValid(pPickupList))
-                    return;
+                await Task.Delay(100);
 
                 for (long i = 0; i < mPickupCount; i++)
                 {
                     long dwpPickup = Memory.Read<long>(pPickupList + i * 0x10);
-                    int dwPickupValue = Memory.Read<int>(dwpPickup + 0x470);        // pDroppedPickupData
+                    if (!Memory.IsValid(dwpPickup))
+                        continue;
 
-                    if (dwPickupValue == BSTValue)
+                    long dwPickupValue = Memory.Read<long>(dwpPickup + 0x470);        // pDroppedPickupData
+                    if (!Memory.IsValid(dwPickupValue))
+                        continue;
+
+                    if (dwPickupValue == BSTValue || dwPickupValue == FixVehValue)
                     {
                         Memory.Write(dwpPickup + 0x470, FixVehValue);
 
@@ -136,16 +142,12 @@ public static class Vehicle
                         await Task.Delay(10);
 
                         Memory.Write(dwpPickup + 0x90, vehicleV3);
+                        Memory.Write(pCVehicle + 0x9D8, 0.0f);
                     }
                 }
 
-                await Task.Delay(700);
-
-                Memory.Write(offset + 0x17BE28, 1);
-                Memory.Write(pCVehicle + Offsets.CPed_CVehicle_Health, 999.0f);
-
-                if (Memory.Read<int>(offset + 0xA7B78) != 0)
-                    Memory.Write(offset + 0xA7B78, -1);
+                if (Memory.Read<int>(offset + 0x6AF10) != 0)
+                    Memory.Write(offset + 0x6AF10, -1);
             }
         });
     }
@@ -319,8 +321,8 @@ public static class Vehicle
     /// <param name="index"></param>
     public static void RequestPersonalVehicle(int index)
     {
-        Hacks.WriteGA(Offsets.RequestPersonalVehicle1, index);
-        Hacks.WriteGA(Offsets.RequestPersonalVehicle2, 1);
+        Hacks.WriteGA(Offsets.oVMYCar + 986, index);
+        Hacks.WriteGA(Offsets.oVMYCar + 983, 1);
     }
 
     /// <summary>

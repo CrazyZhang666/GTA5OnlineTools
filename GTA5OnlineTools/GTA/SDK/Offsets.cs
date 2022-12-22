@@ -10,6 +10,7 @@ public static class Offsets
 
         public const string ReplayInterfaceMask = "48 8D 0D ?? ?? ?? ?? 48 8B D7 E8 ?? ?? ?? ?? 48 8D 0D ?? ?? ?? ?? 8A D8 E8";
         public const string NetworkPlayerMgrMask = "48 8B 0D ?? ?? ?? ?? E8 ?? ?? ?? ?? 48 8B C8 E8 ?? ?? ?? ?? 48 8B CF";
+        public const string NetworkInfoMask = "48 8B 0D ?? ?? ?? ?? 48 8B D7 E8 ?? ?? ?? ?? 84 C0 75 17 48 8B 0D ?? ?? ?? ?? 48 8B D7";
 
         public const string ViewPortMask = "48 8B 15 ?? ?? ?? ?? 48 8D 2D ?? ?? ?? ?? 48 8B CD";
         public const string CCameraMask = "48 8B 05 ?? ?? ?? ?? 4A 8B 1C F0";
@@ -17,7 +18,6 @@ public static class Offsets
 
         public const string WeatherMask = "48 83 EC ?? 8B 05 ?? ?? ?? ?? 8B 3D ?? ?? ?? ?? 49";
 
-        public const string FriendListMask = "48 8B 0D ?? ?? ?? ?? 8B C6 48 8D 5C 24 70";
         public const string PickupDataMask = "48 8B 05 ?? ?? ?? ?? 48 8B 1C F8 8B";
         public const string UnkModelMask = "4C 8B 15 ?? ?? ?? ?? 49 8B 04 D2 44 39 40 08";
 
@@ -46,9 +46,6 @@ public static class Offsets
     public const int oNETTimeHelp = 2672505;
     public const int oPlayerIDHelp = 2657589;
     public const int oPlayerGA = 2672505;
-
-    public const int RequestPersonalVehicle1 = oVMYCar + 986;
-    public const int RequestPersonalVehicle2 = oVMYCar + 983;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

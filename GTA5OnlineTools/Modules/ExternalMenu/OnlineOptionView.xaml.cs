@@ -44,6 +44,11 @@ public partial class OnlineOptionView : UserControl
         Online.StopCutscene();
     }
 
+    private void CheckBox_FreeChangeAppearance_Click(object sender, RoutedEventArgs e)
+    {
+        Online.FreeChangeAppearance(CheckBox_FreeChangeAppearance.IsChecked == true);
+    }
+
     private void Button_RPxN_Click(object sender, RoutedEventArgs e)
     {
         var btnContent = (e.OriginalSource as Button).Content.ToString();
