@@ -62,7 +62,7 @@
                                 Margin="5"
                                 DockPanel.Dock="Top"
                                 TextWrapping="Wrap">
-                                一款国外UnKnoWnCheaTs论坛Kiddion大佬制作的免费GTA5外置菜单，功能十分实用。By CrazyZhang和mAsk°汉化
+                                一款国外UnKnoWnCheaTs论坛Kiddion大佬制作的免费GTA5外置菜单，功能十分实用
                             </TextBlock>
                             <!--  增强  -->
                             <StackPanel DockPanel.Dock="Top">
@@ -174,7 +174,7 @@
                                 Margin="5"
                                 DockPanel.Dock="Top"
                                 TextWrapping="Wrap">
-                                一款国外UnKnoWnCheaTs论坛polivilas大佬制作的免费GTA5全局变量编辑器。By CrazyZhang汉化
+                                一款国外UnKnoWnCheaTs论坛polivilas大佬制作的免费GTA5全局变量编辑器
                             </TextBlock>
                             <!--  增强  -->
                             <StackPanel DockPanel.Dock="Top">
@@ -239,7 +239,7 @@
                                 Margin="5"
                                 DockPanel.Dock="Top"
                                 TextWrapping="Wrap">
-                                一款国外UnKnoWnCheaTs论坛polivilas大佬制作的免费GTA5角色服装编辑器。By CrazyZhang汉化
+                                一款国外UnKnoWnCheaTs论坛polivilas大佬制作的免费GTA5角色服装编辑器
                             </TextBlock>
                             <!--  增强  -->
                             <StackPanel DockPanel.Dock="Top">
@@ -295,7 +295,7 @@
                                 Margin="5"
                                 DockPanel.Dock="Top"
                                 TextWrapping="Wrap">
-                                一款国外UnKnoWnCheaTs论坛polivilas大佬制作的免费GTA5载具改装编辑器。主要用来改装载具，使用频率较少，目前尚未汉化
+                                一款国外UnKnoWnCheaTs论坛polivilas大佬制作的免费GTA5载具改装编辑器。主要用来改装载具，使用频率较少
                             </TextBlock>
                             <!--  增强  -->
                             <StackPanel DockPanel.Dock="Top">
@@ -348,7 +348,7 @@
                                 Margin="5"
                                 DockPanel.Dock="Top"
                                 TextWrapping="Wrap">
-                                一款GitHub开源项目Yimura大佬制作的免费GTA5注入式菜单，旨在防止崩溃（目前并非全部）并改善整体体验。By CrazyZhang和Aure汉化
+                                一款GitHub开源项目Yimura大佬制作的免费GTA5注入式菜单，旨在防止崩溃（目前并非全部）并改善整体体验
                             </TextBlock>
                             <!--  增强  -->
                             <StackPanel DockPanel.Dock="Top">

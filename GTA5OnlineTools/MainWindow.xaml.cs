@@ -250,7 +250,7 @@ public partial class MainWindow
 
             this.Dispatcher.Invoke(() =>
             {
-                if (Directory.Exists(@"C:\ProgramData\GTA5OnlineTools\Log\ErrorLog"))
+                if (Directory.Exists(@"C:\ProgramData\GTA5OnlineTools\Log\Crash"))
                 {
                     var boxResult = MessageBox.Show("检测到小助手最近发生过异常崩溃问题，系统建议你初始化配置文件，以解决崩溃问题，如果不执行本操作崩溃问题可能还会再次发生\n\n" +
                         "程序会自动重置此文件夹：C:\\ProgramData\\GTA5OnlineTools\\\n\n" +
