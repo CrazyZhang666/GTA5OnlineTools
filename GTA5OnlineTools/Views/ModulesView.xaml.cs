@@ -17,7 +17,6 @@ public partial class ModulesView : UserControl
 
     private OutfitsEditWindow OutfitsEditWindow = null;
     private StatScriptsWindow StatScriptsWindow = null;
-    private CasinoHackWindow CasinoHackWindow = null;
     private SpeedMeterWindow SpeedMeterWindow = null;
 
     /// <summary>
@@ -60,9 +59,6 @@ public partial class ModulesView : UserControl
                     break;
                 case "StatScripts":
                     StatScriptsClick();
-                    break;
-                case "CasinoHack":
-                    CasinoHackClick();
                     break;
                 case "SpeedMeter":
                     SpeedMeterClick();
@@ -200,30 +196,6 @@ public partial class ModulesView : UserControl
         }
     }
 
-    private void CasinoHackClick()
-    {
-        if (CasinoHackWindow == null)
-        {
-            CasinoHackWindow = new CasinoHackWindow();
-            CasinoHackWindow.Show();
-        }
-        else
-        {
-            if (CasinoHackWindow.IsVisible)
-            {
-                CasinoHackWindow.Topmost = true;
-                CasinoHackWindow.Topmost = false;
-                CasinoHackWindow.WindowState = WindowState.Normal;
-            }
-            else
-            {
-                CasinoHackWindow = null;
-                CasinoHackWindow = new CasinoHackWindow();
-                CasinoHackWindow.Show();
-            }
-        }
-    }
-
     private void SpeedMeterClick()
     {
         if (SpeedMeterWindow == null)
@@ -286,12 +258,6 @@ public partial class ModulesView : UserControl
             {
                 StatScriptsWindow.Close();
                 StatScriptsWindow = null;
-            }
-
-            if (CasinoHackWindow != null)
-            {
-                CasinoHackWindow.Close();
-                CasinoHackWindow = null;
             }
 
             if (SpeedMeterWindow != null)

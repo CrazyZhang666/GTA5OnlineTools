@@ -27,7 +27,6 @@ public partial class CheatsView : UserControl
 
     private GTAHaxStatWindow GTAHaxWindow = null;
     private KiddionChsWindow KiddionChsWindow = null;
-    private KiddionLuaWindow KiddionLuaWindow = null;
 
     public CheatsView()
     {
@@ -157,9 +156,6 @@ public partial class CheatsView : UserControl
                 break;
             case "KiddionChsHelper":
                 KiddionChsHelperClick();
-                break;
-            case "KiddionLuaHelper":
-                KiddionLuaHelperClick();
                 break;
             case "EditKiddionConfig":
                 EditKiddionConfigClick();
@@ -381,37 +377,6 @@ public partial class CheatsView : UserControl
                 KiddionChsWindow = null;
                 KiddionChsWindow = new KiddionChsWindow();
                 KiddionChsWindow.Show();
-            }
-        }
-    }
-
-    /// <summary>
-    /// Kiddion Lua生成
-    /// </summary>
-    private void KiddionLuaHelperClick()
-    {
-        if (KiddionLuaWindow == null)
-        {
-            KiddionLuaWindow = new KiddionLuaWindow();
-            KiddionLuaWindow.Show();
-        }
-        else
-        {
-            if (KiddionLuaWindow.IsVisible)
-            {
-                if (!KiddionLuaWindow.Topmost)
-                {
-                    KiddionLuaWindow.Topmost = true;
-                    KiddionLuaWindow.Topmost = false;
-                }
-
-                KiddionLuaWindow.WindowState = WindowState.Normal;
-            }
-            else
-            {
-                KiddionLuaWindow = null;
-                KiddionLuaWindow = new KiddionLuaWindow();
-                KiddionLuaWindow.Show();
             }
         }
     }

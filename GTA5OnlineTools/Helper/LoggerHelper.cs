@@ -28,7 +28,7 @@ public static class LoggerHelper
         LogManager.Configuration = config;
     }
 
-    #region Debug，调试
+    #region Debug, 调试
     public static void Debug(string msg)
     {
         Logger.Debug(msg);
@@ -40,7 +40,7 @@ public static class LoggerHelper
     }
     #endregion
 
-    #region Info，信息
+    #region Info, 信息
     public static void Info(string msg)
     {
         Logger.Info(msg);
@@ -52,7 +52,7 @@ public static class LoggerHelper
     }
     #endregion
 
-    #region Warn，警告
+    #region Warn, 警告
     public static void Warn(string msg)
     {
         Logger.Warn(msg);
@@ -64,7 +64,7 @@ public static class LoggerHelper
     }
     #endregion
 
-    #region Trace，追踪
+    #region Trace, 追踪
     public static void Trace(string msg)
     {
         Logger.Trace(msg);
@@ -76,7 +76,7 @@ public static class LoggerHelper
     }
     #endregion
 
-    #region Error，错误
+    #region Error, 错误
     public static void Error(string msg)
     {
         Logger.Error(msg);
@@ -88,7 +88,7 @@ public static class LoggerHelper
     }
     #endregion
 
-    #region Fatal,致命错误
+    #region Fatal, 致命错误
     public static void Fatal(string msg)
     {
         Logger.Fatal(msg);

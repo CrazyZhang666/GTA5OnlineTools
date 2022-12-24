@@ -52,14 +52,6 @@
             Style="{StaticResource ButtonStyle_FuncModule}" />
 
         <ui:UiButtonIcon
-            Title="Casino Hack"
-            Command="{Binding ModelsClickCommand}"
-            CommandParameter="CasinoHack"
-            Content="赌场黑客"
-            Icon="&#xe811;"
-            Style="{StaticResource ButtonStyle_FuncModule}" />
-
-        <ui:UiButtonIcon
             Title="Speed Meter"
             Command="{Binding ModelsClickCommand}"
             CommandParameter="SpeedMeter"

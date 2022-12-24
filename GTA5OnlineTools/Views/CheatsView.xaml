@@ -92,11 +92,6 @@
                                         Command="{Binding ExtraClickCommand}"
                                         CommandParameter="KiddionChsHelper"
                                         Content="汉化修正" />
-                                    <Button
-                                        Background="#F34B7D"
-                                        Command="{Binding ExtraClickCommand}"
-                                        CommandParameter="KiddionLuaHelper"
-                                        Content="Lua生成" />
                                 </WrapPanel>
                                 <WrapPanel>
                                     <Button
