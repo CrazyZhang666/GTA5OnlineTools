@@ -37,7 +37,7 @@ public partial class CasinoView : UserControl
         TextBox_Casino_Player3.Text = Hacks.ReadGA<int>(1970895 + 2325 + 3).ToString();
         TextBox_Casino_Player4.Text = Hacks.ReadGA<int>(1970895 + 2325 + 4).ToString();
 
-        TextBox_Casino_Lester.Text = Hacks.ReadGA<int>(262145 + 29732).ToString();
+        TextBox_Casino_Lester.Text = Hacks.ReadGA<int>(262145 + 28791).ToString();
 
         TextBox_CasinoPotential_Money.Text = Hacks.ReadGA<int>(262145 + 28804 + 1).ToString();
         TextBox_CasinoPotential_Artwork.Text = Hacks.ReadGA<int>(262145 + 28804 + 2).ToString();
@@ -103,7 +103,7 @@ public partial class CasinoView : UserControl
                 Hacks.WriteGA(1970895 + 2325 + 3, Convert.ToInt32(TextBox_Casino_Player3.Text.Trim()));
                 Hacks.WriteGA(1970895 + 2325 + 4, Convert.ToInt32(TextBox_Casino_Player4.Text.Trim()));
 
-                Hacks.WriteGA(262145 + 29732, Convert.ToInt32(TextBox_Casino_Lester.Text.Trim()));
+                Hacks.WriteGA(262145 + 28791, Convert.ToInt32(TextBox_Casino_Lester.Text.Trim()));
 
                 Hacks.WriteGA(262145 + 28804 + 1, Convert.ToInt32(TextBox_CasinoPotential_Money.Text.Trim()));
                 Hacks.WriteGA(262145 + 28804 + 2, Convert.ToInt32(TextBox_CasinoPotential_Artwork.Text.Trim()));
