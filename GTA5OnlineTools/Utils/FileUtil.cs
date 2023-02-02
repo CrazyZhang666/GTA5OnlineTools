@@ -5,26 +5,66 @@ public static class FileUtil
     /// <summary>
     /// 默认路径
     /// </summary>
-    public const string Default_Path = @".\AppData\";
+    public const string AppData = "C:\\ProgramData\\GTA5OnlineTools";
+    /// <summary>
+    /// 资源路径
+    /// </summary>
+    public const string ResFiles = "GTA5OnlineTools.GTA.Files";
 
-    public const string Resource_Path = "GTA5OnlineTools.GTA.Files.";
-    public const string Resource_Kiddion_Path = "GTA5OnlineTools.GTA.Files.Kiddion.";
-    public const string Resource_Inject_Path = "GTA5OnlineTools.GTA.Files.Inject.";
+    public const string Dir_Kiddion = $"{AppData}\\Kiddion";
+    public const string Dir_Cache = $"{AppData}\\Cache";
+    public const string Dir_Config = $"{AppData}\\Config";
+    public const string Dir_Inject = $"{AppData}\\Inject";
+    public const string Dir_Log = $"{AppData}\\Log";
 
-    public static string D_Kiddion_Path = Default_Path + @"Kiddion\";
-    public static string D_Cache_Path = Default_Path + @"Cache\";
-    public static string D_Config_Path = Default_Path + @"Config\";
-    public static string D_Inject_Path = Default_Path + @"Inject\";
-    public static string D_Log_Path = Default_Path + @"Log\";
+    public const string Dir_Kiddion_Scripts = $"{Dir_Kiddion}\\scripts";
 
-    public static string D_KiddionScripts_Path = D_Kiddion_Path + @"scripts\";
+    public const string Res_Other_SGTA50000 = $"{ResFiles}.Other.SGTA50000";
 
-    public static string F_GTAHaxStat_Path = D_Cache_Path + "stat.txt";
+    public const string Res_Kiddion_Kiddion = $"{ResFiles}.Kiddion.Kiddion.exe";
+    public const string File_Kiddion_Kiddion = $"{Dir_Kiddion}\\Kiddion.exe";
 
-    public static string F_OptionConfig_Path = D_Config_Path + "OptionConfig.json";
-    public static string F_SelfStateConfig_Path = D_Config_Path + "SelfStateConfig.json";
+    public const string Res_Kiddion_KiddionChs = $"{ResFiles}.Kiddion.KiddionChs.dll";
+    public const string File_Kiddion_KiddionChs = $"{Dir_Kiddion}\\KiddionChs.dll";
 
-    public static string F_CustomTPList_Path = D_Config_Path + "CustomTPList.json";
+    public const string Res_Kiddion_Config = $"{ResFiles}.Kiddion.config.json";
+    public const string File_Kiddion_Config = $"{Dir_Kiddion}\\config.json";
+
+    public const string Res_Kiddion_Key87_Config = $"{ResFiles}.Kiddion.key87.config.json";
+
+    public const string Res_Kiddion_Themes = $"{ResFiles}.Kiddion.themes.json";
+    public const string File_Kiddion_Themes = $"{Dir_Kiddion}\\themes.json";
+
+    public const string Res_Kiddion_Teleports = $"{ResFiles}.Kiddion.teleports.json";
+    public const string File_Kiddion_Teleports = $"{Dir_Kiddion}\\teleports.json";
+
+    public const string Res_Kiddion_Vehicles = $"{ResFiles}.Kiddion.vehicles.json";
+    public const string File_Kiddion_Vehicles = $"{Dir_Kiddion}\\vehicles.json";
+
+    public const string Res_Kiddion_Scripts_Readme = $"{ResFiles}.Kiddion.scripts.Readme.api";
+    public const string File_Kiddion_Scripts_Readme = $"{Dir_Kiddion_Scripts}\\Readme.api";
+
+    public const string Res_Cache_BincoHax = $"{ResFiles}.Cache.BincoHax.exe";
+    public const string File_Cache_BincoHax = $"{Dir_Cache}\\BincoHax.exe";
+
+    public const string Res_Cache_GTAHax = $"{ResFiles}.Cache.GTAHax.exe";
+    public const string File_Cache_GTAHax = $"{Dir_Cache}\\GTAHax.exe";
+
+    public const string Res_Cache_LSCHax = $"{ResFiles}.Cache.LSCHax.exe";
+    public const string File_Cache_LSCHax = $"{Dir_Cache}\\LSCHax.exe";
+
+    public const string Res_Cache_Notepad2 = $"{ResFiles}.Cache.Notepad2.exe";
+    public const string File_Cache_Notepad2 = $"{Dir_Cache}\\Notepad2.exe";
+
+    public const string Res_Cache_Stat = $"{ResFiles}.Cache.stat.txt";
+    public const string File_Cache_Stat = $"{Dir_Cache}\\stat.txt";
+
+    public const string Res_Inject_YimMenu = $"{ResFiles}.Inject.YimMenu.dll";
+    public const string File_Inject_YimMenu = $"{Dir_Inject}\\YimMenu.dll";
+
+    public const string File_Config_Option = $"{Dir_Config}\\OptionConfig.json";
+    public const string File_Config_SelfState = $"{Dir_Config}\\SelfStateConfig.json";
+    public const string File_Config_CustomTPList = $"{Dir_Config}\\CustomTPList.json";
 
     /// <summary>
     /// 获取当前运行文件完整路径
@@ -74,7 +114,7 @@ public static class FileUtil
     /// <param name="log">日志内容</param>
     public static void SaveCrashLog(string log)
     {
-        var path = D_Log_Path + @"\Crash";
+        var path = Dir_Log + @"\Crash";
         Directory.CreateDirectory(path);
         path += $@"\#Crash#{DateTime.Now:yyyyMMdd_HH-mm-ss_ffff}.log";
         File.WriteAllText(path, log);

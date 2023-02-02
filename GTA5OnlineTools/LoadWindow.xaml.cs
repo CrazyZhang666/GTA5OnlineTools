@@ -50,51 +50,51 @@ public partial class LoadWindow
                 LoggerHelper.Info("正在初始化配置文件...");
 
                 // 创建指定文件夹，用于释放必要文件和更新软件（如果已存在则不会创建）
-                Directory.CreateDirectory(FileUtil.D_Cache_Path);
-                Directory.CreateDirectory(FileUtil.D_Config_Path);
-                Directory.CreateDirectory(FileUtil.D_Kiddion_Path);
-                Directory.CreateDirectory(FileUtil.D_KiddionScripts_Path);
-                Directory.CreateDirectory(FileUtil.D_Inject_Path);
-                Directory.CreateDirectory(FileUtil.D_Log_Path);
+                Directory.CreateDirectory(FileUtil.Dir_Cache);
+                Directory.CreateDirectory(FileUtil.Dir_Config);
+                Directory.CreateDirectory(FileUtil.Dir_Kiddion);
+                Directory.CreateDirectory(FileUtil.Dir_Kiddion_Scripts);
+                Directory.CreateDirectory(FileUtil.Dir_Inject);
+                Directory.CreateDirectory(FileUtil.Dir_Log);
 
                 // 清空缓存文件夹
-                FileUtil.DelectDir(FileUtil.D_Cache_Path);
+                FileUtil.DelectDir(FileUtil.Dir_Cache);
 
                 // 释放必要文件
-                FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "Kiddion.exe", FileUtil.D_Kiddion_Path + "Kiddion.exe");
-                FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "KiddionChs.dll", FileUtil.D_Kiddion_Path + "KiddionChs.dll");
+                FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Kiddion, FileUtil.File_Kiddion_Kiddion);
+                FileUtil.ExtractResFile(FileUtil.Res_Kiddion_KiddionChs, FileUtil.File_Kiddion_KiddionChs);
 
                 // 释放前先判断，防止覆盖配置文件
-                if (!File.Exists(FileUtil.D_Kiddion_Path + "config.json"))
-                    FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "config.json", FileUtil.D_Kiddion_Path + "config.json");
-                if (!File.Exists(FileUtil.D_Kiddion_Path + "themes.json"))
-                    FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "themes.json", FileUtil.D_Kiddion_Path + "themes.json");
-                if (!File.Exists(FileUtil.D_Kiddion_Path + "teleports.json"))
-                    FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "teleports.json", FileUtil.D_Kiddion_Path + "teleports.json");
-                if (!File.Exists(FileUtil.D_Kiddion_Path + "vehicles.json"))
-                    FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "vehicles.json", FileUtil.D_Kiddion_Path + "vehicles.json");
+                if (!File.Exists(FileUtil.File_Kiddion_Config))
+                    FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Config, FileUtil.File_Kiddion_Config);
+                if (!File.Exists(FileUtil.File_Kiddion_Themes))
+                    FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Themes, FileUtil.File_Kiddion_Themes);
+                if (!File.Exists(FileUtil.File_Kiddion_Teleports))
+                    FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Teleports, FileUtil.File_Kiddion_Teleports);
+                if (!File.Exists(FileUtil.File_Kiddion_Vehicles))
+                    FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Vehicles, FileUtil.File_Kiddion_Vehicles);
 
                 // Kiddion Lua脚本
-                FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "scripts.Readme.api", FileUtil.D_KiddionScripts_Path + "Readme.api");
+                FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Scripts_Readme, FileUtil.File_Kiddion_Scripts_Readme);
 
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                FileUtil.ExtractResFile(FileUtil.Resource_Path + "GTAHax.exe", FileUtil.D_Cache_Path + "GTAHax.exe");
-                FileUtil.ExtractResFile(FileUtil.Resource_Path + "stat.txt", FileUtil.D_Cache_Path + "stat.txt");
-                FileUtil.ExtractResFile(FileUtil.Resource_Path + "BincoHax.exe", FileUtil.D_Cache_Path + "BincoHax.exe");
-                FileUtil.ExtractResFile(FileUtil.Resource_Path + "LSCHax.exe", FileUtil.D_Cache_Path + "LSCHax.exe");
+                FileUtil.ExtractResFile(FileUtil.Res_Cache_GTAHax, FileUtil.File_Cache_GTAHax);
+                FileUtil.ExtractResFile(FileUtil.Res_Cache_BincoHax, FileUtil.File_Cache_BincoHax);
+                FileUtil.ExtractResFile(FileUtil.Res_Cache_LSCHax, FileUtil.File_Cache_LSCHax);
+                FileUtil.ExtractResFile(FileUtil.Res_Cache_Stat, FileUtil.File_Cache_Stat);
 
-                FileUtil.ExtractResFile(FileUtil.Resource_Path + "Notepad2.exe", FileUtil.D_Cache_Path + "Notepad2.exe");
+                FileUtil.ExtractResFile(FileUtil.Res_Cache_Notepad2, FileUtil.File_Cache_Notepad2);
 
                 // 判断DLL文件是否存在以及是否被占用
-                if (!File.Exists(FileUtil.D_Inject_Path + "YimMenu.dll"))
+                if (!File.Exists(FileUtil.File_Inject_YimMenu))
                 {
-                    FileUtil.ExtractResFile(FileUtil.Resource_Inject_Path + "YimMenu.dll", FileUtil.D_Inject_Path + "YimMenu.dll");
+                    FileUtil.ExtractResFile(FileUtil.Res_Inject_YimMenu, FileUtil.File_Inject_YimMenu);
                 }
                 else
                 {
-                    if (!FileUtil.IsOccupied(FileUtil.D_Inject_Path + "YimMenu.dll"))
-                        FileUtil.ExtractResFile(FileUtil.Resource_Inject_Path + "YimMenu.dll", FileUtil.D_Inject_Path + "YimMenu.dll");
+                    if (!FileUtil.IsOccupied(FileUtil.File_Inject_YimMenu))
+                        FileUtil.ExtractResFile(FileUtil.Res_Inject_YimMenu, FileUtil.File_Inject_YimMenu);
                 }
 
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -136,7 +136,7 @@ public partial class LoadWindow
             {
                 case "InitDefaultPath":
                     {
-                        FileUtil.DelectDir(FileUtil.Default_Path);
+                        FileUtil.DelectDir(FileUtil.AppData);
                         Thread.Sleep(100);
 
                         App.AppMainMutex.Dispose();
@@ -145,7 +145,7 @@ public partial class LoadWindow
                     }
                     break;
                 case "OpenDefaultPath":
-                    ProcessUtil.OpenPath(FileUtil.Default_Path);
+                    ProcessUtil.OpenPath(FileUtil.AppData);
                     break;
                 case "ExitAPP":
                     Application.Current.Shutdown();

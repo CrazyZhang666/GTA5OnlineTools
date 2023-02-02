@@ -151,7 +151,7 @@ public partial class CasinoView : UserControl
     {
         try
         {
-            File.WriteAllText(FileUtil.F_GTAHaxStat_Path, TextBox_PreviewGTAHax.Text);
+            File.WriteAllText(FileUtil.File_Cache_Stat, TextBox_PreviewGTAHax.Text);
         }
         catch (Exception ex)
         {
@@ -410,10 +410,8 @@ public partial class CasinoView : UserControl
 
     private void Button_ImportGTAHax_Click(object sender, RoutedEventArgs e)
     {
-
-
         if (!ProcessUtil.IsAppRun("GTAHax"))
-            ProcessUtil.OpenProcess("GTAHax", false);
+            ProcessUtil.OpenProcess(FileUtil.File_Cache_GTAHax);
 
         Task.Run(() =>
         {

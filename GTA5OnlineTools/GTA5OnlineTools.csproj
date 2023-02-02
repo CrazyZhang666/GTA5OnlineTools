@@ -8,6 +8,7 @@
 		<Platforms>x64</Platforms>
 		<StartupObject>GTA5OnlineTools.App</StartupObject>
 		<ApplicationIcon>Assets\Images\Favicon.ico</ApplicationIcon>
+		<ApplicationManifest>Properties\app.manifest</ApplicationManifest>
 		<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
 		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
 		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -24,8 +25,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="GTA\Files\BincoHax.exe" />
-		<EmbeddedResource Include="GTA\Files\GTAHax.exe" />
+		<EmbeddedResource Include="GTA\Files\Cache\BincoHax.exe" />
+		<EmbeddedResource Include="GTA\Files\Cache\GTAHax.exe" />
 		<EmbeddedResource Include="GTA\Files\Inject\YimMenu.dll" />
 		<EmbeddedResource Include="GTA\Files\Kiddion\config.json" />
 		<EmbeddedResource Include="GTA\Files\Kiddion\key87\config.json" />
@@ -35,10 +36,10 @@
 		<EmbeddedResource Include="GTA\Files\Kiddion\teleports.json" />
 		<EmbeddedResource Include="GTA\Files\Kiddion\themes.json" />
 		<EmbeddedResource Include="GTA\Files\Kiddion\vehicles.json" />
-		<EmbeddedResource Include="GTA\Files\LSCHax.exe" />
-		<EmbeddedResource Include="GTA\Files\Notepad2.exe" />
+		<EmbeddedResource Include="GTA\Files\Cache\LSCHax.exe" />
+		<EmbeddedResource Include="GTA\Files\Cache\Notepad2.exe" />
 		<EmbeddedResource Include="GTA\Files\Other\SGTA50000" />
-		<EmbeddedResource Include="GTA\Files\stat.txt" />
+		<EmbeddedResource Include="GTA\Files\Cache\stat.txt" />
 	</ItemGroup>
 
 	<ItemGroup>

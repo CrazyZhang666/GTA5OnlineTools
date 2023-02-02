@@ -112,7 +112,7 @@ public partial class ToolsView : UserControl
     /// </summary>
     private void ReleaseDirectoryClick()
     {
-        ProcessUtil.OpenPath(FileUtil.Default_Path);
+        ProcessUtil.OpenPath(FileUtil.AppData);
     }
 
     /// <summary>
@@ -128,7 +128,7 @@ public partial class ToolsView : UserControl
             {
                 ProcessUtil.CloseThirdProcess();
                 Thread.Sleep(100);
-                FileUtil.DelectDir(FileUtil.Default_Path);
+                FileUtil.DelectDir(FileUtil.AppData);
                 Thread.Sleep(100);
 
                 App.AppMainMutex.Dispose();
@@ -290,7 +290,7 @@ public partial class ToolsView : UserControl
                 {
                     var dirIf = new DirectoryInfo(dir);
                     string fullName = Path.Combine(dirIf.FullName, "SGTA50000");
-                    FileUtil.ExtractResFile(FileUtil.Resource_Path + "Other.SGTA50000", fullName);
+                    FileUtil.ExtractResFile(FileUtil.Res_Other_SGTA50000, fullName);
                 }
 
                 NotifierHelper.Show(NotifierType.Success, $"GTA5故事模式存档替换成功\n{path}");

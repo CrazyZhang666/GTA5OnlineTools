@@ -112,7 +112,7 @@ public partial class PericoView : UserControl
     {
         try
         {
-            File.WriteAllText(FileUtil.F_GTAHaxStat_Path, TextBox_PreviewGTAHax.Text);
+            File.WriteAllText(FileUtil.File_Cache_Stat, TextBox_PreviewGTAHax.Text);
         }
         catch (Exception ex)
         {
@@ -122,8 +122,6 @@ public partial class PericoView : UserControl
 
     private void Button_BuildGTAHax_Click(object sender, RoutedEventArgs e)
     {
-
-
         TextBox_PreviewGTAHax.Clear();
         TextBox_PreviewGTAHax.AppendText("INT32\n");
 
@@ -421,10 +419,8 @@ public partial class PericoView : UserControl
 
     private void Button_ImportGTAHax_Click(object sender, RoutedEventArgs e)
     {
-
-
         if (!ProcessUtil.IsAppRun("GTAHax"))
-            ProcessUtil.OpenProcess("GTAHax", false);
+            ProcessUtil.OpenProcess(FileUtil.File_Cache_GTAHax);
 
         Task.Run(() =>
         {

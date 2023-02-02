@@ -218,7 +218,7 @@ public partial class CheatsView : UserControl
             {
                 if (CheatsModel.KiddionIsRun)
                 {
-                    ProcessUtil.OpenProcess("Kiddion", true);
+                    ProcessUtil.OpenProcess(FileUtil.File_Kiddion_Kiddion);
 
                     if (CheatsModel.IsUseKiddionChs)
                     {
@@ -229,7 +229,7 @@ public partial class CheatsView : UserControl
                             {
                                 // 拿到Kiddion进程
                                 var pKiddion = Process.GetProcessesByName("Kiddion").ToList()[0];
-                                BaseInjector.DLLInjector(pKiddion.Id, FileUtil.D_Kiddion_Path + "KiddionChs.dll");
+                                BaseInjector.DLLInjector(pKiddion.Id, FileUtil.File_Kiddion_KiddionChs);
                                 return;
                             }
 
@@ -251,7 +251,7 @@ public partial class CheatsView : UserControl
     private void GTAHaxClick()
     {
         if (CheatsModel.GTAHaxIsRun)
-            ProcessUtil.OpenProcess("GTAHax", false);
+            ProcessUtil.OpenProcess(FileUtil.File_Cache_GTAHax);
         else
             ProcessUtil.CloseProcess("GTAHax");
     }
@@ -262,7 +262,7 @@ public partial class CheatsView : UserControl
     private void BincoHaxClick()
     {
         if (CheatsModel.BincoHaxIsRun)
-            ProcessUtil.OpenProcess("BincoHax", false);
+            ProcessUtil.OpenProcess(FileUtil.File_Cache_BincoHax);
         else
             ProcessUtil.CloseProcess("BincoHax");
     }
@@ -273,7 +273,7 @@ public partial class CheatsView : UserControl
     private void LSCHaxClick()
     {
         if (CheatsModel.LSCHaxIsRun)
-            ProcessUtil.OpenProcess("LSCHax", false);
+            ProcessUtil.OpenProcess(FileUtil.File_Cache_LSCHax);
         else
             ProcessUtil.CloseProcess("LSCHax");
     }
@@ -283,7 +283,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void YimMenuClick()
     {
-        var dllPath = FileUtil.D_Inject_Path + "YimMenu.dll";
+        var dllPath = FileUtil.Dir_Inject + "YimMenu.dll";
 
         if (!File.Exists(dllPath))
         {
@@ -320,7 +320,7 @@ public partial class CheatsView : UserControl
     private void KiddionKey104Click()
     {
         ProcessUtil.CloseProcess("Kiddion");
-        FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "config.json", FileUtil.D_Kiddion_Path + "config.json");
+        FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Config, FileUtil.File_Kiddion_Config);
         NotifierHelper.Show(NotifierType.Success, "切换到《Kiddion [104键]》成功");
     }
 
@@ -330,7 +330,7 @@ public partial class CheatsView : UserControl
     private void KiddionKey87Click()
     {
         ProcessUtil.CloseProcess("Kiddion");
-        FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "key87.config.json", FileUtil.D_Kiddion_Path + "config.json");
+        FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Key87_Config, FileUtil.File_Kiddion_Config);
         NotifierHelper.Show(NotifierType.Success, "切换到《Kiddion [87键]》成功");
     }
 
@@ -339,7 +339,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void KiddionConfigDirectoryClick()
     {
-        ProcessUtil.OpenPath(FileUtil.D_Kiddion_Path);
+        ProcessUtil.OpenPath(FileUtil.Dir_Kiddion);
     }
 
     /// <summary>
@@ -347,7 +347,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void KiddionScriptsDirectoryClick()
     {
-        ProcessUtil.OpenPath(FileUtil.D_KiddionScripts_Path);
+        ProcessUtil.OpenPath(FileUtil.Dir_Kiddion_Scripts);
     }
 
     /// <summary>
@@ -386,7 +386,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void EditKiddionConfigClick()
     {
-        ProcessUtil.Notepad2EditTextFile(FileUtil.D_Kiddion_Path + "config.json");
+        ProcessUtil.Notepad2EditTextFile(FileUtil.Dir_Kiddion + "config.json");
     }
 
     /// <summary>
@@ -394,7 +394,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void EditKiddionThemeClick()
     {
-        ProcessUtil.Notepad2EditTextFile(FileUtil.D_Kiddion_Path + "themes.json");
+        ProcessUtil.Notepad2EditTextFile(FileUtil.Dir_Kiddion + "themes.json");
     }
 
     /// <summary>
@@ -402,7 +402,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void EditKiddionTPClick()
     {
-        ProcessUtil.Notepad2EditTextFile(FileUtil.D_Kiddion_Path + "teleports.json");
+        ProcessUtil.Notepad2EditTextFile(FileUtil.Dir_Kiddion + "teleports.json");
     }
 
     /// <summary>
@@ -410,7 +410,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void EditKiddionVCClick()
     {
-        ProcessUtil.Notepad2EditTextFile(FileUtil.D_Kiddion_Path + "vehicles.json");
+        ProcessUtil.Notepad2EditTextFile(FileUtil.Dir_Kiddion + "vehicles.json");
     }
 
     /// <summary>
@@ -427,17 +427,19 @@ public partial class CheatsView : UserControl
                 ProcessUtil.CloseProcess("Notepad2");
                 Thread.Sleep(100);
 
-                FileUtil.DelectDir(FileUtil.D_Kiddion_Path);
-                Directory.CreateDirectory(FileUtil.D_KiddionScripts_Path);
+                FileUtil.DelectDir(FileUtil.Dir_Kiddion);
+                Directory.CreateDirectory(FileUtil.Dir_Kiddion_Scripts);
                 Thread.Sleep(100);
 
-                FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "Kiddion.exe", FileUtil.D_Kiddion_Path + "Kiddion.exe");
-                FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "KiddionChs.dll", FileUtil.D_Kiddion_Path + "KiddionChs.dll");
-                FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "config.json", FileUtil.D_Kiddion_Path + "config.json");
-                FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "themes.json", FileUtil.D_Kiddion_Path + "themes.json");
-                FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "teleports.json", FileUtil.D_Kiddion_Path + "teleports.json");
-                FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "vehicles.json", FileUtil.D_Kiddion_Path + "vehicles.json");
-                FileUtil.ExtractResFile(FileUtil.Resource_Kiddion_Path + "scripts.Readme.api", FileUtil.D_KiddionScripts_Path + "Readme.api");
+                FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Kiddion, FileUtil.File_Kiddion_Kiddion);
+                FileUtil.ExtractResFile(FileUtil.Res_Kiddion_KiddionChs, FileUtil.File_Kiddion_KiddionChs);
+
+                FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Config, FileUtil.File_Kiddion_Config);
+                FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Themes, FileUtil.File_Kiddion_Themes);
+                FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Teleports, FileUtil.File_Kiddion_Teleports);
+                FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Vehicles, FileUtil.File_Kiddion_Vehicles);
+
+                FileUtil.ExtractResFile(FileUtil.Res_Kiddion_Scripts_Readme, FileUtil.File_Kiddion_Scripts_Readme);
 
                 NotifierHelper.Show(NotifierType.Success, "重置Kiddion配置文件成功");
             }
@@ -455,7 +457,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void EditGTAHaxStatClick()
     {
-        ProcessUtil.Notepad2EditTextFile(FileUtil.F_GTAHaxStat_Path);
+        ProcessUtil.Notepad2EditTextFile(FileUtil.File_Cache_Stat);
     }
 
     /// <summary>
@@ -504,7 +506,7 @@ public partial class CheatsView : UserControl
     {
         try
         {
-            if (FileUtil.IsOccupied(FileUtil.D_Inject_Path + "YimMenu.dll"))
+            if (FileUtil.IsOccupied(FileUtil.Dir_Inject + "YimMenu.dll"))
             {
                 NotifierHelper.Show(NotifierType.Warning, "请先卸载YimMenu菜单后再执行操作");
                 return;

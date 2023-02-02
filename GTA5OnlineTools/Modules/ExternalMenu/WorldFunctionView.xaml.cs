@@ -28,16 +28,16 @@ public partial class WorldFunctionView : UserControl
         ExternalMenuWindow.WindowClosingEvent += ExternalMenuWindow_WindowClosingEvent;
 
         // 如果配置文件不存在就创建
-        if (!File.Exists(FileUtil.F_CustomTPList_Path))
+        if (!File.Exists(FileUtil.File_Config_CustomTPList))
         {
             // 保存配置文件
             SaveConfig();
         }
 
         // 如果配置文件存在就读取
-        if (File.Exists(FileUtil.F_CustomTPList_Path))
+        if (File.Exists(FileUtil.File_Config_CustomTPList))
         {
-            using var streamReader = new StreamReader(FileUtil.F_CustomTPList_Path);
+            using var streamReader = new StreamReader(FileUtil.File_Config_CustomTPList);
             List<TeleportData.TeleportInfo> teleportPreviews = JsonUtil.JsonDese<List<TeleportData.TeleportInfo>>(streamReader.ReadToEnd());
 
             TeleportData.CustomTeleport.Clear();
@@ -69,10 +69,10 @@ public partial class WorldFunctionView : UserControl
     /// </summary>
     private void SaveConfig()
     {
-        if (Directory.Exists(FileUtil.D_Config_Path))
+        if (Directory.Exists(FileUtil.Dir_Config))
         {
             // 写入到Json文件
-            File.WriteAllText(FileUtil.F_CustomTPList_Path, JsonUtil.JsonSeri(TeleportData.CustomTeleport));
+            File.WriteAllText(FileUtil.File_Config_CustomTPList, JsonUtil.JsonSeri(TeleportData.CustomTeleport));
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using GTA5OnlineTools.Helper;
+using System.Security.Policy;
 
 namespace GTA5OnlineTools.Utils;
 
@@ -37,14 +38,32 @@ public static class ProcessUtil
     }
 
     /// <summary>
+    /// 打开进程基类
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="args"></param>
+    public static void OpenBase(string path, string args = "")
+    {
+        Process.Start(new ProcessStartInfo(path, args) { UseShellExecute = false });
+    }
+
+    /// <summary>
+    /// 打开链接
+    /// </summary>
+    public static void OpenLink(string url)
+    {
+        Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+    }
+
+    /// <summary>
     /// 打开指定路径或链接（带异常提示）
     /// </summary>
     /// <param name="path">本地文件夹路径</param>
-    public static void OpenPath(string path)
+    public static void OpenPath(string path, string args = "")
     {
         try
         {
-            Process.Start(new ProcessStartInfo(path) { UseShellExecute = true });
+            OpenBase(path, args);
         }
         catch (Exception ex)
         {
@@ -55,53 +74,20 @@ public static class ProcessUtil
     /// <summary>
     /// 使用Notepad2编辑文本文件
     /// </summary>
-    /// <param name="path"></param>
-    public static void Notepad2EditTextFile(string path)
+    /// <param name="args"></param>
+    public static void Notepad2EditTextFile(string args)
     {
-        try
-        {
-            Process.Start(new ProcessStartInfo(FileUtil.D_Cache_Path + "Notepad2.exe", path) { UseShellExecute = true });
-        }
-        catch (Exception ex)
-        {
-            NotifierHelper.ShowException(ex);
-        }
+        OpenPath(FileUtil.File_Cache_Notepad2, args);
     }
 
     /// <summary>
-    /// 以管理员权限打开指定程序，不需要后缀.exe
+    /// 以管理员权限打开指定程序
     /// </summary>
-    /// <param name="processName">程序名字，要带后缀名</param>
-    /// <param name="isKiddion">是否在Kiddion目录下</param>
-    public static void OpenProcess(string processName, bool isKiddion)
+    /// <param name="processPath">程序路径</param>
+    public static void OpenProcess(string processPath)
     {
-        try
-        {
-            if (IsAppRun(processName))
-            {
-                NotifierHelper.Show(NotifierType.Warning, $"请不要重复打开，{processName} 已经在运行了");
-            }
-            else
-            {
-                string path = string.Empty;
-                if (isKiddion)
-                    path = FileUtil.D_Kiddion_Path;
-                else
-                    path = FileUtil.D_Cache_Path;
-
-                Directory.SetCurrentDirectory(path);
-                path = Path.Combine(path, processName + ".exe");
-                Process.Start(new ProcessStartInfo(path)
-                {
-                    UseShellExecute = true,
-                    Verb = "runas"
-                });
-            }
-        }
-        catch (Exception ex)
-        {
-            NotifierHelper.ShowException(ex);
-        }
+        Directory.SetCurrentDirectory(Path.GetDirectoryName(processPath));
+        OpenPath(processPath);
     }
 
     /// <summary>

@@ -63,16 +63,16 @@ public partial class SelfStateView : UserControl
         HotKeys.KeyDownEvent += HotKeys_KeyDownEvent;
 
         // 如果配置文件不存在就创建
-        if (!File.Exists(FileUtil.F_SelfStateConfig_Path))
+        if (!File.Exists(FileUtil.File_Config_SelfState))
         {
             // 保存配置文件
             SaveConfig();
         }
 
         // 如果配置文件存在就读取
-        if (File.Exists(FileUtil.F_SelfStateConfig_Path))
+        if (File.Exists(FileUtil.File_Config_SelfState))
         {
-            using var streamReader = new StreamReader(FileUtil.F_SelfStateConfig_Path);
+            using var streamReader = new StreamReader(FileUtil.File_Config_SelfState);
             SelfStateConfig = JsonUtil.JsonDese<SelfStateConfig>(streamReader.ReadToEnd());
 
             SelfStateModel.IsHotKeyToWaypoint = SelfStateConfig.IsHotKeyToWaypoint;
@@ -99,7 +99,7 @@ public partial class SelfStateView : UserControl
     /// </summary>
     private void SaveConfig()
     {
-        if (Directory.Exists(FileUtil.D_Config_Path))
+        if (Directory.Exists(FileUtil.Dir_Config))
         {
             SelfStateConfig.IsHotKeyToWaypoint = SelfStateModel.IsHotKeyToWaypoint;
             SelfStateConfig.IsHotKeyToObjective = SelfStateModel.IsHotKeyToObjective;
@@ -112,7 +112,7 @@ public partial class SelfStateView : UserControl
             SelfStateConfig.IsHotKeyNoCollision = SelfStateModel.IsHotKeyNoCollision;
 
             // 写入到Json文件
-            File.WriteAllText(FileUtil.F_SelfStateConfig_Path, JsonUtil.JsonSeri(SelfStateConfig));
+            File.WriteAllText(FileUtil.File_Config_SelfState, JsonUtil.JsonSeri(SelfStateConfig));
         }
     }
 

@@ -72,11 +72,9 @@ public partial class GTAHaxStatWindow
 
     private void Button_ImportGTAHax_Click(object sender, RoutedEventArgs e)
     {
-        
-
         try
         {
-            File.WriteAllText(FileUtil.F_GTAHaxStat_Path, TextBox_PreviewGTAHax.Text);
+            File.WriteAllText(FileUtil.File_Cache_Stat, TextBox_PreviewGTAHax.Text);
         }
         catch (Exception ex)
         {
@@ -84,7 +82,7 @@ public partial class GTAHaxStatWindow
         }
 
         if (!ProcessUtil.IsAppRun("GTAHax"))
-            ProcessUtil.OpenProcess("GTAHax", false);
+            ProcessUtil.OpenProcess(FileUtil.File_Cache_GTAHax);
 
         Task.Run(() =>
         {
