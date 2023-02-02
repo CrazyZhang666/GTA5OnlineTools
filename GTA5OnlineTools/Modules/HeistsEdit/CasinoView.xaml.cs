@@ -19,7 +19,7 @@ public partial class CasinoView : UserControl
 
     private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
     {
-        ProcessUtil.OpenPath(e.Uri.OriginalString);
+        ProcessUtil.OpenLink(e.Uri.OriginalString);
         e.Handled = true;
     }
 

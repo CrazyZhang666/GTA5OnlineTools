@@ -32,7 +32,7 @@ public partial class ToolsView : UserControl
     /// <param name="e"></param>
     private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
     {
-        ProcessUtil.OpenPath(e.Uri.OriginalString);
+        ProcessUtil.OpenLink(e.Uri.OriginalString);
         e.Handled = true;
     }
 
@@ -104,7 +104,7 @@ public partial class ToolsView : UserControl
     /// </summary>
     private void CurrentDirectoryClick()
     {
-        ProcessUtil.OpenPath(FileUtil.CurrentDirectory_Path);
+        ProcessUtil.OpenLink(FileUtil.CurrentDirectory_Path);
     }
 
     /// <summary>
@@ -112,7 +112,7 @@ public partial class ToolsView : UserControl
     /// </summary>
     private void ReleaseDirectoryClick()
     {
-        ProcessUtil.OpenPath(FileUtil.AppData);
+        ProcessUtil.OpenLink(FileUtil.AppData);
     }
 
     /// <summary>

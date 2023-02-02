@@ -1,5 +1,4 @@
 ﻿using GTA5OnlineTools.Helper;
-using System.Security.Policy;
 
 namespace GTA5OnlineTools.Utils;
 
@@ -44,19 +43,20 @@ public static class ProcessUtil
     /// <param name="args"></param>
     public static void OpenBase(string path, string args = "")
     {
-        Process.Start(new ProcessStartInfo(path, args) { UseShellExecute = false });
+        Process.Start(path, args);
     }
 
     /// <summary>
-    /// 打开链接
+    /// 打开链接或者文件夹路径
     /// </summary>
+    /// <param name="url"></param>
     public static void OpenLink(string url)
     {
         Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
     }
 
     /// <summary>
-    /// 打开指定路径或链接（带异常提示）
+    /// 打开指定路径或链接
     /// </summary>
     /// <param name="path">本地文件夹路径</param>
     public static void OpenPath(string path, string args = "")

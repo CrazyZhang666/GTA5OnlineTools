@@ -51,7 +51,7 @@ public partial class UpdateWindow
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private async void Window_Update_Closing(object sender, CancelEventArgs e)
-    { 
+    {
         await downloader.Clear();
         downloader.Dispose();
     }
@@ -63,7 +63,7 @@ public partial class UpdateWindow
     /// <param name="e"></param>
     private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
     {
-        ProcessUtil.OpenPath(e.Uri.OriginalString);
+        ProcessUtil.OpenLink(e.Uri.OriginalString);
         e.Handled = true;
     }
 
@@ -74,8 +74,6 @@ public partial class UpdateWindow
     /// <param name="e"></param>
     private void Button_Update_Click(object sender, RoutedEventArgs e)
     {
-
-
         Button_Update.IsEnabled = false;
         Button_CancelUpdate.IsEnabled = true;
 
@@ -108,8 +106,6 @@ public partial class UpdateWindow
     /// <param name="e"></param>
     private void Button_CancelUpdate_Click(object sender, RoutedEventArgs e)
     {
-
-
         downloader.CancelAsync();
         downloader.Clear();
 

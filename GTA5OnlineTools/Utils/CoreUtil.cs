@@ -8,7 +8,7 @@ public static class CoreUtil
     /// <summary>
     /// 主窗口标题
     /// </summary>
-    public const string MainAppWindowName = "GTA5线上小助手 支持1.64 完全免费 v";
+    public const string MainAppWindowName = "GTA5线上小助手 支持1.646 完全免费 v";
 
     /// <summary>
     /// 目标进程，默认为GTA5
