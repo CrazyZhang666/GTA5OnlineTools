@@ -47,11 +47,11 @@
 
 	<ItemGroup>
 		<PackageReference Include="Chinese" Version="0.5.0" />
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
-		<PackageReference Include="Downloader" Version="3.0.1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+		<PackageReference Include="Downloader" Version="3.0.3" />
 		<PackageReference Include="GameOverlay.Net" Version="4.3.1" />
 		<PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
-		<PackageReference Include="NLog" Version="5.1.0" />
+		<PackageReference Include="NLog" Version="5.1.1" />
 		<PackageReference Include="Notification.Wpf" Version="6.1.0.5" />
 		<PackageReference Include="RestSharp" Version="108.0.3" />
 	</ItemGroup>

@@ -5,7 +5,7 @@ public static class FileUtil
     /// <summary>
     /// 默认路径
     /// </summary>
-    public const string Default_Path = @"C:\ProgramData\GTA5OnlineTools\";
+    public const string Default_Path = @".\AppData\";
 
     public const string Resource_Path = "GTA5OnlineTools.GTA.Files.";
     public const string Resource_Kiddion_Path = "GTA5OnlineTools.GTA.Files.Kiddion.";
