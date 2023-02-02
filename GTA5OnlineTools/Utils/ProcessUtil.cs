@@ -28,7 +28,7 @@ public static class ProcessUtil
                 if (item.MainWindowHandle == IntPtr.Zero)
                     continue;
 
-                if (item.MainModule.FileVersionInfo.LegalCopyright == "Rockstar Games Inc. (C) 2005-2022 Take Two Interactive. All rights reserved.")
+                if (item.MainModule.FileVersionInfo.LegalCopyright == "Rockstar Games Inc. (C) 2005-2023 Take Two Interactive. All rights reserved.")
                     return true;
             }
         }
