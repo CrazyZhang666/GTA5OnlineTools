@@ -259,7 +259,7 @@ public partial class MainWindow
 
                     if (boxResult == MessageBoxResult.Yes)
                     {
-                        FileUtil.DelectDir(FileUtil.AppData);
+                        FileUtil.DelectDir(FileUtil.Default);
                         Thread.Sleep(100);
 
                         App.AppMainMutex.Dispose();
@@ -269,7 +269,7 @@ public partial class MainWindow
                     }
                     else if (boxResult == MessageBoxResult.No)
                     {
-                        ProcessUtil.OpenPath(FileUtil.AppData);
+                        ProcessUtil.OpenPath(FileUtil.Default);
                     }
                 }
             });

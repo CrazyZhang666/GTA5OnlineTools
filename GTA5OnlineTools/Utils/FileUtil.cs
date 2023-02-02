@@ -5,17 +5,17 @@ public static class FileUtil
     /// <summary>
     /// 默认路径
     /// </summary>
-    public const string AppData = "C:\\ProgramData\\GTA5OnlineTools";
+    public const string Default = "C:\\ProgramData\\GTA5OnlineTools";
     /// <summary>
     /// 资源路径
     /// </summary>
     public const string ResFiles = "GTA5OnlineTools.GTA.Files";
 
-    public const string Dir_Kiddion = $"{AppData}\\Kiddion";
-    public const string Dir_Cache = $"{AppData}\\Cache";
-    public const string Dir_Config = $"{AppData}\\Config";
-    public const string Dir_Inject = $"{AppData}\\Inject";
-    public const string Dir_Log = $"{AppData}\\Log";
+    public const string Dir_Kiddion = $"{Default}\\Kiddion";
+    public const string Dir_Cache = $"{Default}\\Cache";
+    public const string Dir_Config = $"{Default}\\Config";
+    public const string Dir_Inject = $"{Default}\\Inject";
+    public const string Dir_Log = $"{Default}\\Log";
 
     public const string Dir_Kiddion_Scripts = $"{Dir_Kiddion}\\scripts";
 

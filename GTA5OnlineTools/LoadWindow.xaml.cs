@@ -136,7 +136,7 @@ public partial class LoadWindow
             {
                 case "InitDefaultPath":
                     {
-                        FileUtil.DelectDir(FileUtil.AppData);
+                        FileUtil.DelectDir(FileUtil.Default);
                         Thread.Sleep(100);
 
                         App.AppMainMutex.Dispose();
@@ -145,7 +145,7 @@ public partial class LoadWindow
                     }
                     break;
                 case "OpenDefaultPath":
-                    ProcessUtil.OpenPath(FileUtil.AppData);
+                    ProcessUtil.OpenPath(FileUtil.Default);
                     break;
                 case "ExitAPP":
                     Application.Current.Shutdown();

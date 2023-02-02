@@ -283,9 +283,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void YimMenuClick()
     {
-        var dllPath = FileUtil.Dir_Inject + "YimMenu.dll";
-
-        if (!File.Exists(dllPath))
+        if (!File.Exists(FileUtil.File_Inject_YimMenu))
         {
             NotifierHelper.Show(NotifierType.Error, "发生异常，YimMenu菜单DLL文件不存在");
             return;
@@ -293,7 +291,7 @@ public partial class CheatsView : UserControl
 
         foreach (ProcessModule module in Process.GetProcessById(Memory.GTA5ProId).Modules)
         {
-            if (module.FileName == dllPath)
+            if (module.FileName == FileUtil.File_Inject_YimMenu)
             {
                 NotifierHelper.Show(NotifierType.Warning, "该DLL已经被注入过了，请勿重复注入");
                 return;
@@ -302,7 +300,7 @@ public partial class CheatsView : UserControl
 
         try
         {
-            BaseInjector.DLLInjector(Memory.GTA5ProId, dllPath);
+            BaseInjector.DLLInjector(Memory.GTA5ProId, FileUtil.File_Inject_YimMenu);
             Memory.SetForegroundWindow();
             NotifierHelper.Show(NotifierType.Success, "YimMenu注入成功，请前往游戏查看");
         }
@@ -339,7 +337,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void KiddionConfigDirectoryClick()
     {
-        ProcessUtil.OpenPath(FileUtil.Dir_Kiddion);
+        ProcessUtil.OpenLink(FileUtil.Dir_Kiddion);
     }
 
     /// <summary>
@@ -347,7 +345,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void KiddionScriptsDirectoryClick()
     {
-        ProcessUtil.OpenPath(FileUtil.Dir_Kiddion_Scripts);
+        ProcessUtil.OpenLink(FileUtil.Dir_Kiddion_Scripts);
     }
 
     /// <summary>
@@ -386,7 +384,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void EditKiddionConfigClick()
     {
-        ProcessUtil.Notepad2EditTextFile(FileUtil.Dir_Kiddion + "config.json");
+        ProcessUtil.Notepad2EditTextFile(FileUtil.File_Kiddion_Config);
     }
 
     /// <summary>
@@ -394,7 +392,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void EditKiddionThemeClick()
     {
-        ProcessUtil.Notepad2EditTextFile(FileUtil.Dir_Kiddion + "themes.json");
+        ProcessUtil.Notepad2EditTextFile(FileUtil.File_Kiddion_Themes);
     }
 
     /// <summary>
@@ -402,7 +400,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void EditKiddionTPClick()
     {
-        ProcessUtil.Notepad2EditTextFile(FileUtil.Dir_Kiddion + "teleports.json");
+        ProcessUtil.Notepad2EditTextFile(FileUtil.File_Kiddion_Teleports);
     }
 
     /// <summary>
@@ -410,7 +408,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void EditKiddionVCClick()
     {
-        ProcessUtil.Notepad2EditTextFile(FileUtil.Dir_Kiddion + "vehicles.json");
+        ProcessUtil.Notepad2EditTextFile(FileUtil.File_Kiddion_Vehicles);
     }
 
     /// <summary>
