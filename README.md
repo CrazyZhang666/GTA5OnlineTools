@@ -1,35 +1,27 @@
-# GTA5çº¿ä¸Šå°åŠ©æ‰‹
+# GTA5ÏßÉÏÐ¡ÖúÊÖ
 
-ä¸€ä¸ªå®Œå…¨å…è´¹çš„GTA5çº¿ä¸Šæ¨¡å¼è¾…åŠ©å·¥å…·
+Ò»¸öÍêÈ«Ãâ·ÑµÄGTA5ÏßÉÏÄ£Ê½¸¨Öú¹¤¾ß
 
-## ä¸‹è½½
+## ÏÂÔØ
 
-[æœ€æ–°ç‰ˆæœ¬å‘å¸ƒåœ°å€](https://github.com/CrazyZhang666/GTA5OnlineTools/releases)  
+[×îÐÂ°æ±¾·¢²¼µØÖ·](https://github.com/CrazyZhang666/GTA5OnlineTools/releases)  
 
-## ç¼–è¯‘
+## ±àÒë
 
-* Windows 10 ä¸“ä¸šç‰ˆ 22H2 x64  
-* Visual Studio 2022 ä¼ä¸šç‰ˆ  
+* Windows 10 ×¨Òµ°æ 22H2 x64  
+* Visual Studio 2022 ÆóÒµ°æ  
 * .NET 6.0  
 
-## çŽ¯å¢ƒ
+## »·¾³
 
 * SDK
-> https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-6.0.404-windows-x64-installer
+> https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-6.0.405-windows-x64-installer
 
 * Runtime
-> https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.12-windows-x64-installer
+> https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.13-windows-x64-installer
 
-## æŠ€æœ¯
+## ¼¼Êõ
 
 * WPF
 * CSharp
 * MVVM
-
-## GithubåŠ é€Ÿ
-
-* Steam++ï¼ˆæŽ¨èï¼‰
-> https://steampp.net/
-
-* FastGithub
-> https://github.com/dotnetcore/FastGithub/releases
