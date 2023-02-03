@@ -11,14 +11,14 @@ using CommunityToolkit.Mvvm.Input;
 namespace GTA5OnlineTools.Views;
 
 /// <summary>
-/// CheatsView.xaml 的交互逻辑
+/// HacksView.xaml 的交互逻辑
 /// </summary>
-public partial class CheatsView : UserControl
+public partial class HacksView : UserControl
 {
     /// <summary>
-    /// Cheats 数据模型绑定
+    /// Hacks 数据模型绑定
     /// </summary>
-    public CheatsModel CheatsModel { get; set; } = new();
+    public HacksModel HacksModel { get; set; } = new();
 
     private readonly Kiddion Kiddion = new();
     private readonly GTAHax GTAHax = new();
@@ -27,9 +27,8 @@ public partial class CheatsView : UserControl
     private readonly YimMenu YimMenu = new();
 
     private GTAHaxStatWindow GTAHaxWindow = null;
-    private KiddionChsWindow KiddionChsWindow = null;
 
-    public CheatsView()
+    public HacksView()
     {
         InitializeComponent();
         this.DataContext = this;
@@ -49,13 +48,13 @@ public partial class CheatsView : UserControl
         while (MainWindow.IsAppRunning)
         {
             // 判断 Kiddion 是否运行
-            CheatsModel.KiddionIsRun = ProcessUtil.IsAppRun("Kiddion");
+            HacksModel.KiddionIsRun = ProcessUtil.IsAppRun("Kiddion");
             // 判断 GTAHax 是否运行
-            CheatsModel.GTAHaxIsRun = ProcessUtil.IsAppRun("GTAHax");
+            HacksModel.GTAHaxIsRun = ProcessUtil.IsAppRun("GTAHax");
             // 判断 BincoHax 是否运行
-            CheatsModel.BincoHaxIsRun = ProcessUtil.IsAppRun("BincoHax");
+            HacksModel.BincoHaxIsRun = ProcessUtil.IsAppRun("BincoHax");
             // 判断 LSCHax 是否运行
-            CheatsModel.LSCHaxIsRun = ProcessUtil.IsAppRun("LSCHax");
+            HacksModel.LSCHaxIsRun = ProcessUtil.IsAppRun("LSCHax");
 
             Thread.Sleep(1000);
         }
@@ -206,7 +205,7 @@ public partial class CheatsView : UserControl
 
             Task.Run(async () =>
             {
-                if (CheatsModel.KiddionIsRun)
+                if (HacksModel.KiddionIsRun)
                 {
                     ProcessUtil.OpenProcess(FileUtil.File_Kiddion_Kiddion);
 
@@ -237,7 +236,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void GTAHaxClick()
     {
-        if (CheatsModel.GTAHaxIsRun)
+        if (HacksModel.GTAHaxIsRun)
             ProcessUtil.OpenProcess(FileUtil.File_Cache_GTAHax);
         else
             ProcessUtil.CloseProcess("GTAHax");
@@ -248,7 +247,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void BincoHaxClick()
     {
-        if (CheatsModel.BincoHaxIsRun)
+        if (HacksModel.BincoHaxIsRun)
             ProcessUtil.OpenProcess(FileUtil.File_Cache_BincoHax);
         else
             ProcessUtil.CloseProcess("BincoHax");
@@ -259,7 +258,7 @@ public partial class CheatsView : UserControl
     /// </summary>
     private void LSCHaxClick()
     {
-        if (CheatsModel.LSCHaxIsRun)
+        if (HacksModel.LSCHaxIsRun)
             ProcessUtil.OpenProcess(FileUtil.File_Cache_LSCHax);
         else
             ProcessUtil.CloseProcess("LSCHax");

@@ -25,7 +25,7 @@ public partial class MainWindow
     ///////////////////////////////////////////////////////////////
 
     private readonly HomeView HomeView = new();
-    private readonly CheatsView CheatsView = new();
+    private readonly HacksView CheatsView = new();
     private readonly ModulesView ModulesView = new();
     private readonly ToolsView ToolsView = new();
     private readonly AboutView AboutView = new();

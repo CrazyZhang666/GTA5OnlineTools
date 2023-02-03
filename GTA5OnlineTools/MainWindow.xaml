@@ -65,17 +65,17 @@
                     Command="{Binding NavigateCommand}"
                     CommandParameter="CheatsView"
                     Content="第三方"
-                    Icon="&#xe636;" />
+                    Icon="&#xe63b;" />
                 <ui:RadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="ModulesView"
                     Content="功能"
-                    Icon="&#xe691;" />
+                    Icon="&#xe666;" />
                 <ui:RadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="ToolsView"
                     Content="工具"
-                    Icon="&#xe648;" />
+                    Icon="&#xe606;" />
                 <ui:RadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="AboutView"

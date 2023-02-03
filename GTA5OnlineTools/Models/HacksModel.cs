@@ -2,7 +2,7 @@
 
 namespace GTA5OnlineTools.Models;
 
-public partial class CheatsModel : ObservableObject
+public partial class HacksModel : ObservableObject
 {
     /// <summary>
     /// Kiddion运行状态

@@ -9,15 +9,23 @@
     <Style TargetType="{x:Type controls:GroupBoxHack}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="2" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:GroupBoxHack}">
                     <Border
-                        Width="550"
+                        Width="600"
                         Height="200"
                         Margin="5,5,0,0"
-                        BorderBrush="Gray"
-                        BorderThickness="1">
+                        Padding="{TemplateBinding Padding}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="5"
+                        SnapsToDevicePixels="True">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="150" />
@@ -27,7 +35,7 @@
                             <Border
                                 Margin="5,5,0,5"
                                 BorderBrush="Gray"
-                                BorderThickness="0.7"
+                                BorderThickness="1"
                                 SnapsToDevicePixels="True">
                                 <Image
                                     RenderOptions.BitmapScalingMode="HighQuality"
@@ -67,6 +75,13 @@
                             </DockPanel>
                         </Grid>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Padding" Value="0" />
+                            <Setter Property="BorderThickness" Value="3" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource BlueColor}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

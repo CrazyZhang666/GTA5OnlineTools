@@ -13,12 +13,12 @@
                     <Border
                         x:Name="border"
                         Margin="3,3,0,3"
-                        Padding="6"
+                        Padding="5,7,5,5"
                         VerticalAlignment="Center"
                         Background="Transparent"
                         BorderBrush="Transparent"
-                        BorderThickness="1"
-                        CornerRadius="5"
+                        BorderThickness="0,0,0,5"
+                        CornerRadius="0"
                         SnapsToDevicePixels="True">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                             <TextBlock
@@ -32,11 +32,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Background" Value="#E6E6E6" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#E6E6E6" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="border" Property="BorderBrush" Value="#616161" />
-                            <Setter TargetName="border" Property="Background" Value="#E2F0FF" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#6CB5FE" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

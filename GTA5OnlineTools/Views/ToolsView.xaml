@@ -90,12 +90,6 @@
                         Style="{StaticResource ButtonStyle_Tools}" />
                     <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
-                        CommandParameter="MinimizeToTray"
-                        Content="最小化程序到系统托盘"
-                        Icon="&#xe60e;"
-                        Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:ButtonIcon
-                        Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="ManualGC"
                         Content="GC垃圾回收"
                         Icon="&#xe651;"

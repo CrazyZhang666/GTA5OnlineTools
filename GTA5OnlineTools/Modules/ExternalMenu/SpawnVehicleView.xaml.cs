@@ -1,5 +1,4 @@
-﻿using GTA5OnlineTools.Utils;
-using GTA5OnlineTools.GTA.SDK;
+﻿using GTA5OnlineTools.GTA.SDK;
 using GTA5OnlineTools.GTA.Data;
 using GTA5OnlineTools.GTA.Client;
 using GTA5OnlineTools.GTA.Settings;
@@ -68,7 +67,7 @@ public partial class SpawnVehicleView : UserControl
                                 {
                                     Id = name,
                                     Name = displayName,
-                                    Image = $"\\Assets\\Images\\Client\\Vehicles\\{name}.png"
+                                    Image = $"\\Assets\\Client\\Vehicles\\{name}.png"
                                 });
                             }
                         });
@@ -95,16 +94,12 @@ public partial class SpawnVehicleView : UserControl
 
     private void Button_SpawnOnlineVehicleA_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Vehicle.SpawnVehicle(VehicleSpawn.VehicleHash, -255.0f, 5, VehicleSpawn.VehicleMod);
         //Vehicle.SpawnVehicle(vehicleSpawn.VehicleHash, -255.0f);
     }
 
     private void Button_SpawnOnlineVehicleB_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Vehicle.SpawnVehicle(VehicleSpawn.VehicleHash, 0.0f, 5, VehicleSpawn.VehicleMod);
         //Vehicle.SpawnVehicle(vehicleSpawn.VehicleHash, -255.0f);
     }
@@ -135,22 +130,16 @@ public partial class SpawnVehicleView : UserControl
 
     private void Button_FillVehicleHealth_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Vehicle.FillHealth();
     }
 
     private void Button_RepairVehicle_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Vehicle.FixVehicleByBST();
     }
 
     private void Button_TurnOffBST_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Online.InstantBullShark(false);
     }
 
