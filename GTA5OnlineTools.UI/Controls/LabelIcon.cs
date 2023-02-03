@@ -11,5 +11,5 @@ public class LabelIcon : Label
         set { SetValue(IconProperty, value); }
     }
     public static readonly DependencyProperty IconProperty =
-        DependencyProperty.Register("Icon", typeof(string), typeof(LabelIcon), new PropertyMetadata("\xe63b"));
+        DependencyProperty.Register("Icon", typeof(string), typeof(LabelIcon), new PropertyMetadata("\xe70a"));
 }

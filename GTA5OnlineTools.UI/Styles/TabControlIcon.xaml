@@ -63,8 +63,7 @@
                                     VerticalAlignment="Center"
                                     Background="Transparent"
                                     BorderBrush="Transparent"
-                                    BorderThickness="2"
-                                    CornerRadius="3">
+                                    BorderThickness="0,0,0,5">
                                     <StackPanel
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
@@ -88,7 +87,6 @@
                                     </Trigger>
                                     <Trigger Property="IsSelected" Value="True">
                                         <Setter TargetName="border" Property="BorderBrush" Value="#2196F3" />
-                                        <Setter TargetName="border" Property="Background" Value="#E2F0FF" />
                                     </Trigger>
                                 </ControlTemplate.Triggers>
                             </ControlTemplate>

@@ -89,16 +89,12 @@ public partial class SpawnVehicleWindow
 
     private void Button_SpawnOnlineVehicleA_Click(object sender, RoutedEventArgs e)
     {
-
-
         Vehicle.SpawnVehicle(vehicleSpawn.VehicleHash, -255.0f, 5, vehicleSpawn.VehicleMod);
         //Vehicle.SpawnVehicle(vehicleSpawn.VehicleHash, -255.0f);
     }
 
     private void Button_SpawnOnlineVehicleB_Click(object sender, RoutedEventArgs e)
     {
-
-
         Vehicle.SpawnVehicle(vehicleSpawn.VehicleHash, 0.0f, 5, vehicleSpawn.VehicleMod);
         //Vehicle.SpawnVehicle(vehicleSpawn.VehicleHash, -255.0f);
     }

@@ -11,5 +11,5 @@ public class RadioButtonIcon : RadioButton
         set { SetValue(IconProperty, value); }
     }
     public static readonly DependencyProperty IconProperty =
-        DependencyProperty.Register("Icon", typeof(string), typeof(RadioButtonIcon), new PropertyMetadata("\xe63b"));
+        DependencyProperty.Register("Icon", typeof(string), typeof(RadioButtonIcon), new PropertyMetadata("\xe70a"));
 }

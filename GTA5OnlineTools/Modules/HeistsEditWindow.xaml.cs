@@ -50,11 +50,11 @@ public partial class HeistsEditWindow
     /// </summary>
     private void CreateMenuBar()
     {
-        MenuBars.Add(new MenuBar() { Icon = "\xe63b", Title = "事所合约", NameSpace = "ContractView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe63b", Title = "佩里克岛", NameSpace = "PericoView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe63b", Title = "赌场抢劫", NameSpace = "CasinoView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe63b", Title = "末日抢劫", NameSpace = "DoomsdayView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe63b", Title = "公寓抢劫", NameSpace = "ApartmentView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe610", Title = "事所合约", NameSpace = "ContractView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe610", Title = "佩里克岛", NameSpace = "PericoView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe610", Title = "赌场抢劫", NameSpace = "CasinoView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe610", Title = "末日抢劫", NameSpace = "DoomsdayView" });
+        MenuBars.Add(new MenuBar() { Icon = "\xe610", Title = "公寓抢劫", NameSpace = "ApartmentView" });
     }
 
     /// <summary>

@@ -34,7 +34,7 @@
                             <Setter TargetName="border" Property="BorderBrush" Value="#E6E6E6" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="border" Property="BorderBrush" Value="#6CB5FE" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="#2196F3" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

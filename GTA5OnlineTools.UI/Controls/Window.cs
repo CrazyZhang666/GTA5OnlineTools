@@ -1,4 +1,6 @@
-﻿namespace GTA5OnlineTools.UI.Controls;
+﻿using System.Windows;
+
+namespace GTA5OnlineTools.UI.Controls;
 
 public class Window : System.Windows.Window
 {
@@ -69,7 +71,7 @@ public class Window : System.Windows.Window
         set { SetValue(CaptionHeightProperty, value); }
     }
     public static readonly DependencyProperty CaptionHeightProperty =
-        DependencyProperty.Register("CaptionHeight", typeof(double), typeof(Window), new PropertyMetadata(35.0));
+        DependencyProperty.Register("CaptionHeight", typeof(double), typeof(Window), new PropertyMetadata(30.0));
 
     /// <summary>
     /// 标题栏背景色
@@ -80,7 +82,7 @@ public class Window : System.Windows.Window
         set { SetValue(CaptionBackgroundProperty, value); }
     }
     public static readonly DependencyProperty CaptionBackgroundProperty =
-        DependencyProperty.Register("CaptionBackground", typeof(Brush), typeof(Window), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(0, 255, 255, 255))));
+        DependencyProperty.Register("CaptionBackground", typeof(Brush), typeof(Window), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(245, 245, 245))));
 
     /// <summary>
     /// 标题栏的内容

@@ -24,7 +24,6 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="5"
                         SnapsToDevicePixels="True">
                         <Grid>
                             <Grid.ColumnDefinitions>
