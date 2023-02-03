@@ -17,11 +17,11 @@ public partial class ExternalMenuWindow
     /// <summary>
     /// 导航菜单
     /// </summary>
-    public List<MenuBar> MenuBars { get; set; } = new();
+    public List<NavMenu> NavMenus { get; set; } = new();
     /// <summary>
     /// 导航命令
     /// </summary>
-    public RelayCommand<MenuBar> NavigateCommand { get; private set; }
+    public RelayCommand<NavMenu> NavigateCommand { get; private set; }
 
     private readonly ReadMeView ReadMeView = new();
     private readonly SelfStateView SelfStateView = new();
@@ -127,30 +127,30 @@ public partial class ExternalMenuWindow
     /// </summary>
     private void CreateMenuBar()
     {
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "自身属性", NameSpace = "SelfStateView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "世界功能", NameSpace = "WorldFunctionView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "线上选项", NameSpace = "OnlineOptionView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "线上载具", NameSpace = "SpawnVehicleView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "线上武器", NameSpace = "SpawnWeaponView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "任务帮手", NameSpace = "JobHelperView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "外部ESP", NameSpace = "ExternalOverlayView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "玩家列表", NameSpace = "PlayerListView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "战局聊天", NameSpace = "SessionChatView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "其他杂项", NameSpace = "OtherMiscView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "自身属性", ViewName = "SelfStateView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "世界功能", ViewName = "WorldFunctionView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "线上选项", ViewName = "OnlineOptionView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "线上载具", ViewName = "SpawnVehicleView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "线上武器", ViewName = "SpawnWeaponView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "任务帮手", ViewName = "JobHelperView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "外部ESP", ViewName = "ExternalOverlayView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "玩家列表", ViewName = "PlayerListView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "战局聊天", ViewName = "SessionChatView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "其他杂项", ViewName = "OtherMiscView" });
 
-        MenuBars.Add(new MenuBar() { Icon = "\xe666", Title = "README", NameSpace = "ReadMeView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe666", Title = "README", ViewName = "ReadMeView" });
     }
 
     /// <summary>
     /// 页面导航（重复点击不会重复触发）
     /// </summary>
     /// <param name="menu"></param>
-    private void Navigate(MenuBar menu)
+    private void Navigate(NavMenu menu)
     {
-        if (menu == null || string.IsNullOrEmpty(menu.NameSpace))
+        if (menu == null || string.IsNullOrEmpty(menu.ViewName))
             return;
 
-        switch (menu.NameSpace)
+        switch (menu.ViewName)
         {
             case "ReadMeView":
                 ContentControl_Main.Content = ReadMeView;

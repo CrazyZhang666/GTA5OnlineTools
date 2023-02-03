@@ -26,15 +26,11 @@ public partial class OutfitsEditWindow
 
     private void Button_Read_Click(object sender, RoutedEventArgs e)
     {
-        
-
         ReadOutfitsData();
     }
 
     private void Button_Write_Click(object sender, RoutedEventArgs e)
     {
-        
-
         try
         {
             Outfits.OutfitIndex = ComboBox_OutfitIndex.SelectedIndex;
@@ -71,7 +67,7 @@ public partial class OutfitsEditWindow
             Outfits.ARMOR = Convert.ToInt32(TextBox_ARMOR.Text);
             Outfits.ARMOR_TEX = Convert.ToInt32(TextBox_ARMOR_TEX.Text);
 
-            /********************************************************************************************/
+            ///////////////////////////////////////////////////////////////////////
 
             Outfits.HATS = Convert.ToInt32(TextBox_HATS.Text);
             Outfits.HATS_TEX = Convert.ToInt32(TextBox_HATS_TEX.Text);
@@ -134,7 +130,7 @@ public partial class OutfitsEditWindow
             TextBox_ARMOR.Text = Outfits.ARMOR.ToString();
             TextBox_ARMOR_TEX.Text = Outfits.ARMOR_TEX.ToString();
 
-            /********************************************************************************************/
+            ///////////////////////////////////////////////////////////////////////
 
             TextBox_HATS.Text = Outfits.HATS.ToString();
             TextBox_HATS_TEX.Text = Outfits.HATS_TEX.ToString();

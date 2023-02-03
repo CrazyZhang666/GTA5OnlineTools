@@ -42,7 +42,7 @@
             x:Name="MenuBar"
             Margin="5,5,0,5"
             DockPanel.Dock="Bottom"
-            ItemsSource="{Binding MenuBars}"
+            ItemsSource="{Binding NavMenus}"
             SelectedIndex="0"
             Style="{StaticResource ListBoxStyle_NavMenu}">
             <b:Interaction.Triggers>

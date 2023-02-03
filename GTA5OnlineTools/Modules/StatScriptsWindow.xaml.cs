@@ -31,8 +31,6 @@ public partial class StatScriptsWindow
 
     private void Button_LoadSession_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Online.LoadSession(11);
     }
 
@@ -47,8 +45,6 @@ public partial class StatScriptsWindow
 
     private void Button_ExecuteAutoScript_Click(object sender, RoutedEventArgs e)
     {
-        
-
         var index = ListBox_STATList.SelectedIndex;
         if (index != -1)
         {

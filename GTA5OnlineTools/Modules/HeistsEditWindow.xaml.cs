@@ -13,7 +13,7 @@ public partial class HeistsEditWindow
     /// <summary>
     /// 导航菜单
     /// </summary>
-    public List<MenuBar> MenuBars { get; set; } = new();
+    public List<NavMenu> NavMenus { get; set; } = new();
 
     private readonly ContractView ContractView = new();
     private readonly PericoView PericoView = new();
@@ -50,11 +50,11 @@ public partial class HeistsEditWindow
     /// </summary>
     private void CreateMenuBar()
     {
-        MenuBars.Add(new MenuBar() { Icon = "\xe610", Title = "事所合约", NameSpace = "ContractView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe610", Title = "佩里克岛", NameSpace = "PericoView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe610", Title = "赌场抢劫", NameSpace = "CasinoView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe610", Title = "末日抢劫", NameSpace = "DoomsdayView" });
-        MenuBars.Add(new MenuBar() { Icon = "\xe610", Title = "公寓抢劫", NameSpace = "ApartmentView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe610", Title = "事所合约", ViewName = "ContractView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe610", Title = "佩里克岛", ViewName = "PericoView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe610", Title = "赌场抢劫", ViewName = "CasinoView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe610", Title = "末日抢劫", ViewName = "DoomsdayView" });
+        NavMenus.Add(new NavMenu() { Icon = "\xe610", Title = "公寓抢劫", ViewName = "ApartmentView" });
     }
 
     /// <summary>
@@ -62,12 +62,12 @@ public partial class HeistsEditWindow
     /// </summary>
     /// <param name="menu"></param>
     [RelayCommand]
-    private void Navigate(MenuBar menu)
+    private void Navigate(NavMenu menu)
     {
-        if (menu == null || string.IsNullOrEmpty(menu.NameSpace))
+        if (menu == null || string.IsNullOrEmpty(menu.ViewName))
             return;
 
-        switch (menu.NameSpace)
+        switch (menu.ViewName)
         {
             case "ContractView":
                 ContentControl_Main.Content = ContractView;

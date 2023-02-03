@@ -43,8 +43,6 @@ public partial class SpeedMeterWindow
 
     private void Button_RunDraw_Click(object sender, RoutedEventArgs e)
     {
-        
-
         Memory.SetForegroundWindow();
 
         if (DrawWindow == null)
@@ -62,8 +60,6 @@ public partial class SpeedMeterWindow
 
     private void Button_StopDraw_Click(object sender, RoutedEventArgs e)
     {
-        
-
         if (DrawWindow != null)
         {
             DrawWindow.Close();
