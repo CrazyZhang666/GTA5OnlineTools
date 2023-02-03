@@ -327,46 +327,4 @@ public partial class MainWindow
             WeakReferenceMessenger.Default.Send("404", "Change");
         }
     }
-
-    #region 托盘菜单事件
-    /// <summary>
-    /// 鼠标双击托盘
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void TaskbarIcon_Main_TrayMouseDoubleClick(object sender, RoutedEventArgs e)
-    {
-        if (WindowState == WindowState.Minimized)
-        {
-            WindowState = WindowState.Normal;
-            Activate();
-            ShowInTaskbar = true;
-        }
-    }
-
-    /// <summary>
-    /// 显示主窗口
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void MenuItem_ShowMainWindow_Click(object sender, RoutedEventArgs e)
-    {
-        if (WindowState == WindowState.Minimized)
-        {
-            WindowState = WindowState.Normal;
-            Activate();
-            ShowInTaskbar = true;
-        }
-    }
-
-    /// <summary>
-    /// 退出程序
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void MenuItem_ExitProcess_Click(object sender, RoutedEventArgs e)
-    {
-        Close();
-    }
-    #endregion
 }

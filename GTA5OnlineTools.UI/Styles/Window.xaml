@@ -72,6 +72,7 @@
                                 <StackPanel
                                     Grid.Column="1"
                                     Orientation="Horizontal"
+                                    SnapsToDevicePixels="True"
                                     WindowChrome.IsHitTestVisibleInChrome="True">
                                     <Button
                                         x:Name="ButtonMin"

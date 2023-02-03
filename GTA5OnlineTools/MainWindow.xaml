@@ -11,6 +11,7 @@
     Height="720"
     MinWidth="1280"
     MinHeight="720"
+    CaptionBackground="#F5F5F5"
     CaptionHeight="40"
     Closing="Window_Main_Closing"
     Loaded="Window_Main_Loaded"
@@ -65,7 +66,7 @@
                     Command="{Binding NavigateCommand}"
                     CommandParameter="CheatsView"
                     Content="第三方"
-                    Icon="&#xe63b;" />
+                    Icon="&#xe691;" />
                 <ui:RadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="ModulesView"

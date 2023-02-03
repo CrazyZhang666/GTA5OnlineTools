@@ -23,7 +23,7 @@ public class Window : System.Windows.Window
         set { SetValue(SystemButtonSizeProperty, value); }
     }
     public static readonly DependencyProperty SystemButtonSizeProperty =
-        DependencyProperty.Register("SystemButtonSize", typeof(double), typeof(Window), new PropertyMetadata(35.0));
+        DependencyProperty.Register("SystemButtonSize", typeof(double), typeof(Window), new PropertyMetadata(30.0));
 
     /// <summary>
     /// 系统按钮前景色

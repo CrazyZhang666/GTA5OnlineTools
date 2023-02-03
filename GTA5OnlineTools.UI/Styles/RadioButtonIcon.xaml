@@ -12,9 +12,8 @@
                 <ControlTemplate TargetType="{x:Type controls:RadioButtonIcon}">
                     <Border
                         x:Name="border"
-                        Margin="3,3,0,3"
-                        Padding="5,7,5,5"
-                        VerticalAlignment="Center"
+                        Margin="3,0,0,0"
+                        Padding="5,7,5,3"
                         Background="Transparent"
                         BorderBrush="Transparent"
                         BorderThickness="0,0,0,5"

@@ -21,9 +21,14 @@ public partial class AboutView : UserControl
 
     }
 
-    [RelayCommand]
-    private void HyperlinkClick(string url)
+    /// <summary>
+    /// 超链接请求导航事件
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
     {
-        ProcessUtil.OpenPath(url);
+        ProcessUtil.OpenLink(e.Uri.OriginalString);
+        e.Handled = true;
     }
 }
