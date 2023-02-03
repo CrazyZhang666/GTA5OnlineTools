@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     d:DesignHeight="720"
     d:DesignWidth="1280"
     Style="{StaticResource UserControlStyle_Loaded}"
@@ -16,11 +16,11 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <UniformGrid Grid.Row="0" Columns="2">
-            <ui:UiLabelIcon
+            <ui:LabelIcon
                 Content="通知公告"
                 Icon="&#xe62d;"
                 Style="{StaticResource LabelIconStyle_MenuTitle}" />
-            <ui:UiLabelIcon
+            <ui:LabelIcon
                 Content="更新日志"
                 Icon="&#xe624;"
                 Style="{StaticResource LabelIconStyle_MenuTitle}" />

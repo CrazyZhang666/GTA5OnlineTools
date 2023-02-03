@@ -1,10 +1,10 @@
-﻿<ui:UiWindow
+﻿<ui:Window
     x:Class="GTA5OnlineTools.Windows.Cheats.GTAHaxStatWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     x:Name="Window_GTAHaxStat"
     Title="GTA5线上小助手 - GTAHax预设代码"
     Width="1000"
@@ -12,10 +12,10 @@
     Closing="Window_GTAHaxStat_Closing"
     Loaded="Window_GTAHaxStat_Loaded"
     ResizeMode="CanMinimize"
-    Style="{StaticResource UiWindowStyle}"
+    Style="{StaticResource SystemWindowStyle}"
     mc:Ignorable="d">
 
-    <ui:UiWindow.TitleContent>
+    <ui:Window.TitleContent>
         <StackPanel
             VerticalAlignment="Center"
             DockPanel.Dock="Left"
@@ -23,7 +23,7 @@
             <Image
                 Height="20"
                 Margin="5"
-                Source="\Assets\Images\Favicon.ico"
+                Source="/Assets/Favicon.ico"
                 Style="{StaticResource ImageStyle_HighQuality}" />
             <TextBlock
                 VerticalAlignment="Center"
@@ -31,7 +31,7 @@
                 FontWeight="Bold"
                 Text="{Binding ElementName=Window_GTAHaxStat, Path=Title}" />
         </StackPanel>
-    </ui:UiWindow.TitleContent>
+    </ui:Window.TitleContent>
 
     <Grid Grid.Row="0">
         <Grid.ColumnDefinitions>
@@ -60,4 +60,4 @@
             SelectionChanged="ListBox_GTAHaxClass_SelectionChanged" />
     </Grid>
 
-</ui:UiWindow>
+</ui:Window>

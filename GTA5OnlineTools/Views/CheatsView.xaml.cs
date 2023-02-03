@@ -2,7 +2,8 @@
 using GTA5OnlineTools.Models;
 using GTA5OnlineTools.Helper;
 using GTA5OnlineTools.GTA.Core;
-using GTA5OnlineTools.Views.Cheats;
+using GTA5OnlineTools.Views.ReadMe;
+using GTA5OnlineTools.Windows;
 using GTA5OnlineTools.Windows.Cheats;
 
 using CommunityToolkit.Mvvm.Input;
@@ -19,11 +20,11 @@ public partial class CheatsView : UserControl
     /// </summary>
     public CheatsModel CheatsModel { get; set; } = new();
 
-    private readonly KiddionPage KiddionPage = new();
-    private readonly GTAHaxPage GTAHaxPage = new();
-    private readonly BincoHaxPage BincoHaxPage = new();
-    private readonly LSCHaxPage LSCHaxPage = new();
-    private readonly YimMenuPage YimMenuPage = new();
+    private readonly Kiddion Kiddion = new();
+    private readonly GTAHax GTAHax = new();
+    private readonly BincoHax BincoHax = new();
+    private readonly LSCHax LSCHax = new();
+    private readonly YimMenu YimMenu = new();
 
     private GTAHaxStatWindow GTAHaxWindow = null;
     private KiddionChsWindow KiddionChsWindow = null;
@@ -32,18 +33,12 @@ public partial class CheatsView : UserControl
     {
         InitializeComponent();
         this.DataContext = this;
-        MainWindow.WindowClosingEvent += MainWindow_WindowClosingEvent;
 
         new Thread(CheckCheatsIsRun)
         {
             Name = "CheckCheatsIsRun",
             IsBackground = true
         }.Start();
-    }
-
-    private void MainWindow_WindowClosingEvent()
-    {
-
     }
 
     /// <summary>
@@ -103,31 +98,26 @@ public partial class CheatsView : UserControl
     /// <summary>
     /// 点击第三方辅助使用说明
     /// </summary>
-    /// <param name="pageName"></param>
+    /// <param name="Name"></param>
     [RelayCommand]
-    private void ReadMeClick(string pageName)
+    private void ReadMeClick(string Name)
     {
-        switch (pageName)
+        switch (Name)
         {
-            case "KiddionPage":
-                CheatsModel.FrameState = Visibility.Visible;
-                CheatsModel.FrameContent = KiddionPage;
+            case "Kiddion":
+                ShowReadMe(Kiddion);
                 break;
-            case "GTAHaxPage":
-                CheatsModel.FrameState = Visibility.Visible;
-                CheatsModel.FrameContent = GTAHaxPage;
+            case "GTAHax":
+                ShowReadMe(GTAHax);
                 break;
-            case "BincoHaxPage":
-                CheatsModel.FrameState = Visibility.Visible;
-                CheatsModel.FrameContent = BincoHaxPage;
+            case "BincoHax":
+                ShowReadMe(BincoHax);
                 break;
-            case "LSCHaxPage":
-                CheatsModel.FrameState = Visibility.Visible;
-                CheatsModel.FrameContent = LSCHaxPage;
+            case "LSCHax":
+                ShowReadMe(LSCHax);
                 break;
-            case "YimMenuPage":
-                CheatsModel.FrameState = Visibility.Visible;
-                CheatsModel.FrameContent = YimMenuPage;
+            case "YimMenu":
+                ShowReadMe(YimMenu);
                 break;
         }
     }
@@ -141,7 +131,7 @@ public partial class CheatsView : UserControl
     {
         switch (funcName)
         {
-            #region Kiddion增强功能
+            #region Kiddion额外功能
             case "KiddionKey104":
                 KiddionKey104Click();
                 break;
@@ -153,9 +143,6 @@ public partial class CheatsView : UserControl
                 break;
             case "KiddionScriptsDirectory":
                 KiddionScriptsDirectoryClick();
-                break;
-            case "KiddionChsHelper":
-                KiddionChsHelperClick();
                 break;
             case "EditKiddionConfig":
                 EditKiddionConfigClick();
@@ -174,7 +161,7 @@ public partial class CheatsView : UserControl
                 break;
             #endregion
             ////////////////////////////////////
-            #region 其他增强功能
+            #region 其他额外功能
             case "EditGTAHaxStat":
                 EditGTAHaxStatClick();
                 break;
@@ -195,13 +182,16 @@ public partial class CheatsView : UserControl
     }
 
     /// <summary>
-    /// 使用说明隐藏按钮点击事件
+    /// 显示使用说明窗口
     /// </summary>
-    [RelayCommand]
-    private void FrameHideClick()
+    /// <param name="userControl"></param>
+    private void ShowReadMe(UserControl userControl)
     {
-        CheatsModel.FrameState = Visibility.Collapsed;
-        CheatsModel.FrameContent = null;
+        var readMeWindow = new ReadMeWindow(userControl)
+        {
+            Owner = MainWindow.MainWindowInstance
+        };
+        readMeWindow.ShowDialog();
     }
 
     #region 第三方辅助功能开关事件
@@ -220,22 +210,19 @@ public partial class CheatsView : UserControl
                 {
                     ProcessUtil.OpenProcess(FileUtil.File_Kiddion_Kiddion);
 
-                    if (CheatsModel.IsUseKiddionChs)
+                    do
                     {
-                        do
+                        // 等待Kiddion启动
+                        if (ProcessUtil.IsAppRun("Kiddion"))
                         {
-                            // 等待Kiddion启动
-                            if (ProcessUtil.IsAppRun("Kiddion"))
-                            {
-                                // 拿到Kiddion进程
-                                var pKiddion = Process.GetProcessesByName("Kiddion").ToList()[0];
-                                BaseInjector.DLLInjector(pKiddion.Id, FileUtil.File_Kiddion_KiddionChs);
-                                return;
-                            }
+                            // 拿到Kiddion进程
+                            var pKiddion = Process.GetProcessesByName("Kiddion").ToList()[0];
+                            BaseInjector.DLLInjector(pKiddion.Id, FileUtil.File_Kiddion_KiddionChs);
+                            return;
+                        }
 
-                            await Task.Delay(250);
-                        } while (count++ > 10);
-                    }
+                        await Task.Delay(250);
+                    } while (count++ > 10);
                 }
                 else
                 {
@@ -311,7 +298,7 @@ public partial class CheatsView : UserControl
     }
     #endregion
 
-    #region Kiddion增强功能
+    #region Kiddion额外功能
     /// <summary>
     /// 启用Kiddion[104键]
     /// </summary>
@@ -346,37 +333,6 @@ public partial class CheatsView : UserControl
     private void KiddionScriptsDirectoryClick()
     {
         ProcessUtil.OpenLink(FileUtil.Dir_Kiddion_Scripts);
-    }
-
-    /// <summary>
-    /// Kiddion 汉化修正
-    /// </summary>
-    private void KiddionChsHelperClick()
-    {
-        if (KiddionChsWindow == null)
-        {
-            KiddionChsWindow = new KiddionChsWindow();
-            KiddionChsWindow.Show();
-        }
-        else
-        {
-            if (KiddionChsWindow.IsVisible)
-            {
-                if (!KiddionChsWindow.Topmost)
-                {
-                    KiddionChsWindow.Topmost = true;
-                    KiddionChsWindow.Topmost = false;
-                }
-
-                KiddionChsWindow.WindowState = WindowState.Normal;
-            }
-            else
-            {
-                KiddionChsWindow = null;
-                KiddionChsWindow = new KiddionChsWindow();
-                KiddionChsWindow.Show();
-            }
-        }
     }
 
     /// <summary>
@@ -449,7 +405,7 @@ public partial class CheatsView : UserControl
     }
     #endregion
 
-    #region 其他增强功能
+    #region 其他额外功能
     /// <summary>
     /// 编辑GTAHax导入文件
     /// </summary>
@@ -504,9 +460,9 @@ public partial class CheatsView : UserControl
     {
         try
         {
-            if (FileUtil.IsOccupied(FileUtil.Dir_Inject + "YimMenu.dll"))
+            if (FileUtil.IsOccupied(FileUtil.File_Inject_YimMenu))
             {
-                NotifierHelper.Show(NotifierType.Warning, "请先卸载YimMenu菜单后再执行操作");
+                NotifierHelper.Show(NotifierType.Warning, "YimMenu被占用，请先卸载YimMenu菜单后再执行操作");
                 return;
             }
 

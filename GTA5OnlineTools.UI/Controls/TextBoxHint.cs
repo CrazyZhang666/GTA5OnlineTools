@@ -1,6 +1,6 @@
 ﻿namespace GTA5OnlineTools.UI.Controls;
 
-public class UiTextBoxHint : TextBox
+public class TextBoxHint : TextBox
 {
     /// <summary>
     /// 提示信息
@@ -11,5 +11,5 @@ public class UiTextBoxHint : TextBox
         set { SetValue(HintProperty, value); }
     }
     public static readonly DependencyProperty HintProperty =
-        DependencyProperty.Register("Hint", typeof(string), typeof(UiTextBoxHint), new PropertyMetadata("请输入文本"));
+        DependencyProperty.Register("Hint", typeof(string), typeof(TextBoxHint), new PropertyMetadata("请输入文本"));
 }

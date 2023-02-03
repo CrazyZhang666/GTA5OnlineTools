@@ -1,10 +1,9 @@
-﻿<Page
-    x:Class="GTA5OnlineTools.Views.Cheats.YimMenuPage"
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Views.ReadMe.YimMenu"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="YimMenuPage"
     d:DesignHeight="720"
     d:DesignWidth="1280"
     mc:Ignorable="d">
@@ -29,8 +28,10 @@
                     配置文件
                 </Paragraph>
                 <Paragraph Style="{StaticResource ParagraphStyle_Content}">
-                    默认配置文件路径：C:\Users\用户名\AppData\Roaming\BigBaseV2<LineBreak />
-                    如果你不小心修改了某些设置导致Yim无法正常使用，请先卸载注入，到这个文件夹清理里面内容，然后重新注入Yim即可恢复默认设置</Paragraph>
+                    默认配置文件路径：C:\Users\用户名\AppData\Roaming\BigBaseV2
+                    <LineBreak />
+                    如果你不小心修改了某些设置导致Yim无法正常使用，请先卸载注入，到这个文件夹清理里面内容，然后重新注入Yim即可恢复默认设置
+                </Paragraph>
 
                 <Paragraph Style="{StaticResource ParagraphStyle_Title}">
                     注意事项
@@ -74,4 +75,4 @@
         </RichTextBox>
     </UniformGrid>
 
-</Page>
+</UserControl>

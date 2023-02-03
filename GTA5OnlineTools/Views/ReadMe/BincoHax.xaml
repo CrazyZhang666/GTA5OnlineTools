@@ -1,10 +1,9 @@
-﻿<Page
-    x:Class="GTA5OnlineTools.Views.Cheats.GTAHaxPage"
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Views.ReadMe.BincoHax"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="GTAHaxPage"
     d:DesignHeight="720"
     d:DesignWidth="1280"
     mc:Ignorable="d">
@@ -16,16 +15,19 @@
                     简介
                 </Paragraph>
                 <Paragraph Style="{StaticResource ParagraphStyle_Content}">
-                    ● 一个GTA5全局变量编辑器
+                    ● 一个GTA5线上模式角色服装编辑器，能够自定义角色的服装
                 </Paragraph>
                 <Paragraph Style="{StaticResource ParagraphStyle_Content}">
-                    ● 修改数据分为int类型和bool类型。字符串格式一般为$+MP0/MP1+_对应变量名
+                    ● 可以获取男、女警服等限制服装（虽然不能保存）
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    提示
                 </Paragraph>
                 <Paragraph Style="{StaticResource ParagraphStyle_Content}">
-                    ● int类型可以直接修改，赋值为整数型，如果标明范围则不要超过，否则可能会有风险
+                    ● 必须要在服装店打开衣服列表后才可以打开此软件
                 </Paragraph>
                 <Paragraph Style="{StaticResource ParagraphStyle_Content}">
-                    ● bool类型需要人物佩戴一个可下拉式头盔来表示修改状态，头盔上拉表示true，头盔下拉表示false
+                    ● 进入黑名单的衣服是不能保存的，但是可以穿在身上
                 </Paragraph>
 
             </FlowDocument>
@@ -37,16 +39,22 @@
                     说明
                 </Paragraph>
                 <Paragraph Style="{StaticResource ParagraphStyle_Content}">
-                    ● 比如我们要修改角色的属性值-体力，如果角色是角色1为MP0，角色2为MP1，对应的函数为SCRIPT_INCREASE_STAM，赋值范围为0~100，则最终组合字符串为
+                    ● 首先进入线上模式任意一家服装店，然后去柜台（其他的地方也可以，只要能显示衣服列表即可）按E键，会出现一个衣服列表
                 </Paragraph>
                 <Paragraph Style="{StaticResource ParagraphStyle_Content}">
-                    $MP0_SCRIPT_INCREASE_STAM<LineBreak />
-                    100</Paragraph>
+                    ● 然后再我们打开辅助（提前打开会出错，请关闭后再重新打开），等服装加载完成后我们点击左边的【更新当前数据】
+                </Paragraph>
                 <Paragraph Style="{StaticResource ParagraphStyle_Content}">
-                    ● 这样就代表我们修改了角色1的属性值体力为100，也就是加满了体力
+                    ● 这时上面的表格会读取出角色当前服装数据，灰色的数据是当前服装ID，白色的数据是我们可以修改的，可以输入你需要的衣服ID
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 输入完成后我们点击左边的【应用修改】，然后返回游戏切换菜单查看效果
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 不要忘了去柜台保存我们修改好的衣服套装
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
     </UniformGrid>
 
-</Page>
+</UserControl>

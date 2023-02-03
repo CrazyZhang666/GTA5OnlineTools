@@ -23,6 +23,7 @@
         <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/ButtonIcon.xaml" />
         <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/RadioButtonIcon.xaml" />
         <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/TextBoxHint.xaml" />
+        <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/GroupBoxHack.xaml" />
 
         <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/ListBox.xaml" />
         <ResourceDictionary Source="/GTA5OnlineTools.UI;component/Styles/TabControlIcon.xaml" />

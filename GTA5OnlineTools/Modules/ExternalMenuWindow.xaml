@@ -1,11 +1,11 @@
-﻿<ui:UiWindow
+﻿<ui:Window
     x:Class="GTA5OnlineTools.Modules.ExternalMenuWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     x:Name="Window_ExternalMenu"
     Title="GTA5线上小助手 - 外置菜单"
     Width="1000"
@@ -14,10 +14,10 @@
     Closing="Window_ExternalMenu_Closing"
     Loaded="Window_ExternalMenu_Loaded"
     ResizeMode="CanMinimize"
-    Style="{StaticResource UiWindowStyle}"
+    Style="{StaticResource SystemWindowStyle}"
     mc:Ignorable="d">
 
-    <ui:UiWindow.TitleContent>
+    <ui:Window.TitleContent>
         <DockPanel>
             <StackPanel
                 VerticalAlignment="Center"
@@ -35,7 +35,7 @@
                 <Image
                     Height="20"
                     Margin="5"
-                    Source="\Assets\Images\Favicon.ico"
+                    Source="/Assets/Favicon.ico"
                     Style="{StaticResource ImageStyle_HighQuality}" />
                 <TextBlock
                     VerticalAlignment="Center"
@@ -44,7 +44,7 @@
                     Text="{Binding ElementName=Window_ExternalMenu, Path=Title}" />
             </StackPanel>
         </DockPanel>
-    </ui:UiWindow.TitleContent>
+    </ui:Window.TitleContent>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -81,4 +81,4 @@
         <ContentControl x:Name="ContentControl_Main" Grid.Column="1" />
     </Grid>
 
-</ui:UiWindow>
+</ui:Window>

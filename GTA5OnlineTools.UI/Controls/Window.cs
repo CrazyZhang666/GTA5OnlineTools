@@ -1,6 +1,6 @@
 ﻿namespace GTA5OnlineTools.UI.Controls;
 
-public class UiWindow : Window
+public class Window : System.Windows.Window
 {
     #region 系统按钮
     /// <summary>
@@ -12,7 +12,7 @@ public class UiWindow : Window
         set { SetValue(SystemButtonColorProperty, value); }
     }
     public static readonly DependencyProperty SystemButtonColorProperty =
-        DependencyProperty.Register("SystemButtonColor", typeof(Brush), typeof(UiWindow), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(0, 255, 255, 255))));
+        DependencyProperty.Register("SystemButtonColor", typeof(Brush), typeof(Window), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(0, 255, 255, 255))));
 
     /// <summary>
     /// 系统按钮大小
@@ -23,7 +23,7 @@ public class UiWindow : Window
         set { SetValue(SystemButtonSizeProperty, value); }
     }
     public static readonly DependencyProperty SystemButtonSizeProperty =
-        DependencyProperty.Register("SystemButtonSize", typeof(double), typeof(UiWindow), new PropertyMetadata(30.0));
+        DependencyProperty.Register("SystemButtonSize", typeof(double), typeof(Window), new PropertyMetadata(35.0));
 
     /// <summary>
     /// 系统按钮前景色
@@ -34,7 +34,7 @@ public class UiWindow : Window
         set { SetValue(SystemButtonForegroundProperty, value); }
     }
     public static readonly DependencyProperty SystemButtonForegroundProperty =
-        DependencyProperty.Register("SystemButtonForeground", typeof(Brush), typeof(UiWindow), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(88, 88, 88))));
+        DependencyProperty.Register("SystemButtonForeground", typeof(Brush), typeof(Window), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(88, 88, 88))));
 
     /// <summary>
     /// 系统按钮悬浮背景色
@@ -45,7 +45,7 @@ public class UiWindow : Window
         set { SetValue(SystemButtonOverColorProperty, value); }
     }
     public static readonly DependencyProperty SystemButtonOverColorProperty =
-        DependencyProperty.Register("SystemButtonOverColor", typeof(Brush), typeof(UiWindow), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(225, 225, 225))));
+        DependencyProperty.Register("SystemButtonOverColor", typeof(Brush), typeof(Window), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(225, 225, 225))));
 
     /// <summary>
     /// 关闭按钮悬浮背景色
@@ -56,7 +56,7 @@ public class UiWindow : Window
         set { SetValue(SystemButtonCloseOverColorProperty, value); }
     }
     public static readonly DependencyProperty SystemButtonCloseOverColorProperty =
-        DependencyProperty.Register("SystemButtonCloseOverColor", typeof(Brush), typeof(UiWindow), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(232, 17, 35))));
+        DependencyProperty.Register("SystemButtonCloseOverColor", typeof(Brush), typeof(Window), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(232, 17, 35))));
     #endregion
 
     #region 窗口属性
@@ -69,7 +69,7 @@ public class UiWindow : Window
         set { SetValue(CaptionHeightProperty, value); }
     }
     public static readonly DependencyProperty CaptionHeightProperty =
-        DependencyProperty.Register("CaptionHeight", typeof(double), typeof(UiWindow), new PropertyMetadata(30.0));
+        DependencyProperty.Register("CaptionHeight", typeof(double), typeof(Window), new PropertyMetadata(35.0));
 
     /// <summary>
     /// 标题栏背景色
@@ -80,7 +80,7 @@ public class UiWindow : Window
         set { SetValue(CaptionBackgroundProperty, value); }
     }
     public static readonly DependencyProperty CaptionBackgroundProperty =
-        DependencyProperty.Register("CaptionBackground", typeof(Brush), typeof(UiWindow), new PropertyMetadata(new SolidColorBrush(Color.FromRgb(245, 245, 245))));
+        DependencyProperty.Register("CaptionBackground", typeof(Brush), typeof(Window), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(0, 255, 255, 255))));
 
     /// <summary>
     /// 标题栏的内容
@@ -91,7 +91,7 @@ public class UiWindow : Window
         set { SetValue(TitleContentProperty, value); }
     }
     public static readonly DependencyProperty TitleContentProperty =
-        DependencyProperty.Register("TitleContent", typeof(UIElement), typeof(UiWindow), new PropertyMetadata(default));
+        DependencyProperty.Register("TitleContent", typeof(UIElement), typeof(Window), new PropertyMetadata(default));
 
     /// <summary>
     /// 沉浸式标题栏
@@ -102,11 +102,11 @@ public class UiWindow : Window
         set { SetValue(FitSystemWindowProperty, value); }
     }
     public static readonly DependencyProperty FitSystemWindowProperty =
-        DependencyProperty.Register("FitSystemWindow", typeof(bool), typeof(UiWindow), new PropertyMetadata(default));
+        DependencyProperty.Register("FitSystemWindow", typeof(bool), typeof(Window), new PropertyMetadata(default));
     #endregion
 
     #region 初始化
-    public UiWindow()
+    public Window()
     {
         var chrome = new WindowChrome
         {
@@ -122,6 +122,9 @@ public class UiWindow : Window
 
         // 窗口默认居中
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        // 窗口边框
+        BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#585858"));
+        BorderThickness = new Thickness(1);
 
         #region 绑定系统Command
         CommandBindings.Add(new CommandBinding(SystemCommands.MinimizeWindowCommand, (sender, e) =>

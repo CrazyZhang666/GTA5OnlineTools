@@ -3,13 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="clr-namespace:GTA5OnlineTools.UI.Controls">
 
-    <Style TargetType="{x:Type controls:UiLabelIcon}">
+    <Style TargetType="{x:Type controls:LabelIcon}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Margin" Value="5" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:UiLabelIcon}">
+                <ControlTemplate TargetType="{x:Type controls:LabelIcon}">
                     <Grid SnapsToDevicePixels="True">
                         <Border
                             Background="#B3E19D"
@@ -42,7 +42,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="LabelIconStyle_MenuTitle" TargetType="{x:Type controls:UiLabelIcon}">
+    <Style x:Key="LabelIconStyle_MenuTitle" TargetType="{x:Type controls:LabelIcon}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="FontSize" Value="18" />
@@ -50,7 +50,7 @@
         <Setter Property="Margin" Value="5" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:UiLabelIcon}">
+                <ControlTemplate TargetType="{x:Type controls:LabelIcon}">
                     <StackPanel
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"

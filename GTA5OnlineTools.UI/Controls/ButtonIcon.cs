@@ -1,6 +1,6 @@
 ﻿namespace GTA5OnlineTools.UI.Controls;
 
-public class UiButtonIcon : Button
+public class ButtonIcon : Button
 {
     /// <summary>
     /// Icon图标
@@ -11,7 +11,7 @@ public class UiButtonIcon : Button
         set { SetValue(IconProperty, value); }
     }
     public static readonly DependencyProperty IconProperty =
-        DependencyProperty.Register("Icon", typeof(string), typeof(UiButtonIcon), new PropertyMetadata(default));
+        DependencyProperty.Register("Icon", typeof(string), typeof(ButtonIcon), new PropertyMetadata(default));
 
     /// <summary>
     /// Title标题
@@ -22,5 +22,5 @@ public class UiButtonIcon : Button
         set { SetValue(TitleProperty, value); }
     }
     public static readonly DependencyProperty TitleProperty =
-        DependencyProperty.Register("Title", typeof(string), typeof(UiButtonIcon), new PropertyMetadata(default));
+        DependencyProperty.Register("Title", typeof(string), typeof(ButtonIcon), new PropertyMetadata(default));
 }

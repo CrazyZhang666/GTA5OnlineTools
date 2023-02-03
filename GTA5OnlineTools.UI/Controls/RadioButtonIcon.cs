@@ -1,6 +1,6 @@
 ﻿namespace GTA5OnlineTools.UI.Controls;
 
-public class UiTabItemIcon : TabItem
+public class RadioButtonIcon : RadioButton
 {
     /// <summary>
     /// Icon图标
@@ -11,5 +11,5 @@ public class UiTabItemIcon : TabItem
         set { SetValue(IconProperty, value); }
     }
     public static readonly DependencyProperty IconProperty =
-        DependencyProperty.Register("Icon", typeof(string), typeof(UiTabItemIcon), new PropertyMetadata("\xe63b"));
+        DependencyProperty.Register("Icon", typeof(string), typeof(RadioButtonIcon), new PropertyMetadata("\xe63b"));
 }

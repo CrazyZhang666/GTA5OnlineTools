@@ -83,9 +83,6 @@ public partial class ToolsView : UserControl
             case "StoryModeArchive":
                 StoryModeArchiveClick();
                 break;
-            case "MinimizeToTray":
-                MinimizeToTrayClick();
-                break;
             case "ManualGC":
                 ManualGCClick();
                 break;
@@ -198,7 +195,7 @@ public partial class ToolsView : UserControl
     private void RefreshDNSCacheClick()
     {
         CoreUtil.FlushDNSCache();
-        MainWindow.ActionShowNoticeInfo("成功刷新DNS解析程序缓存");
+        NotifierHelper.Show(NotifierType.Success, "成功刷新DNS解析程序缓存");
     }
 
     /// <summary>
@@ -300,16 +297,6 @@ public partial class ToolsView : UserControl
                 NotifierHelper.ShowException(ex);
             }
         }
-    }
-
-    /// <summary>
-    /// 最小化程序到系统托盘
-    /// </summary>
-    private void MinimizeToTrayClick()
-    {
-        MainWindow.MainWindowInstance.WindowState = WindowState.Minimized;
-        MainWindow.MainWindowInstance.ShowInTaskbar = false;
-        MainWindow.ActionShowNoticeInfo("程序已最小化到托盘");
     }
 
     /// <summary>

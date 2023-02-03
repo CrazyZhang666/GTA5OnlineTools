@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     d:DesignHeight="600"
     d:DesignWidth="900"
     mc:Ignorable="d">
@@ -12,7 +12,7 @@
     <UniformGrid Columns="3">
         <!--  面板1  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="战局切换" />
+            <ui:LabelIcon Content="战局切换" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_Sessions_Click" Content="公共战局" />
                 <Button Click="Button_Sessions_Click" Content="仅限邀请战局" />
@@ -26,7 +26,7 @@
                 <Button Click="Button_Sessions_Click" Content="离开线上模式" />
             </WrapPanel>
 
-            <ui:UiLabelIcon Content="特殊功能" />
+            <ui:LabelIcon Content="特殊功能" />
             <WrapPanel Margin="5,0,5,0">
                 <Button
                     x:Name="Button_EmptySession"
@@ -48,7 +48,7 @@
                     Content="免费更改角色外观" />
             </WrapPanel>
 
-            <ui:UiLabelIcon Content="高级" />
+            <ui:LabelIcon Content="高级" />
             <UniformGrid Margin="5,0,5,0" Columns="2">
                 <StackPanel>
                     <CheckBox
@@ -98,7 +98,7 @@
         </StackPanel>
         <!--  面板2  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="线上资产传送" />
+            <ui:LabelIcon Content="线上资产传送" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_Blips_Click" Content="游艇" />
                 <Button Click="Button_Blips_Click" Content="CEO仓库" />
@@ -121,7 +121,7 @@
                 <Button Click="Button_Blips_Click" Content="事务所" />
             </WrapPanel>
 
-            <ui:UiLabelIcon Content="梅利威瑟" />
+            <ui:LabelIcon Content="梅利威瑟" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_MerryweatherServices_Click" Content="请求弹药空投" />
                 <Button Click="Button_MerryweatherServices_Click" Content="请求重型防弹装甲" />
@@ -148,7 +148,7 @@
         </StackPanel>
         <!--  面板3  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="角色等级RP倍数" />
+            <ui:LabelIcon Content="角色等级RP倍数" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_RPxN_Click" Content="RPx1" />
                 <Button Click="Button_RPxN_Click" Content="RPx2" />
@@ -161,7 +161,7 @@
                 <Button Click="Button_RPxN_Click" Content="RPx1000" />
             </WrapPanel>
 
-            <ui:UiLabelIcon Content="车友会等级RP倍数" />
+            <ui:LabelIcon Content="车友会等级RP倍数" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_REPxN_Click" Content="REPx1" />
                 <Button Click="Button_REPxN_Click" Content="REPx2" />

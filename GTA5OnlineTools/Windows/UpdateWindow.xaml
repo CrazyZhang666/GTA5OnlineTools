@@ -1,10 +1,10 @@
-﻿<ui:UiWindow
+﻿<ui:Window
     x:Class="GTA5OnlineTools.Windows.UpdateWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     x:Name="Window_Update"
     Title="GTA5线上小助手 - 在线更新"
     Width="700"
@@ -12,10 +12,10 @@
     Closing="Window_Update_Closing"
     Loaded="Window_Update_Loaded"
     ResizeMode="CanMinimize"
-    Style="{StaticResource UiWindowStyle}"
+    Style="{StaticResource SystemWindowStyle}"
     mc:Ignorable="d">
 
-    <ui:UiWindow.TitleContent>
+    <ui:Window.TitleContent>
         <StackPanel
             VerticalAlignment="Center"
             DockPanel.Dock="Left"
@@ -23,7 +23,7 @@
             <Image
                 Height="20"
                 Margin="5"
-                Source="\Assets\Images\Favicon.ico"
+                Source="/Assets/Favicon.ico"
                 Style="{StaticResource ImageStyle_HighQuality}" />
             <TextBlock
                 VerticalAlignment="Center"
@@ -31,7 +31,7 @@
                 FontWeight="Bold"
                 Text="{Binding ElementName=Window_Update, Path=Title}" />
         </StackPanel>
-    </ui:UiWindow.TitleContent>
+    </ui:Window.TitleContent>
 
     <Window.TaskbarItemInfo>
         <TaskbarItemInfo ProgressState="Normal" />
@@ -137,4 +137,4 @@
         </DockPanel>
     </Grid>
 
-</ui:UiWindow>
+</ui:Window>

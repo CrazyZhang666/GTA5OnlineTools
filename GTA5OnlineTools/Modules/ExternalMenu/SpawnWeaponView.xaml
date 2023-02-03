@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     d:DesignHeight="600"
     d:DesignWidth="900"
     mc:Ignorable="d">
@@ -75,7 +75,7 @@
     <UniformGrid Columns="3">
         <!--  面板1  -->
         <DockPanel LastChildFill="True">
-            <ui:UiLabelIcon Content="武器分类" DockPanel.Dock="Top" />
+            <ui:LabelIcon Content="武器分类" DockPanel.Dock="Top" />
             <ComboBox
                 x:Name="ComboBox_WeaponClass"
                 Margin="5"
@@ -94,7 +94,7 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <ui:UiLabelIcon Content="武器列表" DockPanel.Dock="Top" />
+            <ui:LabelIcon Content="武器列表" DockPanel.Dock="Top" />
             <ListBox
                 x:Name="ListBox_WeaponInfo"
                 Margin="5"
@@ -104,7 +104,7 @@
         </DockPanel>
         <!--  面板2  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="弹药编辑" />
+            <ui:LabelIcon Content="弹药编辑" />
             <WrapPanel Margin="5,0,5,0">
                 <RadioButton
                     x:Name="RadioButton_AmmoModifier_None"
@@ -125,7 +125,7 @@
                     Content="无限弹药和弹夹 ★" />
             </WrapPanel>
 
-            <ui:UiLabelIcon Content="高级" />
+            <ui:LabelIcon Content="高级" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
                     x:Name="CheckBox_ReloadMult"
@@ -147,13 +147,13 @@
                     Content="提升射程" />
             </WrapPanel>
 
-            <ui:UiLabelIcon Content="子弹类型" />
+            <ui:LabelIcon Content="子弹类型" />
             <ComboBox x:Name="ComboBox_ImpactExplosion" SelectionChanged="ComboBox_ImpactExplosion_SelectionChanged" />
             <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
                 注意：如果你修改的武器和NPC使用的武器一样，那么他们的子弹类型也会一并修改
             </TextBlock>
 
-            <ui:UiLabelIcon Content="快捷功能" />
+            <ui:LabelIcon Content="快捷功能" />
             <WrapPanel Margin="5,0,5,0">
                 <Button
                     x:Name="Button_FillCurrentAmmo"
@@ -165,7 +165,7 @@
                     Content="补满全部武器弹药" />
             </WrapPanel>
 
-            <ui:UiLabelIcon Content="刷出武器" />
+            <ui:LabelIcon Content="刷出武器" />
             <StackPanel Margin="5,0,5,0">
                 <Button
                     x:Name="Button_SpawnWeapon"

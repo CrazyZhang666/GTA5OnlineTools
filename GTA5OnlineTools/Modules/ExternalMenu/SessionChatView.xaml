@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     d:DesignHeight="600"
     d:DesignWidth="900"
     mc:Ignorable="d">
@@ -12,7 +12,7 @@
     <UniformGrid Columns="3">
         <!--  面板1  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="输入文本" DockPanel.Dock="Top" />
+            <ui:LabelIcon Content="输入文本" DockPanel.Dock="Top" />
             <TextBox
                 x:Name="TextBox_InputMessage"
                 Height="150"
@@ -96,7 +96,7 @@
         </StackPanel>
         <!--  面板2  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="玩家昵称修改（最大20字符）" />
+            <ui:LabelIcon Content="玩家昵称修改（最大20字符）" />
             <DockPanel LastChildFill="False">
                 <TextBlock
                     Margin="5"

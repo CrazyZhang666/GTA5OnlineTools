@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     d:DesignHeight="600"
     d:DesignWidth="900"
     mc:Ignorable="d">
@@ -12,7 +12,7 @@
     <UniformGrid Columns="3">
         <!--  面板1  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="本地天气" />
+            <ui:LabelIcon Content="本地天气" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_LocalWeather_Click" Content="默认" />
                 <Button Click="Button_LocalWeather_Click" Content="格外晴朗" />
@@ -32,7 +32,7 @@
                 <Button Click="Button_LocalWeather_Click" Content="万圣节" />
             </WrapPanel>
 
-            <ui:UiLabelIcon Content="NPC控制" />
+            <ui:LabelIcon Content="NPC控制" />
             <WrapPanel Margin="5,0,5,0">
                 <Button
                     x:Name="Button_KillAllNPC"
@@ -68,7 +68,7 @@
                     Content="传送全部敌对NPC到我" />
             </WrapPanel>
 
-            <ui:UiLabelIcon Content="自定义传送" />
+            <ui:LabelIcon Content="自定义传送" />
             <WrapPanel Margin="5,0,5,0">
                 <Button
                     x:Name="Button_ToWaypoint"
@@ -82,7 +82,7 @@
         </StackPanel>
         <!--  面板2  -->
         <DockPanel LastChildFill="True">
-            <ui:UiLabelIcon Content="传送分类" DockPanel.Dock="Top" />
+            <ui:LabelIcon Content="传送分类" DockPanel.Dock="Top" />
             <ComboBox
                 x:Name="ComboBox_TeleportClass"
                 Margin="5"
@@ -101,7 +101,7 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <ui:UiLabelIcon Content="传送列表（双击快速传送）" DockPanel.Dock="Top" />
+            <ui:LabelIcon Content="传送列表（双击快速传送）" DockPanel.Dock="Top" />
             <ListBox
                 x:Name="ListBox_TeleportInfo"
                 Margin="5"
@@ -112,7 +112,7 @@
         </DockPanel>
         <!--  面板3  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="坐标数据" />
+            <ui:LabelIcon Content="坐标数据" />
             <StackPanel Margin="5,0,5,0">
                 <!--  X坐标  -->
                 <DockPanel>
@@ -257,7 +257,7 @@
                 </WrapPanel>
             </StackPanel>
 
-            <ui:UiLabelIcon Content="坐标微调" />
+            <ui:LabelIcon Content="坐标微调" />
             <StackPanel Margin="5,0,5,0">
                 <DockPanel>
                     <TextBlock

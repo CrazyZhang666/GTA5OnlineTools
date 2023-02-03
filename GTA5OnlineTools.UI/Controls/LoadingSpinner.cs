@@ -1,6 +1,6 @@
 ﻿namespace GTA5OnlineTools.UI.Controls;
 
-public class UiLoadingSpinner : Control
+public class LoadingSpinner : Control
 {
     /// <summary>
     /// 是否显示加载动画
@@ -11,7 +11,7 @@ public class UiLoadingSpinner : Control
         set { SetValue(IsLoadingProperty, value); }
     }
     public static readonly DependencyProperty IsLoadingProperty =
-        DependencyProperty.Register("IsLoading", typeof(bool), typeof(UiLoadingSpinner), new PropertyMetadata(false));
+        DependencyProperty.Register("IsLoading", typeof(bool), typeof(LoadingSpinner), new PropertyMetadata(false));
 
     /// <summary>
     /// 圆弧直径
@@ -22,7 +22,7 @@ public class UiLoadingSpinner : Control
         set { SetValue(DiameterProperty, value); }
     }
     public static readonly DependencyProperty DiameterProperty =
-        DependencyProperty.Register("Diameter", typeof(double), typeof(UiLoadingSpinner), new PropertyMetadata(100.0));
+        DependencyProperty.Register("Diameter", typeof(double), typeof(LoadingSpinner), new PropertyMetadata(100.0));
 
     /// <summary>
     /// 圆弧边框厚度
@@ -33,7 +33,7 @@ public class UiLoadingSpinner : Control
         set { SetValue(ThicknessProperty, value); }
     }
     public static readonly DependencyProperty ThicknessProperty =
-        DependencyProperty.Register("Thickness", typeof(double), typeof(UiLoadingSpinner), new PropertyMetadata(1.0));
+        DependencyProperty.Register("Thickness", typeof(double), typeof(LoadingSpinner), new PropertyMetadata(1.0));
 
     /// <summary>
     /// 圆弧边框颜色
@@ -44,7 +44,7 @@ public class UiLoadingSpinner : Control
         set { SetValue(ColorProperty, value); }
     }
     public static readonly DependencyProperty ColorProperty =
-        DependencyProperty.Register("Color", typeof(Brush), typeof(UiLoadingSpinner), new PropertyMetadata(Brushes.Black));
+        DependencyProperty.Register("Color", typeof(Brush), typeof(LoadingSpinner), new PropertyMetadata(Brushes.Black));
 
     /// <summary>
     /// 圆弧两端形状
@@ -55,5 +55,5 @@ public class UiLoadingSpinner : Control
         set { SetValue(CapProperty, value); }
     }
     public static readonly DependencyProperty CapProperty =
-        DependencyProperty.Register("Cap", typeof(PenLineCap), typeof(UiLoadingSpinner), new PropertyMetadata(PenLineCap.Flat));
+        DependencyProperty.Register("Cap", typeof(PenLineCap), typeof(LoadingSpinner), new PropertyMetadata(PenLineCap.Flat));
 }

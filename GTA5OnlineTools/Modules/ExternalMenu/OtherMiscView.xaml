@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     d:DesignHeight="600"
     d:DesignWidth="900"
     mc:Ignorable="d">
@@ -13,7 +13,7 @@
         <!--  面板1  -->
         <DockPanel>
             <StackPanel DockPanel.Dock="Top">
-                <ui:UiLabelIcon Content="随身技工" />
+                <ui:LabelIcon Content="随身技工" />
                 <UniformGrid Margin="5,0,5,0" Columns="3">
                     <Button
                         x:Name="Button_RefushPersonalVehicleList"
@@ -37,7 +37,7 @@
         <!--  面板2  -->
         <DockPanel>
             <StackPanel DockPanel.Dock="Top">
-                <ui:UiLabelIcon Content="模型修改" />
+                <ui:LabelIcon Content="模型修改" />
                 <StackPanel Margin="5,0,5,0">
                     <Button
                         x:Name="Button_ModelChange"

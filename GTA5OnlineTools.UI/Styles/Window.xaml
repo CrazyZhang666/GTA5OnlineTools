@@ -5,7 +5,7 @@
     xmlns:controls="clr-namespace:GTA5OnlineTools.UI.Controls">
 
     <!--#region 系统按钮-->
-    <Style x:Key="UiSystemButton" TargetType="{x:Type Button}">
+    <Style x:Key="SystemButton" TargetType="{x:Type Button}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -41,7 +41,7 @@
     <!--#endregion-->
 
     <!--#region 系统窗口-->
-    <Style x:Key="UiWindowStyle" TargetType="{x:Type controls:UiWindow}">
+    <Style x:Key="SystemWindowStyle" TargetType="{x:Type controls:Window}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -49,7 +49,7 @@
         <Setter Property="BorderBrush" Value="#585858" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:UiWindow}">
+                <ControlTemplate TargetType="{x:Type controls:Window}">
                     <Border
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -71,7 +71,6 @@
                                 <ContentPresenter Content="{TemplateBinding TitleContent}" />
                                 <StackPanel
                                     Grid.Column="1"
-                                    VerticalAlignment="Center"
                                     Orientation="Horizontal"
                                     WindowChrome.IsHitTestVisibleInChrome="True">
                                     <Button
@@ -85,7 +84,7 @@
                                         Command="SystemCommands.MinimizeWindowCommand"
                                         Foreground="{TemplateBinding SystemButtonForeground}"
                                         IsTabStop="False"
-                                        Style="{StaticResource UiSystemButton}"
+                                        Style="{StaticResource SystemButton}"
                                         ToolTip="最小化" />
                                     <Button
                                         x:Name="ButtonMax"
@@ -97,7 +96,7 @@
                                         Command="SystemCommands.MaximizeWindowCommand"
                                         Foreground="{TemplateBinding SystemButtonForeground}"
                                         IsTabStop="False"
-                                        Style="{StaticResource UiSystemButton}"
+                                        Style="{StaticResource SystemButton}"
                                         ToolTip="最大化" />
                                     <Button
                                         x:Name="ButtonRestore"
@@ -109,7 +108,7 @@
                                         Command="SystemCommands.RestoreWindowCommand"
                                         Foreground="{TemplateBinding SystemButtonForeground}"
                                         IsTabStop="False"
-                                        Style="{StaticResource UiSystemButton}"
+                                        Style="{StaticResource SystemButton}"
                                         ToolTip="向下还原" />
                                     <Button
                                         x:Name="ButtonClose"
@@ -121,7 +120,7 @@
                                         Command="SystemCommands.CloseWindowCommand"
                                         Foreground="{TemplateBinding SystemButtonForeground}"
                                         IsTabStop="False"
-                                        Style="{StaticResource UiSystemButton}"
+                                        Style="{StaticResource SystemButton}"
                                         ToolTip="关闭" />
                                 </StackPanel>
                             </Grid>

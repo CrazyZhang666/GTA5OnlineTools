@@ -1,6 +1,6 @@
 ﻿namespace GTA5OnlineTools.UI.Controls;
 
-public class UiLabelIcon : Label
+public class LabelIcon : Label
 {
     /// <summary>
     /// Icon图标
@@ -11,5 +11,5 @@ public class UiLabelIcon : Label
         set { SetValue(IconProperty, value); }
     }
     public static readonly DependencyProperty IconProperty =
-        DependencyProperty.Register("Icon", typeof(string), typeof(UiLabelIcon), new PropertyMetadata("\xe63b"));
+        DependencyProperty.Register("Icon", typeof(string), typeof(LabelIcon), new PropertyMetadata("\xe63b"));
 }

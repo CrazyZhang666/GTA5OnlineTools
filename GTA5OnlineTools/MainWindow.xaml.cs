@@ -9,7 +9,6 @@ using GTA5OnlineTools.GTA.Core;
 using RestSharp;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
-using Hardcodet.Wpf.TaskbarNotification;
 
 namespace GTA5OnlineTools;
 
@@ -53,11 +52,6 @@ public partial class MainWindow
     public static Window MainWindowInstance { get; private set; } = null;
 
     /// <summary>
-    /// 发送任务栏通知消息委托
-    /// </summary>
-    public static Action<string> ActionShowNoticeInfo;
-
-    /// <summary>
     /// 存储软件开始运行的时间
     /// </summary>
     private DateTime OriginDateTime;
@@ -94,8 +88,6 @@ public partial class MainWindow
 
         MainModel.AppRunTime = "00:00:00";
         MainModel.AppVersion = $"{CoreUtil.ClientVersion}";
-
-        ActionShowNoticeInfo = ShowNoticeInfo;
 
         // 更新主窗口UI线程
         new Thread(UpdateUiThread)
@@ -334,15 +326,6 @@ public partial class MainWindow
             WeakReferenceMessenger.Default.Send("404", "Notice");
             WeakReferenceMessenger.Default.Send("404", "Change");
         }
-    }
-
-    /// <summary>
-    /// 发送通知栏提示信息
-    /// </summary>
-    /// <param name="msg"></param>
-    private void ShowNoticeInfo(string msg)
-    {
-        TaskbarIcon_Main.ShowBalloonTip("提示", msg, BalloonIcon.Info);
     }
 
     #region 托盘菜单事件

@@ -15,7 +15,7 @@
                 Width="96"
                 Height="96"
                 Margin="10"
-                Source="/Assets/Images/Favicon.ico" />
+                Source="/Assets/Favicon.ico" />
             <TextBlock
                 Margin="5,0,5,5"
                 HorizontalAlignment="Center"

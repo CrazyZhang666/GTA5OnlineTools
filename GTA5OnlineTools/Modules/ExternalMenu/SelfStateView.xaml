@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     d:DesignHeight="600"
     d:DesignWidth="900"
     mc:Ignorable="d">
@@ -12,7 +12,7 @@
     <UniformGrid Columns="3">
         <!--  面板1  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="属性调节" />
+            <ui:LabelIcon Content="属性调节" />
             <StackPanel Margin="5,0,5,0">
                 <!--  生命值  -->
                 <DockPanel>
@@ -164,7 +164,7 @@
                 </DockPanel>
             </StackPanel>
 
-            <ui:UiLabelIcon Content="一般选项" />
+            <ui:LabelIcon Content="一般选项" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
                     x:Name="CheckBox_PlayerGodMode"
@@ -203,7 +203,7 @@
         </StackPanel>
         <!--  面板2  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="快捷键" />
+            <ui:LabelIcon Content="快捷键" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox Content="[F5] 传送到导航点" IsChecked="{Binding SelfStateModel.IsHotKeyToWaypoint, UpdateSourceTrigger=PropertyChanged}" />
                 <CheckBox Content="[F6] 传送到目标点" IsChecked="{Binding SelfStateModel.IsHotKeyToObjective, UpdateSourceTrigger=PropertyChanged}" />
@@ -237,7 +237,7 @@
                     IsChecked="{Binding SelfStateModel.IsHotKeyNoCollision, UpdateSourceTrigger=PropertyChanged}" />
             </StackPanel>
 
-            <ui:UiLabelIcon Content="快捷功能" />
+            <ui:LabelIcon Content="快捷功能" />
             <WrapPanel Margin="5,0,5,0">
                 <Button
                     x:Name="Button_ToWaypoint"
@@ -276,7 +276,7 @@
         </StackPanel>
         <!--  面板3  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="实用功能" />
+            <ui:LabelIcon Content="实用功能" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
                     x:Name="CheckBox_AutoClearWanted"
@@ -296,7 +296,7 @@
                     Content="自动击杀警察 ★" />
             </StackPanel>
 
-            <ui:UiLabelIcon Content="高级" />
+            <ui:LabelIcon Content="高级" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
                     x:Name="CheckBox_ProofBullet"

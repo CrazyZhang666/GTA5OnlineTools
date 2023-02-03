@@ -4,12 +4,12 @@
     xmlns:controls="clr-namespace:GTA5OnlineTools.UI.Controls"
     xmlns:cvt="clr-namespace:GTA5OnlineTools.UI.Converters">
 
-    <Style TargetType="{x:Type controls:UiLoadingSpinner}">
+    <Style TargetType="{x:Type controls:LoadingSpinner}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:UiLoadingSpinner}">
+                <ControlTemplate TargetType="{x:Type controls:LoadingSpinner}">
                     <ControlTemplate.Resources>
                         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                         <cvt:DiameterAndThicknessToStrokeDashArrayConverter x:Key="DiameterAndThicknessToStrokeDashArrayConverter" />

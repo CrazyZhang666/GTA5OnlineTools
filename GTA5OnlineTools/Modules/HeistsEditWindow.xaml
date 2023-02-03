@@ -1,11 +1,11 @@
-﻿<ui:UiWindow
+﻿<ui:Window
     x:Class="GTA5OnlineTools.Modules.HeistsEditWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     x:Name="Window_HeistsEdit"
     Title="GTA5线上小助手 - 抢劫任务编辑器"
     Width="1280"
@@ -14,15 +14,15 @@
     MinHeight="720"
     Closing="Window_HeistPreps_Closing"
     Loaded="Window_HeistPreps_Loaded"
-    Style="{StaticResource UiWindowStyle}"
+    Style="{StaticResource SystemWindowStyle}"
     mc:Ignorable="d">
 
-    <ui:UiWindow.TitleContent>
+    <ui:Window.TitleContent>
         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
             <Image
                 Height="20"
                 Margin="5"
-                Source="\Assets\Images\Favicon.ico"
+                Source="/Assets/Favicon.ico"
                 Style="{StaticResource ImageStyle_HighQuality}" />
             <TextBlock
                 VerticalAlignment="Center"
@@ -30,7 +30,7 @@
                 FontWeight="Bold"
                 Text="{Binding ElementName=Window_HeistsEdit, Path=Title}" />
         </StackPanel>
-    </ui:UiWindow.TitleContent>
+    </ui:Window.TitleContent>
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -67,4 +67,4 @@
         <ContentControl x:Name="ContentControl_Main" Grid.Column="1" />
     </Grid>
 
-</ui:UiWindow>
+</ui:Window>

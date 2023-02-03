@@ -34,7 +34,7 @@ public partial class SessionChatView : UserControl
 
     private void Button_Translate_Click(object sender, RoutedEventArgs e)
     {
-        
+
 
         try
         {
@@ -69,7 +69,7 @@ public partial class SessionChatView : UserControl
 
     private void Button_SendTextToGTA5_Click(object sender, RoutedEventArgs e)
     {
-        
+
 
         try
         {
@@ -115,13 +115,13 @@ public partial class SessionChatView : UserControl
         else
             KeyPress(WinVK.Y);
 
-        Thread.Sleep(Convert.ToInt32(Slider_SendKey_Sleep1.Value));
-        Forms.SendKeys.Flush();
-        Thread.Sleep(Convert.ToInt32(Slider_SendKey_Sleep2.Value));
-        Forms.SendKeys.SendWait(str);
-        Thread.Sleep(Convert.ToInt32(Slider_SendKey_Sleep2.Value));
-        Forms.SendKeys.Flush();
-        Thread.Sleep(Convert.ToInt32(Slider_SendKey_Sleep1.Value));
+        //Thread.Sleep(Convert.ToInt32(Slider_SendKey_Sleep1.Value));
+        //Forms.SendKeys.Flush();
+        //Thread.Sleep(Convert.ToInt32(Slider_SendKey_Sleep2.Value));
+        //Forms.SendKeys.SendWait(str);
+        //Thread.Sleep(Convert.ToInt32(Slider_SendKey_Sleep2.Value));
+        //Forms.SendKeys.Flush();
+        //Thread.Sleep(Convert.ToInt32(Slider_SendKey_Sleep1.Value));
 
         KeyPress(WinVK.RETURN);
         KeyPress(WinVK.RETURN);
@@ -180,7 +180,7 @@ public partial class SessionChatView : UserControl
 
     private void Button_ReadPlayerName_Click(object sender, RoutedEventArgs e)
     {
-        
+
 
         long pCPlayerInfo = Globals.GetCPlayerInfo();
         TextBox_PlayerName.Text = Memory.ReadString(pCPlayerInfo + Offsets.CPed_CPlayerInfo_Name, 64);
@@ -193,7 +193,7 @@ public partial class SessionChatView : UserControl
 
     private void Button_WritePlayerName_Click(object sender, RoutedEventArgs e)
     {
-        
+
 
         try
         {

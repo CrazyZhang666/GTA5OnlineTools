@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     d:DesignHeight="600"
     d:DesignWidth="900"
     mc:Ignorable="d">
@@ -12,7 +12,7 @@
     <UniformGrid Columns="3">
         <!--  面板1  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="CEO普通货物" />
+            <ui:LabelIcon Content="CEO普通货物" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_CEOCargos_Click" Content="医疗用品" />
                 <Button Click="Button_CEOCargos_Click" Content="烟酒" />
@@ -26,7 +26,7 @@
                 <Button Click="Button_CEOCargos_Click" Content="珠宝" />
                 <Button Click="Button_CEOCargos_Click" Content="银块" />
             </WrapPanel>
-            <ui:UiLabelIcon Content="CEO特殊货物" />
+            <ui:LabelIcon Content="CEO特殊货物" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_CEOSpecialCargos_Click" Content="古董艺术品（华丽彩蛋）" />
                 <Button Click="Button_CEOSpecialCargos_Click" Content="武器弹药（黄金火神机枪）" />
@@ -62,7 +62,7 @@
         </StackPanel>
         <!--  面板2  -->
         <StackPanel>
-            <ui:UiLabelIcon Content="地堡" />
+            <ui:LabelIcon Content="地堡" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
                     x:Name="CheckBox_BunkerSupplyDelay"
@@ -74,7 +74,7 @@
                     Content="解锁地堡所有研究 (临时)" />
             </StackPanel>
 
-            <ui:UiLabelIcon Content="摩托帮" />
+            <ui:LabelIcon Content="摩托帮" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
                     x:Name="CheckBox_MCSupplyDelay"
@@ -82,7 +82,7 @@
                     Content="移除摩托帮进货延迟" />
             </StackPanel>
 
-            <ui:UiLabelIcon Content="夜总会" />
+            <ui:LabelIcon Content="夜总会" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
                     x:Name="CheckBox_NightclubOutDelay"
@@ -90,7 +90,7 @@
                     Content="移除夜总会出货延迟" />
             </StackPanel>
 
-            <ui:UiLabelIcon Content="进出口大亨" />
+            <ui:LabelIcon Content="进出口大亨" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
                     x:Name="CheckBox_ExportVehicleDelay"
@@ -98,7 +98,7 @@
                     Content="移除进出口大亨出货延迟" />
             </StackPanel>
 
-            <ui:UiLabelIcon Content="走私大暴走" />
+            <ui:LabelIcon Content="走私大暴走" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
                     x:Name="CheckBox_SmugglerRunInDelay"
@@ -110,7 +110,7 @@
                     Content="移除机库出货延迟" />
             </StackPanel>
 
-            <ui:UiLabelIcon Content="事务所合约" />
+            <ui:LabelIcon Content="事务所合约" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
                     x:Name="CheckBox_SecurityHitCooldown"

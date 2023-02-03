@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     d:DesignHeight="720"
     d:DesignWidth="1280"
     Style="{StaticResource UserControlStyle_Loaded}"
@@ -19,49 +19,49 @@
         <ScrollViewer Margin="5">
             <StackPanel>
                 <WrapPanel>
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="CurrentDirectory"
                         Content="程序当前目录"
                         Icon="&#xec17;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="ReleaseDirectory"
                         Content="程序释放目录"
                         Icon="&#xec17;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="InitCPDPath"
                         Content="初始化配置文件夹"
                         Icon="&#xe619;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="RestartApp"
                         Content="重启程序"
                         Icon="&#xe653;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="BaseInjector"
                         Content="基础DLL注入器"
                         Icon="&#xe63d;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="OpenUpdateWindow"
                         Content="打开更新窗口"
                         Icon="&#xe652;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="RefreshDNSCache"
                         Content="刷新DNS缓存"
                         Icon="&#xe62c;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="EditHosts"
                         Content="编辑Hosts文件"
@@ -70,31 +70,31 @@
                 </WrapPanel>
                 <!--  ##################################################  -->
                 <WrapPanel>
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="ReNameAppCN"
                         Content="重命名小助手中文"
                         Icon="&#xe667;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="ReNameAppEN"
                         Content="重命名小助手英文"
                         Icon="&#xe667;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="StoryModeArchive"
                         Content="替换故事模式完美存档"
                         Icon="&#xe64d;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="MinimizeToTray"
                         Content="最小化程序到系统托盘"
                         Icon="&#xe60e;"
                         Style="{StaticResource ButtonStyle_Tools}" />
-                    <ui:UiButtonIcon
+                    <ui:ButtonIcon
                         Command="{Binding ToolsButtonClickCommand}"
                         CommandParameter="ManualGC"
                         Content="GC垃圾回收"

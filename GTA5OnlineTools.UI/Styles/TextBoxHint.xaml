@@ -6,7 +6,7 @@
 
     <cvt:IsNullOrEmptyConverter x:Key="IsNullOrEmptyConverter" />
 
-    <Style TargetType="{x:Type controls:UiTextBoxHint}">
+    <Style TargetType="{x:Type controls:TextBoxHint}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="ContextMenu" Value="{x:Null}" />
@@ -27,7 +27,7 @@
         <Setter Property="InputLanguageManager.InputLanguage" Value="en-US" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type controls:UiTextBoxHint}">
+                <ControlTemplate TargetType="{x:Type controls:TextBoxHint}">
                     <Border
                         x:Name="border"
                         Background="{TemplateBinding Background}"

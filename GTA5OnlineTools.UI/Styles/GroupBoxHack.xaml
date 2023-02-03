@@ -1,0 +1,75 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:GTA5OnlineTools.UI.Controls"
+    xmlns:cvt="clr-namespace:GTA5OnlineTools.UI.Converters">
+
+    <cvt:StringToImageSourceConverter x:Key="StringToImageSourceConverter" />
+
+    <Style TargetType="{x:Type controls:GroupBoxHack}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:GroupBoxHack}">
+                    <Border
+                        Width="550"
+                        Height="200"
+                        Margin="5,5,0,0"
+                        BorderBrush="Gray"
+                        BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <!--  预览图片  -->
+                            <Border
+                                Margin="5,5,0,5"
+                                BorderBrush="Gray"
+                                BorderThickness="0.7"
+                                SnapsToDevicePixels="True">
+                                <Image
+                                    RenderOptions.BitmapScalingMode="HighQuality"
+                                    Source="{TemplateBinding Image,
+                                                             Converter={StaticResource StringToImageSourceConverter}}"
+                                    Stretch="UniformToFill">
+                                    <Image.ToolTip>
+                                        <Image Source="{TemplateBinding Image, Converter={StaticResource StringToImageSourceConverter}}" />
+                                    </Image.ToolTip>
+                                </Image>
+                            </Border>
+                            <!--  简介和功能  -->
+                            <DockPanel Grid.Column="1" Margin="5">
+                                <!--  顶部区域  -->
+                                <DockPanel DockPanel.Dock="Top">
+                                    <!--  标题  -->
+                                    <TextBlock
+                                        Margin="5"
+                                        DockPanel.Dock="Left"
+                                        FontSize="18"
+                                        FontWeight="Bold"
+                                        Text="{TemplateBinding Title}" />
+                                    <!--  标题 额外功能  -->
+                                    <ContentPresenter
+                                        HorizontalAlignment="Right"
+                                        Content="{TemplateBinding TitleContent}"
+                                        DockPanel.Dock="Right" />
+                                </DockPanel>
+                                <!--  描述  -->
+                                <TextBlock
+                                    Margin="5"
+                                    DockPanel.Dock="Top"
+                                    Text="{TemplateBinding Description}"
+                                    TextWrapping="Wrap" />
+                                <!--  描述 额外功能  -->
+                                <ContentPresenter Content="{TemplateBinding DescriptionContent}" DockPanel.Dock="Top" />
+                            </DockPanel>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

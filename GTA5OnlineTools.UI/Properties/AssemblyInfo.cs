@@ -10,6 +10,6 @@
 
 [assembly: Guid("d7832ce3-0d74-432f-bb24-fa64f04d3ee2")]
 
-[assembly: XmlnsPrefix("http://crazyzhang.cn/ui/2022/xaml", "ui")]
-[assembly: XmlnsDefinition("http://crazyzhang.cn/ui/2022/xaml", "GTA5OnlineTools.UI")]
-[assembly: XmlnsDefinition("http://crazyzhang.cn/ui/2022/xaml", "GTA5OnlineTools.UI.Controls")]
+[assembly: XmlnsPrefix("http://crazyzhang.cn/ui/2023/xaml", "ui")]
+[assembly: XmlnsDefinition("http://crazyzhang.cn/ui/2023/xaml", "GTA5OnlineTools.UI")]
+[assembly: XmlnsDefinition("http://crazyzhang.cn/ui/2023/xaml", "GTA5OnlineTools.UI.Controls")]

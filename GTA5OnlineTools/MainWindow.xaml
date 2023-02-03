@@ -1,11 +1,10 @@
-﻿<ui:UiWindow
+﻿<ui:Window
     x:Class="GTA5OnlineTools.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:tb="http://www.hardcodet.net/taskbar"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     x:Name="Window_Main"
     Title="GTA5线上小助手"
     Width="1280"
@@ -15,10 +14,10 @@
     CaptionHeight="40"
     Closing="Window_Main_Closing"
     Loaded="Window_Main_Loaded"
-    Style="{StaticResource UiWindowStyle}"
+    Style="{StaticResource SystemWindowStyle}"
     mc:Ignorable="d">
 
-    <ui:UiWindow.TitleContent>
+    <ui:Window.TitleContent>
         <DockPanel LastChildFill="True">
             <StackPanel
                 VerticalAlignment="Center"
@@ -27,7 +26,7 @@
                 <Image
                     Height="25"
                     Margin="5"
-                    Source="\Assets\Images\Favicon.ico"
+                    Source="/Assets/Favicon.ico"
                     Style="{StaticResource ImageStyle_HighQuality}" />
                 <TextBlock
                     Margin="0,0,5,0"
@@ -56,58 +55,36 @@
                 DockPanel.Dock="Left"
                 Orientation="Horizontal"
                 WindowChrome.IsHitTestVisibleInChrome="True">
-                <ui:UiRadioButtonIcon
+                <ui:RadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="HomeView"
                     Content="主页"
                     Icon="&#xe734;"
                     IsChecked="True" />
-                <ui:UiRadioButtonIcon
+                <ui:RadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="CheatsView"
                     Content="第三方"
                     Icon="&#xe636;" />
-                <ui:UiRadioButtonIcon
+                <ui:RadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="ModulesView"
                     Content="功能"
                     Icon="&#xe691;" />
-                <ui:UiRadioButtonIcon
+                <ui:RadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="ToolsView"
                     Content="工具"
                     Icon="&#xe648;" />
-                <ui:UiRadioButtonIcon
+                <ui:RadioButtonIcon
                     Command="{Binding NavigateCommand}"
                     CommandParameter="AboutView"
                     Content="关于"
                     Icon="&#xe625;" />
             </StackPanel>
         </DockPanel>
-    </ui:UiWindow.TitleContent>
+    </ui:Window.TitleContent>
 
-    <Grid>
-        <tb:TaskbarIcon
-            x:Name="TaskbarIcon_Main"
-            IconSource="/Assets/Images/Favicon.ico"
-            MenuActivation="LeftOrRightClick"
-            ToolTipText="GTA5线上小助手"
-            TrayMouseDoubleClick="TaskbarIcon_Main_TrayMouseDoubleClick">
-            <tb:TaskbarIcon.ContextMenu>
-                <ContextMenu>
-                    <MenuItem
-                        x:Name="MenuItem_ShowMainWindow"
-                        Click="MenuItem_ShowMainWindow_Click"
-                        Header="显示主窗口" />
-                    <MenuItem
-                        x:Name="MenuItem_ExitProcess"
-                        Click="MenuItem_ExitProcess_Click"
-                        Header="退出程序" />
-                </ContextMenu>
-            </tb:TaskbarIcon.ContextMenu>
-        </tb:TaskbarIcon>
-        <!--  ################################  -->
-        <ContentControl x:Name="ContentControl_Main" FocusVisualStyle="{x:Null}" />
-    </Grid>
+    <ContentControl x:Name="ContentControl_Main" FocusVisualStyle="{x:Null}" />
 
-</ui:UiWindow>
+</ui:Window>

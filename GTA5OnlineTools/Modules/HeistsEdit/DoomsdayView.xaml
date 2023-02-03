@@ -4,13 +4,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ui="http://crazyzhang.cn/ui/2022/xaml"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
     d:DesignHeight="720"
     d:DesignWidth="1280"
     mc:Ignorable="d">
 
     <TabControl Margin="5">
-        <ui:UiTabItemIcon Header="末日抢劫 - 分红数据">
+        <ui:TabItemIcon Header="末日抢劫 - 分红数据">
             <StackPanel>
                 <Border Margin="5" Background="#F0F0F0">
                     <WrapPanel HorizontalAlignment="Center">
@@ -61,9 +61,9 @@
                     </StackPanel>
                 </UniformGrid>
             </StackPanel>
-        </ui:UiTabItemIcon>
+        </ui:TabItemIcon>
         <!--  ##############################  -->
-        <ui:UiTabItemIcon Header="末日抢劫 - 高级">
+        <ui:TabItemIcon Header="末日抢劫 - 高级">
             <UniformGrid Columns="3">
                 <StackPanel Margin="5">
                     <TextBlock Style="{StaticResource TextBlockStyle_Title}" Text="跳过前置" />
@@ -94,7 +94,7 @@
                 </StackPanel>
 
             </UniformGrid>
-        </ui:UiTabItemIcon>
+        </ui:TabItemIcon>
     </TabControl>
 
 </UserControl>
