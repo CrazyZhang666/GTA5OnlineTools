@@ -12,7 +12,6 @@
     Closing="Window_GTA5Menu_Closing"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     Loaded="Window_GTA5Menu_Loaded"
-    ResizeMode="CanMinimize"
     Style="{StaticResource SystemWindowStyle}"
     mc:Ignorable="d">
 

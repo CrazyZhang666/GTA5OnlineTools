@@ -12,7 +12,6 @@
     Closing="Window_Profiles_Closing"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     Loaded="Window_Profiles_Loaded"
-    ResizeMode="CanMinimize"
     Style="{StaticResource SystemWindowStyle}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">

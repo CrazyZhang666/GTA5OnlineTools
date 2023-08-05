@@ -12,7 +12,6 @@
     Closing="Window_GTAHax_Closing"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     Loaded="Window_GTAHax_Loaded"
-    ResizeMode="CanMinimize"
     Style="{StaticResource SystemWindowStyle}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">

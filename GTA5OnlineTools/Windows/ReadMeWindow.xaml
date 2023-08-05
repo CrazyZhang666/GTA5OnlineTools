@@ -10,7 +10,6 @@
     Width="1067"
     Height="600"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
-    ResizeMode="NoResize"
     Style="{StaticResource SystemWindowStyle}"
     WindowStartupLocation="CenterOwner"
     mc:Ignorable="d">

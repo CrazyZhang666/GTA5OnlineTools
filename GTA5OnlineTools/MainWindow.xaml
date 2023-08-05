@@ -13,10 +13,8 @@
     Closing="Window_Main_Closing"
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     Loaded="Window_Main_Loaded"
-    ResizeMode="CanMinimize"
     Style="{StaticResource SystemWindowStyle}"
     mc:Ignorable="d">
-
     <ui:Window.TitleContent>
         <DockPanel>
             <StackPanel
@@ -107,7 +105,6 @@
             </StackPanel>
         </DockPanel>
     </ui:Window.TitleContent>
-
     <Grid>
         <!--  内容区域  -->
         <ContentControl x:Name="ContentControl_NavRegion" FocusVisualStyle="{x:Null}" />
