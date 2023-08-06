@@ -5,42 +5,42 @@ namespace GTA5OnlineTools.Utils;
 public static class CoreUtil
 {
     /// <summary>
-    /// 主窗口标题
+    /// 主視窗標題
     /// </summary>
-    public const string MainAppWindowName = "GTA5线上小助手 支持1.67 完全免费 v";
+    public const string MainAppWindowName = "GTA5線上小助手 支援1.67 完全免費 v";
 
     /// <summary>
-    /// 程序服务端版本号，如：1.2.3.4
+    /// 程式服務端版本號，如：1.2.3.4
     /// </summary>
     public static Version ServerVersion = Version.Parse("0.0.0.0");
 
     /// <summary>
-    /// 程序客户端版本号，如：1.2.3.4
+    /// 程式客戶端版本號，如：1.2.3.4
     /// </summary>
     public static readonly Version ClientVersion = Application.ResourceAssembly.GetName().Version;
 
     /// <summary>
-    /// 程序客户端最后编译时间
+    /// 程式客戶端最後編譯時間
     /// </summary>
     public static readonly DateTime BuildDate = File.GetLastWriteTime(Environment.ProcessPath);
 
     /// <summary>
-    /// 检查更新相关信息
+    /// 檢查更新相關資訊
     /// </summary>
     public static UpdateInfo UpdateInfo { get; set; }
 
     /// <summary>
-    /// 正在更新时的文件名
+    /// 正在更新時的檔名
     /// </summary>
-    public const string HalfwayAppName = "未下载完的小助手更新文件.exe";
+    public const string HalfwayAppName = "未下載完的小助手更新檔案.exe";
 
     /// <summary>
-    /// 固定下载更新地址
+    /// 固定下載更新地址
     /// </summary>
     public static string UpdateAddress = "https://github.com/CrazyZhang666/GTA5/releases/download/update/GTA5OnlineTools.exe";
 
     /// <summary>
-    /// 更新完成后的完整文件名
+    /// 更新完成後的完整檔名
     /// </summary>
     /// <returns></returns>
     public static string FullAppName()
@@ -49,7 +49,7 @@ public static class CoreUtil
     }
 
     /// <summary>
-    /// 计算时间差，即软件运行时间
+    /// 計算時間差，即軟體執行時間
     /// </summary>
     public static string ExecDateDiff(DateTime dateBegin, DateTime dateEnd)
     {
@@ -60,16 +60,16 @@ public static class CoreUtil
     }
 
     /// <summary>
-    /// 获取管理员状态
+    /// 獲取管理員狀態
     /// </summary>
     /// <returns></returns>
     public static string GetAdminState()
     {
-        return IsAdministrator() ? "管理员" : "普通";
+        return IsAdministrator() ? "管理員" : "普通";
     }
 
     /// <summary>
-    /// 判断是否管理员权限运行
+    /// 判斷是否管理員許可權執行
     /// </summary>
     /// <returns></returns>
     public static bool IsAdministrator()
@@ -77,12 +77,12 @@ public static class CoreUtil
         var current = WindowsIdentity.GetCurrent();
         var windowsPrincipal = new WindowsPrincipal(current);
 
-        // WindowsBuiltInRole可以枚举出很多权限，例如系统用户、User、Guest等等
+        // WindowsBuiltInRole可以列舉出很多許可權，例如系統使用者、User、Guest等等
         return windowsPrincipal.IsInRole(WindowsBuiltInRole.Administrator);
     }
 
     /// <summary>
-    /// 文件大小转换
+    /// 檔案大小轉換
     /// </summary>
     /// <param name="size"></param>
     /// <returns></returns>
@@ -97,7 +97,7 @@ public static class CoreUtil
     }
 
     /// <summary>
-    /// 获取未下载完临时文件路径
+    /// 獲取未下載完臨時檔案路徑
     /// </summary>
     /// <returns></returns>
     public static string GetHalfwayFilePath()
@@ -106,7 +106,7 @@ public static class CoreUtil
     }
 
     /// <summary>
-    /// 获取已下载完真实文件路径
+    /// 獲取已下載完真實檔案路徑
     /// </summary>
     /// <returns></returns>
     public static string GetFullFilePath()
