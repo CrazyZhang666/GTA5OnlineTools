@@ -49,15 +49,15 @@
                     VerticalAlignment="Center"
                     Text="显示/隐藏" />
                 <RadioButton
-                    x:Name="RadioButton_ShowMenuKey_Del"
-                    Click="RadioButton_ShowMenuKey_Click"
-                    Content="Del键"
-                    IsChecked="True"
-                    WindowChrome.IsHitTestVisibleInChrome="True" />
-                <RadioButton
                     x:Name="RadioButton_ShowMenuKey_Oem3"
                     Click="RadioButton_ShowMenuKey_Click"
                     Content="~键"
+                    IsChecked="True"
+                    WindowChrome.IsHitTestVisibleInChrome="True" />
+                <RadioButton
+                    x:Name="RadioButton_ShowMenuKey_Del"
+                    Click="RadioButton_ShowMenuKey_Click"
+                    Content="Del键"
                     WindowChrome.IsHitTestVisibleInChrome="True" />
                 <!--  //////////  -->
                 <Border

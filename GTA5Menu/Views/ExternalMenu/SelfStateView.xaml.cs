@@ -95,6 +95,7 @@ public partial class SelfStateView : UserControl
         // 取消订阅按钮事件
         HotKeys.KeyDownEvent -= HotKeys_KeyDownEvent;
 
+        // 保存配置文件
         SaveConfig();
 
         GTA5MenuWindow.WindowClosingEvent -= GTA5MenuWindow_WindowClosingEvent;
@@ -109,35 +110,16 @@ public partial class SelfStateView : UserControl
     /// </summary>
     private void ReadConfig()
     {
-        var isHotKeyToWaypoint = IniHelper.ReadValue("ExternalMenu", "IsHotKeyToWaypoint");
-        var isHotKeyToObjective = IniHelper.ReadValue("ExternalMenu", "IsHotKeyToObjective");
-        var isHotKeyFillHealthArmor = IniHelper.ReadValue("ExternalMenu", "IsHotKeyFillHealthArmor");
-        var isHotKeyClearWanted = IniHelper.ReadValue("ExternalMenu", "IsHotKeyClearWanted");
+        SelfStateModel.IsHotKeyToWaypoint = IniHelper.ReadValue("ExternalMenu", "IsHotKeyToWaypoint").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateModel.IsHotKeyToObjective = IniHelper.ReadValue("ExternalMenu", "IsHotKeyToObjective").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateModel.IsHotKeyFillHealthArmor = IniHelper.ReadValue("ExternalMenu", "IsHotKeyFillHealthArmor").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateModel.IsHotKeyClearWanted = IniHelper.ReadValue("ExternalMenu", "IsHotKeyClearWanted").Equals("True", StringComparison.OrdinalIgnoreCase);
 
-        var isHotKeyFillAllAmmo = IniHelper.ReadValue("ExternalMenu", "IsHotKeyFillAllAmmo");
-        var isHotKeyMovingFoward = IniHelper.ReadValue("ExternalMenu", "IsHotKeyMovingFoward");
+        SelfStateModel.IsHotKeyFillAllAmmo = IniHelper.ReadValue("ExternalMenu", "IsHotKeyFillAllAmmo").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateModel.IsHotKeyMovingFoward = IniHelper.ReadValue("ExternalMenu", "IsHotKeyMovingFoward").Equals("True", StringComparison.OrdinalIgnoreCase);
 
-        var isHotKeyNoCollision = IniHelper.ReadValue("ExternalMenu", "IsHotKeyNoCollision");
-        var isHotKeyToCrossHair = IniHelper.ReadValue("ExternalMenu", "IsHotKeyToCrossHair");
-
-        if (!string.IsNullOrEmpty(isHotKeyToWaypoint))
-            SelfStateModel.IsHotKeyToWaypoint = isHotKeyToWaypoint == "1";
-        if (!string.IsNullOrEmpty(isHotKeyToObjective))
-            SelfStateModel.IsHotKeyToObjective = isHotKeyToObjective == "1";
-        if (!string.IsNullOrEmpty(isHotKeyFillHealthArmor))
-            SelfStateModel.IsHotKeyFillHealthArmor = isHotKeyFillHealthArmor == "1";
-        if (!string.IsNullOrEmpty(isHotKeyClearWanted))
-            SelfStateModel.IsHotKeyClearWanted = isHotKeyClearWanted == "1";
-
-        if (!string.IsNullOrEmpty(isHotKeyFillAllAmmo))
-            SelfStateModel.IsHotKeyFillAllAmmo = isHotKeyFillAllAmmo == "1";
-        if (!string.IsNullOrEmpty(isHotKeyMovingFoward))
-            SelfStateModel.IsHotKeyMovingFoward = isHotKeyMovingFoward == "1";
-
-        if (!string.IsNullOrEmpty(isHotKeyNoCollision))
-            SelfStateModel.IsHotKeyNoCollision = isHotKeyNoCollision == "1";
-        if (!string.IsNullOrEmpty(isHotKeyToCrossHair))
-            SelfStateModel.IsHotKeyToCrossHair = isHotKeyToCrossHair == "1";
+        SelfStateModel.IsHotKeyNoCollision = IniHelper.ReadValue("ExternalMenu", "IsHotKeyNoCollision").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateModel.IsHotKeyToCrossHair = IniHelper.ReadValue("ExternalMenu", "IsHotKeyToCrossHair").Equals("True", StringComparison.OrdinalIgnoreCase);
     }
 
     /// <summary>
@@ -145,16 +127,16 @@ public partial class SelfStateView : UserControl
     /// </summary>
     private void SaveConfig()
     {
-        IniHelper.WriteValue("ExternalMenu", "IsHotKeyToWaypoint", $"{Convert.ToInt32(SelfStateModel.IsHotKeyToWaypoint)}");
-        IniHelper.WriteValue("ExternalMenu", "IsHotKeyToObjective", $"{Convert.ToInt32(SelfStateModel.IsHotKeyToObjective)}");
-        IniHelper.WriteValue("ExternalMenu", "IsHotKeyFillHealthArmor", $"{Convert.ToInt32(SelfStateModel.IsHotKeyFillHealthArmor)}");
-        IniHelper.WriteValue("ExternalMenu", "IsHotKeyClearWanted", $"{Convert.ToInt32(SelfStateModel.IsHotKeyClearWanted)}");
+        IniHelper.WriteValue("ExternalMenu", "IsHotKeyToWaypoint", $"{SelfStateModel.IsHotKeyToWaypoint}");
+        IniHelper.WriteValue("ExternalMenu", "IsHotKeyToObjective", $"{SelfStateModel.IsHotKeyToObjective}");
+        IniHelper.WriteValue("ExternalMenu", "IsHotKeyFillHealthArmor", $"{SelfStateModel.IsHotKeyFillHealthArmor}");
+        IniHelper.WriteValue("ExternalMenu", "IsHotKeyClearWanted", $"{SelfStateModel.IsHotKeyClearWanted}");
 
-        IniHelper.WriteValue("ExternalMenu", "IsHotKeyFillAllAmmo", $"{Convert.ToInt32(SelfStateModel.IsHotKeyFillAllAmmo)}");
-        IniHelper.WriteValue("ExternalMenu", "IsHotKeyMovingFoward", $"{Convert.ToInt32(SelfStateModel.IsHotKeyMovingFoward)}");
+        IniHelper.WriteValue("ExternalMenu", "IsHotKeyFillAllAmmo", $"{SelfStateModel.IsHotKeyFillAllAmmo}");
+        IniHelper.WriteValue("ExternalMenu", "IsHotKeyMovingFoward", $"{SelfStateModel.IsHotKeyMovingFoward}");
 
-        IniHelper.WriteValue("ExternalMenu", "IsHotKeyNoCollision", $"{Convert.ToInt32(SelfStateModel.IsHotKeyNoCollision)}");
-        IniHelper.WriteValue("ExternalMenu", "IsHotKeyToCrossHair", $"{Convert.ToInt32(SelfStateModel.IsHotKeyToCrossHair)}");
+        IniHelper.WriteValue("ExternalMenu", "IsHotKeyNoCollision", $"{SelfStateModel.IsHotKeyNoCollision}");
+        IniHelper.WriteValue("ExternalMenu", "IsHotKeyToCrossHair", $"{SelfStateModel.IsHotKeyToCrossHair}");
     }
 
     /// <summary>
