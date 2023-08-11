@@ -86,9 +86,9 @@ public partial class MoneyView : UserControl
 
             !int.TryParse(TextBox_CasinoAI_11.Text, out int ai11) ||
             !int.TryParse(TextBox_CasinoAI_12.Text, out int ai12) ||
-            !int.TryParse(TextBox_CasinoAI_12.Text, out int ai13) ||
-            !int.TryParse(TextBox_CasinoAI_12.Text, out int ai14) ||
-            !int.TryParse(TextBox_CasinoAI_12.Text, out int ai15))
+            !int.TryParse(TextBox_CasinoAI_13.Text, out int ai13) ||
+            !int.TryParse(TextBox_CasinoAI_14.Text, out int ai14) ||
+            !int.TryParse(TextBox_CasinoAI_15.Text, out int ai15))
         {
             NotifierHelper.Show(NotifierType.Warning, "部分数据不合法，请检查后重新写入");
             return;
