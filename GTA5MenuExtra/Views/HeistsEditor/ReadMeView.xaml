@@ -22,7 +22,13 @@
                 <Paragraph>
                     ● 跳前置不能太频繁，否则可能有封号风险（在线时间和金钱不平衡）
                 </Paragraph>
-
+                <Paragraph
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Foreground="Green"
+                    LineHeight="20">
+                    ★★★★★<LineBreak />
+                    推荐使用Kiddion里的Alice脚本（第三方->下载Lua脚本），这个跳前置更加方便快捷，还有自动完成任务等更多实用功能</Paragraph>
             </FlowDocument>
         </RichTextBox>
 

@@ -36,4 +36,4 @@
 
 ## 鸣谢
 
-感谢 Aure、Alice、sch等对小助手功能的贡献（排名不分先后）
+感谢 Aure、Alice、sch、Blue-Flag 等对小助手的贡献（排名不分先后）
