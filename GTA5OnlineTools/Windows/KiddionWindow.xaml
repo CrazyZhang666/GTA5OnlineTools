@@ -42,10 +42,6 @@
                 x:Name="Button_GetKiddionUI"
                 Click="Button_GetKiddionUI_Click"
                 Content="获取Kiddion文本" />
-            <Button
-                x:Name="Button_BatchTranslation"
-                Click="Button_BatchTranslation_Click"
-                Content="批量机器翻译" />
 
             <TextBlock Margin="5" VerticalAlignment="Center">
                 <Hyperlink NavigateUri="https://github.com/CrazyZhang666/GTA5OnlineTools/discussions/new?category=general" RequestNavigate="Hyperlink_RequestNavigate">

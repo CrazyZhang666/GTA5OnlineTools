@@ -1,9 +1,8 @@
 ﻿using GTA5HotKey;
-using GTA5Shared.API;
-using GTA5Shared.Helper;
 using GTA5Core.Native;
 using GTA5Core.Offsets;
 using GTA5Core.Features;
+using GTA5Shared.Helper;
 
 using WinFormLib;
 
@@ -19,7 +18,7 @@ public partial class SessionChatView : UserControl
         InitializeComponent();
         GTA5MenuWindow.WindowClosingEvent += GTA5MenuWindow_WindowClosingEvent;
 
-        TextBox_InputMessage.Text = "测试文本: 请把GTA5游戏中聊天输入法调成英文,否则会漏掉文字.Hello1234,漏掉文字了吗?";
+        TextBox_InputMessage.Text = "测试文本: 请把GTA5游戏中聊天输入法调成英文,否则会漏掉文字.Hello1234";
 
         var pCPlayerInfo = Game.GetCPlayerInfo();
         TextBox_PlayerName.Text = Memory.ReadString(pCPlayerInfo + CPlayerInfo.Name, 20);
@@ -45,9 +44,6 @@ public partial class SessionChatView : UserControl
 
         switch (btnContent)
         {
-            case "中英互译":
-                YouDaoTranslation(message);
-                break;
             case "简转繁":
                 TextBox_InputMessage.Text = ChsHelper.ToTraditional(message);
                 break;
@@ -120,22 +116,6 @@ public partial class SessionChatView : UserControl
 
         KeyPress(Keys.Return);
         KeyPress(Keys.Return);
-    }
-
-    /// <summary>
-    /// 调用有道翻译中英互译API
-    /// </summary>
-    /// <param name="message"></param>
-    private async void YouDaoTranslation(string message)
-    {
-        try
-        {
-            TextBox_InputMessage.Text = await WebAPI.GetYouDaoContent(message);
-        }
-        catch (Exception ex)
-        {
-            NotifierHelper.ShowException(ex);
-        }
     }
 
     private void TextBox_InputMessage_KeyUp(object sender, KeyEventArgs e)

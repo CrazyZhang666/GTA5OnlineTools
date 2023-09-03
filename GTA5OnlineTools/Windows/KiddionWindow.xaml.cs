@@ -99,25 +99,4 @@ public partial class KiddionWindow
             await Task.Delay(1);
         }
     }
-
-    /// <summary>
-    /// 批量翻译
-    /// </summary>
-    private async void Button_BatchTranslation_Click(object sender, RoutedEventArgs e)
-    {
-        AudioHelper.PlayClickSound();
-
-        if (!ProcessHelper.IsAppRun("Kiddion"))
-        {
-            NotifierHelper.Show(NotifierType.Warning, "未发现《Kiddion》进程，请先运行《Kiddion》程序");
-            return;
-        }
-
-        ClearLogger();
-        foreach (var text in GetKiddionUITextInfos())
-        {
-            var chs = await WebAPI.GetYouDaoContent(text);
-            AppendLogger($"{{ L\"{text}\", L\"{chs}\" }},");
-        }
-    }
 }

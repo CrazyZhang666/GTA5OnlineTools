@@ -24,7 +24,6 @@
                 ToolTip="提示：输入完成后，按下Enter键自动发送文本到游戏中" />
             <!--  ////////////  -->
             <WrapPanel Margin="5,0,5,0">
-                <Button Click="Button_Translate_Click" Content="中英互译" />
                 <Button Click="Button_Translate_Click" Content="简转繁" />
                 <Button Click="Button_Translate_Click" Content="繁转简" />
                 <Button Click="Button_Translate_Click" Content="转拼音" />

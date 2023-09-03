@@ -60,4 +60,8 @@
         <EmbeddedResource Include="Files\Other\SGTA50000" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="API\RespJson\" />
+    </ItemGroup>
+
 </Project>
