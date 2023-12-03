@@ -15,6 +15,7 @@ public partial class SpeedMeterWindow
     public SpeedMeterWindow()
     {
         InitializeComponent();
+        DrawData.IsShowMPH = true;
     }
 
     private void Window_SpeedMeter_Loaded(object sender, RoutedEventArgs e)
@@ -85,5 +86,10 @@ public partial class SpeedMeterWindow
     private void RadioButton_SpeedMeterUnit_MPH_Click(object sender, RoutedEventArgs e)
     {
         DrawData.IsShowMPH = RadioButton_SpeedMeterUnit_MPH.IsChecked == true;
+    }
+
+    private void RadioButton_SpeedMeterUnit_KPH_Click(object sender, RoutedEventArgs e)
+    {
+        DrawData.IsShowMPH   = RadioButton_SpeedMeterUnit_MPH.IsChecked == true;
     }
 }

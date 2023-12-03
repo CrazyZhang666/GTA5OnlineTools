@@ -89,7 +89,8 @@ public partial class DrawWindow : Window
     private void DrawThread()
     {
         bool isShow = true;
-        bool isChange = false;
+        bool isChangeMPH = false;
+        bool isChangeKPH = false;
 
         while (isRunning)
         {
@@ -132,22 +133,24 @@ public partial class DrawWindow : Window
 
                 if (DrawData.IsShowMPH)
                 {
-                    if (!isChange)
+                    if (!isChangeMPH)
                     {
                         MeterPlate_Main.Unit = "MPH";
                         MeterPlate_Main.Maximum = 200;
                         SpeedUnit = MPH;
-                        isChange = true;
+                        isChangeKPH = false;
+                        isChangeMPH = true;
                     }
                 }
                 else
                 {
-                    if (isChange)
+                    if (!isChangeKPH)
                     {
                         MeterPlate_Main.Unit = "KPH";
                         MeterPlate_Main.Maximum = 400;
                         SpeedUnit = KPH;
-                        isChange = false;
+                        isChangeKPH = true;
+                        isChangeMPH = false;
                     }
                 }
             });

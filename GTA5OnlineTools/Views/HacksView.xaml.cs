@@ -542,6 +542,7 @@ public partial class HacksView : UserControl
         var res_cache = $"{FileHelper.ResFiles}.YimMenu.cache.zip";
         var file_cache = $"{FileHelper.Dir_AppData_YimMenu}\\cache.zip";
 
+        FileHelper.CreateDirectory(FileHelper.Dir_AppData_YimMenu);
         FileHelper.ExtractResFile(res_cache, file_cache);
 
         using var archive = ZipFile.OpenRead(file_cache);

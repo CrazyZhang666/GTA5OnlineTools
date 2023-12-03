@@ -20,17 +20,17 @@ public static class STATS
 
     private static long StatGetIntHash()
     {
-        return Memory.Read<long>(Memory.GTA5ProBaseAddress + 0x2699E98) + 0xAE8;
+        return Memory.Read<long>(Memory.GTA5ProBaseAddress + 0x269cd78) + 0xAE8;
     }
 
     private static long StatSetFloatHash()
     {
-        return Memory.Read<long>(Memory.GTA5ProBaseAddress + 0x2699EB0) + 0x568;
+        return Memory.Read<long>(Memory.GTA5ProBaseAddress + 0x269cd90) + 0x568;
     }
 
     private static long StatBoolMaskHash()
     {
-        return Memory.Read<long>(Memory.GTA5ProBaseAddress + 0x2699EC8) + 0xCD8;
+        return Memory.Read<long>(Memory.GTA5ProBaseAddress + 0x269cda8) + 0xCD8;
     }
 
     private static long ShopControllerMask()

@@ -10,5 +10,5 @@ public static class DrawData
     /// <summary>
     /// 是否显示MPH
     /// </summary>
-    public static bool IsShowMPH = true;
+    public static bool IsShowMPH;
 }
