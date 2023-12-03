@@ -26,6 +26,10 @@ public partial class App : Application
     {
         AppMainMutex = new Mutex(true, AppName, out var createdNew);
 
+        byte a = 255;
+        a += 5;
+        Console.WriteLine(a);
+
         if (createdNew)
         {
             // 如果加入启动参数 -d ，则配置目录为当前exe所在目录

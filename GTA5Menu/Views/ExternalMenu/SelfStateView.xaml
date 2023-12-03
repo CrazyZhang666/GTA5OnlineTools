@@ -56,7 +56,7 @@
                 <ui:SliderIcon
                     Name="Slider_WalkSpeed"
                     Title="潜行速度"
-                    Maximum="10"
+                    Maximum="20"
                     Minimum="0"
                     Style="{StaticResource SliderIconStyle_Float}"
                     ValueChanged="Slider_WalkSpeed_ValueChanged" />
@@ -64,7 +64,7 @@
                 <ui:SliderIcon
                     Name="Slider_RunSpeed"
                     Title="奔跑速度"
-                    Maximum="10"
+                    Maximum="20"
                     Minimum="0"
                     Style="{StaticResource SliderIconStyle_Float}"
                     ValueChanged="Slider_RunSpeed_ValueChanged" />
