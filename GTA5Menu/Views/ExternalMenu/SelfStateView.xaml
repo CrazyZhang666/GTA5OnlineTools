@@ -10,9 +10,14 @@
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
-    <UniformGrid Columns="3">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="200" />
+            <ColumnDefinition MinWidth="200" />
+            <ColumnDefinition MinWidth="200" />
+        </Grid.ColumnDefinitions>
         <!--  面板1  -->
-        <StackPanel>
+        <StackPanel Grid.Column="0">
             <ui:LabelIcon Content="属性调节" />
             <StackPanel Margin="5,0,5,0">
                 <!--  生命值  -->
@@ -105,8 +110,12 @@
                 </StackPanel>
             </UniformGrid>
         </StackPanel>
+        <GridSplitter 
+            Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
         <!--  面板2  -->
-        <StackPanel>
+        <StackPanel Grid.Column="1">
             <ui:LabelIcon Content="快捷键" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox Content="[F5] 传送到导航点" IsChecked="{Binding SelfStateModel.IsHotKeyToWaypoint, UpdateSourceTrigger=PropertyChanged}" />
@@ -174,8 +183,12 @@
                     Content="传送到准星位置" />
             </WrapPanel>
         </StackPanel>
+        <GridSplitter 
+            Grid.Column="1" Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
         <!--  面板3  -->
-        <StackPanel>
+        <StackPanel Grid.Column="2">
             <ui:LabelIcon Content="实用功能" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
@@ -232,6 +245,6 @@
                     Content="防海水（可以水下行走）" />
             </StackPanel>
         </StackPanel>
-    </UniformGrid>
+    </Grid>
 
 </UserControl>

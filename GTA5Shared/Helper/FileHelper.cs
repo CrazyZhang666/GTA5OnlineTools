@@ -87,7 +87,6 @@ public static class FileHelper
     {
         Dir_MyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         Dir_AppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
         Initialization(Dir_MyDocuments);
     }
 

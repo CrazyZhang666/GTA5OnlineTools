@@ -34,15 +34,15 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Border
-                            x:Name="checkBoxBorder"
-                            Grid.Column="0"
-                            Margin="0"
+                            x:Name="checkBoxBorder" 
+                            Grid.Column="0" 
+                            Margin="0" 
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="3">
+                            CornerRadius="5">
                             <Viewbox
                                 Width="15"
                                 Height="15"
