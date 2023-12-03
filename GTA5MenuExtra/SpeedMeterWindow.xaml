@@ -54,7 +54,7 @@
                     IsChecked="True" />
                 <RadioButton
                     x:Name="RadioButton_SpeedMeterUnit_KPH"
-                    Click="RadioButton_SpeedMeterUnit_MPH_Click"
+                    Click="RadioButton_SpeedMeterUnit_KPH_Click"
                     Content="KPH（公里每小时）" />
             </WrapPanel>
 
