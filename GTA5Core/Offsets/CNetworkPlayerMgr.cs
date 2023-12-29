@@ -16,7 +16,7 @@ public struct CNetGamePlayerLocal               // 0xE8
 public struct CNetGamePlayer                    // 0x180
 {
     public const int IsSpectating = 0x0C;
-    public const int CPlayerInfo = 0xA0;
+    public const int CPlayerInfo = 0xA8;
 
     public const int ClanName = 0xD6;           // 0xB8 + 0x1E  char m_clan_name[25]    ClanData
     public const int ClanTag = 0xEF;            // 0xB8 + 0x37  char m_clan_tag[5]

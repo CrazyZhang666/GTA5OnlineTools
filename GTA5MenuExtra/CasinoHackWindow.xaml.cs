@@ -1,4 +1,4 @@
-﻿using GTA5MenuExtra.Models;
+using GTA5MenuExtra.Models;
 
 using GTA5Core.Native;
 using GTA5Core.Features;
@@ -57,15 +57,15 @@ public partial class CasinoHackWindow
 
                 ///////////// 庄家底牌 /////////////
 
-                var index = Memory.Read<int>(pointer + (2029 + 2 + 1 + 1 * 1) * 8);
+                var index = Memory.Read<int>(pointer + (2031 + 2 + 1 + 1 * 1) * 8);
                 CasinoHackModel.BlackjackContent = GetBlackJackContent(index);
 
                 ///////////// 下一张牌 /////////////
 
-                var current_table = Memory.Read<int>(pointer + (1772 + 1 + Globals.GetPlayerID() * 8 + 4) * 8);
-                var nums = Memory.Read<int>(pointer + (112 + 1 + 1 + current_table * 211 + 209) * 8);
+                var current_table = Memory.Read<int>(pointer + (1774 + 1 + Globals.GetPlayerID() * 8 + 4) * 8);
+                var nums = Memory.Read<int>(pointer + (114 + 1 + 1 + current_table * 211 + 209) * 8);
 
-                index = Memory.Read<int>(pointer + (2029 + 2 + 1 + nums * 1) * 8);
+                index = Memory.Read<int>(pointer + (2031 + 2 + 1 + nums * 1) * 8);
                 CasinoHackModel.BlackjackNextContent = GetBlackJackContent(index);
             }
 
@@ -75,20 +75,20 @@ public partial class CasinoHackWindow
             {
                 var pointer = Memory.Read<long>(pScript);
 
-                var index = Memory.Read<int>(pointer + (1034 + 799 + 2 + 1 + 2 * 1) * 8);
+                var index = Memory.Read<int>(pointer + (1036 + 799 + 2 + 1 + 2 * 1) * 8);
                 CasinoHackModel.Poker1Content = GetBlackJackContent(index);
 
-                index = Memory.Read<int>(pointer + (1034 + 799 + 2 + 1 + 0 * 1) * 8);
+                index = Memory.Read<int>(pointer + (1036 + 799 + 2 + 1 + 0 * 1) * 8);
                 CasinoHackModel.Poker2Content = GetBlackJackContent(index);
 
-                index = Memory.Read<int>(pointer + (1034 + 799 + 2 + 1 + 1 * 1) * 8);
+                index = Memory.Read<int>(pointer + (1036 + 799 + 2 + 1 + 1 * 1) * 8);
                 CasinoHackModel.Poker3Content = GetBlackJackContent(index);
             }
 
             // 幸运轮盘
             if (luckyWheelSlot != -1)
             {
-                Locals.WriteLocalAddress("casino_lucky_wheel", 276 + 14, luckyWheelSlot);
+                Locals.WriteLocalAddress("casino_lucky_wheel", 278 + 14, luckyWheelSlot);
             }
 
             // 老虎机
@@ -103,7 +103,7 @@ public partial class CasinoHackWindow
                     {
                         for (var j = 0; j < 64; j++)
                         {
-                            var offset = 1344 + 1 + 1 + i * 65 + 1 + j;
+                            var offset = 1346 + 1 + 1 + i * 65 + 1 + j;
                             Memory.Write(pointer + offset * 8, slotMachineSlot);
                         }
                     }
@@ -118,7 +118,7 @@ public partial class CasinoHackWindow
 
                 for (var i = 0; i < 6; i++)
                 {
-                    Memory.Write(pointer + (120 + 1357 + 153 + 1 + i * 1) * 8, rouletteSlot);
+                    Memory.Write(pointer + (122 + 1357 + 153 + 1 + i * 1) * 8, rouletteSlot);
                 }
             }
 

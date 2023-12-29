@@ -30,38 +30,4 @@
         <ProjectReference Include="..\MetroSkin\MetroSkin.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Compile Update="Views\HeistsEditor\Apartment\MissionView.xaml.cs">
-        <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="Views\HeistsEditor\Apartment\MoneyView.xaml.cs">
-        <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="Views\HeistsEditor\Casino\MoneyView.xaml.cs">
-        <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="Views\HeistsEditor\Contract\MissionView.xaml.cs">
-        <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="Views\HeistsEditor\Contract\MoneyView.xaml.cs">
-        <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="Views\HeistsEditor\Doomsday\MissionView.xaml.cs">
-        <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="Views\HeistsEditor\Doomsday\MoneyView.xaml.cs">
-        <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="Views\HeistsEditor\Perico\MissionView.xaml.cs">
-        <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="Views\HeistsEditor\Perico\MoneyView.xaml.cs">
-        <SubType>Code</SubType>
-      </Compile>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Views\OutfitsEditor\" />
-    </ItemGroup>
-
 </Project>

@@ -178,9 +178,9 @@ public static class Vehicle
     }
 
     /// <summary>
-    /// 提前解锁1.67新载具（避免刷出消失）
+    /// 提前解锁1.67 and 1.68新载具（避免刷出消失）
     /// </summary>
-    public static void Unlock167Vehicle()
+    public static void Unlock168Vehicle()
     {
         Globals.Set_Global_Value(Base.Default + 35462, 1);         // walton
         Globals.Set_Global_Value(Base.Default + 35463, 1);         // vapid ratel
@@ -194,5 +194,26 @@ public static class Vehicle
         Globals.Set_Global_Value(Base.Default + 35472, 1);         // conada
         Globals.Set_Global_Value(Base.Default + 35473, 1);         // bravodo hotring
         Globals.Set_Global_Value(Base.Default + 35474, 1);         // albany brigrham
+
+        Globals.Set_Global_Value(Base.Default + 36301, 1);         // enable_vehicle_baller8
+        Globals.Set_Global_Value(Base.Default + 36286, 1);         // enable_vehicle_turismo3
+        Globals.Set_Global_Value(Base.Default + 36291, 1);         // enable_vehicle_aleutian
+        Globals.Set_Global_Value(Base.Default + 36302, 1);         // enable_vehicle_terminus
+        Globals.Set_Global_Value(Base.Default + 36296, 1);         // enable_vehicle_impaler6
+        Globals.Set_Global_Value(Base.Default + 36295, 1);         // enable_vehicle_cavalcade
+        Globals.Set_Global_Value(Base.Default + 36300, 1);         // enable_vehicle_dorado
+        Globals.Set_Global_Value(Base.Default + 36293, 1);         // enable_vehicle_asterope2
+        Globals.Set_Global_Value(Base.Default + 36296, 1);         // enable_vehicle_impaler5
+        Globals.Set_Global_Value(Base.Default + 36298, 1);         // enable_vehicle_vivanite
+        Globals.Set_Global_Value(Base.Default + 36292, 1);         // enable_vehicle_dominator9
+        Globals.Set_Global_Value(Base.Default + 36287 , 1);         // enable_vehicle_vigero3
+        Globals.Set_Global_Value(Base.Default + 36285 , 1);         // enable_vehicle_fr36
+        Globals.Set_Global_Value(Base.Default + 36297 , 1);         // enable_vehicle_polgauntlet
+        Globals.Set_Global_Value(Base.Default + 36304 , 1);         // enable_vehicle_benson2
+        Globals.Set_Global_Value(Base.Default + 36303 , 1);         // enable_vehicle_boxville6
+        Globals.Set_Global_Value(Base.Default + 36289 , 1);         // enable_vehicle_police4
+        Globals.Set_Global_Value(Base.Default + 36288 , 1);         // enable_vehicle_police5
+        Globals.Set_Global_Value(Base.Default + 36290 , 1);         // enable_vehicle_riot
+        // 来源: https://www.unknowncheats.me/forum/3936713-post229.html
     }
 }

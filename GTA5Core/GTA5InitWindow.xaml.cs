@@ -188,11 +188,11 @@ public partial class GTA5InitWindow
         if (!Memory.IsValid(Pointers.WeatherPTR))
             return false;
 
-        Pointers.TimePTR = Memory.FindPattern(Mask.Time);
-        Pointers.TimePTR = Memory.Rip_6A(Pointers.TimePTR);
-        Logger($"《GTA5》TimePTR 0x{Pointers.TimePTR:X}");
-        if (!Memory.IsValid(Pointers.TimePTR))
-            return false;
+        //Pointers.TimePTR = Memory.FindPattern(Mask.Time);
+        //Pointers.TimePTR = Memory.Rip_6A(Pointers.TimePTR);
+        //Logger($"《GTA5》TimePTR 0x{Pointers.TimePTR:X}");
+        //if (!Memory.IsValid(Pointers.TimePTR))
+        //    return false;
 
         Pointers.PickupDataPTR = Memory.FindPattern(Mask.PickupData);
         Pointers.PickupDataPTR = Memory.Rip_37(Pointers.PickupDataPTR);
@@ -200,11 +200,11 @@ public partial class GTA5InitWindow
         if (!Memory.IsValid(Pointers.PickupDataPTR))
             return false;
 
-        Pointers.UnkModelPTR = Memory.FindPattern(Mask.UnkModel);
-        Pointers.UnkModelPTR = Memory.Rip_37(Pointers.UnkModelPTR);
-        Logger($"《GTA5》UnkModelPTR 0x{Pointers.UnkModelPTR:X}");
-        if (!Memory.IsValid(Pointers.UnkModelPTR))
-            return false;
+        //Pointers.UnkModelPTR = Memory.FindPattern(Mask.UnkModel);
+        //Pointers.UnkModelPTR = Memory.Rip_37(Pointers.UnkModelPTR);
+        //Logger($"《GTA5》UnkModelPTR 0x{Pointers.UnkModelPTR:X}");
+        //if (!Memory.IsValid(Pointers.UnkModelPTR))
+        //    return false;
 
         Pointers.LocalScriptsPTR = Memory.FindPattern(Mask.LocalScripts);
         Pointers.LocalScriptsPTR = Memory.Rip_37(Pointers.LocalScriptsPTR);

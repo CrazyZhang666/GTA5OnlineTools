@@ -48,9 +48,9 @@
             <ui:LabelIcon Content="载具解锁" />
             <WrapPanel Margin="5,0,5,0">
                 <Button
-                    x:Name="Button_Unlock167Vehicle"
-                    Click="Button_Unlock167Vehicle_Click"
-                    Content="提前解锁1.67新载具" />
+                    x:Name="Button_Unlock168Vehicle"
+                    Click="Button_Unlock168Vehicle_Click"
+                    Content="提前解锁1.68新载具" />
             </WrapPanel>
         </StackPanel>
         <!--  面板2  -->

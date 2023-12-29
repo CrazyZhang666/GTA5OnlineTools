@@ -112,11 +112,11 @@ public partial class VehicleOptionView : UserControl
         Online.InstantBullShark(false);
     }
 
-    private void Button_Unlock167Vehicle_Click(object sender, RoutedEventArgs e)
+    private void Button_Unlock168Vehicle_Click(object sender, RoutedEventArgs e)
     {
         AudioHelper.PlayClickSound();
 
-        Vehicle.Unlock167Vehicle();
+        Vehicle.Unlock168Vehicle();
     }
 
     private void ListBox_VehicleExtras_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -1,36 +1,56 @@
-﻿using GTA5Core.Native;
+using GTA5Core.Native;
 using GTA5Core.Offsets;
 
 namespace GTA5Core.Features;
 
+public enum MPStatTypes
+{
+    TYPE_INT = 0,
+    TYPE_FLOAT,
+    TYPE_BOOL,
+    TYPE_STRING,
+    TYPE_LABEL,
+    TYPE_DATE,
+    TYPE_POS,
+    TYPE_USERID,
+    TYPE_INT_AWD,
+    TYPE_FLOAT_AWD,
+    TYPE_BOOL_AWD
+};
+
 public static class STATS
 {
-    private const int statGetIntValue = 2805862 + 267;
+    private const int character = 1574925;
 
-    private const int characterSlot = 1574918;
-    private const int callStat = 1654054 + 1136;
+    private const int stat_data_type = 0x026b1578;
 
-    private const int statSetIntHash = 1665476 + 1 + 3;
-    private const int statSetIntValue = 980531 + 5525;
+    private const int stat_structure = 2749147 + 305;
 
-    private const int statSetIntMinusOne = 1654054 + 1139;   // https://pastebin.com/VbfAmLYB 
+    private const int stat_get_int_outvalue = 2750546 + 267;
 
-    private const int statBoolHash = 1665484 + 1 + 17;
-    private const int statBoolValue = 2694581;
+    private const int stat_get_int_switch = 1668317;
+    private const int stat_get_int_case = stat_get_int_switch + 1136;   // https://pastebin.com/VbfAmLYB 
+    private const int stat_set_int_case = stat_get_int_switch + 1139;
+
+    private const int stat_set_int_hash = 1679796 + 1 + 3;
+    private const int stat_set_int_value = 982384 + 5587;
+
+    private const int stat_bool_hash = 1679804 + 1 + 17;
+    private const int stat_bool_value = 2695956;
 
     private static long StatGetIntHash()
     {
-        return Memory.Read<long>(Memory.GTA5ProBaseAddress + 0x269cd78) + 0xAE8;
+        return Memory.Read<long>(Memory.GTA5ProBaseAddress + (stat_data_type + ((int)MPStatTypes.TYPE_INT * 0x18))) + (0xAE8 + (Globals.Get_Global_Value<int>(character) * 4));
     }
 
     private static long StatSetFloatHash()
     {
-        return Memory.Read<long>(Memory.GTA5ProBaseAddress + 0x269cd90) + 0x568;
+        return Memory.Read<long>(Memory.GTA5ProBaseAddress + (stat_data_type + ((int)MPStatTypes.TYPE_FLOAT * 0x18))) + (0x568 + (Globals.Get_Global_Value<int>(character) * 4));
     }
 
     private static long StatBoolMaskHash()
     {
-        return Memory.Read<long>(Memory.GTA5ProBaseAddress + 0x269cda8) + 0xCD8;
+        return Memory.Read<long>(Memory.GTA5ProBaseAddress + (stat_data_type + ((int)MPStatTypes.TYPE_BOOL * 0x18))) + (0xCD8 + (Globals.Get_Global_Value<int>(character) * 4));
     }
 
     private static long ShopControllerMask()
@@ -93,43 +113,41 @@ public static class STATS
     {
         var hash = GET_STAT_HASH(statName);
 
-        var oldGetIntHash = Memory.Read<uint>(StatGetIntHash() + Globals.Get_Global_Value<int>(characterSlot) * 4);
-        var oldGetIntValue = Globals.Get_Global_Value<int>(statGetIntValue);
+        var oldGetIntHash = Memory.Read<uint>(StatGetIntHash());
+        var oldGetIntValue = Globals.Get_Global_Value<int>(stat_get_int_outvalue);
 
-        var oldSetIntHash = Globals.Get_Global_Value<uint>(statSetIntHash);
-        var oldSetIntValue = Globals.Get_Global_Value<int>(statSetIntValue);
+        var oldSetIntHash = Globals.Get_Global_Value<uint>(stat_set_int_hash);
+        var oldSetIntValue = Globals.Get_Global_Value<int>(stat_set_int_value);
 
-        Memory.Write(StatGetIntHash() + Globals.Get_Global_Value<int>(characterSlot), hash);
+        Memory.Write(StatGetIntHash(), hash);
 
-        Globals.Set_Global_Value(statSetIntHash, hash);
-        Globals.Set_Global_Value(statSetIntValue, value);
+        Globals.Set_Global_Value(stat_set_int_hash, hash);
+        Globals.Set_Global_Value(stat_set_int_value, value);
 
-        Globals.Set_Global_Value(statGetIntValue, value - 1);
+        Globals.Set_Global_Value(stat_get_int_outvalue, value - 1);
 
         for (var i = 0; i < 10; i++)
         {
-            if (Globals.Get_Global_Value<int>(statGetIntValue) == value)
+            if (Globals.Get_Global_Value<int>(stat_get_int_outvalue) == value)
                 break;
 
-            if (Globals.Get_Global_Value<int>(callStat) != 9)
-                Globals.Set_Global_Value(callStat, 9);
-
-            if (Globals.Get_Global_Value<int>(callStat + 3) != 3)
-                Globals.Set_Global_Value(callStat + 3, 3);
+            if ((Globals.Get_Global_Value<int>(stat_get_int_case) != 9) & (Globals.Get_Global_Value<int>(stat_set_int_case) != 3) & (Globals.Get_Global_Value<int>(stat_structure) != 3))
+                Globals.Set_Global_Value(stat_get_int_case, 9);
+                Globals.Set_Global_Value(stat_structure, 3);
+                Globals.Set_Global_Value(stat_set_int_case, 3);
 
             await Task.Delay(100);
 
             if (i > 5)
-                Globals.Set_Global_Value(statGetIntValue, value);
+                Globals.Set_Global_Value(stat_get_int_outvalue, value);
         }
 
-        Memory.Write(StatGetIntHash() + Globals.Get_Global_Value<int>(characterSlot), oldGetIntHash);
-        Globals.Set_Global_Value(statGetIntValue, oldGetIntValue);
+        Memory.Write(StatGetIntHash(), oldGetIntHash);
+        Globals.Set_Global_Value(stat_get_int_outvalue, oldGetIntValue);
 
-        Globals.Set_Global_Value(statSetIntHash, oldSetIntHash);
-        Globals.Set_Global_Value(statSetIntValue, oldSetIntValue);
+        Globals.Set_Global_Value(stat_set_int_hash, oldSetIntHash);
+        Globals.Set_Global_Value(stat_set_int_value, oldSetIntValue);
     }
-
     /// <summary>
     /// 设置INT类型STAT值（旧方法）
     /// </summary>
@@ -140,17 +158,17 @@ public static class STATS
     {
         var hash = GET_STAT_HASH(statName);
 
-        var oldHash = Globals.Get_Global_Value<uint>(statSetIntHash);             // if (STATS::STAT_GET_INT(statHash,
-        var oldValue = Globals.Get_Global_Value<int>(statSetIntValue);
+        var oldHash = Globals.Get_Global_Value<uint>(stat_set_int_hash);             // if (STATS::STAT_GET_INT(statHash,
+        var oldValue = Globals.Get_Global_Value<int>(stat_set_int_value);
 
-        Globals.Set_Global_Value(statSetIntHash, hash);
-        Globals.Set_Global_Value(statSetIntValue, value);
-        Globals.Set_Global_Value(statSetIntMinusOne, -1);
+        Globals.Set_Global_Value(stat_set_int_hash, hash);
+        Globals.Set_Global_Value(stat_set_int_value, value);
+        Globals.Set_Global_Value(stat_set_int_case, -1);
 
         await Task.Delay(1000);
 
-        Globals.Set_Global_Value(statSetIntHash, oldHash);
-        Globals.Set_Global_Value(statSetIntValue, oldValue);
+        Globals.Set_Global_Value(stat_set_int_hash, oldHash);
+        Globals.Set_Global_Value(stat_set_int_value, oldValue);
     }
 
     /// <summary>
@@ -162,22 +180,21 @@ public static class STATS
     {
         var hash = GET_STAT_HASH(statName);
 
-        var oldGetIntHash = Memory.Read<uint>(StatGetIntHash() + Globals.Get_Global_Value<int>(characterSlot) * 4);
-        var oldGetIntValue = Globals.Get_Global_Value<int>(statGetIntValue);
+        var oldGetIntHash = Memory.Read<uint>(StatGetIntHash());
+        var oldGetIntValue = Globals.Get_Global_Value<int>(stat_get_int_outvalue);
 
-        Memory.Write(StatGetIntHash() + Globals.Get_Global_Value<int>(characterSlot), hash);
+        Memory.Write(StatGetIntHash(), hash);
 
         do
         {
-            if (Globals.Get_Global_Value<int>(callStat) != 9)
-                Globals.Set_Global_Value(callStat, 9);
+            if (Globals.Get_Global_Value<int>(stat_get_int_case) != 9)
+                Globals.Set_Global_Value(stat_get_int_case, 9);
+        } while (Globals.Get_Global_Value<int>(stat_get_int_outvalue) != oldGetIntValue);
 
-        } while (Globals.Get_Global_Value<int>(statGetIntValue) != oldGetIntValue);
+        var result = Globals.Get_Global_Value<int>(stat_get_int_outvalue);
 
-        var result = Globals.Get_Global_Value<int>(statGetIntValue);
-
-        Memory.Write(StatGetIntHash() + Globals.Get_Global_Value<int>(characterSlot), oldGetIntHash);
-        Globals.Set_Global_Value(statGetIntValue, oldGetIntValue);
+        Memory.Write(StatGetIntHash(), oldGetIntHash);
+        Globals.Set_Global_Value(stat_get_int_outvalue, oldGetIntValue);
 
         return result;
     }
@@ -197,34 +214,34 @@ public static class STATS
         await STAT_SET_INT("MPx_RACE_START", 100);
         await STAT_SET_INT("MPx_RACES_WON", value);
 
-        var oldGetIntHash = Memory.Read<uint>(StatGetIntHash() + Globals.Get_Global_Value<int>(characterSlot) * 4);
-        var oldGetIntValue = Globals.Get_Global_Value<int>(statGetIntValue);
+        var oldGetIntHash = Memory.Read<uint>(StatGetIntHash());
+        var oldGetIntValue = Globals.Get_Global_Value<int>(stat_get_int_outvalue);
 
-        var oldFloatHash = Memory.Read<uint>(StatSetFloatHash() + Globals.Get_Global_Value<int>(characterSlot) * 4);
+        var oldFloatHash = Memory.Read<uint>(StatSetFloatHash());
 
-        Memory.Write(StatGetIntHash() + Globals.Get_Global_Value<int>(characterSlot) * 4, hash);
-        Memory.Write(StatSetFloatHash() + Globals.Get_Global_Value<int>(characterSlot) * 4, hash);
+        Memory.Write(StatGetIntHash(), hash);
+        Memory.Write(StatSetFloatHash(), hash);
 
-        Globals.Set_Global_Value(statGetIntValue, value - 1);
-
-        do
-        {
-            if (Globals.Get_Global_Value<int>(callStat) != 9)
-                Globals.Set_Global_Value(callStat, 9);
-
-            await Task.Delay(100);
-
-        } while (Globals.Get_Global_Value<int>(statGetIntValue) != value);
-
-        Memory.Write(StatGetIntHash() + Globals.Get_Global_Value<int>(characterSlot) * 4, oldGetIntHash);
-        Globals.Set_Global_Value(statGetIntValue, oldGetIntValue);
-        Memory.Write(StatSetFloatHash() + Globals.Get_Global_Value<int>(characterSlot) * 4, oldFloatHash);
+        Globals.Set_Global_Value(stat_get_int_outvalue, value - 1);
 
         do
         {
+            if (Globals.Get_Global_Value<int>(stat_get_int_case) != 9)
+                Globals.Set_Global_Value(stat_get_int_case, 9);
+
+            await Task.Delay(1000);
+
+        } while (Globals.Get_Global_Value<int>(stat_get_int_outvalue) != value);
+
+        Memory.Write(StatGetIntHash(), oldGetIntHash);
+        Globals.Set_Global_Value(stat_get_int_outvalue, oldGetIntValue);
+        Memory.Write(StatSetFloatHash(), oldFloatHash);
+
+        do
+        {
             await Task.Delay(100);
 
-        } while (Memory.Read<uint>(StatSetFloatHash() + Globals.Get_Global_Value<int>(characterSlot) * 4) == oldFloatHash);
+        } while (Memory.Read<uint>(StatSetFloatHash()) == oldFloatHash);
 
         await STAT_SET_INT("MPx_RACE_START", oldRaceStartValue);
         await STAT_SET_INT("MPx_RACES_WON", oldRacesWonValue);
@@ -247,22 +264,22 @@ public static class STATS
                 if (i >= 5)
                     break;
 
-                oldBoolHash[i] = Globals.Get_Global_Value<int>(statBoolHash + i);
+                oldBoolHash[i] = Globals.Get_Global_Value<int>(stat_bool_hash + i);
 
-                Globals.Set_Global_Value(statBoolHash + i, GET_STAT_HASH(statName[i]));
-                Globals.Set_Global_Value(statBoolValue + i, 1);
+                Globals.Set_Global_Value(stat_bool_hash + i, GET_STAT_HASH(statName[i]));
+                Globals.Set_Global_Value(stat_bool_value + i, 1);
             }
 
             for (int i = 0; i < oldBoolHash.Length; i++)
             {
                 do
                 {
-                    if (Globals.Get_Global_Value<int>(statBoolValue + i) == 0)
-                        Globals.Set_Global_Value(statBoolHash + i, oldBoolHash[i]);
+                    if (Globals.Get_Global_Value<int>(stat_bool_value + i) == 0)
+                        Globals.Set_Global_Value(stat_bool_hash + i, oldBoolHash[i]);
 
                     await Task.Delay(100);
 
-                } while (Globals.Get_Global_Value<int>(statBoolHash + i) == oldBoolHash[i]);
+                } while (Globals.Get_Global_Value<int>(stat_bool_hash + i) == oldBoolHash[i]);
             }
         }
         else
@@ -272,7 +289,7 @@ public static class STATS
                 if (i >= 5)
                     break;
 
-                Memory.Write(StatBoolMaskHash() + Globals.Get_Global_Value<int>(characterSlot) * 4, GET_STAT_HASH(statName[i]));
+                Memory.Write(StatBoolMaskHash(), GET_STAT_HASH(statName[i]));
 
                 do
                 {

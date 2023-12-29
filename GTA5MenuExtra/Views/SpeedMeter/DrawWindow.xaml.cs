@@ -88,9 +88,9 @@ public partial class DrawWindow : Window
 
     private void DrawThread()
     {
-        bool isShow = true;
-        bool isChangeMPH = false;
-        bool isChangeKPH = false;
+        var isShow = true;
+        var isChangeMPH = false;
+        var isChangeKPH = false;
 
         while (isRunning)
         {
@@ -176,18 +176,18 @@ public partial class DrawWindow : Window
     /// <returns></returns>
     private int GetVehicleSpeed()
     {
-        long pCPedFactory = Memory.Read<long>(Pointers.WorldPTR);
-        long pCPed = Memory.Read<long>(pCPedFactory + CPedFactory.CPed);
-        byte oInVehicle = Memory.Read<byte>(pCPed + CPed.InVehicle);
+        var pCPedFactory = Memory.Read<long>(Pointers.WorldPTR);
+        var pCPed = Memory.Read<long>(pCPedFactory + CPedFactory.CPed);
+        var oInVehicle = Memory.Read<byte>(pCPed + CPed.InVehicle);
 
         if (oInVehicle == 0x01)
         {
-            long pCVehicle = Memory.Read<long>(pCPed + CPed.CVehicle);
+            var pCVehicle = Memory.Read<long>(pCPed + CPed.CVehicle);
 
-            var v3_1 = Memory.Read<Vector3>(pCVehicle + 0x7D0);
+            var v3_1 = Memory.Read<Vector3>(pCVehicle + 0x7E0);
             var VehicleSpeed1 = Math.Sqrt(Math.Pow(v3_1.X, 2) + Math.Pow(v3_1.Y, 2) + Math.Pow(v3_1.Z, 2));
 
-            var v3_2 = Memory.Read<Vector3>(pCVehicle + 0x7D0);
+            var v3_2 = Memory.Read<Vector3>(pCVehicle + 0x7E0);
             var VehicleSpeed2 = Math.Sqrt(Math.Pow(v3_2.X, 2) + Math.Pow(v3_2.Y, 2) + Math.Pow(v3_2.Z, 2));
 
             var VehicleSpeed = VehicleSpeed1 + (VehicleSpeed2 - VehicleSpeed1) * 0.5;
@@ -207,8 +207,8 @@ public partial class DrawWindow : Window
     /// <returns></returns>
     private double GetVehicleMaxSpeed()
     {
-        long pUnk = Memory.Read<long>(Pointers.UnkPTR);
-        long offset = Memory.Read<long>(pUnk + 0x08);
+        var pUnk = Memory.Read<long>(Pointers.UnkPTR);
+        var offset = Memory.Read<long>(pUnk + 0x08);
         offset = Memory.Read<long>(pUnk + 0xD10);
 
         return Memory.Read<double>(pUnk + 0x8CC) * SpeedUnit;
@@ -220,8 +220,8 @@ public partial class DrawWindow : Window
     /// <returns></returns>
     private string GetVehicleGear()
     {
-        long pUnk = Memory.Read<long>(Pointers.UnkPTR);
-        int gear = Memory.Read<int>(pUnk + 0xFD4);
+        var pUnk = Memory.Read<long>(Pointers.UnkPTR);
+        var gear = Memory.Read<int>(pUnk + 0xFD4);
 
         return gear == 0 ? "R" : gear.ToString();
     }
@@ -232,7 +232,7 @@ public partial class DrawWindow : Window
     /// <returns></returns>
     private float GetVehicleRPM()
     {
-        long pUnk = Memory.Read<long>(Pointers.UnkPTR);
+        var pUnk = Memory.Read<long>(Pointers.UnkPTR);
 
         return Memory.Read<float>(pUnk + 0xE50);
     }

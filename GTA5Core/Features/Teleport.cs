@@ -1,4 +1,4 @@
-﻿using GTA5Core.Native;
+using GTA5Core.Native;
 using GTA5Core.Offsets;
 
 namespace GTA5Core.Features;
@@ -74,7 +74,7 @@ public static class Teleport
             return;
 
         // 禁用越界死亡
-        Globals.Set_Global_Value(2794162 + 6881, 1);     // freemode - joaat("TRI_WARP")
+        Globals.Set_Global_Value(2738587 + 6920, 1);     // freemode - joaat("TRI_WARP")
 
         var pCPed = Game.GetCPed();
 

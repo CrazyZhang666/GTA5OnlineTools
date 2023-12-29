@@ -66,7 +66,7 @@ public static class Globals
     /// <returns></returns>
     public static bool IsOnlineMode()
     {
-        return Get_Global_Value<int>(113810 + 2366 + 539 + 4321) == 145;
+        return Get_Global_Value<int>(114370 + 2366 + 539 + 4321) == 145;
     }
 
     /// <summary>
@@ -75,7 +75,7 @@ public static class Globals
     /// <returns></returns>
     public static int GetNetworkTime()
     {
-        return Get_Global_Value<int>(1574757 + 11);
+        return Get_Global_Value<int>(1574764 + 11);
     }
 
     /// <summary>
@@ -93,7 +93,7 @@ public static class Globals
     /// <returns></returns>
     public static int GetPlayerIndex()
     {
-        return Get_Global_Value<int>(1574918);
+        return Get_Global_Value<int>(1574925);
     }
 
     /// <summary>
@@ -122,13 +122,13 @@ public static class Globals
 
             Vector3 vector3 = Teleport.GetPlayerPosition();
 
-            Set_Global_Value(2764405 + 3, vector3.X);
-            Set_Global_Value(2764405 + 4, vector3.Y);
-            Set_Global_Value(2764405 + 5, vector3.Z + 3.0f);
-            Set_Global_Value(2764405 + 1, 9999);
+            Set_Global_Value(2707016 + 3, vector3.X);
+            Set_Global_Value(2707016 + 4, vector3.Y);
+            Set_Global_Value(2707016 + 5, vector3.Z + 3.0f);
+            Set_Global_Value(2707016 + 1, 9999);
 
-            Set_Global_Value(4535172 + 1 + Get_Global_Value<int>(2764405) * 85 + 66 + 2, 2);
-            Set_Global_Value(2764405 + 6, 1);
+            Set_Global_Value(4535851 + 1 + Get_Global_Value<int>(2707016) * 85 + 66 + 2, 2);
+            Set_Global_Value(2707016 + 6, 1);
 
             await Task.Delay(200);
 

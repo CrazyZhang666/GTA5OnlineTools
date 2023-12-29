@@ -8,8 +8,8 @@ namespace GTA5MenuExtra.Views.HeistsEditor.Doomsday;
 /// </summary>
 public partial class MoneyView : UserControl
 {
-    private const int player_ratio = 1967630 + 812 + 50;    // 
-    private const int player_money = 262145 + 9305;         // joaat("GANGOPS_THE_IAA_JOB_CASH_REWARD")
+    private const int player_ratio = 1959865 + 812 + 50;    
+    private const int player_money = 262145 + 9319;         // joaat("GANGOPS_THE_IAA_JOB_CASH_REWARD")
 
     public MoneyView()
     {

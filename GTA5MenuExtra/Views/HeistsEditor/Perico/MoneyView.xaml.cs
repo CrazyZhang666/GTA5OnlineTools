@@ -11,15 +11,15 @@ public partial class MoneyView : UserControl
     /// <summary>
     /// 玩家分红
     /// </summary>
-    private const int player_ratio = 1978495 + 825 + 56;
+    private const int player_ratio = 1970744 + 831 + 56;
     /// <summary>
     /// 主要目标价值
     /// </summary>
-    private const int target_money = 262145 + 30189;    // 132820683    joaat("IH_PRIMARY_TARGET_VALUE_TEQUILA")     Global_262145.f_30189
+    private const int target_money = 262145 + 30259;    // 132820683    joaat("IH_PRIMARY_TARGET_VALUE_TEQUILA")     Global_262145.f_30259
     /// <summary>
     /// 背包容量
     /// </summary>
-    private const int bag_size = 262145 + 29939;        // 1859395035   Global_262145.f_29939
+    private const int bag_size = 262145 + 30009;        // 1859395035   Global_262145.f_30009
 
     public MoneyView()
     {
