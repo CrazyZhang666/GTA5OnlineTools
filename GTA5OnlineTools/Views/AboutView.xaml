@@ -25,7 +25,7 @@
             Margin="5"
             HorizontalAlignment="Center"
             FontSize="14"
-            Text="Copyright© 2018-2023 DS By CrazyZhang" />
+            Text="Copyright© 2018-2024 DS By CrazyZhang" />
 
         <TextBlock Margin="5" HorizontalAlignment="Center">
             <Hyperlink NavigateUri="https://crazyzhang.cn" RequestNavigate="Hyperlink_RequestNavigate">

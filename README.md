@@ -16,11 +16,11 @@
 
 * SDK
 
-> https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-6.0.410-windows-x64-installer
+> https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-6.0.417-windows-x64-installer
 
 * Runtime
 
-> https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.18-windows-x64-installer
+> https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.25-windows-x64-installer
 
 ## 技术
 

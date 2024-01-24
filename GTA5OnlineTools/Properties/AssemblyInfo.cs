@@ -14,10 +14,10 @@
 [assembly: AssemblyTitle("GTA5线上小助手")]
 [assembly: AssemblyCompany("https://crazyzhang.cn")]
 [assembly: AssemblyProduct("GTA5线上小助手")]
-[assembly: AssemblyVersion("3.1.8.6")]
-[assembly: AssemblyFileVersion("3.1.8.6")]
-[assembly: AssemblyInformationalVersion("3.1.8.6")]
+[assembly: AssemblyVersion("3.1.8.8")]
+[assembly: AssemblyFileVersion("3.1.8.8")]
+[assembly: AssemblyInformationalVersion("3.1.8.8")]
 
 // 不重复
 [assembly: AssemblyDescription("https://github.com/CrazyZhang666/GTA5OnlineTools")]
-[assembly: AssemblyCopyright("Copyright © 2018-2023")]
+[assembly: AssemblyCopyright("Copyright © 2018-2024")]

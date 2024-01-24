@@ -18,8 +18,8 @@
 
     <ItemGroup>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-        <PackageReference Include="NLog" Version="5.2.7" />
-        <PackageReference Include="Notification.Wpf" Version="7.0.0.2" />
+        <PackageReference Include="NLog" Version="5.2.8" />
+        <PackageReference Include="Notification.Wpf" Version="8.0.0" />
         <PackageReference Include="RestSharp" Version="110.2.0" />
         <PackageReference Include="Chinese" Version="0.5.0" />
     </ItemGroup>
