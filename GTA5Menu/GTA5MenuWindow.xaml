@@ -51,12 +51,12 @@
                 <RadioButton
                     x:Name="RadioButton_ShowMenuKey_Oem3"
                     Click="RadioButton_ShowMenuKey_Click"
-                    Content="Del键"
+                    Content="~键"
                     WindowChrome.IsHitTestVisibleInChrome="True" />
                 <RadioButton
                     x:Name="RadioButton_ShowMenuKey_Del"
                     Click="RadioButton_ShowMenuKey_Click"
-                    Content="~键"
+                    Content="Del键"
                     IsChecked="True"
                     WindowChrome.IsHitTestVisibleInChrome="True" />
                 <!--  //////////  -->

@@ -37,7 +37,9 @@
                 Margin="5,5,2.5,5"
                 ItemsSource="{Binding NetPlayerInfos}"
                 SelectionChanged="ListBox_NetPlayers_SelectionChanged"
-                Style="{StaticResource ListBoxStyle_PlayerInfo}">
+                Style="{StaticResource ListBoxStyle_PlayerInfo}" 
+                IsTextSearchEnabled="True" TextSearch.TextPath="PlayerName" 
+                >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>

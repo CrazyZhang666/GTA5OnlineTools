@@ -198,7 +198,7 @@ public partial class GTA5MenuWindow
 
     /// <summary>
     /// 窗口是否隐藏任务栏图标
-    /// </summary>
+    /// </summary>`
     /// <param name="sender"></param>
     /// <param name="e"></param>
     private void CheckBox_IsShowInTaskbar_Click(object sender, RoutedEventArgs e)
