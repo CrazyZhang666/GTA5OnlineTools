@@ -10,9 +10,14 @@
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
-    <UniformGrid Columns="3">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="200" />
+            <ColumnDefinition MinWidth="200" />
+            <ColumnDefinition MinWidth="200" />
+        </Grid.ColumnDefinitions>
         <!--  面板1  -->
-        <StackPanel>
+        <StackPanel Grid.Column="0">
             <ui:LabelIcon Content="输入文本" />
             <TextBox
                 x:Name="TextBox_InputMessage"
@@ -39,7 +44,7 @@
             </WrapPanel>
             <!--  ////////////  -->
             <ui:LabelIcon Content="发送设置" />
-            <StackPanel Margin="5,0,5,0">
+            <StackPanel  Margin="5,0,5,0">
                 <ui:SliderIcon
                     x:Name="Slider_SendKey_Sleep1"
                     Title="启动延迟"
@@ -73,8 +78,12 @@
                 </TextBlock>
             </StackPanel>
         </StackPanel>
+        <GridSplitter 
+            Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
         <!--  面板2  -->
-        <StackPanel>
+        <StackPanel  Grid.Column="1">
             <ui:LabelIcon Content="玩家昵称修改（最大20字符）" />
             <DockPanel LastChildFill="False">
                 <TextBlock
@@ -110,8 +119,12 @@
                 提示：修改成功后，切换战局生效
             </TextBlock>
         </StackPanel>
+        <GridSplitter 
+            Grid.Column="1" Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
         <!--  面板3  -->
 
-    </UniformGrid>
+    </Grid>
 
 </UserControl>

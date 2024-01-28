@@ -62,7 +62,10 @@ public partial class HomeView : UserControl
             if (string.IsNullOrEmpty(change))
                 TextBox_Change.Text = builder.ToString();
             else
+            {
+                change = "2024/01/23  v3.1.8.9  \n-优化小助手菜单处支持拖动调节宽度\t优化" + change;
                 TextBox_Change.Text = change;
+            }
         }
         catch (Exception ex)
         {

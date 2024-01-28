@@ -48,6 +48,7 @@
                                 <ColumnDefinition />
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <!--  ////////////  -->
                             <Border
@@ -151,6 +152,11 @@
                                     Text="{Binding Rank}"
                                     TextAlignment="Center" />
                             </Border>
+
+                            <Button 
+                                Grid.Column="4" 
+                                Style="{StaticResource ButtonStyle_Base}" 
+                                Click="Button_TeleportToPlayer_Click" Content="传送" />
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

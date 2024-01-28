@@ -10,9 +10,14 @@
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
-    <UniformGrid Columns="3">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="200" Width="auto" />
+            <ColumnDefinition MinWidth="200" Width="auto" />
+            <ColumnDefinition MinWidth="200" Width="auto" />
+        </Grid.ColumnDefinitions>
         <!--  面板1  -->
-        <StackPanel>
+        <StackPanel Grid.Column="0" >
             <ui:LabelIcon Content="本地天气" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_LocalWeather_Click" Content="默认" />
@@ -65,8 +70,12 @@
                 </TextBlock>
             </StackPanel>
         </StackPanel>
+        <GridSplitter 
+            Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
         <!--  面板2  -->
-        <StackPanel>
+        <StackPanel Grid.Column="1">
             <ui:LabelIcon Content="NPC控制" />
             <!--  //////////////  -->
             <WrapPanel Margin="5,0,5,0">
@@ -132,8 +141,12 @@
                     Content="移除CCTV摄像头" />
             </WrapPanel>
         </StackPanel>
+        <GridSplitter 
+            Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
         <!--  面板3  -->
-        <StackPanel />
-    </UniformGrid>
+        <StackPanel  Grid.Column="2" />
+    </Grid>
 
 </UserControl>

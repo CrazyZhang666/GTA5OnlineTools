@@ -10,9 +10,14 @@
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
-    <UniformGrid Columns="3">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="200" Width="auto" />
+            <ColumnDefinition MinWidth="200" Width="auto" />
+            <ColumnDefinition MinWidth="200" Width="auto" />
+        </Grid.ColumnDefinitions>
         <!--  面板1  -->
-        <StackPanel>
+        <StackPanel Grid.Column="0" >
             <ui:LabelIcon Content="战局切换" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_Sessions_Click" Content="公共战局" />
@@ -101,8 +106,12 @@
                 </StackPanel>
             </UniformGrid>
         </StackPanel>
+        <GridSplitter 
+            Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
         <!--  面板2  -->
-        <StackPanel>
+        <StackPanel Grid.Column="1" >
             <ui:LabelIcon Content="线上资产传送" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_Blips_Click" Content="办公室" />
@@ -157,8 +166,12 @@
                 <Button Click="Button_Blips_Click" Content="隐藏包裹" />
             </WrapPanel>
         </StackPanel>
+        <GridSplitter 
+            Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
         <!--  面板3  -->
-        <StackPanel>
+        <StackPanel  Grid.Column="2" >
             <ui:LabelIcon Content="梅利威瑟" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_MerryweatherServices_Click" Content="请求弹药空投" />
@@ -205,6 +218,10 @@
                     Content="进入迷你坦克" />
             </WrapPanel>
         </StackPanel>
-    </UniformGrid>
+        <GridSplitter 
+            Grid.Column="1" Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
+    </Grid>
 
 </UserControl>

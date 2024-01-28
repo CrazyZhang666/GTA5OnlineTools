@@ -10,9 +10,14 @@
     DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
     mc:Ignorable="d">
 
-    <UniformGrid Columns="3">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="200" Width="auto" />
+            <ColumnDefinition MinWidth="200" Width="auto" />
+            <ColumnDefinition MinWidth="200" Width="auto" />
+        </Grid.ColumnDefinitions>
         <!--  面板1  -->
-        <StackPanel>
+        <StackPanel Grid.Column="0">
             <ui:LabelIcon Content="CEO普通货物" />
             <WrapPanel Margin="5,0,5,0">
                 <Button Click="Button_CEOCargos_Click" Content="医疗用品" />
@@ -61,8 +66,12 @@
             </StackPanel>
 
         </StackPanel>
+        <GridSplitter 
+            Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
         <!--  面板2  -->
-        <StackPanel>
+        <StackPanel Grid.Column="1">
             <ui:LabelIcon Content="地堡" />
             <StackPanel Margin="5,0,5,0">
                 <CheckBox
@@ -127,9 +136,13 @@
             </StackPanel>
 
         </StackPanel>
+        <GridSplitter 
+            Grid.Column="1" Width="2" 
+            HorizontalAlignment="Right" VerticalContentAlignment="Stretch"
+            />
         <!--  面板3  -->
-        <StackPanel />
+        <StackPanel Grid.Column="2" />
 
-    </UniformGrid>
+    </Grid>
 
 </UserControl>
