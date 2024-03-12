@@ -1,12 +1,14 @@
 {
-  "default_language_set": true,
-  "fallback_default_language": "zh_CN",
-  "fallback_languages": {
-    "zh_CN": {
-      "file": "zh_CN.json",
-      "name": "Chinese (CN)"
-    }
-  },
-  "selected_language": "zh_CN",
-  "version": 56
+    "alphabet_type": "chinese",
+    "default_language_set": true,
+    "fallback_default_language": "zh_CN",
+    "fallback_languages": {
+        "zh_CN": {
+            "alphabet_type": "chinese",
+            "file": "zh_CN.json",
+            "name": "Chinese (CN)"
+        }
+    },
+    "selected_language": "zh_CN",
+    "version": 75
 }

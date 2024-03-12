@@ -507,4 +507,63 @@ public static class Online
     {
         Globals.Set_Global_Value(Base.Default + 30464, isEnable ? 0 : 60000); // joaat("IH_SUBMARINE_MISSILES_COOLDOWN")
     }
+
+    /// <summary>
+    /// 即时完成fm_mission_controller
+    /// </summary>
+    /// <param name="isEnable"></param>
+    public static void instant_fm_mission_controller() // 公寓抢劫 | 末日豪劫 | 名钻赌场豪劫
+    {
+        if (Locals.LocalAddress("fm_mission_controller") != 0)
+        {
+            if (Locals.ReadLocalAddress<int>("fm_mission_controller", 0x6510/8) != 0)
+            {
+                Locals.WriteLocalAddress<int>("fm_mission_controller", 0x3DDC0/8, 264666);
+                Locals.WriteLocalAddress<int>("fm_mission_controller", 0x26880/8, 12);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 即时完成fm_mission_controller_2020
+    /// </summary>
+    /// <param name="isEnable"></param>
+    public static void instant_fm_mission_controller_2020() // 改装铺合约 | 佩里科岛 | 德瑞
+    {
+        if (Locals.LocalAddress("fm_mission_controller_2020") != 0)
+        {
+            if (Locals.ReadLocalAddress<int>("fm_mission_controller_2020", 0x24FF8/8) != 0)
+            {
+                Locals.WriteLocalAddress<int>("fm_mission_controller_2020", 0x3DDC0/8, 264666);
+                Locals.WriteLocalAddress<int>("fm_mission_controller_2020", 0x62338/8, 9);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 单人启动某个任务
+    /// </summary>
+    /// <param name="isEnable"></param>
+    public static void alone_launch_heist(string name) // 一个不够聪明的p2c skid menu尝试反转Alice.lua的偏移量 lol~
+    {
+        // public by Alice2333
+        // post by https://www.unknowncheats.me/forum/4004717-post4751.html
+        // 某个p2c skid menu我相信你也在看
+        if (name == "fleeca") // 全福银行
+        {
+            Globals.Set_Global_Value(864505, 1);
+        }
+        if (name == "act3") // 末日将至
+        {
+            Globals.Set_Global_Value(803718, 1);
+        }
+        if (name == "aggressive") // 名钻赌场豪劫-气势汹汹
+        {
+            Globals.Set_Global_Value(864238, 1);
+        }
+        Globals.Set_Global_Value(4721848, 1);
+        Globals.Set_Global_Value(4895268, 0);
+        Globals.Set_Global_Value(4721844, 1);
+        Globals.Set_Global_Value(4721845, 1);
+    }
 }
