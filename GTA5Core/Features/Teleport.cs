@@ -40,6 +40,8 @@ public static class Teleport
     public static void ToWaypoint()
     {
         var wayPos = GetWaypointPosition();
+        if (wayPos == Vector3.Zero)
+            return;
         SetTeleportPosition(wayPos);
         SetTeleportCoords(wayPos);
 
@@ -96,6 +98,8 @@ public static class Teleport
     /// </summary>
     public static void SetTeleportCoords(Vector3 vector3)
     {
+        if (vector3 == Vector3.Zero)
+            return;
         if (Globals.IsOnlineMode())
         {
             var pCPed = Game.GetCPed();
