@@ -33,18 +33,22 @@
                 <CheckBox
                     x:Name="CheckBox_FastReload"
                     Click="CheckBox_FastReload_Click"
+                    IsChecked="{Binding WO_Options.FastReload, UpdateSourceTrigger=PropertyChanged}"
                     Content="快速换弹" />
                 <CheckBox
                     x:Name="CheckBox_NoRecoil"
                     Click="CheckBox_NoRecoil_Click"
+                    IsChecked="{Binding WO_Options.NoRecoil, UpdateSourceTrigger=PropertyChanged}"
                     Content="无后坐力" />
                 <CheckBox
                     x:Name="CheckBox_NoSpread"
                     Click="CheckBox_NoSpread_Click"
+                    IsChecked="{Binding WO_Options.NoSpread, UpdateSourceTrigger=PropertyChanged}"
                     Content="无子弹扩散" />
                 <CheckBox
                     x:Name="CheckBox_LongRange"
                     Click="CheckBox_LongRange_Click"
+                    IsChecked="{Binding WO_Options.LongRange, UpdateSourceTrigger=PropertyChanged}"
                     Content="提升射程" />
             </WrapPanel>
             <!--  ////////////////  -->

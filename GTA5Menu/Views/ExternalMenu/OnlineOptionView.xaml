@@ -59,44 +59,54 @@
                     <CheckBox
                         x:Name="CheckBox_PassiveModeCooldown"
                         Click="CheckBox_PassiveModeCooldown_Click"
+                        IsChecked="{Binding OP_Options.PassiveModeCooldown, UpdateSourceTrigger=PropertyChanged}"
                         Content="移除被动模式冷却" />
                     <CheckBox
                         x:Name="CheckBox_SuicideCooldown"
                         Click="CheckBox_SuicideCooldown_Click"
+                        IsChecked="{Binding OP_Options.SuicideCooldown, UpdateSourceTrigger=PropertyChanged}"
                         Content="移除自杀冷却" />
                     <CheckBox
                         x:Name="CheckBox_OrbitalCooldown"
                         Click="CheckBox_OrbitalCooldown_Click"
+                        IsChecked="{Binding OP_Options.OrbitalCooldown, UpdateSourceTrigger=PropertyChanged}"
                         Content="移除天基炮冷却" />
                     <CheckBox
                         x:Name="CheckBox_SellOnNonPublic"
                         Click="CheckBox_SellOnNonPublic_Click"
+                        IsChecked="{Binding OP_Options.SellOnNonPublic, UpdateSourceTrigger=PropertyChanged}"
                         Content="非公开战局运货" />
                     <CheckBox
                         x:Name="CheckBox_SessionSnow"
                         Click="CheckBox_SessionSnow_Click"
+                        IsChecked="{Binding OP_Options.SessionSnow, UpdateSourceTrigger=PropertyChanged}"
                         Content="战局雪天 (自己可见)" />
                 </StackPanel>
                 <StackPanel>
                     <CheckBox
                         x:Name="CheckBox_OffRadar"
                         Click="CheckBox_OffRadar_Click"
+                        IsChecked="{Binding OP_Options.OffRadar, UpdateSourceTrigger=PropertyChanged}"
                         Content="雷达影踪" />
                     <CheckBox
                         x:Name="CheckBox_GhostOrganization"
                         Click="CheckBox_GhostOrganization_Click"
+                        IsChecked="{Binding OP_Options.GhostOrganization, UpdateSourceTrigger=PropertyChanged}"
                         Content="幽灵组织" />
                     <CheckBox
                         x:Name="CheckBox_BribeOrBlindCops"
                         Click="CheckBox_BribeOrBlindCops_Click"
+                        IsChecked="{Binding OP_Options.BribeOrBlindCops, UpdateSourceTrigger=PropertyChanged}"
                         Content="警察无视犯罪" />
                     <CheckBox
                         x:Name="CheckBox_BribeAuthorities"
                         Click="CheckBox_BribeAuthorities_Click"
+                        IsChecked="{Binding OP_Options.BribeAuthorities, UpdateSourceTrigger=PropertyChanged}"
                         Content="贿赂当局" />
                     <CheckBox
                         x:Name="CheckBox_RevealPlayers"
                         Click="CheckBox_RevealPlayers_Click"
+                        IsChecked="{Binding OP_Options.RevealPlayers, UpdateSourceTrigger=PropertyChanged}"
                         Content="显示玩家" />
                 </StackPanel>
             </UniformGrid>

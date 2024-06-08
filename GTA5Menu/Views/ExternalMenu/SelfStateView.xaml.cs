@@ -1,5 +1,4 @@
 ﻿using GTA5Menu.Models;
-
 using GTA5HotKey;
 using GTA5Core.Native;
 using GTA5Core.Offsets;
@@ -7,6 +6,7 @@ using GTA5Core.Features;
 using GTA5Core.GTA.Rage;
 using GTA5Core.GTA.Enum;
 using GTA5Shared.Helper;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace GTA5Menu.Views.ExternalMenu;
 
@@ -20,33 +20,33 @@ public partial class SelfStateView : UserControl
     /// </summary>
     public SelfStateModel SelfStateModel { get; set; } = new();
 
-    private class Options
+    public partial class Options : ObservableObject
     {
-        public bool GodMode = false;
-        public bool AntiAFK = false;
-        public bool NoRagdoll = false;
+        [ObservableProperty] public bool godMode = false;
+        [ObservableProperty] public bool antiAFK = false;
+        [ObservableProperty] public bool noRagdoll = false;
 
-        public bool UndeadOffRadar = false;
-        public bool NPCIgnore = false;
-        public bool PoliceIgnore = false;
+        [ObservableProperty] public bool undeadOffRadar = false;
+        [ObservableProperty] public bool nPCIgnore = false;
+        [ObservableProperty] public bool policeIgnore = false;
 
-        public bool NoCollision = false;
+        [ObservableProperty] public bool noCollision = false;
 
-        public bool ClearWanted = false;
-        public bool KillNPC = false;
-        public bool KillHostilityNPC = false;
-        public bool KillPolice = false;
+        [ObservableProperty] public bool clearWanted = false;
+        [ObservableProperty] public bool killNPC = false;
+        [ObservableProperty] public bool killHostilityNPC = false;
+        [ObservableProperty] public bool killPolice = false;
 
-        public bool ProofBullet = false;
-        public bool ProofFire = false;
-        public bool ProofCollision = false;
-        public bool ProofMelee = false;
-        public bool ProofExplosion = false;
-        public bool ProofSteam = false;
-        public bool ProofDrown = false;
-        public bool ProofWater = false;
+        [ObservableProperty] public bool proofBullet = false;
+        [ObservableProperty] public bool proofFire = false;
+        [ObservableProperty] public bool proofCollision = false;
+        [ObservableProperty] public bool proofMelee = false;
+        [ObservableProperty] public bool proofExplosion = false;
+        [ObservableProperty] public bool proofSteam = false;
+        [ObservableProperty] public bool proofDrown = false;
+        [ObservableProperty] public bool proofWater = false;
     }
-    private readonly Options _options = new();
+    public Options SelfStateOption { get; set; } = new();
 
     /////////////////////////////////////////////////////////
 
@@ -110,6 +110,16 @@ public partial class SelfStateView : UserControl
     /// </summary>
     private void ReadConfig()
     {
+        // 一般选项
+        SelfStateOption.GodMode = IniHelper.ReadValue("ExternalMenu", "GodMode").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.AntiAFK = IniHelper.ReadValue("ExternalMenu", "AntiAFK").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.NoRagdoll = IniHelper.ReadValue("ExternalMenu", "NoRagdoll").Equals("True", StringComparison.OrdinalIgnoreCase);
+
+        SelfStateOption.UndeadOffRadar = IniHelper.ReadValue("ExternalMenu", "UndeadOffRadar").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.NPCIgnore = IniHelper.ReadValue("ExternalMenu", "NPCIgnore").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.PoliceIgnore = IniHelper.ReadValue("ExternalMenu", "PoliceIgnore").Equals("True", StringComparison.OrdinalIgnoreCase);
+
+        // 快捷键
         SelfStateModel.IsHotKeyToWaypoint = IniHelper.ReadValue("ExternalMenu", "IsHotKeyToWaypoint").Equals("True", StringComparison.OrdinalIgnoreCase);
         SelfStateModel.IsHotKeyToObjective = IniHelper.ReadValue("ExternalMenu", "IsHotKeyToObjective").Equals("True", StringComparison.OrdinalIgnoreCase);
         SelfStateModel.IsHotKeyFillHealthArmor = IniHelper.ReadValue("ExternalMenu", "IsHotKeyFillHealthArmor").Equals("True", StringComparison.OrdinalIgnoreCase);
@@ -120,6 +130,22 @@ public partial class SelfStateView : UserControl
 
         SelfStateModel.IsHotKeyNoCollision = IniHelper.ReadValue("ExternalMenu", "IsHotKeyNoCollision").Equals("True", StringComparison.OrdinalIgnoreCase);
         SelfStateModel.IsHotKeyToCrossHair = IniHelper.ReadValue("ExternalMenu", "IsHotKeyToCrossHair").Equals("True", StringComparison.OrdinalIgnoreCase);
+
+        //实用功能
+        SelfStateOption.ClearWanted = IniHelper.ReadValue("ExternalMenu", "ClearWanted").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.KillNPC = IniHelper.ReadValue("ExternalMenu", "KillNPC").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.KillHostilityNPC = IniHelper.ReadValue("ExternalMenu", "KillHostilityNPC").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.KillPolice = IniHelper.ReadValue("ExternalMenu", "KillPolice").Equals("True", StringComparison.OrdinalIgnoreCase);
+
+        //高级
+        SelfStateOption.ProofBullet = IniHelper.ReadValue("ExternalMenu", "ProofBullet").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.ProofFire = IniHelper.ReadValue("ExternalMenu", "ProofFire").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.ProofCollision = IniHelper.ReadValue("ExternalMenu", "ProofCollision").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.ProofMelee = IniHelper.ReadValue("ExternalMenu", "ProofMelee").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.ProofExplosion = IniHelper.ReadValue("ExternalMenu", "ProofExplosion").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.ProofSteam = IniHelper.ReadValue("ExternalMenu", "ProofSteam").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.ProofDrown = IniHelper.ReadValue("ExternalMenu", "ProofDrown").Equals("True", StringComparison.OrdinalIgnoreCase);
+        SelfStateOption.ProofWater = IniHelper.ReadValue("ExternalMenu", "ProofWater").Equals("True", StringComparison.OrdinalIgnoreCase);
     }
 
     /// <summary>
@@ -127,6 +153,16 @@ public partial class SelfStateView : UserControl
     /// </summary>
     private void SaveConfig()
     {
+        //一般选项
+        IniHelper.WriteValue("ExternalMenu", "GodMode", $"{SelfStateOption.GodMode}");
+        IniHelper.WriteValue("ExternalMenu", "AntiAFK", $"{SelfStateOption.AntiAFK}");
+        IniHelper.WriteValue("ExternalMenu", "NoRagdoll", $"{SelfStateOption.NoRagdoll}");
+
+        IniHelper.WriteValue("ExternalMenu", "UndeadOffRadar", $"{SelfStateOption.UndeadOffRadar}");
+        IniHelper.WriteValue("ExternalMenu", "NPCIgnore", $"{SelfStateOption.NPCIgnore}");
+        IniHelper.WriteValue("ExternalMenu", "PoliceIgnore", $"{SelfStateOption.PoliceIgnore}");
+
+        //快捷键
         IniHelper.WriteValue("ExternalMenu", "IsHotKeyToWaypoint", $"{SelfStateModel.IsHotKeyToWaypoint}");
         IniHelper.WriteValue("ExternalMenu", "IsHotKeyToObjective", $"{SelfStateModel.IsHotKeyToObjective}");
         IniHelper.WriteValue("ExternalMenu", "IsHotKeyFillHealthArmor", $"{SelfStateModel.IsHotKeyFillHealthArmor}");
@@ -137,6 +173,22 @@ public partial class SelfStateView : UserControl
 
         IniHelper.WriteValue("ExternalMenu", "IsHotKeyNoCollision", $"{SelfStateModel.IsHotKeyNoCollision}");
         IniHelper.WriteValue("ExternalMenu", "IsHotKeyToCrossHair", $"{SelfStateModel.IsHotKeyToCrossHair}");
+
+        //实用功能
+        IniHelper.WriteValue("ExternalMenu", "ClearWanted", $"{SelfStateOption.ClearWanted}");
+        IniHelper.WriteValue("ExternalMenu", "KillNPC", $"{SelfStateOption.KillNPC}");
+        IniHelper.WriteValue("ExternalMenu", "KillHostilityNPC", $"{SelfStateOption.KillHostilityNPC}");
+        IniHelper.WriteValue("ExternalMenu", "KillPolice", $"{SelfStateOption.KillPolice}");
+
+        //高级
+        IniHelper.WriteValue("ExternalMenu", "ProofBullet", $"{SelfStateOption.ProofBullet}");
+        IniHelper.WriteValue("ExternalMenu", "ProofFire", $"{SelfStateOption.ProofFire}");
+        IniHelper.WriteValue("ExternalMenu", "ProofCollision", $"{SelfStateOption.ProofCollision}");
+        IniHelper.WriteValue("ExternalMenu", "ProofMelee", $"{SelfStateOption.ProofMelee}");
+        IniHelper.WriteValue("ExternalMenu", "ProofExplosion", $"{SelfStateOption.ProofExplosion}");
+        IniHelper.WriteValue("ExternalMenu", "ProofSteam", $"{SelfStateOption.ProofSteam}");
+        IniHelper.WriteValue("ExternalMenu", "ProofDrown", $"{SelfStateOption.ProofDrown}");
+        IniHelper.WriteValue("ExternalMenu", "ProofWater", $"{SelfStateOption.ProofWater}");
     }
 
     /// <summary>
@@ -187,10 +239,10 @@ public partial class SelfStateView : UserControl
             case Keys.D0:
                 if (SelfStateModel.IsHotKeyNoCollision)
                 {
-                    _options.NoCollision = !_options.NoCollision;
-                    Player.NoCollision(_options.NoCollision);
+                    SelfStateOption.NoCollision = !SelfStateOption.NoCollision;
+                    Player.NoCollision(SelfStateOption.NoCollision);
 
-                    if (_options.NoCollision)
+                    if (SelfStateOption.NoCollision)
                         Console.Beep(600, 75);
                     else
                         Console.Beep(500, 75);
@@ -250,31 +302,31 @@ public partial class SelfStateView : UserControl
         ///////////////////////////////////////////////////
 
         // 玩家无敌
-        if (_options.GodMode)
+        if (SelfStateOption.GodMode)
             Player.GodMode(true);
         // 挂机防踢
-        if (_options.AntiAFK)
+        if (SelfStateOption.AntiAFK)
             Online.AntiAFK(true);
         // 无布娃娃
-        if (_options.NoRagdoll)
+        if (SelfStateOption.NoRagdoll)
             Player.NoRagdoll(true);
         // 雷达影踪（假死）
-        if (_options.UndeadOffRadar)
+        if (SelfStateOption.UndeadOffRadar)
             Player.UndeadOffRadar(true);
         // 玩家无碰撞体积
-        if (_options.NoCollision)
+        if (SelfStateOption.NoCollision)
             Player.NoCollision(true);
 
         // NPC无视、警察无视
-        if (_options.NPCIgnore == true && _options.PoliceIgnore == false)
+        if (SelfStateOption.NPCIgnore == true && SelfStateOption.PoliceIgnore == false)
         {
             Player.NPCIgnore(0x040000);
         }
-        else if (_options.NPCIgnore == false && _options.PoliceIgnore == true)
+        else if (SelfStateOption.NPCIgnore == false && SelfStateOption.PoliceIgnore == true)
         {
             Player.NPCIgnore(0xC30000);
         }
-        else if (_options.NPCIgnore == true && _options.PoliceIgnore == true)
+        else if (SelfStateOption.NPCIgnore == true && SelfStateOption.PoliceIgnore == true)
         {
             Player.NPCIgnore(0xC70000);
         }
@@ -282,36 +334,36 @@ public partial class SelfStateView : UserControl
         ///////////////////////////////////////////////////
 
         // 防子弹（防止子弹掉血）
-        if (_options.ProofBullet)
+        if (SelfStateOption.ProofBullet)
             Player.ProofBullet(true);
         // 防火烧（防止燃烧掉血）
-        if (_options.ProofFire)
+        if (SelfStateOption.ProofFire)
             Player.ProofFire(true);
         // 防撞击（防止撞击掉血）
-        if (_options.ProofCollision)
+        if (SelfStateOption.ProofCollision)
             Player.ProofCollision(true);
         // 防近战（防止近战掉血）
-        if (_options.ProofMelee)
+        if (SelfStateOption.ProofMelee)
             Player.ProofMelee(true);
 
         // 防爆炸（防止爆炸掉血）
-        if (_options.ProofExplosion)
+        if (SelfStateOption.ProofExplosion)
             Player.ProofExplosion(true);
         // 防蒸汽（具体场景未知）
-        if (_options.ProofSteam)
+        if (SelfStateOption.ProofSteam)
             Player.ProofSteam(true);
         // 防溺水（具体场景未知）
-        if (_options.ProofDrown)
+        if (SelfStateOption.ProofDrown)
             Player.ProofDrown(true);
         // 防海水（可以水下行走）
-        if (_options.ProofWater)
+        if (SelfStateOption.ProofWater)
             Player.ProofWater(true);
     }
 
     private void GTA5MenuWindow_LoopSpeedFastEvent()
     {
         // 自动消星
-        if (_options.ClearWanted)
+        if (SelfStateOption.ClearWanted)
             Player.WantedLevel((byte)WantedLevel.Level0);
 
         // Ped
@@ -331,11 +383,11 @@ public partial class SelfStateView : UserControl
                 continue;
 
             // 自动击杀NPC
-            if (_options.KillNPC)
+            if (SelfStateOption.KillNPC)
                 Memory.Write(pCPed + CPed.Health, 0.0f);
 
             // 自动击杀敌对NPC
-            if (_options.KillHostilityNPC)
+            if (SelfStateOption.KillHostilityNPC)
             {
                 var oHostility = Memory.Read<byte>(pCPed + CPed.Hostility);
                 if (oHostility > 0x01)
@@ -345,7 +397,7 @@ public partial class SelfStateView : UserControl
             }
 
             // 自动击杀警察
-            if (_options.KillPolice)
+            if (SelfStateOption.KillPolice)
             {
                 var ped_type = Memory.Read<int>(pCPed + CPed.Ragdoll);
                 ped_type = ped_type << 11 >> 25;
@@ -404,46 +456,46 @@ public partial class SelfStateView : UserControl
 
     private void CheckBox_PlayerGodMode_Click(object sender, RoutedEventArgs e)
     {
-        _options.GodMode = CheckBox_PlayerGodMode.IsChecked == true;
-        Player.GodMode(_options.GodMode);
+        SelfStateOption.GodMode = CheckBox_PlayerGodMode.IsChecked == true;
+        Player.GodMode(SelfStateOption.GodMode);
     }
 
     private void CheckBox_AntiAFK_Click(object sender, RoutedEventArgs e)
     {
-        _options.AntiAFK = CheckBox_AntiAFK.IsChecked == true;
-        Online.AntiAFK(_options.AntiAFK);
+        SelfStateOption.AntiAFK = CheckBox_AntiAFK.IsChecked == true;
+        Online.AntiAFK(SelfStateOption.AntiAFK);
     }
 
     private void CheckBox_NoRagdoll_Click(object sender, RoutedEventArgs e)
     {
-        _options.NoRagdoll = CheckBox_NoRagdoll.IsChecked == true;
-        Player.NoRagdoll(_options.NoRagdoll);
+        SelfStateOption.NoRagdoll = CheckBox_NoRagdoll.IsChecked == true;
+        Player.NoRagdoll(SelfStateOption.NoRagdoll);
     }
 
     private void CheckBox_UndeadOffRadar_Click(object sender, RoutedEventArgs e)
     {
-        _options.UndeadOffRadar = CheckBox_UndeadOffRadar.IsChecked == true;
-        Player.UndeadOffRadar(_options.UndeadOffRadar);
+        SelfStateOption.UndeadOffRadar = CheckBox_UndeadOffRadar.IsChecked == true;
+        Player.UndeadOffRadar(SelfStateOption.UndeadOffRadar);
     }
 
     private void CheckBox_NPCIgnore_Click(object sender, RoutedEventArgs e)
     {
-        _options.NPCIgnore = CheckBox_NPCIgnore.IsChecked == true;
-        _options.PoliceIgnore = CheckBox_PoliceIgnore.IsChecked == true;
+        SelfStateOption.NPCIgnore = CheckBox_NPCIgnore.IsChecked == true;
+        SelfStateOption.PoliceIgnore = CheckBox_PoliceIgnore.IsChecked == true;
 
-        if (_options.NPCIgnore == true && _options.PoliceIgnore == false)
+        if (SelfStateOption.NPCIgnore == true && SelfStateOption.PoliceIgnore == false)
         {
             Player.NPCIgnore(0x040000);
             return;
         }
 
-        if (_options.NPCIgnore == false && _options.PoliceIgnore == true)
+        if (SelfStateOption.NPCIgnore == false && SelfStateOption.PoliceIgnore == true)
         {
             Player.NPCIgnore(0xC30000);
             return;
         }
 
-        if (_options.NPCIgnore == true && _options.PoliceIgnore == true)
+        if (SelfStateOption.NPCIgnore == true && SelfStateOption.PoliceIgnore == true)
         {
             Player.NPCIgnore(0xC70000);
             return;
@@ -454,32 +506,32 @@ public partial class SelfStateView : UserControl
 
     private void CheckBox_AutoClearWanted_Click(object sender, RoutedEventArgs e)
     {
-        _options.ClearWanted = CheckBox_AutoClearWanted.IsChecked == true;
+        SelfStateOption.ClearWanted = CheckBox_AutoClearWanted.IsChecked == true;
         Player.WantedLevel((byte)WantedLevel.Level0);
     }
 
     private void CheckBox_AutoKillNPC_Click(object sender, RoutedEventArgs e)
     {
-        _options.KillNPC = CheckBox_AutoKillNPC.IsChecked == true;
+        SelfStateOption.KillNPC = CheckBox_AutoKillNPC.IsChecked == true;
         World.KillNPC(false);
     }
 
     private void CheckBox_AutoKillHostilityNPC_Click(object sender, RoutedEventArgs e)
     {
-        _options.KillHostilityNPC = CheckBox_AutoKillHostilityNPC.IsChecked == true;
+        SelfStateOption.KillHostilityNPC = CheckBox_AutoKillHostilityNPC.IsChecked == true;
         World.KillNPC(true);
     }
 
     private void CheckBox_AutoKillPolice_Click(object sender, RoutedEventArgs e)
     {
-        _options.KillPolice = CheckBox_AutoKillPolice.IsChecked == true;
+        SelfStateOption.KillPolice = CheckBox_AutoKillPolice.IsChecked == true;
         World.KillPolice();
     }
 
     private void CheckBox_NoCollision_Click(object sender, RoutedEventArgs e)
     {
-        _options.NoCollision = SelfStateModel.IsHotKeyNoCollision;
-        Player.NoCollision(_options.NoCollision);
+        SelfStateOption.NoCollision = SelfStateModel.IsHotKeyNoCollision;
+        Player.NoCollision(SelfStateOption.NoCollision);
     }
 
     private void Button_FillHealth_Click(object sender, RoutedEventArgs e)
@@ -533,49 +585,49 @@ public partial class SelfStateView : UserControl
 
     private void CheckBox_ProofBullet_Click(object sender, RoutedEventArgs e)
     {
-        _options.ProofBullet = CheckBox_ProofBullet.IsChecked == true;
-        Player.ProofBullet(_options.ProofBullet);
+        SelfStateOption.ProofBullet = CheckBox_ProofBullet.IsChecked == true;
+        Player.ProofBullet(SelfStateOption.ProofBullet);
     }
 
     private void CheckBox_ProofFire_Click(object sender, RoutedEventArgs e)
     {
-        _options.ProofFire = CheckBox_ProofFire.IsChecked == true;
-        Player.ProofFire(_options.ProofFire);
+        SelfStateOption.ProofFire = CheckBox_ProofFire.IsChecked == true;
+        Player.ProofFire(SelfStateOption.ProofFire);
     }
 
     private void CheckBox_ProofCollision_Click(object sender, RoutedEventArgs e)
     {
-        _options.ProofCollision = CheckBox_ProofCollision.IsChecked == true;
-        Player.ProofCollision(_options.ProofCollision);
+        SelfStateOption.ProofCollision = CheckBox_ProofCollision.IsChecked == true;
+        Player.ProofCollision(SelfStateOption.ProofCollision);
     }
 
     private void CheckBox_ProofMelee_Click(object sender, RoutedEventArgs e)
     {
-        _options.ProofMelee = CheckBox_ProofMelee.IsChecked == true;
-        Player.ProofMelee(_options.ProofMelee);
+        SelfStateOption.ProofMelee = CheckBox_ProofMelee.IsChecked == true;
+        Player.ProofMelee(SelfStateOption.ProofMelee);
     }
 
     private void CheckBox_ProofExplosion_Click(object sender, RoutedEventArgs e)
     {
-        _options.ProofExplosion = CheckBox_ProofExplosion.IsChecked == true;
-        Player.ProofExplosion(_options.ProofExplosion);
+        SelfStateOption.ProofExplosion = CheckBox_ProofExplosion.IsChecked == true;
+        Player.ProofExplosion(SelfStateOption.ProofExplosion);
     }
 
     private void CheckBox_ProofSteam_Click(object sender, RoutedEventArgs e)
     {
-        _options.ProofSteam = CheckBox_ProofSteam.IsChecked == true;
-        Player.ProofSteam(_options.ProofSteam);
+        SelfStateOption.ProofSteam = CheckBox_ProofSteam.IsChecked == true;
+        Player.ProofSteam(SelfStateOption.ProofSteam);
     }
 
     private void CheckBox_ProofDrown_Click(object sender, RoutedEventArgs e)
     {
-        _options.ProofDrown = CheckBox_ProofDrown.IsChecked == true;
-        Player.ProofDrown(_options.ProofDrown);
+        SelfStateOption.ProofDrown = CheckBox_ProofDrown.IsChecked == true;
+        Player.ProofDrown(SelfStateOption.ProofDrown);
     }
 
     private void CheckBox_ProofWater_Click(object sender, RoutedEventArgs e)
     {
-        _options.ProofWater = CheckBox_ProofWater.IsChecked == true;
-        Player.ProofWater(_options.ProofWater);
+        SelfStateOption.ProofWater = CheckBox_ProofWater.IsChecked == true;
+        Player.ProofWater(SelfStateOption.ProofWater);
     }
 }

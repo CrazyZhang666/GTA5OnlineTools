@@ -1,4 +1,5 @@
-﻿using GTA5Core.Features;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using GTA5Core.Features;
 using GTA5Core.GTA.Onlines;
 using GTA5Shared.Helper;
 
@@ -9,23 +10,25 @@ namespace GTA5Menu.Views.OnlineWeapon;
 /// </summary>
 public partial class WeaponOptionView : UserControl
 {
-    private class Options
+    public partial class Options : ObservableObject
     {
-        public bool AmmoModifier = false;
-        public byte AmmoModifierFlag = 0;
+        [ObservableProperty] public bool ammoModifier = false;
+        [ObservableProperty] public byte ammoModifierFlag = 0;
 
-        public bool FastReload = false;
-        public bool NoRecoil = false;
-        public bool NoSpread = false;
-        public bool LongRange = false;
+        [ObservableProperty] public bool fastReload = false;
+        [ObservableProperty] public bool noRecoil = false;
+        [ObservableProperty] public bool noSpread = false;
+        [ObservableProperty] public bool longRange = false;
     }
-    private readonly Options _options = new();
+    public Options WO_Options { get; set; } = new();
 
     public WeaponOptionView()
     {
         InitializeComponent();
         GTA5MenuWindow.WindowClosingEvent += GTA5MenuWindow_WindowClosingEvent;
         GTA5MenuWindow.LoopSpeedNormalEvent += GTA5MenuWindow_LoopSpeedNormalEvent;
+
+        ReadConfig();
 
         // 子弹类型
         foreach (var item in OnlineData.ImpactExplosions)
@@ -39,6 +42,24 @@ public partial class WeaponOptionView : UserControl
     {
         GTA5MenuWindow.WindowClosingEvent -= GTA5MenuWindow_WindowClosingEvent;
         GTA5MenuWindow.LoopSpeedNormalEvent -= GTA5MenuWindow_LoopSpeedNormalEvent;
+        SaveConfig();
+    }
+
+    private void ReadConfig()
+    {
+        WO_Options.FastReload = IniHelper.ReadValue("WeaponOption", "FastReload").Equals("True", StringComparison.OrdinalIgnoreCase);
+        WO_Options.NoRecoil = IniHelper.ReadValue("WeaponOption", "NoRecoil").Equals("True", StringComparison.OrdinalIgnoreCase);
+        WO_Options.NoSpread = IniHelper.ReadValue("WeaponOption", "NoSpread").Equals("True", StringComparison.OrdinalIgnoreCase);
+        WO_Options.LongRange = IniHelper.ReadValue("WeaponOption", "LongRange").Equals("True", StringComparison.OrdinalIgnoreCase);
+    }
+
+
+    private void SaveConfig()
+    {
+        IniHelper.WriteValue("WeaponOption", "FastReload", $"{WO_Options.FastReload}");
+        IniHelper.WriteValue("WeaponOption", "NoRecoil", $"{WO_Options.NoRecoil}");
+        IniHelper.WriteValue("WeaponOption", "NoSpread", $"{WO_Options.NoSpread}");
+        IniHelper.WriteValue("WeaponOption", "LongRange", $"{WO_Options.LongRange}");
     }
 
     /////////////////////////////////////////////////////
@@ -46,20 +67,20 @@ public partial class WeaponOptionView : UserControl
     private void GTA5MenuWindow_LoopSpeedNormalEvent()
     {
         // 弹药编辑
-        if (_options.AmmoModifier)
-            Weapon.AmmoModifier(_options.AmmoModifierFlag);
+        if (WO_Options.AmmoModifier)
+            Weapon.AmmoModifier(WO_Options.AmmoModifierFlag);
 
         // 快速换弹
-        if (_options.FastReload)
+        if (WO_Options.FastReload)
             Weapon.FastReload(true);
         // 无后坐力
-        if (_options.NoRecoil)
+        if (WO_Options.NoRecoil)
             Weapon.NoRecoil();
         // 无子弹扩散
-        if (_options.NoSpread)
+        if (WO_Options.NoSpread)
             Weapon.NoSpread();
         // 提升射程
-        if (_options.LongRange)
+        if (WO_Options.LongRange)
             Weapon.LongRange();
     }
 
@@ -71,13 +92,13 @@ public partial class WeaponOptionView : UserControl
         var index = ListBox_AmmoModifier.SelectedIndex;
         if (index == -1 || index == 0)
         {
-            _options.AmmoModifier = false;
+            WO_Options.AmmoModifier = false;
             return;
         }
 
-        _options.AmmoModifier = true;
-        _options.AmmoModifierFlag = (byte)(index - 1);
-        Weapon.AmmoModifier(_options.AmmoModifierFlag);
+        WO_Options.AmmoModifier = true;
+        WO_Options.AmmoModifierFlag = (byte)(index - 1);
+        Weapon.AmmoModifier(WO_Options.AmmoModifierFlag);
     }
 
     /// <summary>
@@ -109,25 +130,25 @@ public partial class WeaponOptionView : UserControl
 
     private void CheckBox_FastReload_Click(object sender, RoutedEventArgs e)
     {
-        _options.FastReload = CheckBox_FastReload.IsChecked == true;
-        Weapon.FastReload(_options.FastReload);
+        WO_Options.FastReload = CheckBox_FastReload.IsChecked == true;
+        Weapon.FastReload(WO_Options.FastReload);
     }
 
     private void CheckBox_NoRecoil_Click(object sender, RoutedEventArgs e)
     {
-        _options.NoRecoil = CheckBox_NoRecoil.IsChecked == true;
+        WO_Options.NoRecoil = CheckBox_NoRecoil.IsChecked == true;
         Weapon.NoRecoil();
     }
 
     private void CheckBox_NoSpread_Click(object sender, RoutedEventArgs e)
     {
-        _options.NoSpread = CheckBox_NoSpread.IsChecked == true;
+        WO_Options.NoSpread = CheckBox_NoSpread.IsChecked == true;
         Weapon.NoSpread();
     }
 
     private void CheckBox_LongRange_Click(object sender, RoutedEventArgs e)
     {
-        _options.LongRange = CheckBox_LongRange.IsChecked == true;
+        WO_Options.LongRange = CheckBox_LongRange.IsChecked == true;
         Weapon.LongRange();
     }
 
