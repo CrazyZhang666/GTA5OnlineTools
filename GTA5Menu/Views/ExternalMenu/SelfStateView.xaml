@@ -79,28 +79,34 @@
                     <CheckBox
                         x:Name="CheckBox_PlayerGodMode"
                         Click="CheckBox_PlayerGodMode_Click"
+                        IsChecked="{Binding SelfStateOption.GodMode, UpdateSourceTrigger=PropertyChanged}"
                         Content="玩家无敌" />
                     <CheckBox
                         x:Name="CheckBox_AntiAFK"
                         Click="CheckBox_AntiAFK_Click"
+                        IsChecked="{Binding SelfStateOption.AntiAFK, UpdateSourceTrigger=PropertyChanged}"
                         Content="挂机防踢" />
                     <CheckBox
                         x:Name="CheckBox_NoRagdoll"
                         Click="CheckBox_NoRagdoll_Click"
+                        IsChecked="{Binding SelfStateOption.NoRagdoll, UpdateSourceTrigger=PropertyChanged}"
                         Content="无布娃娃" />
                 </StackPanel>
                 <StackPanel>
                     <CheckBox
                         x:Name="CheckBox_UndeadOffRadar"
                         Click="CheckBox_UndeadOffRadar_Click"
+                        IsChecked="{Binding SelfStateOption.UndeadOffRadar, UpdateSourceTrigger=PropertyChanged}"
                         Content="雷达影踪（假死）" />
                     <CheckBox
                         x:Name="CheckBox_NPCIgnore"
                         Click="CheckBox_NPCIgnore_Click"
+                        IsChecked="{Binding SelfStateOption.NPCIgnore, UpdateSourceTrigger=PropertyChanged}"
                         Content="NPC无视" />
                     <CheckBox
                         x:Name="CheckBox_PoliceIgnore"
                         Click="CheckBox_NPCIgnore_Click"
+                        IsChecked="{Binding SelfStateOption.PoliceIgnore, UpdateSourceTrigger=PropertyChanged}"
                         Content="警察无视" />
                 </StackPanel>
             </UniformGrid>
@@ -181,18 +187,22 @@
                 <CheckBox
                     x:Name="CheckBox_AutoClearWanted"
                     Click="CheckBox_AutoClearWanted_Click"
+                    IsChecked="{Binding SelfStateOption.ClearWanted, UpdateSourceTrigger=PropertyChanged}"
                     Content="自动消星" />
                 <CheckBox
                     x:Name="CheckBox_AutoKillNPC"
                     Click="CheckBox_AutoKillNPC_Click"
+                    IsChecked="{Binding SelfStateOption.KillNPC, UpdateSourceTrigger=PropertyChanged}"
                     Content="自动击杀NPC" />
                 <CheckBox
                     x:Name="CheckBox_AutoKillHostilityNPC"
                     Click="CheckBox_AutoKillHostilityNPC_Click"
+                    IsChecked="{Binding SelfStateOption.KillHostilityNPC, UpdateSourceTrigger=PropertyChanged}"
                     Content="自动击杀敌对NPC" />
                 <CheckBox
                     x:Name="CheckBox_AutoKillPolice"
                     Click="CheckBox_AutoKillPolice_Click"
+                    IsChecked="{Binding SelfStateOption.KillPolice, UpdateSourceTrigger=PropertyChanged}"
                     Content="自动击杀警察" />
             </StackPanel>
 
@@ -201,34 +211,42 @@
                 <CheckBox
                     x:Name="CheckBox_ProofBullet"
                     Click="CheckBox_ProofBullet_Click"
+                    IsChecked="{Binding SelfStateOption.ProofBullet, UpdateSourceTrigger=PropertyChanged}"
                     Content="防子弹（防止子弹掉血）" />
                 <CheckBox
                     x:Name="CheckBox_ProofFire"
                     Click="CheckBox_ProofFire_Click"
+                    IsChecked="{Binding SelfStateOption.ProofFire, UpdateSourceTrigger=PropertyChanged}"
                     Content="防火烧（防止燃烧掉血）" />
                 <CheckBox
                     x:Name="CheckBox_ProofCollision"
                     Click="CheckBox_ProofCollision_Click"
+                    IsChecked="{Binding SelfStateOption.ProofCollision, UpdateSourceTrigger=PropertyChanged}"
                     Content="防撞击（防止撞击掉血）" />
                 <CheckBox
                     x:Name="CheckBox_ProofMelee"
                     Click="CheckBox_ProofMelee_Click"
+                    IsChecked="{Binding SelfStateOption.ProofMelee, UpdateSourceTrigger=PropertyChanged}"
                     Content="防近战（防止近战掉血）" />
                 <CheckBox
                     x:Name="CheckBox_ProofExplosion"
                     Click="CheckBox_ProofExplosion_Click"
+                    IsChecked="{Binding SelfStateOption.ProofExplosion, UpdateSourceTrigger=PropertyChanged}"
                     Content="防爆炸（防止爆炸掉血）" />
                 <CheckBox
                     x:Name="CheckBox_ProofSteam"
                     Click="CheckBox_ProofSteam_Click"
+                    IsChecked="{Binding SelfStateOption.ProofSteam, UpdateSourceTrigger=PropertyChanged}"
                     Content="防蒸汽（具体场景未知）" />
                 <CheckBox
                     x:Name="CheckBox_ProofDrown"
                     Click="CheckBox_ProofDrown_Click"
+                    IsChecked="{Binding SelfStateOption.ProofDrown, UpdateSourceTrigger=PropertyChanged}"
                     Content="防溺水（具体场景未知）" />
                 <CheckBox
                     x:Name="CheckBox_ProofWater"
                     Click="CheckBox_ProofWater_Click"
+                    IsChecked="{Binding SelfStateOption.ProofWater, UpdateSourceTrigger=PropertyChanged}"
                     Content="防海水（可以水下行走）" />
             </StackPanel>
         </StackPanel>

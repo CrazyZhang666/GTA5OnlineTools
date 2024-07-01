@@ -19,14 +19,17 @@
                     <CheckBox
                         x:Name="CheckBox_VehicleGodMode"
                         Click="CheckBox_VehicleGodMode_Click"
+                        IsChecked="{Binding VO_Options.GodMode, UpdateSourceTrigger=PropertyChanged}"
                         Content="载具无敌" />
                     <CheckBox
                         x:Name="CheckBox_VehicleSeatbelt"
                         Click="CheckBox_VehicleSeatbelt_Click"
+                        IsChecked="{Binding VO_Options.Seatbelt, UpdateSourceTrigger=PropertyChanged}"
                         Content="载具安全带" />
                     <CheckBox
                         x:Name="CheckBox_VehicleParachute"
                         Click="CheckBox_VehicleParachute_Click"
+                        IsChecked="{Binding VO_Options.Parachute, UpdateSourceTrigger=PropertyChanged}"
                         Content="载具降落伞" />
                 </WrapPanel>
                 <WrapPanel Margin="5,0,5,0">
