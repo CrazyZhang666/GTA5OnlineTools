@@ -180,8 +180,12 @@ public static class Vehicle
     /// <summary>
     /// 提前解锁1.69新载具（避免刷出消失）
     /// </summary>
-    public static void Unlock168Vehicle()
+    public static void UnlockDlcVehicle()
     {
+        for (int i = 0; i <= 29; i++)
+        {
+            Globals.Set_Global_Value(Tunables.Index(RAGE.JOAAT("LAUNCHPOSIX_VEHICLE_" + i.ToString())), 0);
+        }
         Globals.Set_Global_Value(Tunables.Index(RAGE.JOAAT("ENABLE_VEHICLE_CASTIGATOR")), 1);
         Globals.Set_Global_Value(Tunables.Index(RAGE.JOAAT("ENABLE_VEHICLE_COQUETTE5")), 1);
         Globals.Set_Global_Value(Tunables.Index(RAGE.JOAAT("ENABLE_VEHICLE_DOMINATOR10")), 1);
